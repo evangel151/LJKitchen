@@ -8,13 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		003729FF1D06A03F006A21C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 003729FE1D06A03F006A21C2 /* main.m */; };
-		00372A021D06A03F006A21C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A011D06A03F006A21C2 /* AppDelegate.m */; };
-		00372A051D06A03F006A21C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A041D06A03F006A21C2 /* ViewController.m */; };
-		00372A081D06A03F006A21C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00372A061D06A03F006A21C2 /* Main.storyboard */; };
 		00372A0A1D06A03F006A21C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00372A091D06A03F006A21C2 /* Assets.xcassets */; };
 		00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */; };
 		00372A181D06A03F006A21C2 /* LJKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A171D06A03F006A21C2 /* LJKitchenTests.m */; };
 		00372A231D06A03F006A21C2 /* LJKitchenUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A221D06A03F006A21C2 /* LJKitchenUITests.m */; };
+		00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED211D08373300B55ED4 /* AppDelegate.m */; };
+		00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED2E1D083D6D00B55ED4 /* LJKMainTabBarController.m */; };
+		00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED311D083E8E00B55ED4 /* LJKNavigationController.m */; };
+		00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED341D083F5A00B55ED4 /* LJKHomeViewController.m */; };
+		00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED371D083F7B00B55ED4 /* LJKMarketViewController.m */; };
+		00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED401D08407A00B55ED4 /* LJKMessageViewController.m */; };
+		00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED431D08409600B55ED4 /* LJKProfileViewController.m */; };
+		00B5ED461D08467E00B55ED4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00B5ED451D08467E00B55ED4 /* Info.plist */; };
+		00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED4A1D085D3300B55ED4 /* LJKNetworkTool.m */; };
+		00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED4D1D0862A800B55ED4 /* LJKCreatRecipeController.m */; };
+		00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED501D0862C300B55ED4 /* LJKBasketController.m */; };
+		00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED531D086A9E00B55ED4 /* LJKFindFriendViewController.m */; };
+		00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED561D086ABB00B55ED4 /* LJKSettingViewController.m */; };
+		00B5ED5A1D086EF000B55ED4 /* LJKCommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED591D086EF000B55ED4 /* LJKCommunityViewController.m */; };
+		00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED5C1D086F1A00B55ED4 /* LJKNotificationViewController.m */; };
+		00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED5F1D08719400B55ED4 /* LJKMallSortViewController.m */; };
+		00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED621D0871BC00B55ED4 /* LJKShoppingSortViewController.m */; };
+		00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */; };
+		00B5ED681D08C77B00B55ED4 /* LJKMessageHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */; };
+		E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C35850CB67314F7DFDA8CBBD /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,20 +54,54 @@
 /* Begin PBXFileReference section */
 		003729FA1D06A03F006A21C2 /* LJKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003729FE1D06A03F006A21C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		00372A001D06A03F006A21C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		00372A011D06A03F006A21C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		00372A031D06A03F006A21C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		00372A041D06A03F006A21C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		00372A071D06A03F006A21C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00372A091D06A03F006A21C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00372A0C1D06A03F006A21C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		00372A0E1D06A03F006A21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00372A131D06A03F006A21C2 /* LJKitchenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJKitchenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00372A171D06A03F006A21C2 /* LJKitchenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJKitchenTests.m; sourceTree = "<group>"; };
 		00372A191D06A03F006A21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00372A1E1D06A03F006A21C2 /* LJKitchenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJKitchenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00372A221D06A03F006A21C2 /* LJKitchenUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJKitchenUITests.m; sourceTree = "<group>"; };
 		00372A241D06A03F006A21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00B5ED201D08373300B55ED4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00B5ED211D08373300B55ED4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		00B5ED2D1D083D6D00B55ED4 /* LJKMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMainTabBarController.h; sourceTree = "<group>"; };
+		00B5ED2E1D083D6D00B55ED4 /* LJKMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMainTabBarController.m; sourceTree = "<group>"; };
+		00B5ED301D083E8E00B55ED4 /* LJKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKNavigationController.h; sourceTree = "<group>"; };
+		00B5ED311D083E8E00B55ED4 /* LJKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKNavigationController.m; sourceTree = "<group>"; };
+		00B5ED331D083F5A00B55ED4 /* LJKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeViewController.h; sourceTree = "<group>"; };
+		00B5ED341D083F5A00B55ED4 /* LJKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeViewController.m; sourceTree = "<group>"; };
+		00B5ED361D083F7B00B55ED4 /* LJKMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketViewController.h; sourceTree = "<group>"; };
+		00B5ED371D083F7B00B55ED4 /* LJKMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketViewController.m; sourceTree = "<group>"; };
+		00B5ED3F1D08407A00B55ED4 /* LJKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMessageViewController.h; sourceTree = "<group>"; };
+		00B5ED401D08407A00B55ED4 /* LJKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMessageViewController.m; sourceTree = "<group>"; };
+		00B5ED421D08409600B55ED4 /* LJKProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKProfileViewController.h; sourceTree = "<group>"; };
+		00B5ED431D08409600B55ED4 /* LJKProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKProfileViewController.m; sourceTree = "<group>"; };
+		00B5ED451D08467E00B55ED4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00B5ED491D085D3300B55ED4 /* LJKNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKNetworkTool.h; sourceTree = "<group>"; };
+		00B5ED4A1D085D3300B55ED4 /* LJKNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKNetworkTool.m; sourceTree = "<group>"; };
+		00B5ED4C1D0862A800B55ED4 /* LJKCreatRecipeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCreatRecipeController.h; sourceTree = "<group>"; };
+		00B5ED4D1D0862A800B55ED4 /* LJKCreatRecipeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCreatRecipeController.m; sourceTree = "<group>"; };
+		00B5ED4F1D0862C300B55ED4 /* LJKBasketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBasketController.h; sourceTree = "<group>"; };
+		00B5ED501D0862C300B55ED4 /* LJKBasketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBasketController.m; sourceTree = "<group>"; };
+		00B5ED521D086A9E00B55ED4 /* LJKFindFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKFindFriendViewController.h; sourceTree = "<group>"; };
+		00B5ED531D086A9E00B55ED4 /* LJKFindFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKFindFriendViewController.m; sourceTree = "<group>"; };
+		00B5ED551D086ABB00B55ED4 /* LJKSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSettingViewController.h; sourceTree = "<group>"; };
+		00B5ED561D086ABB00B55ED4 /* LJKSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSettingViewController.m; sourceTree = "<group>"; };
+		00B5ED581D086EF000B55ED4 /* LJKCommunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCommunityViewController.h; sourceTree = "<group>"; };
+		00B5ED591D086EF000B55ED4 /* LJKCommunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCommunityViewController.m; sourceTree = "<group>"; };
+		00B5ED5B1D086F1A00B55ED4 /* LJKNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKNotificationViewController.h; sourceTree = "<group>"; };
+		00B5ED5C1D086F1A00B55ED4 /* LJKNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKNotificationViewController.m; sourceTree = "<group>"; };
+		00B5ED5E1D08719400B55ED4 /* LJKMallSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMallSortViewController.h; sourceTree = "<group>"; };
+		00B5ED5F1D08719400B55ED4 /* LJKMallSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMallSortViewController.m; sourceTree = "<group>"; };
+		00B5ED611D0871BC00B55ED4 /* LJKShoppingSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKShoppingSortViewController.h; sourceTree = "<group>"; };
+		00B5ED621D0871BC00B55ED4 /* LJKShoppingSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKShoppingSortViewController.m; sourceTree = "<group>"; };
+		00B5ED641D08C74D00B55ED4 /* LJKMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMessageHeader.h; sourceTree = "<group>"; };
+		00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMessageHeader.m; sourceTree = "<group>"; };
+		00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKMessageHeader.xib; sourceTree = "<group>"; };
+		3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C35850CB67314F7DFDA8CBBD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +137,8 @@
 				00372A161D06A03F006A21C2 /* LJKitchenTests */,
 				00372A211D06A03F006A21C2 /* LJKitchenUITests */,
 				003729FB1D06A03F006A21C2 /* Products */,
+				AF8FC38F20D70CB09CAF1CC3 /* Pods */,
+				A0741B224F81F10C083E7106 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +155,7 @@
 		003729FC1D06A03F006A21C2 /* LJKitchen */ = {
 			isa = PBXGroup;
 			children = (
-				00372A001D06A03F006A21C2 /* AppDelegate.h */,
-				00372A011D06A03F006A21C2 /* AppDelegate.m */,
-				00372A031D06A03F006A21C2 /* ViewController.h */,
-				00372A041D06A03F006A21C2 /* ViewController.m */,
-				00372A061D06A03F006A21C2 /* Main.storyboard */,
-				00372A091D06A03F006A21C2 /* Assets.xcassets */,
-				00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */,
-				00372A0E1D06A03F006A21C2 /* Info.plist */,
+				00B5ED0E1D08373300B55ED4 /* Classes */,
 				003729FD1D06A03F006A21C2 /* Supporting Files */,
 			);
 			path = LJKitchen;
@@ -117,7 +164,11 @@
 		003729FD1D06A03F006A21C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00B5ED451D08467E00B55ED4 /* Info.plist */,
+				00372A091D06A03F006A21C2 /* Assets.xcassets */,
+				00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */,
 				003729FE1D06A03F006A21C2 /* main.m */,
+				00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +191,273 @@
 			path = LJKitchenUITests;
 			sourceTree = "<group>";
 		};
+		00B5ED0E1D08373300B55ED4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED0F1D08373300B55ED4 /* Home */,
+				00B5ED131D08373300B55ED4 /* Main */,
+				00B5ED171D08373300B55ED4 /* Market */,
+				00B5ED1B1D08373300B55ED4 /* Message */,
+				00B5ED1F1D08373300B55ED4 /* Other */,
+				00B5ED261D08373300B55ED4 /* Profile */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		00B5ED0F1D08373300B55ED4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED101D08373300B55ED4 /* Controller */,
+				00B5ED111D08373300B55ED4 /* Model */,
+				00B5ED121D08373300B55ED4 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		00B5ED101D08373300B55ED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED331D083F5A00B55ED4 /* LJKHomeViewController.h */,
+				00B5ED341D083F5A00B55ED4 /* LJKHomeViewController.m */,
+				00B5ED4C1D0862A800B55ED4 /* LJKCreatRecipeController.h */,
+				00B5ED4D1D0862A800B55ED4 /* LJKCreatRecipeController.m */,
+				00B5ED4F1D0862C300B55ED4 /* LJKBasketController.h */,
+				00B5ED501D0862C300B55ED4 /* LJKBasketController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B5ED111D08373300B55ED4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B5ED121D08373300B55ED4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B5ED131D08373300B55ED4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED141D08373300B55ED4 /* Controller */,
+				00B5ED151D08373300B55ED4 /* Model */,
+				00B5ED161D08373300B55ED4 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		00B5ED141D08373300B55ED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED2D1D083D6D00B55ED4 /* LJKMainTabBarController.h */,
+				00B5ED2E1D083D6D00B55ED4 /* LJKMainTabBarController.m */,
+				00B5ED301D083E8E00B55ED4 /* LJKNavigationController.h */,
+				00B5ED311D083E8E00B55ED4 /* LJKNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B5ED151D08373300B55ED4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B5ED161D08373300B55ED4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B5ED171D08373300B55ED4 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED181D08373300B55ED4 /* Controller */,
+				00B5ED191D08373300B55ED4 /* Model */,
+				00B5ED1A1D08373300B55ED4 /* View */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		00B5ED181D08373300B55ED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED361D083F7B00B55ED4 /* LJKMarketViewController.h */,
+				00B5ED371D083F7B00B55ED4 /* LJKMarketViewController.m */,
+				00B5ED5E1D08719400B55ED4 /* LJKMallSortViewController.h */,
+				00B5ED5F1D08719400B55ED4 /* LJKMallSortViewController.m */,
+				00B5ED611D0871BC00B55ED4 /* LJKShoppingSortViewController.h */,
+				00B5ED621D0871BC00B55ED4 /* LJKShoppingSortViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B5ED191D08373300B55ED4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B5ED1A1D08373300B55ED4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B5ED1B1D08373300B55ED4 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED1C1D08373300B55ED4 /* Controller */,
+				00B5ED1D1D08373300B55ED4 /* Model */,
+				00B5ED1E1D08373300B55ED4 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		00B5ED1C1D08373300B55ED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED3F1D08407A00B55ED4 /* LJKMessageViewController.h */,
+				00B5ED401D08407A00B55ED4 /* LJKMessageViewController.m */,
+				00B5ED581D086EF000B55ED4 /* LJKCommunityViewController.h */,
+				00B5ED591D086EF000B55ED4 /* LJKCommunityViewController.m */,
+				00B5ED5B1D086F1A00B55ED4 /* LJKNotificationViewController.h */,
+				00B5ED5C1D086F1A00B55ED4 /* LJKNotificationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B5ED1D1D08373300B55ED4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B5ED1E1D08373300B55ED4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED641D08C74D00B55ED4 /* LJKMessageHeader.h */,
+				00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */,
+				00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B5ED1F1D08373300B55ED4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED201D08373300B55ED4 /* AppDelegate.h */,
+				00B5ED211D08373300B55ED4 /* AppDelegate.m */,
+				00B5ED471D085D0100B55ED4 /* Category */,
+				00B5ED481D085D0100B55ED4 /* Tool */,
+				00B5ED221D08373300B55ED4 /* Controller */,
+				00B5ED241D08373300B55ED4 /* Model */,
+				00B5ED251D08373300B55ED4 /* View */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		00B5ED221D08373300B55ED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B5ED241D08373300B55ED4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B5ED251D08373300B55ED4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B5ED261D08373300B55ED4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED271D08373300B55ED4 /* Controller */,
+				00B5ED281D08373300B55ED4 /* Model */,
+				00B5ED291D08373300B55ED4 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		00B5ED271D08373300B55ED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED421D08409600B55ED4 /* LJKProfileViewController.h */,
+				00B5ED431D08409600B55ED4 /* LJKProfileViewController.m */,
+				00B5ED521D086A9E00B55ED4 /* LJKFindFriendViewController.h */,
+				00B5ED531D086A9E00B55ED4 /* LJKFindFriendViewController.m */,
+				00B5ED551D086ABB00B55ED4 /* LJKSettingViewController.h */,
+				00B5ED561D086ABB00B55ED4 /* LJKSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B5ED281D08373300B55ED4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B5ED291D08373300B55ED4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B5ED471D085D0100B55ED4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		00B5ED481D085D0100B55ED4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				00B5ED491D085D3300B55ED4 /* LJKNetworkTool.h */,
+				00B5ED4A1D085D3300B55ED4 /* LJKNetworkTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		A0741B224F81F10C083E7106 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C35850CB67314F7DFDA8CBBD /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF8FC38F20D70CB09CAF1CC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */,
+				3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +465,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00372A271D06A03F006A21C2 /* Build configuration list for PBXNativeTarget "LJKitchen" */;
 			buildPhases = (
+				F198F9B0991FEC7775B2F298 /* Check Pods Manifest.lock */,
 				003729F61D06A03F006A21C2 /* Sources */,
 				003729F71D06A03F006A21C2 /* Frameworks */,
 				003729F81D06A03F006A21C2 /* Resources */,
+				C7EB7DE19D29E765CB2A00FE /* Embed Pods Frameworks */,
+				F661AA223D19ECA1EE7BC1CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +523,7 @@
 		003729F21D06A03F006A21C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LJK;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ycdsq;
 				TargetAttributes = {
@@ -246,9 +568,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B5ED681D08C77B00B55ED4 /* LJKMessageHeader.xib in Resources */,
 				00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */,
 				00372A0A1D06A03F006A21C2 /* Assets.xcassets in Resources */,
-				00372A081D06A03F006A21C2 /* Main.storyboard in Resources */,
+				00B5ED461D08467E00B55ED4 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +591,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C7EB7DE19D29E765CB2A00FE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F198F9B0991FEC7775B2F298 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F661AA223D19ECA1EE7BC1CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		003729F61D06A03F006A21C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00372A051D06A03F006A21C2 /* ViewController.m in Sources */,
-				00372A021D06A03F006A21C2 /* AppDelegate.m in Sources */,
+				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
+				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
+				00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */,
+				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
+				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
+				00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */,
+				00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */,
+				00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */,
+				00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */,
+				00B5ED5A1D086EF000B55ED4 /* LJKCommunityViewController.m in Sources */,
+				00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */,
+				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
+				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
+				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
+				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
+				00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */,
+				00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,14 +697,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00372A061D06A03F006A21C2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00372A071D06A03F006A21C2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -414,23 +792,31 @@
 		};
 		00372A281D06A03F006A21C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LJKitchen/PrefixHeader.pch;
 				INFOPLIST_FILE = LJKitchen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ycdsq.www.LJKitchen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		00372A291D06A03F006A21C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LJKitchen/PrefixHeader.pch;
 				INFOPLIST_FILE = LJKitchen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ycdsq.www.LJKitchen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -501,6 +887,7 @@
 				00372A291D06A03F006A21C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00372A2A1D06A03F006A21C2 /* Build configuration list for PBXNativeTarget "LJKitchenTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +896,7 @@
 				00372A2C1D06A03F006A21C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00372A2D1D06A03F006A21C2 /* Build configuration list for PBXNativeTarget "LJKitchenUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +905,7 @@
 				00372A2F1D06A03F006A21C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

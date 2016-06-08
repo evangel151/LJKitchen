@@ -1,27 +1,29 @@
 //
-//  ViewController.m
+//  LJKBasketController.m
 //  LJKitchen
 //
-//  Created by  a on 16/6/7.
+//  Created by  a on 16/6/8.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LJKBasketController.h"
 
-@interface ViewController ()
+@interface LJKBasketController ()
 
 @end
 
-@implementation ViewController
+@implementation LJKBasketController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"菜篮子";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

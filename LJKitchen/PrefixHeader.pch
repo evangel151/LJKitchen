@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  LJKitchen
+//
+//  Created by  a on 16/6/8.
+//  Copyright © 2016年 ycdsq. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <YYCategories.h>
+#import <SVProgressHUD.h>
+
+#pragma makr - 公用宏
+/** 指定RGB & alpha 颜色 */
+#define LJregular(r,g,b,a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+
+/** 屏幕宽高 */
+#define SCREEN_SIZE    [[UIScreen mainScreen] bounds].size
+#define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT  [[UIScreen mainScreen] bounds].size.height
+#define TABBAR_HEIGHT  44
+#define NAVBAR_HEIGHT  64
+
+#endif /* PrefixHeader_pch */
