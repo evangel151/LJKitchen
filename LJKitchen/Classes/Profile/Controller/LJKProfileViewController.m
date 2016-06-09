@@ -16,14 +16,17 @@
 
 @implementation LJKProfileViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,
+      [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
-    self.view.backgroundColor = [UIColor yellowColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:LJregular(239, 51, 60, 1.0), NSForegroundColorAttributeName,
-      [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
-    
 }
 
 - (void)setupNavigationBar {
@@ -40,14 +43,14 @@
                                     action:@selector(setting)];
 }
 
+// 跳转至 “寻找厨友”
 - (void)findFriend {
-    
     LJKFindFriendViewController *findFriend = [[LJKFindFriendViewController alloc] init];
     [self.navigationController pushViewController:findFriend animated:YES];
     
 }
 
-//
+// 跳转至 “设置”
 - (void)setting {
     LJKSettingViewController *setting = [[LJKSettingViewController alloc] init];
     [self.navigationController pushViewController:setting animated:YES];

@@ -31,6 +31,14 @@
 		00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED621D0871BC00B55ED4 /* LJKShoppingSortViewController.m */; };
 		00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */; };
 		00B5ED681D08C77B00B55ED4 /* LJKMessageHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */; };
+		00D347251D0975F500B01E6C /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347241D0975F400B01E6C /* UIButton+Extension.m */; };
+		00D347281D0987EC00B01E6C /* LJKSendMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347271D0987EC00B01E6C /* LJKSendMailViewController.m */; };
+		00D3472B1D098DA100B01E6C /* LJKSuggestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3472A1D098DA100B01E6C /* LJKSuggestViewController.m */; };
+		00D3472E1D09C41100B01E6C /* LJKBasicTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3472D1D09C41100B01E6C /* LJKBasicTextView.m */; };
+		00D347341D09EE2700B01E6C /* LJKHelpCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347331D09EE2700B01E6C /* LJKHelpCenterViewController.m */; };
+		00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347361D09F0BF00B01E6C /* LJKBasicCell.m */; };
+		00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */; };
+		00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */; };
 		E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C35850CB67314F7DFDA8CBBD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +107,21 @@
 		00B5ED641D08C74D00B55ED4 /* LJKMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMessageHeader.h; sourceTree = "<group>"; };
 		00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMessageHeader.m; sourceTree = "<group>"; };
 		00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKMessageHeader.xib; sourceTree = "<group>"; };
+		00D347231D0975F400B01E6C /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		00D347241D0975F400B01E6C /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		00D347261D0987EC00B01E6C /* LJKSendMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSendMailViewController.h; sourceTree = "<group>"; };
+		00D347271D0987EC00B01E6C /* LJKSendMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSendMailViewController.m; sourceTree = "<group>"; };
+		00D347291D098DA100B01E6C /* LJKSuggestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSuggestViewController.h; sourceTree = "<group>"; };
+		00D3472A1D098DA100B01E6C /* LJKSuggestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSuggestViewController.m; sourceTree = "<group>"; };
+		00D3472C1D09C41100B01E6C /* LJKBasicTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBasicTextView.h; sourceTree = "<group>"; };
+		00D3472D1D09C41100B01E6C /* LJKBasicTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBasicTextView.m; sourceTree = "<group>"; };
+		00D347321D09EE2700B01E6C /* LJKHelpCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpCenterViewController.h; sourceTree = "<group>"; };
+		00D347331D09EE2700B01E6C /* LJKHelpCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpCenterViewController.m; sourceTree = "<group>"; };
+		00D347351D09F0BF00B01E6C /* LJKBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBasicCell.h; sourceTree = "<group>"; };
+		00D347361D09F0BF00B01E6C /* LJKBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBasicCell.m; sourceTree = "<group>"; };
+		00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicCell.xib; sourceTree = "<group>"; };
+		00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpDetailController.h; sourceTree = "<group>"; };
+		00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpDetailController.m; sourceTree = "<group>"; };
 		3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C35850CB67314F7DFDA8CBBD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +295,11 @@
 		00B5ED161D08373300B55ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00D3472C1D09C41100B01E6C /* LJKBasicTextView.h */,
+				00D3472D1D09C41100B01E6C /* LJKBasicTextView.m */,
+				00D347351D09F0BF00B01E6C /* LJKBasicCell.h */,
+				00D347361D09F0BF00B01E6C /* LJKBasicCell.m */,
+				00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,6 +360,14 @@
 				00B5ED591D086EF000B55ED4 /* LJKCommunityViewController.m */,
 				00B5ED5B1D086F1A00B55ED4 /* LJKNotificationViewController.h */,
 				00B5ED5C1D086F1A00B55ED4 /* LJKNotificationViewController.m */,
+				00D347261D0987EC00B01E6C /* LJKSendMailViewController.h */,
+				00D347271D0987EC00B01E6C /* LJKSendMailViewController.m */,
+				00D347291D098DA100B01E6C /* LJKSuggestViewController.h */,
+				00D3472A1D098DA100B01E6C /* LJKSuggestViewController.m */,
+				00D347321D09EE2700B01E6C /* LJKHelpCenterViewController.h */,
+				00D347331D09EE2700B01E6C /* LJKHelpCenterViewController.m */,
+				00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */,
+				00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -428,6 +464,8 @@
 		00B5ED471D085D0100B55ED4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				00D347231D0975F400B01E6C /* UIButton+Extension.h */,
+				00D347241D0975F400B01E6C /* UIButton+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -572,6 +610,7 @@
 				00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */,
 				00372A0A1D06A03F006A21C2 /* Assets.xcassets in Resources */,
 				00B5ED461D08467E00B55ED4 /* Info.plist in Resources */,
+				00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,18 +686,25 @@
 				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
 				00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */,
+				00D3472B1D098DA100B01E6C /* LJKSuggestViewController.m in Sources */,
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
 				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
 				00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */,
 				00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */,
+				00D3472E1D09C41100B01E6C /* LJKBasicTextView.m in Sources */,
 				00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */,
 				00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */,
+				00D347251D0975F500B01E6C /* UIButton+Extension.m in Sources */,
+				00D347341D09EE2700B01E6C /* LJKHelpCenterViewController.m in Sources */,
 				00B5ED5A1D086EF000B55ED4 /* LJKCommunityViewController.m in Sources */,
+				00D347281D0987EC00B01E6C /* LJKSendMailViewController.m in Sources */,
 				00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */,
 				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
 				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
+				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
+				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
 				00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */,
 				00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */,

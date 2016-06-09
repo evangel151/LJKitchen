@@ -9,18 +9,33 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+#pragma makr - lib
 #import <YYCategories.h>
 #import <SVProgressHUD.h>
 
-#pragma makr - 公用宏
+#pragma makr - extension
+#import "UIButton+Extension.h"
+
+
+#pragma makr - marco
 /** 指定RGB & alpha 颜色 */
 #define LJregular(r,g,b,a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+/** MessageView 按钮文字颜色 (与图片搭配) */
+#define Color_DarkGray    LJregular(112, 112, 112, 1)
+/** 默认的背景颜色 */
+#define Color_BackGround  LJregular(230, 230, 230, 1)
+/** 项目主题颜色(跟tabbar图片颜色相同) */
+#define Color_ThemeColor  LJregular(239, 51, 60, 1.0)
 
-/** 屏幕宽高 */
+/** 通用常量 */
 #define SCREEN_SIZE    [[UIScreen mainScreen] bounds].size
 #define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT  [[UIScreen mainScreen] bounds].size.height
 #define TABBAR_HEIGHT  44
 #define NAVBAR_HEIGHT  64
+
+/** 通知中心 */
+#define NotificationCenter [NSNotificationCenter defaultCenter]
 
 #endif /* PrefixHeader_pch */

@@ -11,12 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="440" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sendMail" translatesAutoresizingMaskIntoConstraints="NO" id="uWr-GH-Qe1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sendMail" translatesAutoresizingMaskIntoConstraints="NO" id="uWr-GH-Qe1">
                     <rect key="frame" x="164" y="7" width="41" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="41" id="OyL-5o-GPy"/>
-                        <constraint firstAttribute="height" constant="36" id="wQO-Z3-X15"/>
-                    </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csx-Ls-U2W">
                     <rect key="frame" x="213" y="0.0" width="84" height="50"/>
@@ -27,10 +23,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="uWr-GH-Qe1" secondAttribute="bottom" constant="7" id="I6Z-1A-CuD"/>
-                <constraint firstItem="uWr-GH-Qe1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="gly-fH-fFk"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="330" y="62"/>

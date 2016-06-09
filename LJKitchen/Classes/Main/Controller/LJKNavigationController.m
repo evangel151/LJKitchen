@@ -20,8 +20,10 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor redColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:21],NSFontAttributeName,nil]];
+    // 设置默认的导航栏标题属性
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor],NSForegroundColorAttributeName,
+                                        [UIFont systemFontOfSize:21],NSFontAttributeName,nil]];
 }
 
 
@@ -38,7 +40,7 @@
         UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         viewController.navigationItem.leftBarButtonItem = backItem;
         
-        // 边距修正
+        // 边距修正 (没必要...)
 //        UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 //        fixedItem.width = -5;
 
@@ -54,6 +56,5 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 @end

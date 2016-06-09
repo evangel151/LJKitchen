@@ -33,6 +33,7 @@
     [self addChildViewController:profile title:@"我" image:@"tabDDeselected" selectedImage:@"tabDSelected"];
 }
 
+// 添加TabBar子控制器 
 - (void)addChildViewController:(UIViewController *)childVc
                          title:(NSString *)title
                          image:(NSString *)image
@@ -43,7 +44,8 @@
     childVc.title = title;
     
     LJKNavigationController *naviVc = [[LJKNavigationController alloc] initWithRootViewController:childVc];
-    [naviVc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:LJregular(239, 51, 60, 1.0)} forState:UIControlStateSelected];
+    [naviVc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:Color_ThemeColor}
+                                     forState:UIControlStateSelected];
     [self addChildViewController:naviVc];
 }
 
