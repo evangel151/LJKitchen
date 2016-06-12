@@ -11,6 +11,8 @@
 #import "LJKNotificationViewController.h"
 #import "LJKSendMailViewController.h"
 #import "LJKSuggestViewController.h"
+#import "LJKBasicIconCell.h"
+#import "LJKBasic2Cell.h"
 #import <Masonry.h>
 
 @interface LJKMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -136,12 +138,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *ID = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"测试数据 --%zd", indexPath.row + 1];
+
+    LJKBasic2Cell *cell = [LJKBasic2Cell cellWithTableView:tableView];
+    NSString *iconName = [NSString stringWithFormat:@"market_menu_%ld",indexPath.row + 1];
+    UIImage *roundIcon = [[UIImage imageNamed:iconName] imageByRoundCornerRadius:89];
+    cell.iconView.image = roundIcon;
+    cell.nameLabelTop.text = [NSString stringWithFormat:@"姓名板--%zd", indexPath.row + 1];
+    cell.talkLabelBottom.text = [NSString stringWithFormat:@"最后一条对话--%zd", indexPath.row + 1];
+    cell.timeLabel.text = [NSString stringWithFormat:@"时间戳--%zd", indexPath.row + 1];
     return cell;
 }
 
@@ -169,6 +173,10 @@
 // 有确切高度header才能显示出来
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 66;
 }
 
 #pragma mark - useless 

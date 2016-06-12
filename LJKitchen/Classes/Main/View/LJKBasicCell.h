@@ -10,7 +10,7 @@
 
 @interface LJKBasicCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelView;
-
+@property (weak, nonatomic) IBOutlet UIImageView *arrowView;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

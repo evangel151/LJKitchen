@@ -10,15 +10,24 @@
 #define PrefixHeader_pch
 
 
-#pragma makr - lib
+// libs
 #import <YYCategories.h>
 #import <SVProgressHUD.h>
 
-#pragma makr - extension
+// extension
 #import "UIButton+Extension.h"
 
+// 常量
+#import "LJKConst.h"
 
-#pragma makr - marco
+// 通用常量 
+#define SCREEN_SIZE    [[UIScreen mainScreen] bounds].size
+#define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT  [[UIScreen mainScreen] bounds].size.height
+#define TABBAR_HEIGHT  44
+#define NAVBAR_HEIGHT  64
+
+// marco
 /** 指定RGB & alpha 颜色 */
 #define LJregular(r,g,b,a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
 /** MessageView 按钮文字颜色 (与图片搭配) */
@@ -27,15 +36,15 @@
 #define Color_BackGround  LJregular(230, 230, 230, 1)
 /** 项目主题颜色(跟tabbar图片颜色相同) */
 #define Color_ThemeColor  LJregular(239, 51, 60, 1.0)
+/** 背景为图片时使用 */
+#define Color_TintWhite   [UIColor whiteColor]
 
-/** 通用常量 */
-#define SCREEN_SIZE    [[UIScreen mainScreen] bounds].size
-#define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
-#define SCREEN_HEIGHT  [[UIScreen mainScreen] bounds].size.height
-#define TABBAR_HEIGHT  44
-#define NAVBAR_HEIGHT  64
+
 
 /** 通知中心 */
 #define NotificationCenter [NSNotificationCenter defaultCenter]
+
+/** WeakSelf 防block循环引用 */
+#define WeakSelf __weak typeof(self) weakSelf = self;
 
 #endif /* PrefixHeader_pch */

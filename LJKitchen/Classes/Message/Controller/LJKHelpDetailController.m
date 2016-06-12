@@ -53,6 +53,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupBasic];
+    [self setupNavigationBar];
+}
+
+- (void)setupNavigationBar {
+    self.title = @"帮助中心";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"测试" style:UIBarButtonItemStylePlain target:self action:@selector(popToRoot)];
+    self.navigationItem.rightBarButtonItem.tintColor = Color_ThemeColor;
+}
+
+- (void)popToRoot {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)setupBasic {
     self.view.backgroundColor = Color_BackGround;
     
     [self.view addSubview:self.containView];
@@ -78,10 +93,8 @@
         make.left.equalTo(self.containView.mas_left).offset(20);
         make.right.equalTo(self.containView.mas_right).offset(-20);
     }];
-    
+
 }
-
-
 
 
 

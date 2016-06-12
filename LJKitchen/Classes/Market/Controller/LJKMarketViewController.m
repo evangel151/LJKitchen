@@ -9,6 +9,7 @@
 #import "LJKMarketViewController.h"
 #import "LJKMallSortViewController.h"
 #import "LJKShoppingSortViewController.h"
+#import "LJKSearchBar.h"
 
 @interface LJKMarketViewController ()
 
@@ -23,6 +24,15 @@
 }
 
 - (void)setupNavigationBar {
+    
+    LJKSearchBar *searchBar = [LJKSearchBar searchBarWithPlaceholder:@"小杨生煎"];
+    self.navigationItem.titleView = searchBar;
+    //    WeakSelf;
+    searchBar.searchBarShouldBeginEditingBlock = ^{
+        //        XCFSearchViewController *searchCon = [[XCFSearchViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        //        [weakSelf.navigationController pushViewController:searchCon animated:YES];
+    };
+    
     self.navigationItem.leftBarButtonItem =
     [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"leftPageButtonBackgroundNormal"]
                                      style:UIBarButtonItemStylePlain

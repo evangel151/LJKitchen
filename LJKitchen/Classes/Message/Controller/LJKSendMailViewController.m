@@ -7,7 +7,22 @@
 //
 
 #import "LJKSendMailViewController.h"
+#import "LJKSearchBar.h"
+
 
 @implementation LJKSendMailViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    LJKSearchBar *searchBar = [LJKSearchBar searchBarWithPlaceholder:@"搜厨友"];
+    self.navigationItem.titleView = searchBar;
+//    WeakSelf;
+    searchBar.searchBarShouldBeginEditingBlock = ^{
+//        XCFSearchViewController *searchCon = [[XCFSearchViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//        [weakSelf.navigationController pushViewController:searchCon animated:YES];
+    };
+
+}
 
 @end

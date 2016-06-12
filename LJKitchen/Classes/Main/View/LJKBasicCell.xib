@@ -14,16 +14,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lG-ei-t9F">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lG-ei-t9F">
                         <rect key="frame" x="20" y="0.0" width="200" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="J0z-IC-yi0">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CellArrow" translatesAutoresizingMaskIntoConstraints="NO" id="J0z-IC-yi0">
                         <rect key="frame" x="284" y="10" width="16" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Ba1-iq-pMy"/>
+                            <constraint firstAttribute="width" constant="16" id="vn1-jQ-lEU"/>
+                        </constraints>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="J0z-IC-yi0" firstAttribute="leading" secondItem="7lG-ei-t9F" secondAttribute="trailing" constant="64" id="GLA-Sd-zNe"/>
+                    <constraint firstAttribute="trailing" secondItem="J0z-IC-yi0" secondAttribute="trailing" constant="20" id="Iv8-Ju-Sps"/>
+                    <constraint firstItem="7lG-ei-t9F" firstAttribute="top" secondItem="49n-bk-9fF" secondAttribute="top" id="XCs-WG-cn5"/>
+                    <constraint firstAttribute="bottom" secondItem="7lG-ei-t9F" secondAttribute="bottom" constant="-1" id="YL2-5J-ttn"/>
+                    <constraint firstAttribute="bottom" secondItem="J0z-IC-yi0" secondAttribute="bottom" constant="9" id="lDz-61-Bex"/>
+                    <constraint firstItem="7lG-ei-t9F" firstAttribute="leading" secondItem="49n-bk-9fF" secondAttribute="leading" constant="20" id="uT3-SQ-L3j"/>
+                    <constraint firstItem="J0z-IC-yi0" firstAttribute="top" secondItem="49n-bk-9fF" secondAttribute="top" constant="10" id="vsE-fS-0Zz"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="arrowView" destination="J0z-IC-yi0" id="eBW-FD-ZSU"/>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00019C141D0C195E008BB1A9 /* LJKBasicIconCell.m */; };
+		00019C171D0C195E008BB1A9 /* LJKBasicIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00019C151D0C195E008BB1A9 /* LJKBasicIconCell.xib */; };
+		00019C1D1D0C361D008BB1A9 /* LJKBasic2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00019C1C1D0C361D008BB1A9 /* LJKBasic2Cell.m */; };
+		001D93721D0AC63700B006D2 /* LJKMarketSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D93711D0AC63700B006D2 /* LJKMarketSortCell.m */; };
+		001D93751D0B142A00B006D2 /* LJKSettingFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D93741D0B142A00B006D2 /* LJKSettingFooter.m */; };
+		001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D93771D0B2CD600B006D2 /* LJKNotificationCell.m */; };
+		001D937B1D0B5B0800B006D2 /* LJKSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D937A1D0B5B0800B006D2 /* LJKSearchBar.m */; };
 		003729FF1D06A03F006A21C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 003729FE1D06A03F006A21C2 /* main.m */; };
 		00372A0A1D06A03F006A21C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00372A091D06A03F006A21C2 /* Assets.xcassets */; };
 		00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */; };
@@ -39,6 +46,11 @@
 		00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347361D09F0BF00B01E6C /* LJKBasicCell.m */; };
 		00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */; };
 		00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */; };
+		00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F079EB1D0D6461005FDD59 /* LJKHomeHeader.m */; };
+		00F079F21D0D736C005FDD59 /* LJKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F079F11D0D736C005FDD59 /* LJKConst.m */; };
+		00F079F51D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F079F41D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m */; };
+		00F079FF1D0D9D19005FDD59 /* breakfast.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F079FE1D0D9D19005FDD59 /* breakfast.json */; };
+		00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */; };
 		E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C35850CB67314F7DFDA8CBBD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +72,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00019C131D0C195E008BB1A9 /* LJKBasicIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBasicIconCell.h; sourceTree = "<group>"; };
+		00019C141D0C195E008BB1A9 /* LJKBasicIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBasicIconCell.m; sourceTree = "<group>"; };
+		00019C151D0C195E008BB1A9 /* LJKBasicIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicIconCell.xib; sourceTree = "<group>"; };
+		00019C1B1D0C361D008BB1A9 /* LJKBasic2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBasic2Cell.h; sourceTree = "<group>"; };
+		00019C1C1D0C361D008BB1A9 /* LJKBasic2Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBasic2Cell.m; sourceTree = "<group>"; };
+		001D93701D0AC63700B006D2 /* LJKMarketSortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketSortCell.h; sourceTree = "<group>"; };
+		001D93711D0AC63700B006D2 /* LJKMarketSortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketSortCell.m; sourceTree = "<group>"; };
+		001D93731D0B142A00B006D2 /* LJKSettingFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSettingFooter.h; sourceTree = "<group>"; };
+		001D93741D0B142A00B006D2 /* LJKSettingFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSettingFooter.m; sourceTree = "<group>"; };
+		001D93761D0B2CD600B006D2 /* LJKNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKNotificationCell.h; sourceTree = "<group>"; };
+		001D93771D0B2CD600B006D2 /* LJKNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKNotificationCell.m; sourceTree = "<group>"; };
+		001D93791D0B5B0800B006D2 /* LJKSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSearchBar.h; sourceTree = "<group>"; };
+		001D937A1D0B5B0800B006D2 /* LJKSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSearchBar.m; sourceTree = "<group>"; };
 		003729FA1D06A03F006A21C2 /* LJKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003729FE1D06A03F006A21C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00372A091D06A03F006A21C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +147,15 @@
 		00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicCell.xib; sourceTree = "<group>"; };
 		00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpDetailController.h; sourceTree = "<group>"; };
 		00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpDetailController.m; sourceTree = "<group>"; };
+		00F079EA1D0D6461005FDD59 /* LJKHomeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeader.h; sourceTree = "<group>"; };
+		00F079EB1D0D6461005FDD59 /* LJKHomeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeader.m; sourceTree = "<group>"; };
+		00F079F01D0D736C005FDD59 /* LJKConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKConst.h; sourceTree = "<group>"; };
+		00F079F11D0D736C005FDD59 /* LJKConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKConst.m; sourceTree = "<group>"; };
+		00F079F31D0D8A50005FDD59 /* LJKHomeHeaderTopNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeaderTopNav.h; sourceTree = "<group>"; };
+		00F079F41D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderTopNav.m; sourceTree = "<group>"; };
+		00F079FE1D0D9D19005FDD59 /* breakfast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breakfast.json; sourceTree = "<group>"; };
+		00F07A001D0D9F41005FDD59 /* LJKHomeHeaderNavButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeaderNavButton.h; sourceTree = "<group>"; };
+		00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderNavButton.m; sourceTree = "<group>"; };
 		3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C35850CB67314F7DFDA8CBBD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +226,7 @@
 				00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */,
 				003729FE1D06A03F006A21C2 /* main.m */,
 				00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */,
+				00F079FE1D0D9D19005FDD59 /* breakfast.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +295,12 @@
 		00B5ED121D08373300B55ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00F079EA1D0D6461005FDD59 /* LJKHomeHeader.h */,
+				00F079EB1D0D6461005FDD59 /* LJKHomeHeader.m */,
+				00F079F31D0D8A50005FDD59 /* LJKHomeHeaderTopNav.h */,
+				00F079F41D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m */,
+				00F07A001D0D9F41005FDD59 /* LJKHomeHeaderNavButton.h */,
+				00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +341,15 @@
 				00D347351D09F0BF00B01E6C /* LJKBasicCell.h */,
 				00D347361D09F0BF00B01E6C /* LJKBasicCell.m */,
 				00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */,
+				001D93761D0B2CD600B006D2 /* LJKNotificationCell.h */,
+				001D93771D0B2CD600B006D2 /* LJKNotificationCell.m */,
+				001D93791D0B5B0800B006D2 /* LJKSearchBar.h */,
+				001D937A1D0B5B0800B006D2 /* LJKSearchBar.m */,
+				00019C131D0C195E008BB1A9 /* LJKBasicIconCell.h */,
+				00019C141D0C195E008BB1A9 /* LJKBasicIconCell.m */,
+				00019C151D0C195E008BB1A9 /* LJKBasicIconCell.xib */,
+				00019C1B1D0C361D008BB1A9 /* LJKBasic2Cell.h */,
+				00019C1C1D0C361D008BB1A9 /* LJKBasic2Cell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +387,8 @@
 		00B5ED1A1D08373300B55ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				001D93701D0AC63700B006D2 /* LJKMarketSortCell.h */,
+				001D93711D0AC63700B006D2 /* LJKMarketSortCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +451,8 @@
 				00B5ED221D08373300B55ED4 /* Controller */,
 				00B5ED241D08373300B55ED4 /* Model */,
 				00B5ED251D08373300B55ED4 /* View */,
+				00F079F01D0D736C005FDD59 /* LJKConst.h */,
+				00F079F11D0D736C005FDD59 /* LJKConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -457,6 +511,8 @@
 		00B5ED291D08373300B55ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				001D93731D0B142A00B006D2 /* LJKSettingFooter.h */,
+				001D93741D0B142A00B006D2 /* LJKSettingFooter.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,6 +665,8 @@
 				00B5ED681D08C77B00B55ED4 /* LJKMessageHeader.xib in Resources */,
 				00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */,
 				00372A0A1D06A03F006A21C2 /* Assets.xcassets in Resources */,
+				00F079FF1D0D9D19005FDD59 /* breakfast.json in Resources */,
+				00019C171D0C195E008BB1A9 /* LJKBasicIconCell.xib in Resources */,
 				00B5ED461D08467E00B55ED4 /* Info.plist in Resources */,
 				00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */,
 			);
@@ -683,14 +741,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */,
 				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
+				00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */,
+				001D937B1D0B5B0800B006D2 /* LJKSearchBar.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
+				00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */,
+				00F079F21D0D736C005FDD59 /* LJKConst.m in Sources */,
 				00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */,
 				00D3472B1D098DA100B01E6C /* LJKSuggestViewController.m in Sources */,
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
+				001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */,
 				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
 				00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */,
+				001D93751D0B142A00B006D2 /* LJKSettingFooter.m in Sources */,
 				00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */,
+				001D93721D0AC63700B006D2 /* LJKMarketSortCell.m in Sources */,
 				00D3472E1D09C41100B01E6C /* LJKBasicTextView.m in Sources */,
 				00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */,
 				00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */,
@@ -705,9 +771,11 @@
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
+				00F079F51D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
 				00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */,
 				00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */,
+				00019C1D1D0C361D008BB1A9 /* LJKBasic2Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

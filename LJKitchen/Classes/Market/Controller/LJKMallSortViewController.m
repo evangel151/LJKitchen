@@ -8,7 +8,8 @@
 //
 
 #import "LJKMallSortViewController.h"
-
+#import "LJKMarketSortCell.h"
+#import "LJKShoppingSortViewController.h"
 @interface LJKMallSortViewController ()
 
 @end
@@ -17,83 +18,59 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
+- (instancetype)init {
+    // 创建流水布局
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake((SCREEN_WIDTH - 2) / 3, (SCREEN_WIDTH - 2) / 3);
+    layout.minimumLineSpacing = 1;
+    layout.minimumInteritemSpacing = 1;
+//    layout.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
+    return [super initWithCollectionViewLayout:layout];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    self.title = @"市集分类";
+    self.collectionView.backgroundColor = Color_BackGround;
+    self.collectionView.bounces = NO;
+    [self.collectionView registerClass:[LJKMarketSortCell class]
+            forCellWithReuseIdentifier:[LJKMarketSortCell cellIdentifier]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"shoppingCart"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCart)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)shoppingCart {
+    LJKShoppingSortViewController *cart = [[LJKShoppingSortViewController alloc] init];
+    [self.navigationController pushViewController:cart animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return 15;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+    LJKMarketSortCell *cell = [LJKMarketSortCell cellWithCollectionView:collectionView forIndexPath:indexPath];
     
-    // Configure the cell
-    
+    NSString *imageName = [NSString stringWithFormat:@"market_menu_%zd",indexPath.item + 1];
+    cell.sortItemView.image = [UIImage imageNamed:imageName];
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSString *imageName = [NSString stringWithFormat:@"market_menu_%zd",indexPath.item + 1];
+    
+    [SVProgressHUD showImage:[UIImage imageNamed:@"notification"] status:@"即将跳转对应的搜索结果"];
+    NSLog(@"点击了第%zd个item,即将跳转对应的搜索结果", indexPath.item + 1);
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
