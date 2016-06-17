@@ -7,12 +7,16 @@
 //
 
 #import "LJKHomeHeaderNavButton.h"
+#import "LJKNav.h"
 #import <Masonry.h>
+#import <UIImageView+WebCache.h>
 
 @interface LJKHomeHeaderNavButton ()
 
 /** 按钮图片 */
 @property (nonatomic, strong) UIImageView *imageV;
+/** 按钮背景图片 */
+@property (nonatomic, strong) UIImageView *imageB;
 /** 按钮标题 */
 @property (nonatomic, strong) UILabel *titleL;
 /** 跳转url */
@@ -63,22 +67,29 @@
     return self;
 }
 
+/** 从网络（模型中）获取导航按钮的图标及标题 */
 + (nonnull LJKHomeHeaderNavButton *)buttonWithNav:(nonnull LJKNav *)nav
                                            target:(nullable id)target
                                            action:(nullable SEL)action {
     LJKHomeHeaderNavButton *button = [[LJKHomeHeaderNavButton alloc] init];
+    [button.imageV sd_setImageWithURL:[NSURL URLWithString:nav.picurl]];
+    button.titleL.text = nav.name;
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
 
 
+
+
+
+/** 没有网络的时候再考虑从本地加载按钮图片及文字 */
 + (nonnull LJKHomeHeaderNavButton *)buttonWithImageName:(nonnull NSString *)imageName
                                                   title:(nonnull NSString *)title
                                                  target:(nullable id)target
                                                  action:(nullable SEL)action {
     
     LJKHomeHeaderNavButton *button = [[LJKHomeHeaderNavButton alloc] init];
-    button.imageV.image = [UIImage imageNamed:@"buylistButtonImage"];
+    button.imageV.image = [UIImage imageNamed:imageName];
     button.titleL.text = title;
     
     button.imageV.contentMode = UIViewContentModeScaleAspectFill;
@@ -97,6 +108,5 @@
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     return button;
-    
 }
 @end

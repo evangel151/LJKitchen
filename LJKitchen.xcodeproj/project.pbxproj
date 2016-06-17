@@ -46,11 +46,26 @@
 		00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347361D09F0BF00B01E6C /* LJKBasicCell.m */; };
 		00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */; };
 		00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */; };
+		00EDE7F51D118CBA0025ED9C /* LJKPopEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE7F41D118CBA0025ED9C /* LJKPopEvent.m */; };
+		00EDE7F81D11928B0025ED9C /* LJKNavContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE7F71D11928B0025ED9C /* LJKNavContent.m */; };
+		00EDE7FB1D11929E0025ED9C /* LJKDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE7FA1D11929E0025ED9C /* LJKDish.m */; };
+		00EDE7FE1D11938A0025ED9C /* LJKNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE7FD1D11938A0025ED9C /* LJKNav.m */; };
+		00EDE8011D1199580025ED9C /* LJKAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8001D1199580025ED9C /* LJKAuthor.m */; };
+		00EDE8041D119AC40025ED9C /* LJKAuthorDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8031D119AC40025ED9C /* LJKAuthorDetail.m */; };
+		00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8061D119DF80025ED9C /* LJKMyInfo.m */; };
+		00EDE80A1D11B3F90025ED9C /* LJKPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8091D11B3F90025ED9C /* LJKPicture.m */; };
+		00EDE80D1D11B52C0025ED9C /* LJKComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE80C1D11B52C0025ED9C /* LJKComment.m */; };
+		00EDE8101D11B5FC0025ED9C /* LJKEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE80F1D11B5FC0025ED9C /* LJKEvents.m */; };
+		00EDE8131D11B8900025ED9C /* LJKPopEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8121D11B8900025ED9C /* LJKPopEvents.m */; };
+		00EDE8161D11D3B60025ED9C /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8151D11D3B60025ED9C /* UIViewController+Extension.m */; };
+		00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8181D11D7660025ED9C /* LJKConstRequest.m */; };
+		00EDE81B1D11FAB70025ED9C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE81A1D11FAB70025ED9C /* Foundation+Log.m */; };
 		00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F079EB1D0D6461005FDD59 /* LJKHomeHeader.m */; };
 		00F079F21D0D736C005FDD59 /* LJKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F079F11D0D736C005FDD59 /* LJKConst.m */; };
 		00F079F51D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F079F41D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m */; };
 		00F079FF1D0D9D19005FDD59 /* breakfast.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F079FE1D0D9D19005FDD59 /* breakfast.json */; };
 		00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */; };
+		00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */; };
 		E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C35850CB67314F7DFDA8CBBD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +162,33 @@
 		00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicCell.xib; sourceTree = "<group>"; };
 		00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpDetailController.h; sourceTree = "<group>"; };
 		00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpDetailController.m; sourceTree = "<group>"; };
+		00EDE7F31D118CBA0025ED9C /* LJKPopEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKPopEvent.h; sourceTree = "<group>"; };
+		00EDE7F41D118CBA0025ED9C /* LJKPopEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKPopEvent.m; sourceTree = "<group>"; };
+		00EDE7F61D11928B0025ED9C /* LJKNavContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKNavContent.h; sourceTree = "<group>"; };
+		00EDE7F71D11928B0025ED9C /* LJKNavContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKNavContent.m; sourceTree = "<group>"; };
+		00EDE7F91D11929E0025ED9C /* LJKDish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKDish.h; sourceTree = "<group>"; };
+		00EDE7FA1D11929E0025ED9C /* LJKDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKDish.m; sourceTree = "<group>"; };
+		00EDE7FC1D11938A0025ED9C /* LJKNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKNav.h; sourceTree = "<group>"; };
+		00EDE7FD1D11938A0025ED9C /* LJKNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKNav.m; sourceTree = "<group>"; };
+		00EDE7FF1D1199580025ED9C /* LJKAuthor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKAuthor.h; sourceTree = "<group>"; };
+		00EDE8001D1199580025ED9C /* LJKAuthor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKAuthor.m; sourceTree = "<group>"; };
+		00EDE8021D119AC40025ED9C /* LJKAuthorDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKAuthorDetail.h; sourceTree = "<group>"; };
+		00EDE8031D119AC40025ED9C /* LJKAuthorDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKAuthorDetail.m; sourceTree = "<group>"; };
+		00EDE8051D119DF80025ED9C /* LJKMyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMyInfo.h; sourceTree = "<group>"; };
+		00EDE8061D119DF80025ED9C /* LJKMyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMyInfo.m; sourceTree = "<group>"; };
+		00EDE8081D11B3F90025ED9C /* LJKPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKPicture.h; sourceTree = "<group>"; };
+		00EDE8091D11B3F90025ED9C /* LJKPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKPicture.m; sourceTree = "<group>"; };
+		00EDE80B1D11B52C0025ED9C /* LJKComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKComment.h; sourceTree = "<group>"; };
+		00EDE80C1D11B52C0025ED9C /* LJKComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKComment.m; sourceTree = "<group>"; };
+		00EDE80E1D11B5FC0025ED9C /* LJKEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEvents.h; sourceTree = "<group>"; };
+		00EDE80F1D11B5FC0025ED9C /* LJKEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEvents.m; sourceTree = "<group>"; };
+		00EDE8111D11B8900025ED9C /* LJKPopEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKPopEvents.h; sourceTree = "<group>"; };
+		00EDE8121D11B8900025ED9C /* LJKPopEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKPopEvents.m; sourceTree = "<group>"; };
+		00EDE8141D11D3B60025ED9C /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		00EDE8151D11D3B60025ED9C /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		00EDE8171D11D7660025ED9C /* LJKConstRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKConstRequest.h; sourceTree = "<group>"; };
+		00EDE8181D11D7660025ED9C /* LJKConstRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKConstRequest.m; sourceTree = "<group>"; };
+		00EDE81A1D11FAB70025ED9C /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		00F079EA1D0D6461005FDD59 /* LJKHomeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeader.h; sourceTree = "<group>"; };
 		00F079EB1D0D6461005FDD59 /* LJKHomeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeader.m; sourceTree = "<group>"; };
 		00F079F01D0D736C005FDD59 /* LJKConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKConst.h; sourceTree = "<group>"; };
@@ -156,6 +198,8 @@
 		00F079FE1D0D9D19005FDD59 /* breakfast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breakfast.json; sourceTree = "<group>"; };
 		00F07A001D0D9F41005FDD59 /* LJKHomeHeaderNavButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeaderNavButton.h; sourceTree = "<group>"; };
 		00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderNavButton.m; sourceTree = "<group>"; };
+		00F07A061D0DD801005FDD59 /* LJKHomeHeaderDish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeaderDish.h; sourceTree = "<group>"; };
+		00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderDish.m; sourceTree = "<group>"; };
 		3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C35850CB67314F7DFDA8CBBD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,6 +332,26 @@
 		00B5ED111D08373300B55ED4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00EDE7F31D118CBA0025ED9C /* LJKPopEvent.h */,
+				00EDE7F41D118CBA0025ED9C /* LJKPopEvent.m */,
+				00EDE8111D11B8900025ED9C /* LJKPopEvents.h */,
+				00EDE8121D11B8900025ED9C /* LJKPopEvents.m */,
+				00EDE7F61D11928B0025ED9C /* LJKNavContent.h */,
+				00EDE7F71D11928B0025ED9C /* LJKNavContent.m */,
+				00EDE7F91D11929E0025ED9C /* LJKDish.h */,
+				00EDE7FA1D11929E0025ED9C /* LJKDish.m */,
+				00EDE7FC1D11938A0025ED9C /* LJKNav.h */,
+				00EDE7FD1D11938A0025ED9C /* LJKNav.m */,
+				00EDE7FF1D1199580025ED9C /* LJKAuthor.h */,
+				00EDE8001D1199580025ED9C /* LJKAuthor.m */,
+				00EDE8021D119AC40025ED9C /* LJKAuthorDetail.h */,
+				00EDE8031D119AC40025ED9C /* LJKAuthorDetail.m */,
+				00EDE8081D11B3F90025ED9C /* LJKPicture.h */,
+				00EDE8091D11B3F90025ED9C /* LJKPicture.m */,
+				00EDE80B1D11B52C0025ED9C /* LJKComment.h */,
+				00EDE80C1D11B52C0025ED9C /* LJKComment.m */,
+				00EDE80E1D11B5FC0025ED9C /* LJKEvents.h */,
+				00EDE80F1D11B5FC0025ED9C /* LJKEvents.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +365,8 @@
 				00F079F41D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m */,
 				00F07A001D0D9F41005FDD59 /* LJKHomeHeaderNavButton.h */,
 				00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */,
+				00F07A061D0DD801005FDD59 /* LJKHomeHeaderDish.h */,
+				00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,13 +512,15 @@
 			children = (
 				00B5ED201D08373300B55ED4 /* AppDelegate.h */,
 				00B5ED211D08373300B55ED4 /* AppDelegate.m */,
+				00F079F01D0D736C005FDD59 /* LJKConst.h */,
+				00F079F11D0D736C005FDD59 /* LJKConst.m */,
+				00EDE8171D11D7660025ED9C /* LJKConstRequest.h */,
+				00EDE8181D11D7660025ED9C /* LJKConstRequest.m */,
 				00B5ED471D085D0100B55ED4 /* Category */,
 				00B5ED481D085D0100B55ED4 /* Tool */,
 				00B5ED221D08373300B55ED4 /* Controller */,
 				00B5ED241D08373300B55ED4 /* Model */,
 				00B5ED251D08373300B55ED4 /* View */,
-				00F079F01D0D736C005FDD59 /* LJKConst.h */,
-				00F079F11D0D736C005FDD59 /* LJKConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -504,6 +572,8 @@
 		00B5ED281D08373300B55ED4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00EDE8051D119DF80025ED9C /* LJKMyInfo.h */,
+				00EDE8061D119DF80025ED9C /* LJKMyInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,8 +590,11 @@
 		00B5ED471D085D0100B55ED4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				00EDE81A1D11FAB70025ED9C /* Foundation+Log.m */,
 				00D347231D0975F400B01E6C /* UIButton+Extension.h */,
 				00D347241D0975F400B01E6C /* UIButton+Extension.m */,
+				00EDE8141D11D3B60025ED9C /* UIViewController+Extension.h */,
+				00EDE8151D11D3B60025ED9C /* UIViewController+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -742,27 +815,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */,
+				00EDE81B1D11FAB70025ED9C /* Foundation+Log.m in Sources */,
+				00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */,
 				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
 				00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */,
 				001D937B1D0B5B0800B006D2 /* LJKSearchBar.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
 				00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */,
 				00F079F21D0D736C005FDD59 /* LJKConst.m in Sources */,
+				00EDE7F51D118CBA0025ED9C /* LJKPopEvent.m in Sources */,
+				00EDE7F81D11928B0025ED9C /* LJKNavContent.m in Sources */,
 				00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */,
+				00EDE8041D119AC40025ED9C /* LJKAuthorDetail.m in Sources */,
+				00EDE8161D11D3B60025ED9C /* UIViewController+Extension.m in Sources */,
 				00D3472B1D098DA100B01E6C /* LJKSuggestViewController.m in Sources */,
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
+				00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */,
 				001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */,
+				00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */,
 				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
 				00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */,
 				001D93751D0B142A00B006D2 /* LJKSettingFooter.m in Sources */,
+				00EDE7FE1D11938A0025ED9C /* LJKNav.m in Sources */,
 				00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */,
 				001D93721D0AC63700B006D2 /* LJKMarketSortCell.m in Sources */,
 				00D3472E1D09C41100B01E6C /* LJKBasicTextView.m in Sources */,
 				00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */,
+				00EDE8101D11B5FC0025ED9C /* LJKEvents.m in Sources */,
 				00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */,
 				00D347251D0975F500B01E6C /* UIButton+Extension.m in Sources */,
 				00D347341D09EE2700B01E6C /* LJKHelpCenterViewController.m in Sources */,
 				00B5ED5A1D086EF000B55ED4 /* LJKCommunityViewController.m in Sources */,
+				00EDE8131D11B8900025ED9C /* LJKPopEvents.m in Sources */,
+				00EDE7FB1D11929E0025ED9C /* LJKDish.m in Sources */,
 				00D347281D0987EC00B01E6C /* LJKSendMailViewController.m in Sources */,
 				00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */,
 				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
@@ -770,10 +855,13 @@
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
+				00EDE80A1D11B3F90025ED9C /* LJKPicture.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
 				00F079F51D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
 				00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */,
+				00EDE8011D1199580025ED9C /* LJKAuthor.m in Sources */,
+				00EDE80D1D11B52C0025ED9C /* LJKComment.m in Sources */,
 				00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */,
 				00019C1D1D0C361D008BB1A9 /* LJKBasic2Cell.m in Sources */,
 			);
