@@ -49,6 +49,7 @@
         _friend_TopNavRight = [LJKHomeHeaderTopNav imageViewWithTitle:@"查找好友并关注"
                                                                target:self
                                                                action:@selector(friend)];
+
     }
     return _friend_TopNavRight;
 }
@@ -68,8 +69,8 @@
 //        _fristAuthorButton.backgroundColor = [UIColor purpleColor];
 //        [_fristAuthorButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _fristAuthorButton = [UIButton buttonWithTitle:@"新用户优惠20元"
-                                            titleColor:[UIColor whiteColor]
-                                       backgroundColor:[UIColor orangeColor]
+                                            titleColor:Color_ThemeColor
+                                       backgroundColor:Color_ThemeColor_Yellow
                                               fontSize:21
                                                 target:self
                                                 action:@selector(buttonDidClicked:)];
@@ -149,6 +150,7 @@
         }];
         
         
+        // 红包
         [_fristAuthorButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self);
             make.right.equalTo(self);
@@ -188,7 +190,7 @@
 - (void)setNavContent:(LJKNavContent *)navContent {
     _navContent = navContent;
     // 流行菜谱图片
-    [self.friend_TopNavRight sd_setImageWithURL:[NSURL URLWithString:navContent.pop_recipe_picurl]];
+    [self.popular_TopNavLeft sd_setImageWithURL:[NSURL URLWithString:navContent.pop_recipe_picurl]];
     
     // 添加4个导航按钮
     CGFloat x = 0;

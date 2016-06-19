@@ -14,6 +14,11 @@ CGFloat const LJKRecipeCellMarginTitle = 15;
 CGFloat const LJKRecipeCellMarginFirstTitle = 35;
 /** 下厨房 - 描述与标题之间的间距 */
 CGFloat const LJKRecipeCellMarginTitle2Desc = 8;
+/** 下厨房 - 描述与标题之间的间距 */
+CGFloat const LJKRecipeCellMarginTitle2Top = 10;
+
+
+
 /** 下厨房 - 菜单 - 标题距离顶部导航的间距 */
 CGFloat const LJKRecipeListViewMarginHeadTitle = 20;
 /** 下厨房 - 菜单 - 标题距离作者名字的间距 */
@@ -38,7 +43,6 @@ CGFloat const LJKRecipeListViewHeightAuthorName = 20;
 CGFloat const LJKRecipeListViewHeightCollectButton = 30;
 /** 下厨房 - 菜单 - 专家图标宽高 */
 CGFloat const LJKRecipeListViewHeightExpertIcon = 15;
-
 
 /** 商品界面 - 加入购物车 - 商品分类最小高度 */
 CGFloat const LJKGoodsKindsCategoryViewMinusHeight = 260;

@@ -74,7 +74,7 @@
             make.top.equalTo(self.mas_top).offset(10);
             make.bottom.equalTo(self.mas_bottom).offset(-10);
             make.right.equalTo(self.mas_right).offset(-20);
-            make.width.equalTo(@(50));
+            make.width.equalTo(@(60));
         }];
         
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
