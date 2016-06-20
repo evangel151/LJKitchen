@@ -30,11 +30,11 @@
 @property (nonatomic, strong) UIPageControl *pageControl;              // ScrollView控制器
 @property (nonatomic, assign) NSUInteger count;                        // 导航按钮个数
 
-//@property (nonatomic, strong) LJKHomeHeaderNavButton *fristAuthorButton;
 @end
 
 @implementation LJKHomeHeader
 
+#pragma mark - 懒加载
 - (LJKHomeHeaderTopNav *)popular_TopNavLeft {
     if (!_popular_TopNavLeft) {
         _popular_TopNavLeft = [LJKHomeHeaderTopNav imageViewWithTitle:@"本周流行菜谱"
@@ -111,7 +111,7 @@
     return _pageControl;
 }
 
-
+#pragma mark - 构造方法 & 传入模型赋值
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -209,7 +209,9 @@
     
     
     // 添加三餐导航 (滚动视图)
-    // FIXME: 官方后台返回的数据会根据时间段的变换而增加……（似乎是更傻瓜式了，但感觉怪怪的）
+    // FIXME: 官方后台返回的数据会根据时间段的变换而增加
+    // For example: 凌晨至正午前 popEvents.count == 1(只有早餐)  00:00 前 popEvents.count = 3(早中晚)
+    // 吐槽: 突然就从3页变成1页了，还以为自己写错了……  似乎是更傻瓜式了，但感觉怪怪的
     LJKPopEvents *popEvents = navContent.pop_events;
     self.count = popEvents.count;
     CGFloat scrollViewWidth = self.scrollView.frame.size.width;
@@ -236,7 +238,7 @@
 
 /** 顶部右侧关注状态（朋友圈……） */
 - (void)friend {
-//    !self.clickBlock ? : self.clickBlock(viewDidClickedActionFeedsView);
+    
     if (self.clickBlock) {
         self.clickBlock(viewDidClickedActionFeedsView);
     }
@@ -254,7 +256,7 @@
     !self.clickBlock ? : self.clickBlock(tap.view.tag);
 }
 
-#pragma mark - UIScrollView Delegate
+#pragma mark - ScrollView 代理方法 (同步)
 /** pageControl同步 */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat width = self.scrollView.frame.size.width;

@@ -10,6 +10,7 @@
 
 @interface LJKHomeHeaderTopNav : UIImageView
 
+/** 类方法: 返回一个已经添加了标题 + 手势事件的imageView */
 + (nonnull LJKHomeHeaderTopNav *)imageViewWithTitle:(nonnull NSString *)title
                                             target:(nullable id)target
                                             action:(nullable SEL)action;

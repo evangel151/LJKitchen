@@ -31,22 +31,33 @@
     self.tableView.backgroundColor = Color_BackGround;
 }
 
-#pragma mark - Table view data source
+#pragma mark - TableView 数据源 & 代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return self.title_section0.count;
-    } else if (section == 1) {
-        return self.title_section1.count;
-    } else if (section == 2) {
-        return self.title_section2.count;
-    } else {
-        return self.title_section3.count;
+
+    switch (section) {
+        case 0: {
+            return self.title_section0.count;
+            break;
+        }
+        case 1: {
+            return self.title_section1.count;
+            break;
+        }
+        case 2: {
+            return self.title_section2.count;
+            break;
+        }
+        case 3: {
+           return self.title_section3.count;
+            break;
+        }
     }
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -62,29 +73,41 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     LJKNotificationCell *cell = [LJKNotificationCell cellWithTableView:tableView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if (indexPath.section == 0) {
-        cell.statusLabel.text = @"已关闭";
-        cell.switchView.hidden = YES;
-        cell.accessoryView = cell.statusLabel;
-        cell.textLabel.text = self.title_section0[indexPath.row];
-        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    } else if (indexPath.section == 1) {
-        cell.statusLabel.hidden = YES;
-        cell.switchView.on = YES;
-        cell.accessoryView = cell.switchView;
-        cell.textLabel.text = self.title_section1[indexPath.row];
-    } else if (indexPath.section == 2) {
-        cell.statusLabel.hidden = YES;
-        cell.switchView.on = YES;
-        cell.accessoryView = cell.switchView;
-        cell.textLabel.text = self.title_section2[indexPath.row];
-    } else  {
-        cell.statusLabel.hidden = YES;
-        cell.switchView.on = YES;
-        cell.accessoryView = cell.switchView;
-        cell.textLabel.text = self.title_section3[indexPath.row];
+    
+    switch (indexPath.section) {
+        case 0: {
+            cell.statusLabel.text = @"已关闭";
+            cell.switchView.hidden = YES;
+            cell.accessoryView = cell.statusLabel;
+            cell.textLabel.text = self.title_section0[indexPath.row];
+            cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+           break;
+        }
+        case 1: {
+            cell.statusLabel.hidden = YES;
+            cell.switchView.on = YES;
+            cell.accessoryView = cell.switchView;
+            cell.textLabel.text = self.title_section1[indexPath.row];
+            break;
+        }
+        case 2: {
+            cell.statusLabel.hidden = YES;
+            cell.switchView.on = YES;
+            cell.accessoryView = cell.switchView;
+            cell.textLabel.text = self.title_section2[indexPath.row];
+            break;
+        }
+        case 3: {
+            cell.statusLabel.hidden = YES;
+            cell.switchView.on = YES;
+            cell.accessoryView = cell.switchView;
+            cell.textLabel.text = self.title_section3[indexPath.row];
+            break;
+        }
+            
     }
     [self.cells addObject:cell];
     return cell;
@@ -94,8 +117,10 @@
     if (indexPath.section == 0) {
 
         [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-        [SVProgressHUD showErrorWithStatus:@"模拟器暂时无法跳转系统设置界面"];
+        [SVProgressHUD showErrorWithStatus:@"即将跳转至系统设置界面"];
     }
+    
+    // FIXME: 一键全开/全关……似乎没什么用……
 //        else if (indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
 //        for (int i = 0; i < self.cells.count; i++) {
 //            self.cell = self.cells[i];

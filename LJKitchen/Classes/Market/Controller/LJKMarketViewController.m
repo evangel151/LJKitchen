@@ -46,13 +46,14 @@
                                     action:@selector(shoppingCart)];
 }
 
+#pragma mark - barButton 点击事件 
+// 市集分类
 - (void)mallSort {
-    
     LJKMallSortViewController *mallSort = [[LJKMallSortViewController alloc] init];
     [self.navigationController pushViewController:mallSort animated:YES];
-    
 }
 
+// 购物车 
 - (void)shoppingCart {
     LJKShoppingSortViewController *cart = [[LJKShoppingSortViewController alloc] init];
     [self.navigationController pushViewController:cart animated:YES];

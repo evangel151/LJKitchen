@@ -63,6 +63,7 @@
 		00F079FF1D0D9D19005FDD59 /* breakfast.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F079FE1D0D9D19005FDD59 /* breakfast.json */; };
 		00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */; };
 		00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */; };
+		00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F14E661D188D2C0078F262 /* LJKBLSViewController.m */; };
 		00F85FE31D148560007E5B09 /* LJKContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FD81D148560007E5B09 /* LJKContent.m */; };
 		00F85FE41D148560007E5B09 /* LJKContents.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FDA1D148560007E5B09 /* LJKContents.m */; };
 		00F85FE51D148560007E5B09 /* LJKFeeds.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FDC1D148560007E5B09 /* LJKFeeds.m */; };
@@ -207,6 +208,8 @@
 		00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderNavButton.m; sourceTree = "<group>"; };
 		00F07A061D0DD801005FDD59 /* LJKHomeHeaderDish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeaderDish.h; sourceTree = "<group>"; };
 		00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderDish.m; sourceTree = "<group>"; };
+		00F14E651D188D2B0078F262 /* LJKBLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewController.h; sourceTree = "<group>"; };
+		00F14E661D188D2C0078F262 /* LJKBLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewController.m; sourceTree = "<group>"; };
 		00F85FD71D148560007E5B09 /* LJKContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKContent.h; sourceTree = "<group>"; };
 		00F85FD81D148560007E5B09 /* LJKContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKContent.m; sourceTree = "<group>"; };
 		00F85FD91D148560007E5B09 /* LJKContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKContents.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 				00B5ED4D1D0862A800B55ED4 /* LJKCreatRecipeController.m */,
 				00B5ED4F1D0862C300B55ED4 /* LJKBasketController.h */,
 				00B5ED501D0862C300B55ED4 /* LJKBasketController.m */,
+				00F14E651D188D2B0078F262 /* LJKBLSViewController.h */,
+				00F14E661D188D2C0078F262 /* LJKBLSViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -945,6 +950,7 @@
 				00F860001D14858D007E5B09 /* LJKComment.m in Sources */,
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
+				00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */,
 				00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
 				00F860011D14858D007E5B09 /* LJKDish.m in Sources */,

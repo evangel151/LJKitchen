@@ -19,3 +19,5 @@ UIKIT_EXTERN NSString * const LJKRequestKitchenNav;
 UIKIT_EXTERN NSString * const LJKRequestKitchenFeeds;
 /** 下厨房 - 首页Cell数据 */
 UIKIT_EXTERN NSString * const LJKRequestKitchenCell;
+/** 下厨房 - 首页Cell - 上拉加载更多数据 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenCellMore; // 与LJKRequestKitchenCell 相同

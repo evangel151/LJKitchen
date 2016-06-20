@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// 未使用 
+
 @interface LJKMessageHeader : UIView
 
 @end

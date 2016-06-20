@@ -40,7 +40,7 @@
 /** 默认的背景颜色 */
 #define Color_BackGround  LJregular(230, 230, 230, 1)
 /** 项目主题颜色(跟tabbar图片颜色相同) */
-#define Color_ThemeColor  LJregular(239, 51, 60, 1.0)
+#define Color_ThemeColor  LJregular(234, 79, 57, 1)
 
 #define Color_ThemeColor_Yellow LJregular(251, 246, 213, 1)
 /** 背景为图片时使用 */

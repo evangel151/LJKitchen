@@ -19,8 +19,7 @@
     self.navigationItem.titleView = searchBar;
 //    WeakSelf;
     searchBar.searchBarShouldBeginEditingBlock = ^{
-//        XCFSearchViewController *searchCon = [[XCFSearchViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//        [weakSelf.navigationController pushViewController:searchCon animated:YES];
+
     };
 
 }

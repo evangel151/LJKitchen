@@ -16,7 +16,7 @@
 @end
 
 @implementation LJKHelpDetailController
-
+#pragma mark - 懒加载
 - (UIView *)containView {
     if (!_containView) {
         _containView = [[UIView alloc] init];
@@ -28,10 +28,12 @@
 
 - (UILabel *)detailTitleLabel {
     if (!_detailDesLabel) {
-        _detailTitleLabel = [[UILabel alloc] init];
-        _detailTitleLabel.textColor = Color_DarkGray;
-        _detailTitleLabel.font = [UIFont systemFontOfSize:21];
-        _detailTitleLabel.backgroundColor = [UIColor clearColor];
+        _detailTitleLabel = [UILabel labelWithTextColor:Color_DarkGray
+                                        backgroundColor:[UIColor clearColor]
+                                               fontSize:21
+                                                  lines:0
+                                          textAlignment:NSTextAlignmentLeft];
+        // 模拟缩进……懒的改了
         _detailTitleLabel.text = @"    如何在LJKitchen注册？";
     }
     return _detailTitleLabel;
@@ -39,33 +41,36 @@
 
 - (UILabel *)detailDesLabel {
     if (!_detailDesLabel) {
-        _detailDesLabel = [[UILabel alloc] init];
-        _detailDesLabel.textAlignment = NSTextAlignmentNatural;
-        _detailDesLabel.numberOfLines = 0;
-        _detailDesLabel.backgroundColor = [UIColor clearColor];
-        _detailDesLabel.font = [UIFont systemFontOfSize:21];
+        _detailDesLabel = [UILabel labelWithTextColor:[UIColor blackColor]
+                                      backgroundColor:[UIColor clearColor]
+                                             fontSize:21
+                                                lines:0
+                                        textAlignment:NSTextAlignmentNatural];
+        
         _detailDesLabel.text = @"打开LJKitchen App,点击首页“开始”，使用第三方账号登录即能完成注册。（LJKitchen目前只支持第三方账号登录注册，不支持邮箱注册，建议您再使用第三方账号登录之后，在网页版账号设置里绑定邮箱，之后也可以用所绑定的邮箱进行登录。）";
     }
     return _detailDesLabel;
 }
 
 
-
+#pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"帮助中心";
     [self setupBasic];
     [self setupNavigationBar];
 }
 
 - (void)setupNavigationBar {
-    self.title = @"帮助中心";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"测试" style:UIBarButtonItemStylePlain target:self action:@selector(popToRoot)];
+    self.navigationItem.rightBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:@"· · ·"
+                                     style:UIBarButtonItemStylePlain
+                                    target:self
+                                    action:@selector(popToRoot)];
     self.navigationItem.rightBarButtonItem.tintColor = Color_ThemeColor;
 }
 
-- (void)popToRoot {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+
 
 - (void)setupBasic {
     self.view.backgroundColor = Color_BackGround;
@@ -96,6 +101,9 @@
 
 }
 
-
+#pragma mark - 点击事件
+- (void)popToRoot {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 @end

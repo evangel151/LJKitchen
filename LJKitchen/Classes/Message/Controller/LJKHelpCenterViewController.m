@@ -17,6 +17,7 @@
 
 @implementation LJKHelpCenterViewController
 
+#pragma mark - 懒加载
 - (NSMutableArray *)titleArray {
     if (!_titleArray) {
         self.titleArray = [NSMutableArray arrayWithObjects:@"账号相关",@"菜谱相关",@"作品相关",@"菜单相关",@"登录相关",@"其他", nil];
@@ -34,14 +35,14 @@
     return _helpView;
 }
 
-
+#pragma mark - 页面主体 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = Color_BackGround;
     [self.view addSubview:self.helpView];
 }
 
-#pragma mark UITableViewDataSource & UITableViewDelegate
+#pragma mark TableView 数据源 & 代理
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //    return 1;
 //}

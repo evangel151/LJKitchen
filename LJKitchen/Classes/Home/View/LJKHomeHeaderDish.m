@@ -26,6 +26,7 @@
 
 @implementation LJKHomeHeaderDish
 
+#pragma mark - 懒加载
 - (UIImageView *)imageView_Back {
     if (!_imageView_Back) {
         self.imageView_Back = [[UIImageView alloc] init];
@@ -57,7 +58,7 @@
     return _numberLabel;
 }
 
-
+#pragma mark - 构造 & 模型传入
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -111,7 +112,7 @@
 
 }
 
-
+#pragma mark - init 
 + (nonnull LJKHomeHeaderDish *)viewWithPopEvent:(nonnull LJKPopEvent *)popEvent
                                          target:(nullable id)target
                                          action:(nullable SEL)action {

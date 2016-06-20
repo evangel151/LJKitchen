@@ -9,6 +9,8 @@
 #import "LJKHomeViewController.h"
 #import "LJKBasketController.h"
 #import "LJKCreatRecipeController.h"
+#import "LJKBLSViewController.h"
+
 #import "LJKNetworkTool.h"
 #import "LJKSearchBar.h"  // 搜索栏控件 
 #import "LJKHomeHeader.h" // 首页的顶部视图（整体）
@@ -31,9 +33,12 @@
 @end
 
 @implementation LJKHomeViewController
+
 static NSString *const recipeCellIdentifier = @"RecipeCell";
 static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 
+
+#pragma mark - 懒加载
 - (NSMutableArray *)feedsArray {
     if (!_feedsArray) {
         self.feedsArray = [NSMutableArray array];
@@ -49,16 +54,16 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 }
 
 
+#pragma mark - 页面主体
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-//    self.tableView.backgroundColor = Color_BackGround;
+
     [self setupNavigationBar];
     [self setupHomeHeader];
-//    [self loadStatus];
-    
     [self setupTableView];
     [self setupRefresh];
+    // 加载最新数据
     [self loadNewData];
 }
 
@@ -145,13 +150,10 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 - (void)setupRefresh {
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
                                                                 refreshingAction:@selector(loadNewData)];
+    // !!!: 上拉至底部时，加载旧数据(假数据，与首页数据相同)
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                     refreshingAction:@selector(loadMoreData)];
     
-    // 初始化时未更新菜谱数据，隐藏footer
-    if (!self.issuesArray.count) {
-        self.tableView.mj_footer.hidden = YES;
-    }
 }
 
 - (void)setupTableView {
@@ -174,7 +176,6 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
     [LJKNetworkTool afnGet:LJKRequestKitchenNav params:nil success:^(id json) {
         
         self.homeHeader.navContent = [LJKNavContent mj_objectWithKeyValues:json[@"content"]];
-//        NSLog(@"%@", json);
     } failure:^(NSError *error) {
         NSLog(@"加载header失败 原因:%@", error);
     }];
@@ -211,8 +212,6 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 - (void)loadNewData {
     [self.tableView.mj_footer endRefreshing];
     
-    // LJKRequestKitchenCell
-    
     [LJKNetworkTool afnGet:LJKRequestKitchenCell
                     params:nil success:^(id json) {
 //                        NSLog(@"%@", json);
@@ -220,6 +219,7 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
                         [self.tableView reloadData];
                         [self.tableView.mj_header endRefreshing];
                     } failure:^(NSError *error) {
+                        NSLog(@"加载TableView失败 原因:%@", error);
                         [self.tableView.mj_header endRefreshing];
                     }];
     
@@ -227,6 +227,18 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 
 - (void)loadMoreData {
     [self.tableView.mj_header endRefreshing];
+    
+    [LJKNetworkTool afnGet:LJKRequestKitchenCellMore
+                    params:nil
+                   success:^(id json) {
+                       NSArray *newData = [LJKIssues mj_objectArrayWithKeyValuesArray:json[@"content"][@"issues"]];
+                       [self.issuesArray addObjectsFromArray:newData];
+                       [self.tableView reloadData];
+                       [self.tableView.mj_footer endRefreshing];
+                   } failure:^(NSError *error) {
+                       NSLog(@"加载更多Cell失败 原因:%@", error);
+                       [self.tableView.mj_footer endRefreshing];
+                   }];
 }
 
 #pragma mark - 导航按钮点击方法
@@ -313,20 +325,20 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
     // 根据模板不同跳转对应界面
     switch (item.template) {
         case LJKCellTemplateTopic:
-        case LJKCellTemplateWeeklyMagazine: { // 模板1 5
+        case LJKCellTemplateWeeklyMagazine: { // 模板1 6 (帖子/杂志)
             NSLog(@"即将跳转web——————");
             [self pushWebViewWithUrl:item.url];
             break;
         }
-        case LJKCellTemplateRecipeList: {
+        case LJKCellTemplateRecipeList: { // 模板2 (菜单)
              NSLog(@"即将跳转菜单——————");
             break;
         }
-        case LJKCellTemplateDish: {
+        case LJKCellTemplateDish: { // 模板4 (作品)
             NSLog(@"即将跳转作品详情——————");
             break;
         }
-        case LJKCellTemplateRecipe: {
+        case LJKCellTemplateRecipe: { // 模板5 (菜谱)
             NSLog(@"即将跳转菜谱——————");
             break;
         }

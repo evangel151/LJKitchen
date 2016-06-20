@@ -10,7 +10,7 @@
 #import <Masonry.h>
 
 @interface LJKHomeHeaderTopNav ()
-/** 模糊处理 */
+/** 遮罩处理 */
 @property (nonatomic, strong) UIImageView *contentView;
 /** 标题  (覆盖在标题上) */
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -19,7 +19,7 @@
 
 @implementation LJKHomeHeaderTopNav
 
-
+#pragma mark - 懒加载
 - (UIImageView *)contentView {
     if (!_contentView) {
         _contentView = [[UIImageView alloc] init];
@@ -38,8 +38,7 @@
     return _titleLabel;
 }
 
-
-
+#pragma mark - 构造 & 布局
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -60,6 +59,8 @@
     return self;
 }
 
+#pragma mark - 业务逻辑
+/** 类方法: 返回一个已经添加了标题 + 手势事件的imageView */
 + (nonnull LJKHomeHeaderTopNav *)imageViewWithTitle:(nonnull NSString *)title
                                              target:(nullable id)target
                                              action:(nullable SEL)action {

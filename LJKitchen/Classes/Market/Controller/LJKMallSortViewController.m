@@ -8,8 +8,10 @@
 //
 
 #import "LJKMallSortViewController.h"
-#import "LJKMarketSortCell.h"
 #import "LJKShoppingSortViewController.h"
+
+#import "LJKMarketSortCell.h"
+
 @interface LJKMallSortViewController ()
 
 @end
@@ -18,8 +20,8 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
+#pragma mark - init方法 (创建流水布局)
 - (instancetype)init {
-    // 创建流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake((SCREEN_WIDTH - 2) / 3, (SCREEN_WIDTH - 2) / 3);
     layout.minimumLineSpacing = 1;
@@ -28,24 +30,37 @@ static NSString * const reuseIdentifier = @"Cell";
     return [super initWithCollectionViewLayout:layout];
 }
 
-
+#pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"市集分类";
+    
+    [self setupNav];
+    [self setupCollectionView];
+}
+
+- (void)setupCollectionView {
     self.collectionView.backgroundColor = Color_BackGround;
     self.collectionView.bounces = NO;
     [self.collectionView registerClass:[LJKMarketSortCell class]
             forCellWithReuseIdentifier:[LJKMarketSortCell cellIdentifier]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"shoppingCart"] style:UIBarButtonItemStylePlain target:self action:@selector(shoppingCart)];
 }
 
+- (void)setupNav {
+    self.navigationItem.rightBarButtonItem =
+    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"shoppingCart"]
+                                     style:UIBarButtonItemStylePlain
+                                    target:self
+                                    action:@selector(shoppingCart)];
+}
+
+#pragma mark - Nav点击事件
 - (void)shoppingCart {
     LJKShoppingSortViewController *cart = [[LJKShoppingSortViewController alloc] init];
     [self.navigationController pushViewController:cart animated:YES];
 }
 
-#pragma mark <UICollectionViewDataSource>
-
+#pragma mark - 数据源 & 代理
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
     return 1;

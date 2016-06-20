@@ -72,7 +72,7 @@
 }
 
 
-
+#pragma mark - 页面主体 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -89,16 +89,8 @@
 
 }
 
-/** textView中文字发生改变时做的操作 */
-- (void)textDidChange {
-    if (self.textView.hasText) {
-        self.navigationItem.rightBarButtonItem.enabled = YES;
-        self.navigationItem.rightBarButtonItem.tintColor = Color_ThemeColor;
-    } else {
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-    }
-}
-
+#pragma mark - 点击事件
+// 发送建议to官方
 - (void)postSuggestion {
     if (self.textView.text) {
         NSLog(@"%@", self.textView.text);
@@ -116,12 +108,24 @@
      NSLog(@"跳转至帮助界面——————");
 }
 
+
+#pragma mark - scrollView 代理
 // 开始滚动时 退出键盘
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.textView endEditing:YES];
 }
 
-#pragma mark - 移除通知
+#pragma mark - 通知相关
+/** textView中文字发生改变时做的操作 */
+- (void)textDidChange {
+    if (self.textView.hasText) {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+        self.navigationItem.rightBarButtonItem.tintColor = Color_ThemeColor;
+    } else {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+}
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

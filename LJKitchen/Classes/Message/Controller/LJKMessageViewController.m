@@ -13,6 +13,9 @@
 #import "LJKSuggestViewController.h"
 #import "LJKBasicIconCell.h"
 #import "LJKBasic2Cell.h"
+
+#import <MJRefresh.h>
+
 #import <Masonry.h>
 
 @interface LJKMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -27,6 +30,7 @@
 
 @implementation LJKMessageViewController
 
+#pragma mark - 懒加载 
 - (UIButton *)suggestion {
     if (!_suggestion) {
         _suggestion = [UIButton buttonWithTitle:@"意见反馈"
@@ -69,37 +73,22 @@
     return _messageView;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
+
+
+#pragma mark - 页面主体
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupNavigationBar];
+    [self setupSubviews];
+    [self setupRefresh];
+}
+
+- (void)setupSubviews {
     self.view.backgroundColor = Color_BackGround;
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,
-      [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
     [self.view addSubview:self.messageView];
     self.messageView.backgroundColor = Color_BackGround;
     [self.messageView reloadData];
     [self.view addSubview:self.suggestion];
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setupNavigationBar];
-}
-
-
-
-- (void)send {
-    LJKSendMailViewController *sendMail = [[LJKSendMailViewController alloc] init];
-    [self.navigationController pushViewController:sendMail animated:YES];
-     NSLog(@"跳转至发送邮件界面——————");
-}
-
-- (void)suggest {
-    LJKSuggestViewController *suggest = [[LJKSuggestViewController alloc] init];
-    [self.navigationController pushViewController:suggest animated:YES];
-     NSLog(@"跳转至意见反馈界面——————");
 }
 
 - (void)setupNavigationBar {
@@ -116,6 +105,32 @@
                                     action:@selector(notification)];
 }
 
+
+- (void)setupRefresh {
+    self.messageView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 没有接口，模拟慢速网络(3秒)，并提示用户
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+            [SVProgressHUD showSuccessWithStatus:@"还没有人给你私信哦，再等等吧"];
+            [self.messageView.mj_header endRefreshing];
+        });
+    }];
+}
+
+#pragma mark - 点击事件
+- (void)send {
+    LJKSendMailViewController *sendMail = [[LJKSendMailViewController alloc] init];
+    [self.navigationController pushViewController:sendMail animated:YES];
+     NSLog(@"跳转至发送邮件界面——————");
+}
+
+- (void)suggest {
+    LJKSuggestViewController *suggest = [[LJKSuggestViewController alloc] init];
+    [self.navigationController pushViewController:suggest animated:YES];
+     NSLog(@"跳转至意见反馈界面——————");
+}
+
 - (void)community {
     
     LJKCommunityViewController *community = [[LJKCommunityViewController alloc] init];
@@ -128,7 +143,7 @@
     [self.navigationController pushViewController:notification animated:YES];
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - TableView (私信列表) 数据源 & 代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -180,20 +195,18 @@
 }
 
 #pragma mark - useless 
-#pragma mark 移至 viewWillAppear 
-//- (void)setupBasic {
-//    self.view.backgroundColor = LJregular(230, 230, 230, 1);
-//    [self.navigationController.navigationBar setTitleTextAttributes:
-//     [NSDictionary dictionaryWithObjectsAndKeys:LJregular(239, 51, 60, 1.0), NSForegroundColorAttributeName,
-//      [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
 //
-////    [self.view addSubview:_suggestion];
-////    [self.suggestion mas_makeConstraints:^(MASConstraintMaker *make) {
-////        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 50));
-////        make.left.equalTo(self.view.mas_left);
-////        make.bottom.equalTo(self.view.mas_bottom).offset(-44);
-////    }];
-//
+//    self.view.backgroundColor = Color_BackGround;
+////    [self.navigationController.navigationBar setTitleTextAttributes:
+////     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,
+////      [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
+//    [self.view addSubview:self.messageView];
+//    self.messageView.backgroundColor = Color_BackGround;
+//    [self.messageView reloadData];
+//    [self.view addSubview:self.suggestion];
 //}
+
 
 @end

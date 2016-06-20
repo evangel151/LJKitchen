@@ -26,6 +26,7 @@
 
 @implementation LJKHomeHeaderNavButton
 
+#pragma mark - 懒加载
 - (UIImageView *)imageV {
     if (!_imageV) {
         _imageV = [[UIImageView alloc] init];
@@ -43,7 +44,7 @@
 }
 
 
-
+#pragma mark - 构造方法 & 模型传入
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -92,7 +93,7 @@
     button.imageV.image = [UIImage imageNamed:imageName];
     button.titleL.text = title;
     
-    button.imageV.contentMode = UIViewContentModeScaleAspectFill;
+    button.imageV.contentMode = UIViewContentModeScaleAspectFit;
     // 当传入的是固定的图片时，更新原有约束 
     [button.imageV mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);

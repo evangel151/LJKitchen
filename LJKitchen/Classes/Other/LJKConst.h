@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-/**  cell模板 */
+/**  首页cell 模板 */
 typedef enum {
     LJKCellTemplateTopic = 1,           // 帖子
     LJKCellTemplateRecipeList = 2,      // 菜单
@@ -19,6 +19,8 @@ typedef enum {
     LJKCellTemplateWeeklyMagazine = 6   // 周刊
 } LJKCellTemplate;
 
+
+/** 项目内通用常量 */
 /** 下厨房 - 标题距离屏幕左边的间距 */
 UIKIT_EXTERN CGFloat const LJKRecipeCellMarginTitle;
 /** 下厨房 - 大标题距离屏幕左边的间距 */

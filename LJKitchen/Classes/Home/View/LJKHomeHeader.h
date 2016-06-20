@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, viewDidClickedAction) {
     viewDidClickedActionSupper               = 8,// 晚餐
     
     // 中部新增广告条
-    viewDidClickedActionFristAuthor          = 10// 新增广告
+    viewDidClickedActionFristAuthor          = 10// 新用户优惠
 };
 
 /** 事件点击Block */

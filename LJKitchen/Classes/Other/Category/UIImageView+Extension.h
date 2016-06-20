@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImageView (Extension)
-- (void)setCircleIconWithUrl:(NSURL *)url placeHolder:(NSString *)placeHolder cornRadius:(CGFloat)cornRadius;
+
+/** 扩展: 根据url及给定圆角尺寸返回用户或占位头像 (圆角尺寸以原图尺寸为准)  */
+- (void)setCircleIconWithUrl:(NSURL *)url
+                 placeHolder:(NSString *)placeHolder
+                  cornRadius:(CGFloat)cornRadius;
 @end

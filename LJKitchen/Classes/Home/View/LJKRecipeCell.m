@@ -54,7 +54,7 @@
 @end
 
 @implementation LJKRecipeCell
-
+#pragma mark - 懒加载
 - (UIImageView *)image {
     if (!_image) {
         _image = [[UIImageView alloc] init];
@@ -177,23 +177,9 @@
     return _authorName;
 }
 
-//- (UIButton *)exclusiveButton {
-//    if (!_exclusiveButton) {
-//        _exclusiveButton = [UIButton buttonWithTitle:@"独家"
-//                                          titleColor:Color_TintWhite
-//                                     backgroundColor:[UIColor orangeColor]
-//                                            fontSize:12
-//                                              target:nil
-//                                              action:nil];
-//        _exclusiveButton.userInteractionEnabled = NO;
-//    }
-//    return _exclusiveButton;
-//}
-
 - (UIImageView *)authorIcon {
     if (!_authorIcon) {
         _authorIcon = [[UIImageView alloc] init];
-//        _authorIcon = [UIImageView ]
         _authorIcon.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(authorIconClick)];
         [_authorIcon addGestureRecognizer:tap];
@@ -213,34 +199,50 @@
     return _cookedLabel;
 }
 
+//- (UIButton *)exclusiveButton {
+//    if (!_exclusiveButton) {
+//        _exclusiveButton = [UIButton buttonWithTitle:@"独家"
+//                                          titleColor:Color_TintWhite
+//                                     backgroundColor:[UIColor orangeColor]
+//                                            fontSize:12
+//                                              target:nil
+//                                              action:nil];
+//        _exclusiveButton.userInteractionEnabled = NO;
+//    }
+//    return _exclusiveButton;
+//}
 
 
+#pragma mark - 构造
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 //        self.backgroundColor = Color_BackGround;
         
-        [self.contentView addSubview:self.image];
-        
-        [self.contentView addSubview:self.separator];
-        
+        // 大图组件
         [self.image addSubview:self.coverView];
         [self.image addSubview:self.videoIcon];
         [self.image addSubview:self.firstTitleLabel];
         [self.image addSubview:self.secondTitleLabel];
         [self.image addSubview:self.whisperLabel];
         
-        [self.contentView addSubview:self.bottomView];
+        // 底部视图
         [self.bottomView addSubview:self.descLabel];
         [self.bottomView addSubview:self.titleLabel];
         [self.bottomView addSubview:self.scoreLabel];
         [self.bottomView addSubview:self.authorName];
 //        [self.bottomView addSubview:self.exclusiveButton]; // 独家按钮已移至跳转的菜谱页面中
         [self.bottomView addSubview:self.cookedLabel];
-
-        [self.contentView addSubview:self.authorIcon];
-        // Cell 分隔符
+        
+        // 整体构成
+        [self.contentView addSubview:self.image];
+        [self.contentView addSubview:self.separator];
+        [self.contentView addSubview:self.bottomView];
+        [self.contentView addSubview:self.authorIcon]; // 头像添加顺序靠后可以防止被其他组件遮掩
+        
+        
+        // Cell 分隔符 （图片距离cell顶部的灰色分隔符）
         [_separator mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top);
             make.left.equalTo(self.contentView.mas_left);
@@ -325,17 +327,9 @@
         
         // 底部视图 (菜谱作者)
         [_authorName mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.equalTo(self.titleLabel.mas_bottom).offset(LJKRecipeCellMarginTitle2Desc);
             make.right.equalTo(self.authorIcon.mas_right);
             make.top.equalTo(self.authorIcon.mas_bottom).offset(5);
         }];
-        
-        // 底部视图 (独家标签)
-//        [_exclusiveButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(40, 20));
-//            make.top.equalTo(self.contentView.mas_top).offset(LJKRecipeCellMarginTitle2Top);
-//            make.left.equalTo(self.contentView.mas_left).offset(LJKRecipeCellMarginTitle2Top);
-//        }];
         
         // cooked count
         [_cookedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -347,6 +341,7 @@
 }
 
 
+#pragma mark - 传入模型 & 更新布局
 - (void)setItem:(LJKItems *)item {
     _item = item;
     
@@ -368,10 +363,9 @@
     self.cookedLabel.hidden = YES;
     self.videoIcon.hidden = YES;
     self.descLabel.hidden = YES;
-//    self.exclusiveButton.hidden = YES;
     self.scoreLabel.hidden = YES;
     self.authorName.hidden = YES;
-    
+//    self.exclusiveButton.hidden = YES;
 
     
     // 根据模板设置控件
@@ -390,6 +384,7 @@
             self.authorName.hidden = NO;
             // FIXME: 圆形头像 （已解决）
             // JSON中虽然有3种不同的头像规格，但是目前只有这一种返回正确的url 尺寸为 160 * 160
+            
             [self.authorIcon setCircleIconWithUrl:[NSURL URLWithString:item.contents.author.photo]
                                       placeHolder:@"defaultUserHeader"
                                        cornRadius:80];
@@ -408,14 +403,14 @@
         self.whisperLabel.hidden = NO;
         self.whisperLabel.text = item.contents.whisper;
         
-    } else if (item.template == LJKCellTemplateWeeklyMagazine) { // 模板6
-        
+    } else if (item.template == LJKCellTemplateWeeklyMagazine) { // 模板6杂志
+//        self.bottomView.hidden = YES;
     }
 
 }
 
 
-#pragma mark - 点击事件回调
+#pragma mark - 头像点击事件block
 - (void)authorIconClick {
     !self.authorIconClickedBlock ? : self.authorIconClickedBlock();
 };
