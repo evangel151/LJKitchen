@@ -21,3 +21,8 @@ UIKIT_EXTERN NSString * const LJKRequestKitchenFeeds;
 UIKIT_EXTERN NSString * const LJKRequestKitchenCell;
 /** 下厨房 - 首页Cell - 上拉加载更多数据 */
 UIKIT_EXTERN NSString * const LJKRequestKitchenCellMore; // 与LJKRequestKitchenCell 相同
+
+/** 下厨房 - 三餐基本信息(早餐) */
+UIKIT_EXTERN NSString * const LJKRequestKitchenBreakfast;
+/** 下厨房 - 三餐作品信息(collectionCell)(早餐) */
+UIKIT_EXTERN NSString * const LJKRequestKitchenBreakfastDishes;

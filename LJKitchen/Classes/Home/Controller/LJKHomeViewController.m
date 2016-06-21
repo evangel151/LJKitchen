@@ -114,7 +114,8 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
                  || clickedAction == viewDidClickedActionLunch
                  || clickedAction == viewDidClickedActionSupper) {
             
-//            [weakSelf.navigationController pushViewController:[[XCFMealViewController alloc] init]animated:YES];
+            
+            [weakSelf.navigationController pushViewController:[[LJKBLSViewController alloc] init] animated:YES];
         }
         // 红包(新用户优惠)
         else if (clickedAction == viewDidClickedActionFristAuthor) {

@@ -23,4 +23,11 @@
     label.textAlignment = textAlignment;
     return label;
 }
+
+- (void)setAttributeTextWithString:(NSString *)string range:(NSRange)range {
+    NSMutableAttributedString *attrsString = [[NSMutableAttributedString alloc] initWithString:string];
+    [attrsString addAttribute:NSForegroundColorAttributeName value:Color_ThemeColor range:range];
+    self.attributedText = attrsString;
+}
+
 @end

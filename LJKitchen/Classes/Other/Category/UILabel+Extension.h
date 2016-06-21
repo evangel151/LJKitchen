@@ -16,4 +16,6 @@
                           lines:(NSUInteger)lines
                   textAlignment:(NSTextAlignment)textAlignment;
 
+- (void)setAttributeTextWithString:(NSString *)string range:(NSRange)range;
+
 @end

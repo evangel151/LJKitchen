@@ -53,6 +53,9 @@
 		00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347361D09F0BF00B01E6C /* LJKBasicCell.m */; };
 		00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */; };
 		00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */; };
+		00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */; };
+		00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A121D19546700CE8B39 /* LJKBLSViewCell.m */; };
+		00EB7A161D196D3100CE8B39 /* LJKBLSHeaderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A151D196D3100CE8B39 /* LJKBLSHeaderData.m */; };
 		00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8061D119DF80025ED9C /* LJKMyInfo.m */; };
 		00EDE8161D11D3B60025ED9C /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8151D11D3B60025ED9C /* UIViewController+Extension.m */; };
 		00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8181D11D7660025ED9C /* LJKConstRequest.m */; };
@@ -190,6 +193,13 @@
 		00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicCell.xib; sourceTree = "<group>"; };
 		00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpDetailController.h; sourceTree = "<group>"; };
 		00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpDetailController.m; sourceTree = "<group>"; };
+		00EB7A0E1D19542200CE8B39 /* LJKBLSViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewHeader.h; sourceTree = "<group>"; };
+		00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewHeader.m; sourceTree = "<group>"; };
+		00EB7A111D19546700CE8B39 /* LJKBLSViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewCell.h; sourceTree = "<group>"; };
+		00EB7A121D19546700CE8B39 /* LJKBLSViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewCell.m; sourceTree = "<group>"; };
+		00EB7A141D196D3100CE8B39 /* LJKBLSHeaderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSHeaderData.h; sourceTree = "<group>"; };
+		00EB7A151D196D3100CE8B39 /* LJKBLSHeaderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSHeaderData.m; sourceTree = "<group>"; };
+		00EB7A181D19D1F800CE8B39 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		00EDE8051D119DF80025ED9C /* LJKMyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMyInfo.h; sourceTree = "<group>"; };
 		00EDE8061D119DF80025ED9C /* LJKMyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMyInfo.m; sourceTree = "<group>"; };
 		00EDE8141D11D3B60025ED9C /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
@@ -313,6 +323,7 @@
 				003729FE1D06A03F006A21C2 /* main.m */,
 				00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */,
 				00F079FE1D0D9D19005FDD59 /* breakfast.json */,
+				00EB7A181D19D1F800CE8B39 /* Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -386,6 +397,8 @@
 				002F79D71D1713680021FD04 /* LJKRecipeIngredient.m */,
 				002F79D91D1718520021FD04 /* LJKRecipeStats.h */,
 				002F79DA1D1718520021FD04 /* LJKRecipeStats.m */,
+				00EB7A141D196D3100CE8B39 /* LJKBLSHeaderData.h */,
+				00EB7A151D196D3100CE8B39 /* LJKBLSHeaderData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +416,10 @@
 				00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */,
 				002F79C71D16BC2B0021FD04 /* LJKRecipeCell.h */,
 				002F79C81D16BC2B0021FD04 /* LJKRecipeCell.m */,
+				00EB7A0E1D19542200CE8B39 /* LJKBLSViewHeader.h */,
+				00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */,
+				00EB7A111D19546700CE8B39 /* LJKBLSViewCell.h */,
+				00EB7A121D19546700CE8B39 /* LJKBLSViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -900,8 +917,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */,
 				00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */,
 				00EDE81B1D11FAB70025ED9C /* Foundation+Log.m in Sources */,
+				00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */,
 				00F860071D14858D007E5B09 /* LJKPopEvents.m in Sources */,
 				00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */,
 				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
@@ -934,6 +953,7 @@
 				00D3472E1D09C41100B01E6C /* LJKBasicTextView.m in Sources */,
 				00F860021D14858D007E5B09 /* LJKEvents.m in Sources */,
 				002F79C91D16BC2B0021FD04 /* LJKRecipeCell.m in Sources */,
+				00EB7A161D196D3100CE8B39 /* LJKBLSHeaderData.m in Sources */,
 				00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */,
 				00F860051D14858D007E5B09 /* LJKPicture.m in Sources */,
 				00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */,

@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *n_dishes;
 /** 最近7天做过人数 */
 @property (nonatomic, copy) NSString *n_cooked_last_week;
-/** 是否由我制作（作用未知） */
+/** 是否由本人制作 (发现自己制作的菜谱时会特殊显示) */
 @property (nonatomic, assign) BOOL cooked_by_me;
 /** 未知 */
 @property (nonatomic, copy) NSString *n_pv;
