@@ -24,7 +24,6 @@
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UIImageView *header_IconView;
 @property (nonatomic, strong) UIButton *header_sendMail;
-
 @property (nonatomic, strong) UIButton *suggestion; // 意见及建议
 @end
 

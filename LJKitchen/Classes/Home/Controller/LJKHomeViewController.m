@@ -192,23 +192,7 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 
 }
 
-//- (void)loadStatus {
-//    
-//    // 首页TableView主体JSON
-//    
-//    NSString *url = @"http://api.xiachufang.com/v2/issues/list.json?cursor=&api_key=07397197043fafe11ce5c65c10febf84&size=2&sk=EhUpkVYBSoOT9qAapL0BUw&api_sign=51332747ce48a674bcf0397392410b74&_ts=1465544264.130416&origin=iphone&version=5.5.0&timezone=Asia%2FShanghai&location_code=156320900000000&nonce=F5533FD9-6417-4335-962D-D92D5319250C";
-//    
-//    /**
-//    @"http://api.xiachufang.com/v2/issues/list.json?cursor=&origin=iphone&api_sign=069310ae4fc0b866207dba71320f1c13&sk=7UnwJ-JkQ36hbfrMRoL0fA&size=2&timezone=Asia%2FShanghai&version=5.1.1&api_key=0f9f79be1dac5f003e7de6f876b17c00";
-//     */
-//    
-//    [LJKNetworkTool afnGet:url params:nil success:^(id json) {
-//        
-//    // NSLog(@"%@", json);
-//    } failure:^(NSError *error) {
-//        NSLog(@"加载TableView失败 原因:%@", error);
-//    }];
-//}
+
 
 - (void)loadNewData {
     [self.tableView.mj_footer endRefreshing];

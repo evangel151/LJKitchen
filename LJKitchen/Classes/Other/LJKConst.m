@@ -26,6 +26,13 @@ CGFloat const LJKRecipeListViewMarginHeadTitle2Name = 10;
 
 /** 下厨房 - 头像宽高 */
 CGFloat const LJKAuthorIconWH = 44;
+/** 下厨房 - 复合头像宽高(社区用) */
+CGFloat const LJKAuthorIconsWH = 60;
+/** 下厨房 - 头像距离cell顶部的距离 */
+CGFloat const LJKAuthorIcon2CellTop = 10;
+/** 下厨房 - 头像距离cell左边的距离 */
+CGFloat const LJKAuthorIcon2CellLeft = 20;
+
 
 #pragma mark 顶部Header各部位宽高
 /** 下厨房 - 顶部导航视图高度（流行菜谱、关注动态） */

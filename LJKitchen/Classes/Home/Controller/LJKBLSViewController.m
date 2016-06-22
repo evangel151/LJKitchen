@@ -18,7 +18,7 @@
 #import <MJExtension.h>
 #import <MJRefresh.h>
 
-@interface LJKBLSViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface LJKBLSViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIButton *uploadMyDishButton;
 @property (nonatomic, strong) LJKBLSHeaderData *headerData;
@@ -27,26 +27,22 @@
 
 @implementation LJKBLSViewController
 
-static NSString * const reuseIdentifier = @"BLSDishCell";
+static NSString * const reuseIdentifier  = @"BLSDishCell";
 static NSString * const headerIdentifier = @"BLSHeader";
-
-//- (NSArray *)dishArray {
-//    if (!_dishArray) {
-//        self.dishArray = [[NSArray alloc]init];
-//    }
-//    return _dishArray;
-//}
+static NSString * const footerIdentifier = @"BLSFooter";
 
 
+
+#pragma mark - 懒加载
 - (UIButton *)uploadMyDishButton {
     if (!_uploadMyDishButton) {
         _uploadMyDishButton = [UIButton buttonWithTitle:@"上传我的作品"
                                              titleColor:Color_TintWhite
-                                        backgroundColor:Color_ThemeColor
+                                        backgroundColor:Color_ThemeColor_Alpha
                                                fontSize:17
                                                  target:self
                                                  action:@selector(uploadMyDish)];
-        [_uploadMyDishButton setImage:[UIImage imageNamed:@"tabCDeselected"] forState:UIControlStateNormal];
+        [_uploadMyDishButton setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
     }
     return _uploadMyDishButton;
 }
@@ -68,11 +64,12 @@ static NSString * const headerIdentifier = @"BLSHeader";
         
         [_collectionView registerClass:[LJKBLSViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
         [_collectionView registerClass:[LJKBLSViewHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier];
+        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerIdentifier];
     }
     return _collectionView;
 }
 
-
+#pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupSubviews];
@@ -94,8 +91,8 @@ static NSString * const headerIdentifier = @"BLSHeader";
 
 - (void)loadNewData {
     
-    
-    [LJKNetworkTool afnGet:LJKRequestKitchenBreakfast
+    // 2016.6月22日 晚餐
+    [LJKNetworkTool afnGet:LJKRequestKitchenSupper
                     params:nil
                    success:^(id json) {
 //                       NSLog(@"%@", json);
@@ -109,10 +106,15 @@ static NSString * const headerIdentifier = @"BLSHeader";
                        NSLog(@"加载header失败 原因:%@", error);
     }];
     
-    [LJKNetworkTool afnGet:LJKRequestKitchenBreakfast
+    
+    // FIXME: (暂时无法修正)无法使用固定request获取数据
+    // (抓包获取的url时效性约10min ~ 30min不等) 失效后仍返回success,但数据为nil
+    // 2016.6月22日 晚餐
+//    NSString *supper = @"http://api.xiachufang.com/v2/events/100131208/dishes_order_by_hot_v2.json?api_sign=203b9171e8adaf9493110c90e53069d6&limit=18&sk=EhUpkVYBSoOT9qAapL0BUw&timestamp=1466598138&nonce=2B9BE1A1-3B94-4F27-AABE-DCCE44E030FA&api_key=07397197043fafe11ce5c65c10febf84&version=5.5.0&_ts=1466598139.679015&dish_size=360w_360h&offset=0&location_code=156320900000000&detail=true&origin=iphone";
+    [LJKNetworkTool afnGet:LJKRequestKitchenSupperDishes
                     params:nil
                    success:^(id json) {
-//                       NSLog(@"作品json: %@", json);
+                       NSLog(@"作品json: %@", json);
                        self.dishArray = [LJKDish mj_objectArrayWithKeyValuesArray:json[@"content"][@"dishes"]];
                        [self.collectionView reloadData];
                        
@@ -129,18 +131,16 @@ static NSString * const headerIdentifier = @"BLSHeader";
 #pragma mark - collectionView 数据源 & 代理
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    // FIXME: 接口失效，写死 
-//    NSLog(@"%zd", self.dishArray.count);
-//    return self.dishArray.count;
-    return 20;
+    // FIXME:(已解决:接口具有时效性) 接口失效，写死
+    // return 20;
+    return self.dishArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LJKBLSViewCell *cell =
     [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
                                               forIndexPath:indexPath];
-//    cell.dish = self.dishArray[indexPath.row];
-
+    cell.dish = self.dishArray[indexPath.row];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
@@ -156,14 +156,19 @@ static NSString * const headerIdentifier = @"BLSHeader";
         
         header.data = self.headerData;
         reusableView = header;
+    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerIdentifier forIndexPath:indexPath];
+        
     }
     return reusableView;
 }
 
 - (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    
     return CGSizeMake(SCREEN_WIDTH, 90.0);
-    
+}
+
+- (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    return CGSizeMake(SCREEN_WIDTH, 44.0);
 }
 
 @end

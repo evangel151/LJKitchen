@@ -14,4 +14,8 @@
 - (void)setCircleIconWithUrl:(NSURL *)url
                  placeHolder:(NSString *)placeHolder
                   cornRadius:(CGFloat)cornRadius;
+
+/** 扩展: 根据url返回对应用户头像或占位头像  */
+- (void)setNormalIconWithUrl:(NSURL *)url
+                 placeHolder:(NSString *)placeHolder;
 @end

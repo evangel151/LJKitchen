@@ -24,5 +24,17 @@
     }];
 }
 
+- (void)setNormalIconWithUrl:(NSURL *)url placeHolder:(NSString *)placeHolder {
+    
+    UIImage *ph = [UIImage imageNamed:placeHolder];
+    [self sd_setImageWithURL:url
+            placeholderImage:ph
+                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                       
+                       self.image = image ? image : ph;
+                       
+                   }];
+}
+
 
 @end

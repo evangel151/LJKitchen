@@ -67,6 +67,11 @@
 		00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */; };
 		00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */; };
 		00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F14E661D188D2C0078F262 /* LJKBLSViewController.m */; };
+		00F37B321D1AE1EE008A6B9A /* LJKCommunityForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B311D1AE1EE008A6B9A /* LJKCommunityForumCell.m */; };
+		00F37B351D1AE252008A6B9A /* LJKForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B341D1AE252008A6B9A /* LJKForum.m */; };
+		00F37B381D1B3C4E008A6B9A /* LJKTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B371D1B3C4E008A6B9A /* LJKTopicViewController.m */; };
+		00F37B3B1D1B3C98008A6B9A /* LJKCookerClubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B3A1D1B3C98008A6B9A /* LJKCookerClubViewController.m */; };
+		00F37B3E1D1B4864008A6B9A /* LJKTopicViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B3D1D1B4864008A6B9A /* LJKTopicViewCell.m */; };
 		00F85FE31D148560007E5B09 /* LJKContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FD81D148560007E5B09 /* LJKContent.m */; };
 		00F85FE41D148560007E5B09 /* LJKContents.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FDA1D148560007E5B09 /* LJKContents.m */; };
 		00F85FE51D148560007E5B09 /* LJKFeeds.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FDC1D148560007E5B09 /* LJKFeeds.m */; };
@@ -220,6 +225,16 @@
 		00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderDish.m; sourceTree = "<group>"; };
 		00F14E651D188D2B0078F262 /* LJKBLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewController.h; sourceTree = "<group>"; };
 		00F14E661D188D2C0078F262 /* LJKBLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewController.m; sourceTree = "<group>"; };
+		00F37B301D1AE1EE008A6B9A /* LJKCommunityForumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCommunityForumCell.h; sourceTree = "<group>"; };
+		00F37B311D1AE1EE008A6B9A /* LJKCommunityForumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCommunityForumCell.m; sourceTree = "<group>"; };
+		00F37B331D1AE252008A6B9A /* LJKForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKForum.h; sourceTree = "<group>"; };
+		00F37B341D1AE252008A6B9A /* LJKForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKForum.m; sourceTree = "<group>"; };
+		00F37B361D1B3C4E008A6B9A /* LJKTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTopicViewController.h; sourceTree = "<group>"; };
+		00F37B371D1B3C4E008A6B9A /* LJKTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicViewController.m; sourceTree = "<group>"; };
+		00F37B391D1B3C98008A6B9A /* LJKCookerClubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCookerClubViewController.h; sourceTree = "<group>"; };
+		00F37B3A1D1B3C98008A6B9A /* LJKCookerClubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCookerClubViewController.m; sourceTree = "<group>"; };
+		00F37B3C1D1B4864008A6B9A /* LJKTopicViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTopicViewCell.h; sourceTree = "<group>"; };
+		00F37B3D1D1B4864008A6B9A /* LJKTopicViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicViewCell.m; sourceTree = "<group>"; };
 		00F85FD71D148560007E5B09 /* LJKContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKContent.h; sourceTree = "<group>"; };
 		00F85FD81D148560007E5B09 /* LJKContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKContent.m; sourceTree = "<group>"; };
 		00F85FD91D148560007E5B09 /* LJKContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKContents.h; sourceTree = "<group>"; };
@@ -539,6 +554,10 @@
 				00D347331D09EE2700B01E6C /* LJKHelpCenterViewController.m */,
 				00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */,
 				00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */,
+				00F37B361D1B3C4E008A6B9A /* LJKTopicViewController.h */,
+				00F37B371D1B3C4E008A6B9A /* LJKTopicViewController.m */,
+				00F37B391D1B3C98008A6B9A /* LJKCookerClubViewController.h */,
+				00F37B3A1D1B3C98008A6B9A /* LJKCookerClubViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -546,6 +565,8 @@
 		00B5ED1D1D08373300B55ED4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00F37B331D1AE252008A6B9A /* LJKForum.h */,
+				00F37B341D1AE252008A6B9A /* LJKForum.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,6 +577,10 @@
 				00B5ED641D08C74D00B55ED4 /* LJKMessageHeader.h */,
 				00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */,
 				00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */,
+				00F37B301D1AE1EE008A6B9A /* LJKCommunityForumCell.h */,
+				00F37B311D1AE1EE008A6B9A /* LJKCommunityForumCell.m */,
+				00F37B3C1D1B4864008A6B9A /* LJKTopicViewCell.h */,
+				00F37B3D1D1B4864008A6B9A /* LJKTopicViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,12 +942,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F37B3E1D1B4864008A6B9A /* LJKTopicViewCell.m in Sources */,
 				00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */,
 				00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */,
 				00EDE81B1D11FAB70025ED9C /* Foundation+Log.m in Sources */,
 				00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */,
 				00F860071D14858D007E5B09 /* LJKPopEvents.m in Sources */,
 				00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */,
+				00F37B381D1B3C4E008A6B9A /* LJKTopicViewController.m in Sources */,
 				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
 				00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */,
 				001D937B1D0B5B0800B006D2 /* LJKSearchBar.m in Sources */,
@@ -964,6 +991,7 @@
 				00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */,
 				00F85FE81D148560007E5B09 /* LJKItems.m in Sources */,
 				002F79DE1D173DD80021FD04 /* UIImageView+Extension.m in Sources */,
+				00F37B321D1AE1EE008A6B9A /* LJKCommunityForumCell.m in Sources */,
 				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
 				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
 				00F85FE71D148560007E5B09 /* LJKIssues.m in Sources */,
@@ -974,10 +1002,12 @@
 				00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
 				00F860011D14858D007E5B09 /* LJKDish.m in Sources */,
+				00F37B3B1D1B3C98008A6B9A /* LJKCookerClubViewController.m in Sources */,
 				002F79CC1D16DBF30021FD04 /* UILabel+Extension.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
 				002F79D51D1711F20021FD04 /* LJKRecipeInstruction.m in Sources */,
 				00F85FFE1D14858D007E5B09 /* LJKAuthor.m in Sources */,
+				00F37B351D1AE252008A6B9A /* LJKForum.m in Sources */,
 				00F079F51D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m in Sources */,
 				002F79CF1D1710100021FD04 /* LJKRecipe.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
