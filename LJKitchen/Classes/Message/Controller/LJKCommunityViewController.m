@@ -98,7 +98,7 @@ static CGFloat  cellHeight = 80;
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UITableViewHeaderFooterView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:communityFooterIdentifier];
     footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 80);
-//    footer.contentView.backgroundColor = [UIColor blueColor];
+    footer.contentView.backgroundColor = [UIColor whiteColor];
     UIImageView *imageV = [[UIImageView alloc] init];
     imageV.image = [UIImage imageNamed:@"cookerClub"];
     [footer addSubview:imageV];
@@ -125,6 +125,9 @@ static CGFloat  cellHeight = 80;
     if (indexPath.row == 0) {
         NSLog(@"即将跳转至\"主题帖界面\"——————");
         [self.navigationController pushViewController:[[LJKTopicViewController alloc] init] animated:YES];
+    } else if (indexPath.row == 1) {
+
+        [UILabel showMessage:@"周边需要使用定位功能，暂未实现" atNavController:self.navigationController];
     }
 }
 

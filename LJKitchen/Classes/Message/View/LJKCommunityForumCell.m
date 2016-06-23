@@ -41,24 +41,28 @@
 - (UIImageView *)icon1 {
     if (!_icon1) {
         _icon1 = [[UIImageView alloc] init];
+        _icon1.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon1;
 }
 - (UIImageView *)icon2 {
     if (!_icon2) {
         _icon2 = [[UIImageView alloc] init];
+        _icon2.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon2;
 }
 - (UIImageView *)icon3 {
     if (!_icon3) {
         _icon3 = [[UIImageView alloc] init];
+        _icon3.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon3;
 }
 - (UIImageView *)icon4 {
     if (!_icon4) {
         _icon4 = [[UIImageView alloc] init];
+        _icon4.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon4;
 }

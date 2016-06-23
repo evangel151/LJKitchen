@@ -209,7 +209,7 @@
     
     
     // 添加三餐导航 (滚动视图)
-    // FIXME: 官方后台返回的数据会根据时间段的变换而增加
+    // FIXME: (已解决)官方后台返回的数据会根据时间段的变换而增加
     // For example: 凌晨至正午前 popEvents.count == 1(只有早餐)  00:00 前 popEvents.count = 3(早中晚)
     // 吐槽: 突然就从3页变成1页了，还以为自己写错了……  似乎是更傻瓜式了，但感觉怪怪的
     LJKPopEvents *popEvents = navContent.pop_events;

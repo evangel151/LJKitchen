@@ -76,7 +76,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 0) {
         UIImage *image = [UIImage imageNamed:@"market_menu_1"];
-        // FIXME: BasicCell无法满足"个人信息"cell的需要 
+        // FIXME: (未解决)BasicCell无法满足"个人信息"cell的需要
 //        cell.imageView.image = [image imageByRoundCornerRadius:cell.imageView.width * 0.5];
 //        cell.titleLabelView.text = @"个人信息";
 //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

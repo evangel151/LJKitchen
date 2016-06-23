@@ -10,19 +10,21 @@
 #define PrefixHeader_pch
 
 
-// libs
+// Libs - 通用
 #import <YYCategories.h>
 #import <SVProgressHUD.h>
 
-// extension
+// Extension - 扩展
 #import "UIButton+Extension.h"
 #import "UILabel+Extension.h"
 #import "UIViewController+Extension.h"
 #import "UIImageView+Extension.h"
+#import "NSString+Extension.h"
+#import "NSDate+Extension.h"
 
 // 项目中需要的多种常量
 #import "LJKConst.h"
-// 抓包的请求……
+// 抓包的请求(固定url)
 #import "LJKConstRequest.h"
 
 // 通用常量 
@@ -32,21 +34,20 @@
 #define TABBAR_HEIGHT  44
 #define NAVBAR_HEIGHT  64
 
-// marco
+// Marco - 宏
 /** 指定RGB & alpha 颜色 */
 #define LJregular(r,g,b,a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
 /** MessageView 按钮文字颜色 (与图片搭配) */
 #define Color_DarkGray    LJregular(112, 112, 112, 1)
 /** 默认的背景颜色 */
 #define Color_BackGround  LJregular(230, 230, 230, 1)
-/** 项目主题颜色(跟tabbar图片颜色相同) */
+/** 项目主题颜色(橘红色) */
 #define Color_ThemeColor  LJregular(234, 79, 57, 1)
-/** 项目主体颜色 & alpha (半透明控件使用) */
+/** 项目主体颜色 & alpha (橘红色 + 半透明) */
 #define Color_ThemeColor_Alpha  LJregular(234, 79, 57, 0.9)
 /** 项目主体颜色 (鹅黄色) */
 #define Color_ThemeColor_Yellow LJregular(251, 246, 213, 1)
-
-/** 白色字体 */
+/** 白色字体 (更改为纯白色……) */
 #define Color_TintWhite   [UIColor whiteColor]
 
 

@@ -116,11 +116,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
 
-        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-        [SVProgressHUD showErrorWithStatus:@"即将跳转至系统设置界面"];
+//        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+//        [SVProgressHUD showErrorWithStatus:@"即将跳转至系统设置界面"];        
+        UIAlertController *alertVC =
+        [UIAlertController alertControllerWithTitle:@"LJKitchen将要前往本机的通知中心，确认前往吗？"
+                                            message:@"开启系统推送通知，享受快乐厨房生活"
+                                     preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *appStore = [UIAlertAction actionWithTitle:@"前往"
+                                                           style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction *cancel   = [UIAlertAction actionWithTitle:@"我再看看"
+                                                           style:UIAlertActionStyleCancel handler:nil];
+        
+        [alertVC addAction:appStore];
+        [alertVC addAction:cancel];
+        [self presentViewController:alertVC animated:YES completion:nil];
+        
     }
     
-    // FIXME: 一键全开/全关……似乎没什么用……
+    // FIXME: (无用...)一键全开/全关……
+    // 问题是为什么呢 =。=....
 //        else if (indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3) {
 //        for (int i = 0; i < self.cells.count; i++) {
 //            self.cell = self.cells[i];

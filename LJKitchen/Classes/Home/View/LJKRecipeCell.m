@@ -382,7 +382,7 @@
             self.cookedLabel.hidden = NO;
             self.authorIcon.hidden = NO;
             self.authorName.hidden = NO;
-            // FIXME: 圆形头像 （已解决）
+            // FIXME: 已解决）圆形头像 （
             // JSON中虽然有3种不同的头像规格，但是目前只有这一种返回正确的url 尺寸为 160 * 160
             
             [self.authorIcon setCircleIconWithUrl:[NSURL URLWithString:item.contents.author.photo]

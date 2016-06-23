@@ -78,6 +78,7 @@ static NSString * const footerIdentifier = @"BLSFooter";
 
 - (void)setupSubviews {
     self.collectionView.backgroundColor = Color_BackGround;
+
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.uploadMyDishButton];
     [_uploadMyDishButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,7 +108,7 @@ static NSString * const footerIdentifier = @"BLSFooter";
     }];
     
     
-    // FIXME: (暂时无法修正)无法使用固定request获取数据
+    // FIXME: (未解决)无法使用固定request获取数据
     // (抓包获取的url时效性约10min ~ 30min不等) 失效后仍返回success,但数据为nil
     // 2016.6月22日 晚餐
 //    NSString *supper = @"http://api.xiachufang.com/v2/events/100131208/dishes_order_by_hot_v2.json?api_sign=203b9171e8adaf9493110c90e53069d6&limit=18&sk=EhUpkVYBSoOT9qAapL0BUw&timestamp=1466598138&nonce=2B9BE1A1-3B94-4F27-AABE-DCCE44E030FA&api_key=07397197043fafe11ce5c65c10febf84&version=5.5.0&_ts=1466598139.679015&dish_size=360w_360h&offset=0&location_code=156320900000000&detail=true&origin=iphone";
@@ -117,6 +118,13 @@ static NSString * const footerIdentifier = @"BLSFooter";
                        NSLog(@"作品json: %@", json);
                        self.dishArray = [LJKDish mj_objectArrayWithKeyValuesArray:json[@"content"][@"dishes"]];
                        [self.collectionView reloadData];
+                       
+                       // 如果接口失效(返回空的JSON) 在navigationBar下方出现一个短暂主题颜色提示框，停留1秒后消失
+                       NSUInteger count = self.dishArray.count;
+                       WeakSelf;
+                       if (count == 0 ) {
+                           [UILabel showMessage:@"请求已过期，无法显示，请重新抓取" atNavController:weakSelf.navigationController];
+                       }
                        
                    }
                    failure:^(NSError *error) {
@@ -131,9 +139,15 @@ static NSString * const footerIdentifier = @"BLSFooter";
 #pragma mark - collectionView 数据源 & 代理
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    // FIXME:(已解决:接口具有时效性) 接口失效，写死
+    // FIXME:(已解决) 接口具有时效性 接口失效，写死
     // return 20;
-    return self.dishArray.count;
+    NSUInteger count = self.dishArray.count;
+//    WeakSelf;
+//    if (count == 0 ) {
+//        [UILabel showMessage:@"作品接口已失效，暂时无法显示" atNavController:weakSelf.navigationController];
+//    }
+    
+    return count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
