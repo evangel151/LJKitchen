@@ -8,6 +8,11 @@
 
 #import "LJKBasic2Cell.h"
 #import <Masonry.h>
+
+@interface LJKBasic2Cell ()
+
+@end
+
 @implementation LJKBasic2Cell
 
 - (UIImageView *)iconView {
@@ -47,54 +52,43 @@
 }
 
 
-
-
-
-- (void)awakeFromNib {
-
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-
+#pragma mark - 构造方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        [self.contentView addSubview:self.timeLabel];
         [self.contentView addSubview:self.iconView];
+        [self.contentView addSubview:self.timeLabel];
         [self.contentView addSubview:self.nameLabelTop];
         [self.contentView addSubview:self.talkLabelBottom];
         
         [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(self.contentView.mas_height).offset(-20);
-            make.left.equalTo(self.contentView).offset(20);
-            make.top.equalTo(self.contentView).offset(10);
-            make.bottom.equalTo(self.contentView).offset(-10);
+//            make.width.equalTo(self.contentView.mas_height).offset(-LJKAuthorIcon2CellLeft);
+//            make.bottom.equalTo(self.contentView).offset(-LJKAuthorIcon2CellTop);
+            make.left.equalTo(self.contentView.mas_left).offset(LJKAuthorIcon2CellLeft);
+            make.top.equalTo(self.contentView.mas_top).offset(LJKAuthorIcon2CellTop);
+            make.size.mas_equalTo(CGSizeMake(LJKAuthorIconWH, LJKAuthorIconWH));
         }];
         
         [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentView).offset(5);
-            make.right.equalTo(self.contentView).offset(-20);
-            make.size.mas_equalTo(CGSizeMake(85, 15));
+            make.top.equalTo(self.contentView.mas_top).offset(LJKAuthorIcon2CellTop);
+            make.right.equalTo(self.contentView.mas_right).offset(-LJKAuthorIcon2CellLeft);
+//            make.size.mas_equalTo(CGSizeMake(100, 0.5 * LJKAuthorIconWH));
+            make.bottom.equalTo(self.contentView.mas_centerY);
         }];
         
         [_nameLabelTop mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentView).offset(10);
+            make.top.equalTo(self.contentView.mas_top).offset(LJKAuthorIcon2CellTop);
             make.bottom.equalTo(self.contentView.mas_centerY);
-            make.left.equalTo(_iconView.mas_right).offset(20);
-            make.right.equalTo(_timeLabel.mas_left).offset(-20);
+            make.left.equalTo(self.iconView.mas_right).offset(20);
+            make.right.equalTo(self.contentView.mas_right).offset(-LJKAuthorIcon2CellLeft);
         }];
         
         [_talkLabelBottom mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentView.mas_centerY).offset(10);
-            make.bottom.equalTo(self.contentView).offset(-10);
-            make.left.equalTo(_iconView.mas_right).offset(20);
-            make.right.equalTo(_timeLabel.mas_left).offset(-20);
+            make.top.equalTo(self.contentView.mas_centerY);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-LJKAuthorIcon2CellTop);
+            make.left.equalTo(self.nameLabelTop.mas_left);
+            make.right.equalTo(self.contentView.mas_right).offset(-LJKAuthorIcon2CellLeft);
         }];
         
     }
@@ -109,5 +103,16 @@
     }
     return cell;
 }
+
+- (void)awakeFromNib {
+    
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
 
 @end

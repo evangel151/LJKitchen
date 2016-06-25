@@ -13,5 +13,8 @@
 @property (nonatomic, strong) UILabel *nameLabelTop;
 @property (nonatomic, strong) UILabel *talkLabelBottom;
 @property (nonatomic, strong) UILabel *timeLabel;
+
+
+
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

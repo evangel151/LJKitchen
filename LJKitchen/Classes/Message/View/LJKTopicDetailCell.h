@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LJKTopicComment;
+
 @interface LJKTopicDetailCell : UITableViewCell
+
+@property (nonatomic, strong) LJKTopicComment *comment;
 
 @end

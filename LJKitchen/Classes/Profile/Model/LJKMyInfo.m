@@ -22,9 +22,11 @@ static NSString * const kMyInfo = @"myInfo";
         _myInfo.type        = LJKAuthorTypeMe;
         _myInfo.nfollow     = @"1";
         _myInfo.nfollowed   = @"99999";
-        _myInfo.create_time = @"1970-01-01 13:10:10";
+        _myInfo.create_time = @"2016-06-01 12:28:15";
         _myInfo.ndishes     = @"520";
         _myInfo.nrecipes    = @"1314";
+        _myInfo.name        = @"栩池";
+        _myInfo.photo160    = @"iconLM";
     }
     return _myInfo;
 

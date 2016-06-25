@@ -93,6 +93,16 @@
 		00F860051D14858D007E5B09 /* LJKPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FF91D14858D007E5B09 /* LJKPicture.m */; };
 		00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FFB1D14858D007E5B09 /* LJKPopEvent.m */; };
 		00F860071D14858D007E5B09 /* LJKPopEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F85FFD1D14858D007E5B09 /* LJKPopEvents.m */; };
+		00F921B21D1D8EDA009D78B7 /* LJKTopicComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921B11D1D8EDA009D78B7 /* LJKTopicComment.m */; };
+		00F921B51D1EE59E009D78B7 /* LJKTopicComposeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921B41D1EE59E009D78B7 /* LJKTopicComposeBar.m */; };
+		00F921B81D1EFEA2009D78B7 /* LJKCommentsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */; };
+		00F921BF1D1F00CE009D78B7 /* cart_items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F921BA1D1F00CE009D78B7 /* cart_items.plist */; };
+		00F921C01D1F00CE009D78B7 /* comment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F921BB1D1F00CE009D78B7 /* comment.plist */; };
+		00F921C11D1F00CE009D78B7 /* detaillocation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F921BC1D1F00CE009D78B7 /* detaillocation.plist */; };
+		00F921C21D1F00CE009D78B7 /* Ingredient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F921BD1D1F00CE009D78B7 /* Ingredient.plist */; };
+		00F921C31D1F00CE009D78B7 /* keywords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F921BE1D1F00CE009D78B7 /* keywords.plist */; };
+		00F921C61D1F1109009D78B7 /* LJKSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921C51D1F1109009D78B7 /* LJKSettingCell.m */; };
+		00F921C91D1F280B009D78B7 /* LJKProfileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */; };
 		E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C35850CB67314F7DFDA8CBBD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -282,6 +292,21 @@
 		00F85FFB1D14858D007E5B09 /* LJKPopEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKPopEvent.m; sourceTree = "<group>"; };
 		00F85FFC1D14858D007E5B09 /* LJKPopEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKPopEvents.h; sourceTree = "<group>"; };
 		00F85FFD1D14858D007E5B09 /* LJKPopEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKPopEvents.m; sourceTree = "<group>"; };
+		00F921B01D1D8EDA009D78B7 /* LJKTopicComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTopicComment.h; sourceTree = "<group>"; };
+		00F921B11D1D8EDA009D78B7 /* LJKTopicComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicComment.m; sourceTree = "<group>"; };
+		00F921B31D1EE59E009D78B7 /* LJKTopicComposeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTopicComposeBar.h; sourceTree = "<group>"; };
+		00F921B41D1EE59E009D78B7 /* LJKTopicComposeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicComposeBar.m; sourceTree = "<group>"; };
+		00F921B61D1EFEA2009D78B7 /* LJKCommentsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCommentsTool.h; sourceTree = "<group>"; };
+		00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCommentsTool.m; sourceTree = "<group>"; };
+		00F921BA1D1F00CE009D78B7 /* cart_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cart_items.plist; sourceTree = "<group>"; };
+		00F921BB1D1F00CE009D78B7 /* comment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = comment.plist; sourceTree = "<group>"; };
+		00F921BC1D1F00CE009D78B7 /* detaillocation.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = detaillocation.plist; sourceTree = "<group>"; };
+		00F921BD1D1F00CE009D78B7 /* Ingredient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Ingredient.plist; sourceTree = "<group>"; };
+		00F921BE1D1F00CE009D78B7 /* keywords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keywords.plist; sourceTree = "<group>"; };
+		00F921C41D1F1109009D78B7 /* LJKSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSettingCell.h; sourceTree = "<group>"; };
+		00F921C51D1F1109009D78B7 /* LJKSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSettingCell.m; sourceTree = "<group>"; };
+		00F921C71D1F280B009D78B7 /* LJKProfileHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKProfileHeader.h; sourceTree = "<group>"; };
+		00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKProfileHeader.m; sourceTree = "<group>"; };
 		3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C35850CB67314F7DFDA8CBBD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,6 +372,7 @@
 		003729FD1D06A03F006A21C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00F921B91D1F00CE009D78B7 /* Plist */,
 				00B5ED451D08467E00B55ED4 /* Info.plist */,
 				00372A091D06A03F006A21C2 /* Assets.xcassets */,
 				00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */,
@@ -586,6 +612,10 @@
 				00F37B341D1AE252008A6B9A /* LJKForum.m */,
 				0003B4D71D1C09DA0054F205 /* LJKTopic.h */,
 				0003B4D81D1C09DA0054F205 /* LJKTopic.m */,
+				00F921B01D1D8EDA009D78B7 /* LJKTopicComment.h */,
+				00F921B11D1D8EDA009D78B7 /* LJKTopicComment.m */,
+				00F921B61D1EFEA2009D78B7 /* LJKCommentsTool.h */,
+				00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -602,6 +632,8 @@
 				00F37B3D1D1B4864008A6B9A /* LJKTopicViewCell.m */,
 				0003B4E31D1C93870054F205 /* LJKTopicDetailCell.h */,
 				0003B4E41D1C93870054F205 /* LJKTopicDetailCell.m */,
+				00F921B31D1EE59E009D78B7 /* LJKTopicComposeBar.h */,
+				00F921B41D1EE59E009D78B7 /* LJKTopicComposeBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -682,6 +714,10 @@
 			children = (
 				001D93731D0B142A00B006D2 /* LJKSettingFooter.h */,
 				001D93741D0B142A00B006D2 /* LJKSettingFooter.m */,
+				00F921C41D1F1109009D78B7 /* LJKSettingCell.h */,
+				00F921C51D1F1109009D78B7 /* LJKSettingCell.m */,
+				00F921C71D1F280B009D78B7 /* LJKProfileHeader.h */,
+				00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,6 +795,18 @@
 				00F85FFD1D14858D007E5B09 /* LJKPopEvents.m */,
 			);
 			path = "NavHeader(顶部导航)";
+			sourceTree = "<group>";
+		};
+		00F921B91D1F00CE009D78B7 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				00F921BA1D1F00CE009D78B7 /* cart_items.plist */,
+				00F921BB1D1F00CE009D78B7 /* comment.plist */,
+				00F921BC1D1F00CE009D78B7 /* detaillocation.plist */,
+				00F921BD1D1F00CE009D78B7 /* Ingredient.plist */,
+				00F921BE1D1F00CE009D78B7 /* keywords.plist */,
+			);
+			path = Plist;
 			sourceTree = "<group>";
 		};
 		A0741B224F81F10C083E7106 /* Frameworks */ = {
@@ -892,9 +940,14 @@
 				00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */,
 				00372A0A1D06A03F006A21C2 /* Assets.xcassets in Resources */,
 				00F079FF1D0D9D19005FDD59 /* breakfast.json in Resources */,
+				00F921C31D1F00CE009D78B7 /* keywords.plist in Resources */,
+				00F921C11D1F00CE009D78B7 /* detaillocation.plist in Resources */,
 				00019C171D0C195E008BB1A9 /* LJKBasicIconCell.xib in Resources */,
+				00F921C01D1F00CE009D78B7 /* comment.plist in Resources */,
+				00F921BF1D1F00CE009D78B7 /* cart_items.plist in Resources */,
 				00B5ED461D08467E00B55ED4 /* Info.plist in Resources */,
 				00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */,
+				00F921C21D1F00CE009D78B7 /* Ingredient.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,6 +1041,8 @@
 				00D3472B1D098DA100B01E6C /* LJKSuggestViewController.m in Sources */,
 				00F85FE41D148560007E5B09 /* LJKContents.m in Sources */,
 				00F85FE51D148560007E5B09 /* LJKFeeds.m in Sources */,
+				00F921B51D1EE59E009D78B7 /* LJKTopicComposeBar.m in Sources */,
+				00F921B21D1D8EDA009D78B7 /* LJKTopicComment.m in Sources */,
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
 				00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */,
 				001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */,
@@ -1019,17 +1074,20 @@
 				00F85FE81D148560007E5B09 /* LJKItems.m in Sources */,
 				002F79DE1D173DD80021FD04 /* UIImageView+Extension.m in Sources */,
 				00F37B321D1AE1EE008A6B9A /* LJKCommunityForumCell.m in Sources */,
+				00F921C91D1F280B009D78B7 /* LJKProfileHeader.m in Sources */,
 				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
 				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
 				00F85FE71D148560007E5B09 /* LJKIssues.m in Sources */,
 				0003B4E51D1C93870054F205 /* LJKTopicDetailCell.m in Sources */,
 				00F860001D14858D007E5B09 /* LJKComment.m in Sources */,
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
+				00F921C61D1F1109009D78B7 /* LJKSettingCell.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
 				00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */,
 				00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
 				00F860011D14858D007E5B09 /* LJKDish.m in Sources */,
+				00F921B81D1EFEA2009D78B7 /* LJKCommentsTool.m in Sources */,
 				00F37B3B1D1B3C98008A6B9A /* LJKCookerClubViewController.m in Sources */,
 				002F79CC1D16DBF30021FD04 /* UILabel+Extension.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,

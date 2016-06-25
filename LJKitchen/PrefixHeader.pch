@@ -31,9 +31,11 @@
 #define SCREEN_SIZE    [[UIScreen mainScreen] bounds].size
 #define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT  [[UIScreen mainScreen] bounds].size.height
+
 #define TABBAR_HEIGHT  44
 #define NAVBAR_HEIGHT  64
-
+#define TABLEVIEW_TITLE_HEIGHT 40
+#define TABLEVIEWCELL_NORMAL_HEIGHT 44
 // Marco - 宏
 /** 指定RGB & alpha 颜色 */
 #define LJregular(r,g,b,a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
@@ -49,6 +51,9 @@
 #define Color_ThemeColor_Yellow LJregular(251, 246, 213, 1)
 /** 白色字体 (更改为纯白色……) */
 #define Color_TintWhite   [UIColor whiteColor]
+
+/** (fake)评论地址 */
+#define LJKCommentPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"comment.data"]
 
 
 

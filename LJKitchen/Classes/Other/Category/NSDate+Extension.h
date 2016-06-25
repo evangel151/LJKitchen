@@ -17,4 +17,7 @@
 - (BOOL)isToday;
 /** 是否为昨天 */
 - (BOOL)isYesterday;
+
+
+
 @end

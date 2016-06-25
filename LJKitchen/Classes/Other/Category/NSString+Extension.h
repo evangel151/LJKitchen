@@ -18,6 +18,6 @@
 - (CGSize)getSizeWithEstimatedSize:(CGSize)estimatedSize
                               font:(CGFloat)font;
 
-
-
+/** 工具:转化默认时间格式 */
++ (NSString *)timeToRequiredStyleWithText:(NSString *)text;
 @end

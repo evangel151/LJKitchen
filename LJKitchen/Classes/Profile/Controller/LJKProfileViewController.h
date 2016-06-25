@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LJKProfileViewController : UITableViewController
+@interface LJKProfileViewController : UIViewController
 
 @end

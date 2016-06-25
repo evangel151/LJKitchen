@@ -9,16 +9,21 @@
 #import "LJKProfileViewController.h"
 #import "LJKFindFriendViewController.h"
 #import "LJKSettingViewController.h"
+#import "LJKProfileHeader.h"
+
+#import "LJKAuthorDetail.h"
+#import "LJKMyInfo.h"
+
 
 @interface LJKProfileViewController ()
-
+@property (nonatomic, strong) LJKAuthorDetail *authorDetail;
 @end
 
 @implementation LJKProfileViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName,
       [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
@@ -26,7 +31,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.authorDetail = [LJKMyInfo  info];
     [self setupNavigationBar];
+    [self setupHeader];
+    
 }
 
 - (void)setupNavigationBar {
@@ -41,6 +49,13 @@
                                      style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(setting)];
+}
+
+- (void)setupHeader {
+    CGFloat headerH = 100 + 90 + 44;
+    LJKProfileHeader *header = [[LJKProfileHeader alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, headerH)];
+    header.authorDetail = self.authorDetail;
+    [self.view addSubview:header];
 }
 
 // 跳转至 “寻找厨友”
@@ -60,15 +75,15 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 0;
+//}
 
 
 @end

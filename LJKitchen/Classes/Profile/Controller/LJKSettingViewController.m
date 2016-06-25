@@ -8,19 +8,25 @@
 
 #import "LJKSettingViewController.h"
 #import "LJKNotificationViewController.h"
+
 #import "LJKBasicCell.h"
 #import "LJKSettingFooter.h"
+#import "LJKSettingCell.h"
+
+#import "LJKAuthorDetail.h"
+#import "LJKMyInfo.h"
 
 @interface LJKSettingViewController ()
 @property (nonatomic, strong) NSMutableArray *title_section1;
 @property (nonatomic, strong) NSMutableArray *title_section2;
 @property (nonatomic, strong) NSMutableArray *title_section3;
 @property (nonatomic, strong) LJKSettingFooter *footer;
+@property (nonatomic, strong) LJKAuthorDetail *authorDetail;
 @end
 
 @implementation LJKSettingViewController
 
-
+static NSString *const settingCellIdentifier = @"settingCell";
 
 - (NSMutableArray *)title_section1 {
     if (!_title_section1) {
@@ -47,8 +53,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设置";
+    self.authorDetail = [LJKMyInfo  info];
     self.tableView.backgroundColor = Color_BackGround;
     self.tableView.bounces = NO;
+    
+    [self.tableView registerClass:[LJKSettingCell class] forCellReuseIdentifier:settingCellIdentifier];
 }
 
 
@@ -72,27 +81,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LJKBasicCell *cell = [LJKBasicCell cellWithTableView:tableView];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if (indexPath.section == 0) {
-        UIImage *image = [UIImage imageNamed:@"market_menu_1"];
-        // FIXME: (未解决)BasicCell无法满足"个人信息"cell的需要
-//        cell.imageView.image = [image imageByRoundCornerRadius:cell.imageView.width * 0.5];
-//        cell.titleLabelView.text = @"个人信息";
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.imageView.image = image;
-        cell.imageView.contentMode = UIViewContentModeScaleToFill;
-        cell.imageView.layer.masksToBounds = YES;
-        cell.imageView.layer.cornerRadius = 50;
-        cell.textLabel.text = @"栩池";
+    
+    // FIXME: (未解决)BasicCell无法满足"个人信息"cell的需要
+    LJKSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:settingCellIdentifier];
+    if (indexPath.section == 0 ) {
+        cell.authorDetail = self.authorDetail;
     } else if (indexPath.section == 1) {
-        cell.titleLabelView.text = self.title_section1[indexPath.row];
+        cell.textLabel.text = self.title_section1[indexPath.row];
     } else if (indexPath.section == 2) {
-        cell.titleLabelView.text = self.title_section2[indexPath.row];
-        cell.arrowView.hidden = YES;
+        cell.textLabel.text = self.title_section2[indexPath.row];
+        cell.detailArrow.hidden = YES;
     } else {
-        cell.titleLabelView.text = self.title_section3[indexPath.row];
-        cell.arrowView.hidden = YES;
+        cell.textLabel.text = self.title_section3[indexPath.row];
+        cell.detailArrow.hidden = YES;
     }
     return cell;
 }
@@ -110,16 +111,18 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 100;
+        return TABLEVIEWCELL_NORMAL_HEIGHT + 20;
     }
-    return 44;
+    return TABLEVIEWCELL_NORMAL_HEIGHT;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section == 3) {
         self.footer = [LJKSettingFooter settingFooter];
         self.footer.version.text = @"版本号: 5.5";
-        [self.footer.exit addTarget:self action:@selector(exit) forControlEvents:UIControlEventTouchUpInside];
+        [self.footer.exit addTarget:self
+                             action:@selector(exit)
+                   forControlEvents:UIControlEventTouchUpInside];
         return self.footer;
     }
     return nil;
@@ -127,11 +130,23 @@
 
 #pragma mark - cell & UI 事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2 && indexPath.row == 0) { // 跳转至推送控制界面
+    if (indexPath.section == 0) { // 个人信息编辑
+         NSLog(@"即将跳转个人信息编辑界面——————");
+    } else if (indexPath.section == 1 && indexPath.row == 0) { // 账号管理
+        
+    } else if (indexPath.section == 1 && indexPath.row == 1) { // 设置密码
+        
+    } else if (indexPath.section == 1 && indexPath.row == 2) { // 管理收货地址
+        
+    } else if (indexPath.section == 1 && indexPath.row == 3) { // 发现好友
+        
+    } else if (indexPath.section == 2 ) {                      // 消息推送
         LJKNotificationViewController *noti = [[LJKNotificationViewController alloc] init];
         [self.navigationController pushViewController:noti animated:YES];
-    } else if (indexPath.section == 3 && indexPath.row == 1) { // 为下厨房评分
+    } else if (indexPath.section == 3 && indexPath.row == 1) { // 为app评分
         [self commitScore];
+    } else if (indexPath.section == 3 && indexPath.row == 0) { // 告诉朋友(分享)
+        
     }
 }
 
