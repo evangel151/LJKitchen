@@ -83,7 +83,7 @@
 - (UIView *)dishNavView {
     if (!_dishNavView) {
         _dishNavView = [[UIView alloc] init];
-        _dishNavView.backgroundColor = [UIColor blueColor];
+//        _dishNavView.backgroundColor = [UIColor blueColor];
     }
     return _dishNavView;
 }
@@ -196,7 +196,7 @@
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat buttonWidth = self.navButtonsView.frame.size.width / navContent.navs.count;
-    for (NSInteger index = 0; index<navContent.navs.count; index++) {
+    for (NSInteger index = 0; index < navContent.navs.count; index++) {
         LJKHomeHeaderNavButton *button = [LJKHomeHeaderNavButton buttonWithNav:navContent.navs[index]
                                                                         target:self
                                                                         action:@selector(buttonDidClicked:)];
@@ -238,7 +238,6 @@
 
 /** 顶部右侧关注状态（朋友圈……） */
 - (void)friend {
-    
     if (self.clickBlock) {
         self.clickBlock(viewDidClickedActionFeedsView);
     }

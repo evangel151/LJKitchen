@@ -53,3 +53,11 @@ CGFloat const LJKRecipeListViewHeightExpertIcon = 15;
 
 /** 商品界面 - 加入购物车 - 商品分类最小高度 */
 CGFloat const LJKGoodsKindsCategoryViewMinusHeight = 260;
+
+
+#pragma mark 个人信息 顶部Header各部位宽高
+/** 下厨房 - 个人界面-顶部信息栏 */
+CGFloat const LJKProfileHeader_InfoView_Height = 120;
+
+
+

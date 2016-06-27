@@ -12,6 +12,7 @@
 @implementation LJKNetworkTool
 /** 自定义GET请求 */
 + (void)afnGet:(NSString *)url params:(NSDictionary *)params success:(void(^)(id json))success failure:(void(^)(NSError *error))failure{
+
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];

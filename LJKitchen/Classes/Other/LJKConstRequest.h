@@ -34,3 +34,15 @@ UIKIT_EXTERN NSString * const LJKRequestKitchenCellMore; // 与LJKRequestKitchen
 UIKIT_EXTERN NSString * const LJKRequestCommunity;
 /** 下厨房 - 社区(帖子)  */
 UIKIT_EXTERN NSString * const LJKRequestTopic;
+
+
+/** 下厨房 - 个人信息  */
+UIKIT_EXTERN NSString * const LJKAuthorInfo;
+/** 下厨房 - 个人信息  */
+UIKIT_EXTERN NSString * const LJKAuthorDish;
+
+
+
+
+
+

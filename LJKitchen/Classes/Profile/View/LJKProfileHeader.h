@@ -11,13 +11,13 @@
 typedef NS_ENUM(NSInteger, headerDidClickedAction) {
     
     // 顶部
-    headerDidClickedActionInfoView     = 0,// 个人信息
+    headerDidClickedActionInfoView     = 1,// 个人信息
     
     // 中部
-    headerDidClickedActionCollected    = 2,// 收藏
-    headerDidClickedActionOrders       = 3,// 订单
-    headerDidClickedActionPreferential = 4,// 优惠
-    headerDidClickedActionScore        = 5,// 用户积分
+    headerDidClickedActionCollected    = 10,// 收藏
+    headerDidClickedActionOrders       = 11,// 订单
+    headerDidClickedActionPreferential = 12,// 优惠
+    headerDidClickedActionScore        = 13,// 用户积分
     
     // 底部
     headerDidClickedActionBindMobile   = 6 // 绑定手机

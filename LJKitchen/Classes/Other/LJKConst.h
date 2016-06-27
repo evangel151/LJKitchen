@@ -61,3 +61,10 @@ UIKIT_EXTERN CGFloat const LJKRecipeListViewHeightExpertIcon;
 
 /** 商品界面 - 加入购物车 - 商品分类最小高度 */
 UIKIT_EXTERN CGFloat const LJKGoodsKindsCategoryViewMinusHeight;
+
+
+/** 下厨房 - 个人界面-顶部信息栏 */
+UIKIT_EXTERN CGFloat const LJKProfileHeader_InfoView_Height;
+
+
+

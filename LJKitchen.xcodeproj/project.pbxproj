@@ -50,6 +50,8 @@
 		00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED621D0871BC00B55ED4 /* LJKShoppingSortViewController.m */; };
 		00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */; };
 		00B5ED681D08C77B00B55ED4 /* LJKMessageHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */; };
+		00CBB1321D21D57E00B1A16E /* LJKProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBB1311D21D57E00B1A16E /* LJKProfileEditViewController.m */; };
+		00CBB1351D21DA3C00B1A16E /* LJKProfileEditHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBB1341D21DA3C00B1A16E /* LJKProfileEditHeader.m */; };
 		00D347251D0975F500B01E6C /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347241D0975F400B01E6C /* UIButton+Extension.m */; };
 		00D347281D0987EC00B01E6C /* LJKSendMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347271D0987EC00B01E6C /* LJKSendMailViewController.m */; };
 		00D3472B1D098DA100B01E6C /* LJKSuggestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3472A1D098DA100B01E6C /* LJKSuggestViewController.m */; };
@@ -208,6 +210,10 @@
 		00B5ED641D08C74D00B55ED4 /* LJKMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMessageHeader.h; sourceTree = "<group>"; };
 		00B5ED651D08C74D00B55ED4 /* LJKMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMessageHeader.m; sourceTree = "<group>"; };
 		00B5ED671D08C77B00B55ED4 /* LJKMessageHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKMessageHeader.xib; sourceTree = "<group>"; };
+		00CBB1301D21D57D00B1A16E /* LJKProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKProfileEditViewController.h; sourceTree = "<group>"; };
+		00CBB1311D21D57E00B1A16E /* LJKProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKProfileEditViewController.m; sourceTree = "<group>"; };
+		00CBB1331D21DA3C00B1A16E /* LJKProfileEditHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKProfileEditHeader.h; sourceTree = "<group>"; };
+		00CBB1341D21DA3C00B1A16E /* LJKProfileEditHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKProfileEditHeader.m; sourceTree = "<group>"; };
 		00D347231D0975F400B01E6C /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		00D347241D0975F400B01E6C /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		00D347261D0987EC00B01E6C /* LJKSendMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSendMailViewController.h; sourceTree = "<group>"; };
@@ -696,6 +702,8 @@
 				00B5ED531D086A9E00B55ED4 /* LJKFindFriendViewController.m */,
 				00B5ED551D086ABB00B55ED4 /* LJKSettingViewController.h */,
 				00B5ED561D086ABB00B55ED4 /* LJKSettingViewController.m */,
+				00CBB1301D21D57D00B1A16E /* LJKProfileEditViewController.h */,
+				00CBB1311D21D57E00B1A16E /* LJKProfileEditViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -718,6 +726,8 @@
 				00F921C51D1F1109009D78B7 /* LJKSettingCell.m */,
 				00F921C71D1F280B009D78B7 /* LJKProfileHeader.h */,
 				00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */,
+				00CBB1331D21DA3C00B1A16E /* LJKProfileEditHeader.h */,
+				00CBB1341D21DA3C00B1A16E /* LJKProfileEditHeader.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1022,9 +1032,11 @@
 			files = (
 				00F37B3E1D1B4864008A6B9A /* LJKTopicViewCell.m in Sources */,
 				00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */,
+				00CBB1321D21D57E00B1A16E /* LJKProfileEditViewController.m in Sources */,
 				00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */,
 				00EDE81B1D11FAB70025ED9C /* Foundation+Log.m in Sources */,
 				00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */,
+				00CBB1351D21DA3C00B1A16E /* LJKProfileEditHeader.m in Sources */,
 				00F860071D14858D007E5B09 /* LJKPopEvents.m in Sources */,
 				00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */,
 				00F37B381D1B3C4E008A6B9A /* LJKTopicViewController.m in Sources */,

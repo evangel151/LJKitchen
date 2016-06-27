@@ -72,6 +72,7 @@
 + (nonnull LJKHomeHeaderNavButton *)buttonWithNav:(nonnull LJKNav *)nav
                                            target:(nullable id)target
                                            action:(nullable SEL)action {
+    
     LJKHomeHeaderNavButton *button = [[LJKHomeHeaderNavButton alloc] init];
     [button.imageV sd_setImageWithURL:[NSURL URLWithString:nav.picurl]];
     button.titleL.text = nav.name;
@@ -92,18 +93,18 @@
     LJKHomeHeaderNavButton *button = [[LJKHomeHeaderNavButton alloc] init];
     button.imageV.image = [UIImage imageNamed:imageName];
     button.titleL.text = title;
+//    button.imageV.contentMode = UIViewContentModeScaleAspectFit;
     
-    button.imageV.contentMode = UIViewContentModeScaleAspectFit;
     // 当传入的是固定的图片时，更新原有约束 
     [button.imageV mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);
         make.top.equalTo(button).offset(10);
-        make.size.mas_equalTo(CGSizeMake(20, 20));
+        make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
     [button.titleL mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);
-        make.top.equalTo(button.imageV.mas_bottom).offset(5);
+        make.top.equalTo(button.imageV.mas_bottom).offset(20);
     }];
     
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];

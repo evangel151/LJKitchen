@@ -35,3 +35,13 @@ NSString * const LJKRequestKitchenSupperDishes = @"http://api.xiachufang.com/v2/
 NSString * const LJKRequestCommunity = @"http://api.xiachufang.com/v2/social/init_page.json?origin=iphone&longitude=114.918727&api_sign=bcd62c6e9e0c9b70f1c60719c0b96082&sk=7UnwJ-JkQ36hbfrMRoL0fA&latitude=22.806659&version=5.1.1&api_key=0f9f79be1dac5f003e7de6f876b17c00";
 /** 下厨房 - 社区(帖子)  */
 NSString * const LJKRequestTopic = @"http://api.xiachufang.com/v2/forums/2/topics.json?offset=0&origin=iphone&api_sign=2057b55a66e4d86a9284232741762f0e&sk=7UnwJ-JkQ36hbfrMRoL0fA&limit=20&version=5.1.1&api_key=0f9f79be1dac5f003e7de6f876b17c00";
+
+
+/** 下厨房 - 用户信息 */
+NSString * const LJKAuthorInfo = @"http://api.xiachufang.com/v2/users/show.json?origin=iphone&api_sign=fa3963bc5a16b347e4f7d4ccf2896330&pic_size=160&sk=7UnwJ-JkQ36hbfrMRoL0fA&version=5.1.1&user_id=105223583&api_key=0f9f79be1dac5f003e7de6f876b17c00";
+
+/** 下厨房 - 用户作品 */
+NSString * const LJKAuthorDish = @"http://api.xiachufang.com/v2/dishes/created_by_user.json?detail=true&offset=0&origin=iphone&api_sign=5d8e211b92c5d1e45c214946cc5362a5&sk=7UnwJ-JkQ36hbfrMRoL0fA&limit=18&version=5.1.1&user_id=105223583&api_key=0f9f79be1dac5f003e7de6f876b17c00";
+
+
+

@@ -11,11 +11,12 @@
 
 @interface LJKHomeHeaderNavButton : UIButton
 
+/** 导航按钮(图片为网络获取) */
 + (nonnull LJKHomeHeaderNavButton *)buttonWithNav:(nonnull LJKNav *)nav
                                            target:(nullable id)target
                                            action:(nullable SEL)action;
 
-
+/** 导航按钮(图片为本地获取) */
 + (nonnull LJKHomeHeaderNavButton *)buttonWithImageName:(nonnull NSString *)imageName
                                                   title:(nonnull NSString *)title
                                                  target:(nullable id)target
