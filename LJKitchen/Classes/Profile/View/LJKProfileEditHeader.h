@@ -10,4 +10,11 @@
 
 @interface LJKProfileEditHeader : UIView
 
+/** 头像点击后回调的block */
+@property (nonatomic, copy) void (^uploadIconBlock)();
+
+/** 头像接口(测试用) */
+@property (nonatomic, strong) UIImage *displayIcon;
+
+
 @end

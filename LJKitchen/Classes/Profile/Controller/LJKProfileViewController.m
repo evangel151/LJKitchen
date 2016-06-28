@@ -147,6 +147,7 @@ static NSString * const mydishIdentifier = @"myDishCollectionCell";
     self.scrollView.bounces = NO;
 //    self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 2, self.scrollViewHeight);
+    self.scrollView.contentOffset = CGPointMake(0, 0);
     self.scrollView.delegate = self;
     [self.scrollView scrollRectToVisible:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollViewHeight) animated:NO];
     [self.view addSubview:self.scrollView];

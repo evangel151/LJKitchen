@@ -27,4 +27,24 @@
     return button;
 }
 
+
++ (UIButton *)buttonWithTitle:(NSString *)title
+                   titleColor:(UIColor *)titleColor
+           selectedTitleColor:(UIColor *)selectedTitleColor
+                     fontSize:(CGFloat)fontSize
+            selectedImageName:(NSString *)imageName
+                       target:(id)target
+                       action:(SEL)action {
+    
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    [button setTitleColor:selectedTitleColor forState:UIControlStateSelected];
+    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+    [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateSelected];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
+
 @end

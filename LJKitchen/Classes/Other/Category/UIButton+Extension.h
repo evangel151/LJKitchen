@@ -16,4 +16,14 @@
                      fontSize:(CGFloat)fontSize
                        target:(id)target
                        action:(SEL)action;
+
+
++ (UIButton *)buttonWithTitle:(NSString *)title
+                   titleColor:(UIColor *)titleColor
+           selectedTitleColor:(UIColor *)selectedTitleColor
+                     fontSize:(CGFloat)fontSize
+            selectedImageName:(NSString *)imageName
+                       target:(id)target
+                       action:(SEL)action;
+
 @end

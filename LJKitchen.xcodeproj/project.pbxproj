@@ -31,6 +31,9 @@
 		00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */; };
 		00372A181D06A03F006A21C2 /* LJKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A171D06A03F006A21C2 /* LJKitchenTests.m */; };
 		00372A231D06A03F006A21C2 /* LJKitchenUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A221D06A03F006A21C2 /* LJKitchenUITests.m */; };
+		00A696951D2310250090935F /* LJKEditGenderAndBirthdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */; };
+		00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969A1D2330040090935F /* LJKEditBasicCell.m */; };
+		00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969D1D2335F30090935F /* LJKEditLocationCell.m */; };
 		00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED211D08373300B55ED4 /* AppDelegate.m */; };
 		00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED2E1D083D6D00B55ED4 /* LJKMainTabBarController.m */; };
 		00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED311D083E8E00B55ED4 /* LJKNavigationController.m */; };
@@ -173,6 +176,12 @@
 		00372A1E1D06A03F006A21C2 /* LJKitchenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJKitchenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00372A221D06A03F006A21C2 /* LJKitchenUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJKitchenUITests.m; sourceTree = "<group>"; };
 		00372A241D06A03F006A21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00A696931D2310250090935F /* LJKEditGenderAndBirthdayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditGenderAndBirthdayCell.h; sourceTree = "<group>"; };
+		00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditGenderAndBirthdayCell.m; sourceTree = "<group>"; };
+		00A696991D2330040090935F /* LJKEditBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditBasicCell.h; sourceTree = "<group>"; };
+		00A6969A1D2330040090935F /* LJKEditBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditBasicCell.m; sourceTree = "<group>"; };
+		00A6969C1D2335F30090935F /* LJKEditLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditLocationCell.h; sourceTree = "<group>"; };
+		00A6969D1D2335F30090935F /* LJKEditLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditLocationCell.m; sourceTree = "<group>"; };
 		00B5ED201D08373300B55ED4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00B5ED211D08373300B55ED4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -728,6 +737,12 @@
 				00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */,
 				00CBB1331D21DA3C00B1A16E /* LJKProfileEditHeader.h */,
 				00CBB1341D21DA3C00B1A16E /* LJKProfileEditHeader.m */,
+				00A696931D2310250090935F /* LJKEditGenderAndBirthdayCell.h */,
+				00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */,
+				00A696991D2330040090935F /* LJKEditBasicCell.h */,
+				00A6969A1D2330040090935F /* LJKEditBasicCell.m */,
+				00A6969C1D2335F30090935F /* LJKEditLocationCell.h */,
+				00A6969D1D2335F30090935F /* LJKEditLocationCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1058,6 +1073,7 @@
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
 				00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */,
 				001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */,
+				00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */,
 				00F85FE31D148560007E5B09 /* LJKContent.m in Sources */,
 				00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */,
 				00F860041D14858D007E5B09 /* LJKNavContent.m in Sources */,
@@ -1101,9 +1117,11 @@
 				00F860011D14858D007E5B09 /* LJKDish.m in Sources */,
 				00F921B81D1EFEA2009D78B7 /* LJKCommentsTool.m in Sources */,
 				00F37B3B1D1B3C98008A6B9A /* LJKCookerClubViewController.m in Sources */,
+				00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */,
 				002F79CC1D16DBF30021FD04 /* UILabel+Extension.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
 				002F79D51D1711F20021FD04 /* LJKRecipeInstruction.m in Sources */,
+				00A696951D2310250090935F /* LJKEditGenderAndBirthdayCell.m in Sources */,
 				0003B4DC1D1C12EC0054F205 /* NSString+Extension.m in Sources */,
 				00F85FFE1D14858D007E5B09 /* LJKAuthor.m in Sources */,
 				00F37B351D1AE252008A6B9A /* LJKForum.m in Sources */,

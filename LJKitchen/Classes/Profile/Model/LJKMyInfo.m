@@ -27,6 +27,7 @@ static NSString * const kMyInfo = @"myInfo";
         _myInfo.nrecipes    = @"1314";
         _myInfo.name        = @"栩池";
         _myInfo.photo160    = @"iconLM";
+        _myInfo.birthday    = @"1987-10-09";
     }
     return _myInfo;
 

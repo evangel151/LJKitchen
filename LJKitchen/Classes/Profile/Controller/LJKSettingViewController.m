@@ -8,6 +8,7 @@
 
 #import "LJKSettingViewController.h"
 #import "LJKNotificationViewController.h"
+#import "LJKProfileEditViewController.h"
 
 #import "LJKBasicCell.h"
 #import "LJKSettingFooter.h"
@@ -132,6 +133,9 @@ static NSString *const settingCellIdentifier = @"settingCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) { // 个人信息编辑
          NSLog(@"即将跳转个人信息编辑界面——————");
+        LJKProfileEditViewController *editVc = [[LJKProfileEditViewController alloc] init];
+        [self.navigationController pushViewController:editVc animated:YES];
+        
     } else if (indexPath.section == 1 && indexPath.row == 0) { // 账号管理
         
     } else if (indexPath.section == 1 && indexPath.row == 1) { // 设置密码
@@ -141,8 +145,8 @@ static NSString *const settingCellIdentifier = @"settingCell";
     } else if (indexPath.section == 1 && indexPath.row == 3) { // 发现好友
         
     } else if (indexPath.section == 2 ) {                      // 消息推送
-        LJKNotificationViewController *noti = [[LJKNotificationViewController alloc] init];
-        [self.navigationController pushViewController:noti animated:YES];
+        LJKNotificationViewController *notiVc = [[LJKNotificationViewController alloc] init];
+        [self.navigationController pushViewController:notiVc animated:YES];
     } else if (indexPath.section == 3 && indexPath.row == 1) { // 为app评分
         [self commitScore];
     } else if (indexPath.section == 3 && indexPath.row == 0) { // 告诉朋友(分享)
@@ -159,9 +163,12 @@ static NSString *const settingCellIdentifier = @"settingCell";
                                     preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *appStore = [UIAlertAction actionWithTitle:@"前往AppStore"
-                                                       style:UIAlertActionStyleDefault handler:nil];
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    
     UIAlertAction *cancel   = [UIAlertAction actionWithTitle:@"取消"
-                                                     style:UIAlertActionStyleCancel handler:nil];
+                                                     style:UIAlertActionStyleCancel
+                                                     handler:nil];
 
     [alertVC addAction:appStore];
     [alertVC addAction:cancel];
@@ -174,8 +181,12 @@ static NSString *const settingCellIdentifier = @"settingCell";
                                         message:nil
                                  preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *no = [UIAlertAction actionWithTitle:@"我只是手滑点错了……"
-                                                       style:UIAlertActionStyleDefault handler:nil];
-    UIAlertAction *tureExit = [UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                                                style:UIAlertActionStyleDefault
+                                               handler:nil];
+    
+    UIAlertAction *tureExit = [UIAlertAction actionWithTitle:@"退出"
+                                                       style:UIAlertActionStyleDestructive
+                                                     handler:^(UIAlertAction * _Nonnull action) {
         [SVProgressHUD showSuccessWithStatus:@"Bye~"];
         
     }];

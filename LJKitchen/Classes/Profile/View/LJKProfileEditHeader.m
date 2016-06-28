@@ -16,11 +16,13 @@
 
 
 @implementation LJKProfileEditHeader
-
+#pragma mark - 懒加载
 - (UIImageView *)iconView {
     if (!_iconView) {
         _iconView = [[UIImageView alloc] init];
-        _iconView.image = [UIImage imageNamed:@"iconLM"];
+        _iconView.userInteractionEnabled = YES;
+        [_iconView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(upload)]];
     }
     return _iconView;
 }
@@ -32,14 +34,14 @@
                                 backgroundColor:[UIColor clearColor]
                                        fontSize:15
                                          target:self
-                                         action:@selector(uploadIncon:)];
+                                         action:@selector(upload)];
         [_uploadIcon setBackgroundImage:[UIImage imageNamed:@"exit_Button"] forState:UIControlStateNormal];
     }
     return _uploadIcon;
 }
 
 
-
+#pragma mark - 构造方法
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -48,8 +50,8 @@
         [self addSubview:self.uploadIcon];
         
         [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(LJKAuthorIconWH, LJKAuthorIconWH));
-            make.top.equalTo(self.mas_top).offset(30);
+            make.size.mas_equalTo(CGSizeMake(LJKAuthorIconsWH, LJKAuthorIconsWH));
+            make.top.equalTo(self.mas_top).offset(20);
             make.centerX.equalTo(self.mas_centerX);
         }];
         
@@ -63,8 +65,18 @@
     return self;
 }
 
-- (void)uploadIncon:(UIButton *)button {
-    
+#pragma mark - 传入新头像 
+- (void)setDisplayIcon:(UIImage *)displayIcon {
+    if (displayIcon) {
+        self.iconView.image = displayIcon;
+    } else {
+        self.iconView.image = [UIImage imageNamed:@"defaultUserHeader"];
+    }
+}
+
+#pragma mark - 点击事件
+- (void)upload {
+    !self.uploadIconBlock ? : self.uploadIconBlock();
 }
 
 
