@@ -28,6 +28,9 @@ static NSString * const kMyInfo = @"myInfo";
         _myInfo.name        = @"栩池";
         _myInfo.photo160    = @"iconLM";
         _myInfo.birthday    = @"1987-10-09";
+        
+        _myInfo.current_location  = @"江苏  盐城";
+        _myInfo.hometown_location = @"江苏  盐城";
     }
     return _myInfo;
 

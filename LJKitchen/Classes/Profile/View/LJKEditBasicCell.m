@@ -19,7 +19,7 @@
 - (UITextField *)textField {
     if (!_textField) {
         _textField = [[UITextField alloc] init];
-        _textField.placeholder = @"在此处输入昵称";
+//        _textField.placeholder = @"在此处输入昵称";
         _textField.font = [UIFont systemFontOfSize:15];
     }
     return _textField;
@@ -64,6 +64,14 @@
 
 - (void)dealloc {
     [NotificationCenter removeObserver:self];
+}
+
+// cell 边距设定
+- (void)setFrame:(CGRect)frame {
+    frame.origin.x = 15;
+    frame.size.width -= 30;
+    frame.size.height -= 1;
+    [super setFrame:frame];
 }
 
 @end

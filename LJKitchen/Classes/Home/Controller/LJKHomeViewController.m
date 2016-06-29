@@ -25,7 +25,7 @@
 #import <MJRefresh.h>
 
 @interface LJKHomeViewController ()
-
+@property (nonatomic, strong) UITableView *currentTableView;
 @property (nonatomic, strong) LJKHomeHeader *homeHeader;
 @property (nonatomic, strong) NSMutableArray *feedsArray;
 @property (nonatomic, strong) NSMutableArray *issuesArray;  // 菜谱数据
@@ -55,6 +55,14 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 
 
 #pragma mark - 页面主体
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+//    self.tableView = tableView;
+//}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -158,6 +166,7 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
 }
 
 - (void)setupTableView {
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = Color_BackGround;

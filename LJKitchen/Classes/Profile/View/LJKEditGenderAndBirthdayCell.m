@@ -141,4 +141,12 @@
     self.gender_female.selected = NO;
 }
 
+// cell 边距设定
+- (void)setFrame:(CGRect)frame {
+    frame.origin.x = 15;
+    frame.size.width -= 30;
+    frame.size.height -= 1;
+    [super setFrame:frame];
+}
+
 @end

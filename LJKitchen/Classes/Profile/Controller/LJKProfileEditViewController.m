@@ -7,9 +7,11 @@
 //
 
 #import "LJKProfileEditViewController.h"
+
 #import "LJKProfileEditHeader.h"
 #import "LJKEditGenderAndBirthdayCell.h"
 #import "LJKEditBasicCell.h"
+#import "LJKEditLocationCell.h"
 
 #import "LJKMyInfo.h"
 #import "LJKAuthorDetail.h"
@@ -61,6 +63,8 @@ static NSString *residentIdentifier          = @"residentCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[LJKEditBasicCell class] forCellReuseIdentifier:nickNameIdentifier];
     [self.tableView registerClass:[LJKEditGenderAndBirthdayCell class] forCellReuseIdentifier:birthdayAndGenderIdentifier];
+    [self.tableView registerClass:[LJKEditLocationCell class] forCellReuseIdentifier:homeTownIdentifier];
+    [self.tableView registerClass:[LJKEditLocationCell class] forCellReuseIdentifier:residentIdentifier];
     
 }
 
@@ -125,7 +129,7 @@ static NSString *residentIdentifier          = @"residentCell";
 
 #pragma mark - TableView 数据源 & 代理 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,9 +150,37 @@ static NSString *residentIdentifier          = @"residentCell";
         birthdayCell.displayBirthday = self.authorDetail.birthday;
         
         return  birthdayCell;
+    } else if (indexPath.row == 2) {
+        LJKEditLocationCell *homeTownCell = [tableView dequeueReusableCellWithIdentifier:homeTownIdentifier];
+        homeTownCell.placeHolder = @"家乡";
+        homeTownCell.type = @"家乡";
+        homeTownCell.displayLocation = self.authorDetail.hometown_location;
+        homeTownCell.editingLocationBlock = ^(NSString *homeTownName) {
+            weakSelf.authorDetail.hometown_location = homeTownName;
+        };
+        
+        homeTownCell.cancelEditingBlock = ^(NSString *originHomeTownName) {
+            weakSelf.authorDetail.hometown_location = originHomeTownName;
+            [weakSelf.tableView reloadData];
+        };
+        return homeTownCell;
+    } else if (indexPath.row == 3) {
+        LJKEditLocationCell *residentCell = [tableView dequeueReusableCellWithIdentifier:residentIdentifier];
+        residentCell.placeHolder = @"现居";
+        residentCell.type = @"现居";
+        residentCell.displayLocation = self.authorDetail.current_location;
+        residentCell.editingLocationBlock = ^(NSString *residentName) {
+            weakSelf.authorDetail.current_location = residentName;
+//            [weakSelf.tableView reloadData];
+        };
+        
+        residentCell.cancelEditingBlock = ^(NSString *originResidentName) {
+            weakSelf.authorDetail.current_location = originResidentName;
+            [weakSelf.tableView reloadData];
+        };
+        return residentCell;
     }
     return nil;
-
 }
 
 

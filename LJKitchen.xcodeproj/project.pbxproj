@@ -31,6 +31,11 @@
 		00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */; };
 		00372A181D06A03F006A21C2 /* LJKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A171D06A03F006A21C2 /* LJKitchenTests.m */; };
 		00372A231D06A03F006A21C2 /* LJKitchenUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A221D06A03F006A21C2 /* LJKitchenUITests.m */; };
+		00943B6A1D247119002F8F83 /* LJKCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00943B691D247119002F8F83 /* LJKCity.m */; };
+		00943B6D1D247178002F8F83 /* LJKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00943B6C1D247178002F8F83 /* LJKLocation.m */; };
+		00943B701D247C29002F8F83 /* UIToolbar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00943B6F1D247C29002F8F83 /* UIToolbar+Extension.m */; };
+		00943B741D2487D3002F8F83 /* breakfast.json in Resources */ = {isa = PBXBuildFile; fileRef = 00943B721D2487D3002F8F83 /* breakfast.json */; };
+		00943B751D2487D3002F8F83 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 00943B731D2487D3002F8F83 /* location.json */; };
 		00A696951D2310250090935F /* LJKEditGenderAndBirthdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */; };
 		00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969A1D2330040090935F /* LJKEditBasicCell.m */; };
 		00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969D1D2335F30090935F /* LJKEditLocationCell.m */; };
@@ -176,6 +181,14 @@
 		00372A1E1D06A03F006A21C2 /* LJKitchenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJKitchenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00372A221D06A03F006A21C2 /* LJKitchenUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJKitchenUITests.m; sourceTree = "<group>"; };
 		00372A241D06A03F006A21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00943B681D247119002F8F83 /* LJKCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCity.h; sourceTree = "<group>"; };
+		00943B691D247119002F8F83 /* LJKCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCity.m; sourceTree = "<group>"; };
+		00943B6B1D247178002F8F83 /* LJKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKLocation.h; sourceTree = "<group>"; };
+		00943B6C1D247178002F8F83 /* LJKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKLocation.m; sourceTree = "<group>"; };
+		00943B6E1D247C29002F8F83 /* UIToolbar+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+Extension.h"; sourceTree = "<group>"; };
+		00943B6F1D247C29002F8F83 /* UIToolbar+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+Extension.m"; sourceTree = "<group>"; };
+		00943B721D2487D3002F8F83 /* breakfast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breakfast.json; sourceTree = "<group>"; };
+		00943B731D2487D3002F8F83 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 		00A696931D2310250090935F /* LJKEditGenderAndBirthdayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditGenderAndBirthdayCell.h; sourceTree = "<group>"; };
 		00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditGenderAndBirthdayCell.m; sourceTree = "<group>"; };
 		00A696991D2330040090935F /* LJKEditBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditBasicCell.h; sourceTree = "<group>"; };
@@ -387,6 +400,7 @@
 		003729FD1D06A03F006A21C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00943B711D2487C1002F8F83 /* JSON */,
 				00F921B91D1F00CE009D78B7 /* Plist */,
 				00B5ED451D08467E00B55ED4 /* Info.plist */,
 				00372A091D06A03F006A21C2 /* Assets.xcassets */,
@@ -415,6 +429,15 @@
 				00372A241D06A03F006A21C2 /* Info.plist */,
 			);
 			path = LJKitchenUITests;
+			sourceTree = "<group>";
+		};
+		00943B711D2487C1002F8F83 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				00943B721D2487D3002F8F83 /* breakfast.json */,
+				00943B731D2487D3002F8F83 /* location.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		00B5ED0E1D08373300B55ED4 /* Classes */ = {
@@ -763,6 +786,8 @@
 				0003B4DB1D1C12EC0054F205 /* NSString+Extension.m */,
 				0003B4DD1D1C7FF90054F205 /* NSDate+Extension.h */,
 				0003B4DE1D1C7FF90054F205 /* NSDate+Extension.m */,
+				00943B6E1D247C29002F8F83 /* UIToolbar+Extension.h */,
+				00943B6F1D247C29002F8F83 /* UIToolbar+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -772,6 +797,10 @@
 			children = (
 				00B5ED491D085D3300B55ED4 /* LJKNetworkTool.h */,
 				00B5ED4A1D085D3300B55ED4 /* LJKNetworkTool.m */,
+				00943B681D247119002F8F83 /* LJKCity.h */,
+				00943B691D247119002F8F83 /* LJKCity.m */,
+				00943B6B1D247178002F8F83 /* LJKLocation.h */,
+				00943B6C1D247178002F8F83 /* LJKLocation.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -969,8 +998,10 @@
 				00F921C11D1F00CE009D78B7 /* detaillocation.plist in Resources */,
 				00019C171D0C195E008BB1A9 /* LJKBasicIconCell.xib in Resources */,
 				00F921C01D1F00CE009D78B7 /* comment.plist in Resources */,
+				00943B751D2487D3002F8F83 /* location.json in Resources */,
 				00F921BF1D1F00CE009D78B7 /* cart_items.plist in Resources */,
 				00B5ED461D08467E00B55ED4 /* Info.plist in Resources */,
+				00943B741D2487D3002F8F83 /* breakfast.json in Resources */,
 				00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */,
 				00F921C21D1F00CE009D78B7 /* Ingredient.plist in Resources */,
 			);
@@ -1059,6 +1090,7 @@
 				00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */,
 				001D937B1D0B5B0800B006D2 /* LJKSearchBar.m in Sources */,
 				002F79DB1D1718520021FD04 /* LJKRecipeStats.m in Sources */,
+				00943B6A1D247119002F8F83 /* LJKCity.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
 				00F85FE61D148560007E5B09 /* LJKImage.m in Sources */,
 				00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */,
@@ -1071,6 +1103,7 @@
 				00F921B51D1EE59E009D78B7 /* LJKTopicComposeBar.m in Sources */,
 				00F921B21D1D8EDA009D78B7 /* LJKTopicComment.m in Sources */,
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
+				00943B701D247C29002F8F83 /* UIToolbar+Extension.m in Sources */,
 				00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */,
 				001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */,
 				00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */,
@@ -1112,6 +1145,7 @@
 				00F921C61D1F1109009D78B7 /* LJKSettingCell.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
 				00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */,
+				00943B6D1D247178002F8F83 /* LJKLocation.m in Sources */,
 				00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
 				00F860011D14858D007E5B09 /* LJKDish.m in Sources */,
