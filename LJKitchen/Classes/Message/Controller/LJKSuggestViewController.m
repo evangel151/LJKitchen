@@ -42,7 +42,7 @@
 - (LJKBasicTextView *)textView {
     if (!_textView) {
         _textView = [[LJKBasicTextView alloc] init];
-        _textView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * 0.4);
+        _textView.frame = CGRectMake(20, 20, SCREEN_WIDTH - 40, SCREEN_HEIGHT * 0.3);
         _textView.font = [UIFont systemFontOfSize:15];
         _textView.placeholder = @"我们有什么可以帮助您的吗？";
         _textView.alwaysBounceVertical = YES;
@@ -66,7 +66,7 @@
                                        fontSize:21
                                          target:self
                                          action:@selector(helpButtonDidClick)];
-        _helpButton.frame = CGRectMake(0, SCREEN_HEIGHT * 0.4, SCREEN_WIDTH, 50);
+        _helpButton.frame = CGRectMake(0, SCREEN_HEIGHT * 0.3 + 20 , SCREEN_WIDTH, 50);
     }
     return _helpButton;
 }

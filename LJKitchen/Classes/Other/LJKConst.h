@@ -10,14 +10,22 @@
 
 
 /**  首页cell 模板 */
-typedef enum {
+typedef NS_ENUM (NSInteger, LJKCellTemplate){
     LJKCellTemplateTopic = 1,           // 帖子
     LJKCellTemplateRecipeList = 2,      // 菜单
     LJKCellTemplateUnknow = 3,          // 未知
     LJKCellTemplateDish = 4,            // 作品
     LJKCellTemplateRecipe = 5,          // 菜谱
     LJKCellTemplateWeeklyMagazine = 6   // 周刊
-} LJKCellTemplate;
+};
+
+/** 图片展示类型 */
+typedef NS_ENUM (NSInteger, LJKShowViewType) {
+    LJKShowViewTypeDish,    // 作品
+    LJKShowViewTypeReview,  // 评价
+    LJKShowViewTypeGoods,   // 商品
+    LJKShowViewTypeDetail   // 详细展示
+};
 
 
 /** 项目内通用常量 */

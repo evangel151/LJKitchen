@@ -12,26 +12,30 @@
 #import "LJKEditGenderAndBirthdayCell.h"
 #import "LJKEditBasicCell.h"
 #import "LJKEditLocationCell.h"
+#import "LJKBasicTextView.h"
+#import "LJKEditAuthorDescCell.h"
 
 #import "LJKMyInfo.h"
 #import "LJKAuthorDetail.h"
 
-@interface LJKProfileEditViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface LJKProfileEditViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
 
 @property (nonatomic, strong) LJKAuthorDetail *authorDetail;
 @property (nonatomic, strong) LJKProfileEditHeader *header;
-
+//@property (nonatomic, strong) LJKBasicTextView *authorDescTextView;
 @property (nonatomic, assign) CGFloat headerHeight;
 @end
 
 @implementation LJKProfileEditViewController
 
+#pragma mark - 标识符
 static NSString *nickNameIdentifier          = @"nickNameCell";
 static NSString *birthdayAndGenderIdentifier = @"birthdayAndGenderCell";
 static NSString *homeTownIdentifier          = @"homeTownCell";
 static NSString *residentIdentifier          = @"residentCell";
+static NSString *authorDescIdentifier        = @"authorDescCell";
 
-
+#pragma mark - 懒加载
 - (LJKAuthorDetail *)authorDetail {
     if (!_authorDetail) {
 //        _authorDetail = [[LJKAuthorDetail alloc] init];
@@ -40,6 +44,7 @@ static NSString *residentIdentifier          = @"residentCell";
     return _authorDetail;
 }
 
+#pragma mark - 界面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -65,7 +70,7 @@ static NSString *residentIdentifier          = @"residentCell";
     [self.tableView registerClass:[LJKEditGenderAndBirthdayCell class] forCellReuseIdentifier:birthdayAndGenderIdentifier];
     [self.tableView registerClass:[LJKEditLocationCell class] forCellReuseIdentifier:homeTownIdentifier];
     [self.tableView registerClass:[LJKEditLocationCell class] forCellReuseIdentifier:residentIdentifier];
-    
+    [self.tableView registerClass:[LJKEditAuthorDescCell class] forCellReuseIdentifier:authorDescIdentifier];
 }
 
 - (void)setupTalbeViewHeader {
@@ -125,17 +130,28 @@ static NSString *residentIdentifier          = @"residentCell";
     self.tableView.tableHeaderView = _header;
 }
 
-
+//- (void)setuptableviewFooter {
+//    [self.tableView.tableFooterView addSubview:self.authorDescTextView];
+////    self.tableView.tableFooterView = self.authorDescTextView;
+//}
 
 #pragma mark - TableView 数据源 & 代理 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 4) { // 个人简介
+        return 120;
+    }
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WeakSelf;
-    if (indexPath.row == 0) {
+    
+    if (indexPath.row == 0) { // 姓名
         LJKEditBasicCell *nickNameCell = [tableView dequeueReusableCellWithIdentifier:nickNameIdentifier];
         nickNameCell.currentName = self.authorDetail.name;
         nickNameCell.editingTextBlock = ^(NSString *name) {
@@ -144,13 +160,13 @@ static NSString *residentIdentifier          = @"residentCell";
         
         return  nickNameCell;
         
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 1) { // 性别 & 生日
         LJKEditGenderAndBirthdayCell *birthdayCell = [tableView dequeueReusableCellWithIdentifier:birthdayAndGenderIdentifier];
         birthdayCell.displayGender = self.authorDetail.gender;
         birthdayCell.displayBirthday = self.authorDetail.birthday;
         
         return  birthdayCell;
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 2) { // 家乡
         LJKEditLocationCell *homeTownCell = [tableView dequeueReusableCellWithIdentifier:homeTownIdentifier];
         homeTownCell.placeHolder = @"家乡";
         homeTownCell.type = @"家乡";
@@ -164,7 +180,7 @@ static NSString *residentIdentifier          = @"residentCell";
             [weakSelf.tableView reloadData];
         };
         return homeTownCell;
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 3) { // 现居
         LJKEditLocationCell *residentCell = [tableView dequeueReusableCellWithIdentifier:residentIdentifier];
         residentCell.placeHolder = @"现居";
         residentCell.type = @"现居";
@@ -179,12 +195,19 @@ static NSString *residentIdentifier          = @"residentCell";
             [weakSelf.tableView reloadData];
         };
         return residentCell;
+    } else if (indexPath.row == 4) { // 自我介绍
+        LJKEditAuthorDescCell *descCell = [tableView dequeueReusableCellWithIdentifier:authorDescIdentifier];
+        
+        descCell.editingDescBlock = ^(NSString *displayDesc) {
+            weakSelf.authorDetail.desc = displayDesc;
+        };
+        return descCell;
     }
     return nil;
 }
 
 
-#pragma mark - UIImagePickerControllerDelegate
+#pragma mark - UIImagePicker 代理
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     self.header.displayIcon = info[UIImagePickerControllerEditedImage];
@@ -192,14 +215,24 @@ static NSString *residentIdentifier          = @"residentCell";
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - scrollView delegate 
+#pragma mark - scrollView 代理
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.tableView endEditing:YES];
 }
 
 #pragma mark - 点击事件
 - (void)saveProfileInfo {
-     NSLog(@"保存个人信息——————");
+    NSLog(@"保存个人信息——————");
+    WeakSelf;
+    if (self.authorDetail) {
+        [LJKMyInfo updateInfoWithNewInfo:self.authorDetail];
+        [UILabel showMessage:@"保存个人信息成功" atNavController:weakSelf.navigationController];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
+    } else {
+        [UILabel showMessage:@"保存个人信息失败，请稍后再试" atNavController:weakSelf.navigationController];
+    }
 }
 
 

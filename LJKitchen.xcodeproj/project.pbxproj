@@ -68,6 +68,11 @@
 		00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347361D09F0BF00B01E6C /* LJKBasicCell.m */; };
 		00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */; };
 		00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */; };
+		00E96F041D25888700E6316D /* LJKEditAuthorDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F031D25888700E6316D /* LJKEditAuthorDescCell.m */; };
+		00E96F071D259D2400E6316D /* LJKRedEnvelopeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F061D259D2400E6316D /* LJKRedEnvelopeController.m */; };
+		00E96F0A1D25B2B500E6316D /* LJKFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F091D25B2B500E6316D /* LJKFeedsViewController.m */; };
+		00E96F0D1D25B4B300E6316D /* LJKFeedsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F0C1D25B4B300E6316D /* LJKFeedsViewCell.m */; };
+		00E96F101D25BC0A00E6316D /* LJKImageShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F0F1D25BC0A00E6316D /* LJKImageShowView.m */; };
 		00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */; };
 		00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A121D19546700CE8B39 /* LJKBLSViewCell.m */; };
 		00EB7A161D196D3100CE8B39 /* LJKBLSHeaderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A151D196D3100CE8B39 /* LJKBLSHeaderData.m */; };
@@ -251,6 +256,16 @@
 		00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicCell.xib; sourceTree = "<group>"; };
 		00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpDetailController.h; sourceTree = "<group>"; };
 		00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpDetailController.m; sourceTree = "<group>"; };
+		00E96F021D25888700E6316D /* LJKEditAuthorDescCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditAuthorDescCell.h; sourceTree = "<group>"; };
+		00E96F031D25888700E6316D /* LJKEditAuthorDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditAuthorDescCell.m; sourceTree = "<group>"; };
+		00E96F051D259D2400E6316D /* LJKRedEnvelopeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRedEnvelopeController.h; sourceTree = "<group>"; };
+		00E96F061D259D2400E6316D /* LJKRedEnvelopeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRedEnvelopeController.m; sourceTree = "<group>"; };
+		00E96F081D25B2B500E6316D /* LJKFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKFeedsViewController.h; sourceTree = "<group>"; };
+		00E96F091D25B2B500E6316D /* LJKFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKFeedsViewController.m; sourceTree = "<group>"; };
+		00E96F0B1D25B4B300E6316D /* LJKFeedsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKFeedsViewCell.h; sourceTree = "<group>"; };
+		00E96F0C1D25B4B300E6316D /* LJKFeedsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKFeedsViewCell.m; sourceTree = "<group>"; };
+		00E96F0E1D25BC0A00E6316D /* LJKImageShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKImageShowView.h; sourceTree = "<group>"; };
+		00E96F0F1D25BC0A00E6316D /* LJKImageShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKImageShowView.m; sourceTree = "<group>"; };
 		00EB7A0E1D19542200CE8B39 /* LJKBLSViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewHeader.h; sourceTree = "<group>"; };
 		00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewHeader.m; sourceTree = "<group>"; };
 		00EB7A111D19546700CE8B39 /* LJKBLSViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewCell.h; sourceTree = "<group>"; };
@@ -474,6 +489,10 @@
 				00B5ED501D0862C300B55ED4 /* LJKBasketController.m */,
 				00F14E651D188D2B0078F262 /* LJKBLSViewController.h */,
 				00F14E661D188D2C0078F262 /* LJKBLSViewController.m */,
+				00E96F051D259D2400E6316D /* LJKRedEnvelopeController.h */,
+				00E96F061D259D2400E6316D /* LJKRedEnvelopeController.m */,
+				00E96F081D25B2B500E6316D /* LJKFeedsViewController.h */,
+				00E96F091D25B2B500E6316D /* LJKFeedsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -514,6 +533,8 @@
 				00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */,
 				00EB7A111D19546700CE8B39 /* LJKBLSViewCell.h */,
 				00EB7A121D19546700CE8B39 /* LJKBLSViewCell.m */,
+				00E96F0B1D25B4B300E6316D /* LJKFeedsViewCell.h */,
+				00E96F0C1D25B4B300E6316D /* LJKFeedsViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -711,6 +732,8 @@
 		00B5ED251D08373300B55ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00E96F0E1D25BC0A00E6316D /* LJKImageShowView.h */,
+				00E96F0F1D25BC0A00E6316D /* LJKImageShowView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -766,6 +789,8 @@
 				00A6969A1D2330040090935F /* LJKEditBasicCell.m */,
 				00A6969C1D2335F30090935F /* LJKEditLocationCell.h */,
 				00A6969D1D2335F30090935F /* LJKEditLocationCell.m */,
+				00E96F021D25888700E6316D /* LJKEditAuthorDescCell.h */,
+				00E96F031D25888700E6316D /* LJKEditAuthorDescCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1079,6 +1104,8 @@
 				00F37B3E1D1B4864008A6B9A /* LJKTopicViewCell.m in Sources */,
 				00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */,
 				00CBB1321D21D57E00B1A16E /* LJKProfileEditViewController.m in Sources */,
+				00E96F101D25BC0A00E6316D /* LJKImageShowView.m in Sources */,
+				00E96F071D259D2400E6316D /* LJKRedEnvelopeController.m in Sources */,
 				00019C161D0C195E008BB1A9 /* LJKBasicIconCell.m in Sources */,
 				00EDE81B1D11FAB70025ED9C /* Foundation+Log.m in Sources */,
 				00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */,
@@ -1092,6 +1119,7 @@
 				002F79DB1D1718520021FD04 /* LJKRecipeStats.m in Sources */,
 				00943B6A1D247119002F8F83 /* LJKCity.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
+				00E96F041D25888700E6316D /* LJKEditAuthorDescCell.m in Sources */,
 				00F85FE61D148560007E5B09 /* LJKImage.m in Sources */,
 				00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */,
 				00F079F21D0D736C005FDD59 /* LJKConst.m in Sources */,
@@ -1110,6 +1138,7 @@
 				00F85FE31D148560007E5B09 /* LJKContent.m in Sources */,
 				00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */,
 				00F860041D14858D007E5B09 /* LJKNavContent.m in Sources */,
+				00E96F0A1D25B2B500E6316D /* LJKFeedsViewController.m in Sources */,
 				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
 				0003B4D91D1C09DA0054F205 /* LJKTopic.m in Sources */,
 				00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */,
@@ -1139,6 +1168,7 @@
 				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
 				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
 				00F85FE71D148560007E5B09 /* LJKIssues.m in Sources */,
+				00E96F0D1D25B4B300E6316D /* LJKFeedsViewCell.m in Sources */,
 				0003B4E51D1C93870054F205 /* LJKTopicDetailCell.m in Sources */,
 				00F860001D14858D007E5B09 /* LJKComment.m in Sources */,
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,

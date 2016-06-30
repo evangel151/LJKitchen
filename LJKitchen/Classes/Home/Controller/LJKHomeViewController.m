@@ -10,6 +10,7 @@
 #import "LJKBasketController.h"
 #import "LJKCreatRecipeController.h"
 #import "LJKBLSViewController.h"
+#import "LJKRedEnvelopeController.h" 
 
 #import "LJKNetworkTool.h"
 #import "LJKSearchBar.h"  // 搜索栏控件 
@@ -95,11 +96,11 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
     self.homeHeader.clickBlock = ^(NSInteger clickedAction) {
         // 本周流行菜谱
         if (clickedAction == viewDidClickedActionPopularImageView) {
-            [SVProgressHUD showSuccessWithStatus:@"暂无对应数据"];
+            [SVProgressHUD showSuccessWithStatus:@"没有接口"];
         }
         // 关注动态
         else if (clickedAction == viewDidClickedActionFeedsView) {
-
+            
         }
         // 排行榜
         else if (clickedAction == viewDidClickedActionTopListButton) {
@@ -128,7 +129,8 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
         // 红包(新用户优惠)
         else if (clickedAction == viewDidClickedActionFristAuthor) {
             
-            [SVProgressHUD showSuccessWithStatus:@"跳转至红包界面"];
+//            [SVProgressHUD showSuccessWithStatus:@"跳转至红包界面"];
+            [weakSelf.navigationController pushViewController:[[LJKRedEnvelopeController alloc] init] animated:YES];
         }
     };
 }

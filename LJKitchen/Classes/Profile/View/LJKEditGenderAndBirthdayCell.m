@@ -143,8 +143,8 @@
 
 // cell 边距设定
 - (void)setFrame:(CGRect)frame {
-    frame.origin.x = 15;
-    frame.size.width -= 30;
+    frame.origin.x = 20;
+    frame.size.width -= 40;
     frame.size.height -= 1;
     [super setFrame:frame];
 }

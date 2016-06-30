@@ -29,6 +29,7 @@
 
 static NSString *const settingCellIdentifier = @"settingCell";
 
+#pragma mark - 懒加载
 - (NSMutableArray *)title_section1 {
     if (!_title_section1) {
         _title_section1 = [NSMutableArray arrayWithObjects:@"账号管理",@"设置密码",@"收货地址",@"发现好友", nil];
