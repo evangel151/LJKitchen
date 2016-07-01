@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+
+
+typedef NS_ENUM(NSInteger, DishViewAction) {
+    DishViewActionName,
+    DishViewActionDigg,
+    DishViewActionCommment,
+    DishViewActionMore
+};
+
+
 @class LJKDish;
 @interface LJKFeedsViewCell : UITableViewCell
+
+@property (nonatomic, assign) LJKShowViewType type;
 
 @property (nonatomic, strong) LJKDish *dish;
 /** 图片数据 */

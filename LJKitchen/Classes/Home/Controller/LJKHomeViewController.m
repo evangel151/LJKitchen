@@ -11,6 +11,7 @@
 #import "LJKCreatRecipeController.h"
 #import "LJKBLSViewController.h"
 #import "LJKRedEnvelopeController.h" 
+#import "LJKFeedsViewController.h"
 
 #import "LJKNetworkTool.h"
 #import "LJKSearchBar.h"  // 搜索栏控件 
@@ -100,7 +101,7 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
         }
         // 关注动态
         else if (clickedAction == viewDidClickedActionFeedsView) {
-            
+            [weakSelf.navigationController pushViewController:[[LJKFeedsViewController alloc] init] animated:YES];
         }
         // 排行榜
         else if (clickedAction == viewDidClickedActionTopListButton) {

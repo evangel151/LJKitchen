@@ -47,4 +47,17 @@
     return button;
 }
 
++ (UIButton *)buttonWithImageName:(NSString *)normal
+                selectedImageName:(NSString *)selected
+                       target:(id)target
+                       action:(SEL)action {
+    
+    UIButton *button = [[UIButton alloc] init];
+    [button setImage:[UIImage imageNamed:normal] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:selected] forState:UIControlStateSelected];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
+
 @end

@@ -26,4 +26,9 @@
                        target:(id)target
                        action:(SEL)action;
 
++ (UIButton *)buttonWithImageName:(NSString *)normal
+                selectedImageName:(NSString *)selected
+                           target:(id)target
+                           action:(SEL)action;
+
 @end

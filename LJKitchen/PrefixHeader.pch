@@ -51,6 +51,9 @@
 #define Color_ThemeColor_Yellow LJregular(251, 246, 213, 1)
 /** 白色字体 (更改为纯白色……) */
 #define Color_TintWhite   [UIColor whiteColor]
+#define Color_TintBlack   [UIColor blackColor]
+/** 透明背景 */
+#define Color_Clear [UIColor clearColor]
 
 /** (fake)评论地址 */
 #define LJKCommentPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"comment.data"]
