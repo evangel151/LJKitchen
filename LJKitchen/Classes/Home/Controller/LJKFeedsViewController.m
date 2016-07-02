@@ -17,7 +17,7 @@
 #import <MJRefresh.h>
 #import <MJExtension.h>
 
-@interface LJKFeedsViewController ()
+@interface LJKFeedsViewController ()<UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSMutableArray *feedsArray;
 @property (nonatomic, strong) NSMutableArray *imageViewCurrentLocationArray; // 存储cell内图片轮播器滚动位置
@@ -46,7 +46,7 @@ static NSString *feedsCellIdentifier = @"feedsCell";
     self.title = @"关注动态";
     [self setupNavigationBar];
     [self setupTableView];
-    
+    [self setupRefresh];
     [self loadNewData];
 }
 
@@ -71,26 +71,59 @@ static NSString *feedsCellIdentifier = @"feedsCell";
     self.navigationItem.rightBarButtonItems = @[noti,upload];
 }
 
+- (void)setupRefresh {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
 #pragma mark - 数据处理
 - (void)loadNewData {
+    
+
     [LJKNetworkTool afnGet:LJKRequestKitchenFeeds
                     params:nil
                    success:^(id json) {
+                       
                        self.feedsArray = [LJKFeeds mj_objectArrayWithKeyValuesArray:json[@"content"][@"feeds"]];
                        if (self.imageViewCurrentLocationArray.count > self.feedsArray.count) {
                            NSUInteger length = self.imageViewCurrentLocationArray.count - self.feedsArray.count;
                            NSRange shouldRemoveRange = NSMakeRange(self.feedsArray.count, length);
                            [self.imageViewCurrentLocationArray removeObjectsInRange:shouldRemoveRange];
-                       }
-                       // 如果数组为空，添加与模型数据数量相等的 位移数据
-                       else if (self.imageViewCurrentLocationArray.count == 0){
+                           
+                       } else if (self.imageViewCurrentLocationArray.count == 0){ // 如果数组为空，添加与模型数据数量相等的 位移数据
                            for (NSInteger index=0; index<self.feedsArray.count; index++) {
                                [self.imageViewCurrentLocationArray addObject:@(0)];
                            }
                        }
                        [self.tableView reloadData];
+                       [self.tableView.mj_header endRefreshing];
+                       
     } failure:^(NSError *error) {
-        
+                        [self.tableView.mj_header endRefreshing];
+                        NSLog(@"加载失败 原因:%@", error);
+    }];
+}
+
+
+- (void)loadMoreData {
+    
+    [self.tableView.mj_header endRefreshing];
+    [LJKNetworkTool afnGet:LJKRequestKitchenFeeds
+                    params:nil
+                   success:^(id json) {
+                       
+                       NSArray *newContent = [LJKFeeds mj_objectArrayWithKeyValuesArray:json[@"content"][@"feeds"]];
+                       [self.feedsArray addObjectsFromArray:newContent];
+                       // 添加对应个数的图片位置到数组中
+                       for (NSInteger index=0; index<newContent.count; index++) {
+                           [self.imageViewCurrentLocationArray addObject:@(0)];
+                       }
+                       [self.tableView reloadData];
+                       [self.tableView.mj_footer endRefreshing];
+                       
+    } failure:^(NSError *error) {
+                        [self.tableView.mj_footer endRefreshing];
+                        NSLog(@"加载失败 原因:%@", error);
     }];
 }
 
@@ -103,6 +136,8 @@ static NSString *feedsCellIdentifier = @"feedsCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     LJKFeedsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:feedsCellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = Color_ThemeColor_Yellow;
+    
     if (self.feedsArray.count) {
         LJKFeeds *feeds = self.feedsArray[indexPath.row];
         
@@ -120,7 +155,105 @@ static NSString *feedsCellIdentifier = @"feedsCell";
         // 赋值每个cell对应的图片滚动位置
         cell.imageViewCurrentLocation = [self.imageViewCurrentLocationArray[indexPath.row] floatValue];
     }
-    cell.backgroundColor = Color_BackGround;
+    
+    WeakSelf;
+    // ???: ... why?
+    cell.imageViewDidScrolledBlock = ^(CGFloat finalContentOffsetX) {
+        // 拿到最后的位置保存到数组中
+        weakSelf.imageViewCurrentLocationArray[indexPath.row] = @(finalContentOffsetX);
+    };
+    
+    cell.actionBlock = ^(DishViewAction action) {
+        switch (action) {
+            case DishViewActionIcon: {     // 用户头像
+                [UILabel showMessage:@"即将跳转至关注用户界面"
+                     atNavController:weakSelf.navigationController];
+                break;
+            }
+            case DishViewActionName: {     // 菜谱
+                [UILabel showMessage:@"即将跳转至对应菜谱界面"
+                     atNavController:weakSelf.navigationController];
+                break;
+            }
+            case DishViewActionDigg: {     // 点赞按钮
+//                [UILabel showMessage:@"" atNavController:weakSelf.navigationController];
+                break;
+            }
+            case DishViewActionCommment: { // 评论按钮 & total评论Label
+                [UILabel showMessage:@"即将跳转至少全部评论界面"
+                     atNavController:weakSelf.navigationController];
+                break;
+            }
+            case DishViewActionMore: {     // 更多按钮
+                UIAlertController *alertVC =
+                // 一级AlertAction
+                [UIAlertController alertControllerWithTitle:@"更多"
+                                                    message:nil
+                                             preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *sharedDish =
+                [UIAlertAction actionWithTitle:@"分享作品"
+                                         style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * _Nonnull action) {
+                                           
+                                       }];
+                
+                UIAlertAction *reportDish =
+                [UIAlertAction actionWithTitle:@"举报"
+                                         style:UIAlertActionStyleDestructive
+                                       handler:^(UIAlertAction * _Nonnull action) {
+                                           
+                                           // 二级AlertAction
+                                           UIAlertController *alertVcInside =
+                                           [UIAlertController alertControllerWithTitle:@"请选择你的举报理由？"
+                                                                               message:nil
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                           
+                                           UIAlertAction *rubbish =
+                                           [UIAlertAction actionWithTitle:@"广告或垃圾信息"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           UIAlertAction *stolenImage =
+                                           [UIAlertAction actionWithTitle:@"盗图或抄袭"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           UIAlertAction *other =
+                                           [UIAlertAction actionWithTitle:@"其他"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           UIAlertAction *nonConformity =
+                                           [UIAlertAction actionWithTitle:@"与主题不符"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           
+                                           [alertVcInside addAction:rubbish];
+                                           [alertVcInside addAction:stolenImage];
+                                           [alertVcInside addAction:other];
+                                           [alertVcInside addAction:nonConformity];
+                                           [weakSelf presentViewController:alertVcInside animated:YES completion:nil];
+                                           
+                                           
+                                       }];
+                
+                [alertVC addAction:reportDish];
+                [alertVC addAction:sharedDish];
+                
+                [alertVC setModalPresentationStyle:UIModalPresentationOverFullScreen];
+                [weakSelf presentViewController:alertVC animated:YES completion:nil];
+
+                break;
+            }
+        }
+        
+    };
     return cell;
 }
 
@@ -138,6 +271,21 @@ static NSString *feedsCellIdentifier = @"feedsCell";
 }
 
 - (void)uploadDishButtonClicked {
+    
+}
+
+#pragma mark - AlertAction reuseMethod 
+- (void)showReportSuccessHUD {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"LJKitchen已经收到您的举报，我们会对作品信息进行核查，感谢您对LJKitchen一直以来的支持"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
+}
+
+
+- (void)moreButtonClickedInDishView {
     
 }
 

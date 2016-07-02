@@ -23,6 +23,19 @@
     return size;
 }
 
++ (CGSize)getSizeWithString:(NSString*)string
+                     height:(CGFloat)height
+                       font:(CGFloat)font {
+    
+    CGSize size = [string boundingRectWithSize:CGSizeMake(MAXFLOAT,height)
+                                       options:NSStringDrawingUsesLineFragmentOrigin
+                                    attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:font]}
+                                       context:nil].size;
+    
+    
+    return size;
+}
+
 
 - (CGSize)getSizeWithEstimatedSize:(CGSize)estimatedSize
                               font:(CGFloat)font {

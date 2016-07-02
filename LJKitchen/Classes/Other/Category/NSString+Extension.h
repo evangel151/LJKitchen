@@ -15,6 +15,11 @@
                       width:(CGFloat)width
                        font:(CGFloat)font;
 
+/** 类方法:根据给定文字 + 高度 + 字号 返回size  */
++ (CGSize)getSizeWithString:(NSString*)string
+                     height:(CGFloat)height
+                       font:(CGFloat)font;
+
 - (CGSize)getSizeWithEstimatedSize:(CGSize)estimatedSize
                               font:(CGFloat)font;
 

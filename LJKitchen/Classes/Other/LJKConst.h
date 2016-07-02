@@ -51,6 +51,10 @@ UIKIT_EXTERN CGFloat const LJKAuthorIcon2CellTop;
 /** 下厨房 - 头像距离cell左边的距离 */
 UIKIT_EXTERN CGFloat const LJKAuthorIcon2CellLeft;
 
+/** 下厨房 - 功能型圆形按钮的宽高(正方形) */
+UIKIT_EXTERN CGFloat const LJKDiggsButtonWH;
+
+
 /** 下厨房 - 顶部导航视图高度（流行菜谱、关注动态） */
 UIKIT_EXTERN CGFloat const LJKHomeHeader_TopNav_Height;
 /** 下厨房 - 导航按钮高度（排行榜、看视频、买买买、菜谱分类） */

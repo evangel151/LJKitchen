@@ -105,8 +105,8 @@ static NSString *const imageCellIdentifier = @"imageCell";
             LJKPicture *picData = self.imageArray[indexPath.item];
             NSURL *imageUrl = [NSURL URLWithString:picData.bigPhoto];
             [imageV sd_setImageWithURL:imageUrl];
-        } else {
-            
+        } else { // 应该不会有这种情况……
+            imageV.image = [UIImage imageNamed:@"defaultUserHeader"];
         }
     }
     

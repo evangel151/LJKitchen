@@ -34,6 +34,11 @@ CGFloat const LJKAuthorIcon2CellTop = 10;
 CGFloat const LJKAuthorIcon2CellLeft = 20;
 
 
+/** 下厨房 - 功能型圆形按钮的宽高(正方形) */
+CGFloat const LJKDiggsButtonWH = 30;
+
+
+
 #pragma mark 顶部Header各部位宽高
 /** 下厨房 - 顶部导航视图高度（流行菜谱、关注动态） */
 CGFloat const LJKHomeHeader_TopNav_Height = 130;
