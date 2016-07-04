@@ -60,4 +60,24 @@
     return button;
 }
 
+
++ (UIButton *)buttonWithTitleNormal:(NSString *)normalTitle
+                      titleSelected:(NSString *)selectedTitle
+                         titleColor:(UIColor *)titleColor
+          normalBackgroundImageName:(NSString *)normalImage
+        selectedBackgroundImageName:(NSString *)selectedImage
+                           target:(id)target
+                           action:(SEL)action {
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:normalTitle forState:UIControlStateNormal];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    [button setTitle:selectedTitle forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageNamed:normalImage] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:selectedImage] forState:UIControlStateSelected];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
+
+
 @end

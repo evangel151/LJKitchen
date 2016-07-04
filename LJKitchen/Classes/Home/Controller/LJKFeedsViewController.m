@@ -143,11 +143,15 @@ static NSString *feedsCellIdentifier = @"feedsCell";
         
         // 添加主图、附加图到要显示的图片数组
         NSMutableArray *imageArray = [NSMutableArray array];
-        if (feeds.dish) [imageArray addObject:feeds.dish.main_pic];
+        if (feeds.dish) {
+            [imageArray addObject:feeds.dish.main_pic];
+        }
+        
         if (feeds.dish.extra_pics.count) {
             NSArray *extraPicArray = [LJKPicture mj_objectArrayWithKeyValuesArray:feeds.dish.extra_pics];
             [imageArray addObjectsFromArray:extraPicArray];
         }
+        
         cell.type = LJKShowViewTypeDish;
         cell.dish = feeds.dish;
         cell.imageArray = imageArray;

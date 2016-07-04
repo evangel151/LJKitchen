@@ -7,22 +7,25 @@
 //
 
 #import "LJKHomeViewController.h"
-#import "LJKBasketController.h"
-#import "LJKCreatRecipeController.h"
-#import "LJKBLSViewController.h"
-#import "LJKRedEnvelopeController.h" 
-#import "LJKFeedsViewController.h"
+#import "LJKBasketController.h"         // Nav    - 菜篮子
+#import "LJKCreatRecipeController.h"    // Nav    - 创建菜谱
+#import "LJKBLSViewController.h"        // Header - 三餐(scrollView)
+#import "LJKRedEnvelopeController.h"    // Header - 红包
+#import "LJKFeedsViewController.h"      // Header - 关注动态
+#import "LJKRecommendBuyController.h"   // Header - 推荐购买(买买买)
+#import "LJKRecipeListViewController.h" // Cell   - 菜谱
 
-#import "LJKNetworkTool.h"
-#import "LJKSearchBar.h"  // 搜索栏控件 
-#import "LJKHomeHeader.h" // 首页的顶部视图（整体）
-#import "LJKRecipeCell.h" // 主体Cell
+
+#import "LJKSearchBar.h"   // 搜索栏控件
+#import "LJKHomeHeader.h"  // 首页的顶部视图（整体）
+#import "LJKRecipeCell.h"  // 主体Cell
 
 #import "LJKNavContent.h"
 #import "LJKFeeds.h"
 #import "LJKIssues.h"
 #import "LJKItems.h"
 
+#import "LJKNetworkTool.h" // AFN封装
 #import <MJExtension.h>
 #import <MJRefresh.h>
 
@@ -77,65 +80,6 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
     [self loadNewData];
 }
 
-
-
-- (void)setupHomeHeader {
-    
-    // 加载Header数据
-    [self loadNavData];
-    
-    // 加载header界面
-    // 顶部Header的总体高度 = 顶部关注栏 + 中部导航按钮 + 三餐scrollView + 新用户优惠() + 系统状态栏
-    CGFloat homeHeaderSum = LJKHomeHeader_TopNav_Height + LJKHomeHeader_CenterNav_Height + LJKHomeHeader_CenterNav_Height + LJKHomeHeader_NewAuthor_Height;
-    self.homeHeader = [[LJKHomeHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, homeHeaderSum)];
-    self.homeHeader.backgroundColor = Color_BackGround;
-    self.tableView.tableHeaderView = self.homeHeader;
-    
-    // header业务逻辑
-    WeakSelf;
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-    self.homeHeader.clickBlock = ^(NSInteger clickedAction) {
-        // 本周流行菜谱
-        if (clickedAction == viewDidClickedActionPopularImageView) {
-            [SVProgressHUD showSuccessWithStatus:@"没有接口"];
-        }
-        // 关注动态
-        else if (clickedAction == viewDidClickedActionFeedsView) {
-            [weakSelf.navigationController pushViewController:[[LJKFeedsViewController alloc] init] animated:YES];
-        }
-        // 排行榜
-        else if (clickedAction == viewDidClickedActionTopListButton) {
-            [weakSelf pushWebViewWithUrl:LJKRequestKitchenRankingList];
-        }
-        // 看视频
-        else if (clickedAction == viewDidClickedActionVideoButton) {
-            [SVProgressHUD showSuccessWithStatus:@"视频界面数据无法抓包"];
-        }
-        // 买买买
-        else if (clickedAction == viewDidClickedActionBuyButton) {
-
-        }
-        // 菜谱分类
-        else if (clickedAction == viewDidClickedActionRecipeCategoryButton) {
-            [weakSelf pushWebViewWithUrl:LJKRequestKitchenRecipeCategory];
-        }
-        // 三餐
-        else if (clickedAction == viewDidClickedActionBreakfast
-                 || clickedAction == viewDidClickedActionLunch
-                 || clickedAction == viewDidClickedActionSupper) {
-            
-            
-            [weakSelf.navigationController pushViewController:[[LJKBLSViewController alloc] init] animated:YES];
-        }
-        // 红包(新用户优惠)
-        else if (clickedAction == viewDidClickedActionFristAuthor) {
-            
-//            [SVProgressHUD showSuccessWithStatus:@"跳转至红包界面"];
-            [weakSelf.navigationController pushViewController:[[LJKRedEnvelopeController alloc] init] animated:YES];
-        }
-    };
-}
-
 - (void)setupNavigationBar {
     
     LJKSearchBar *searchBar = [LJKSearchBar searchBarWithPlaceholder:@"菜谱、食材"];
@@ -176,6 +120,63 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
     
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:recipeHeaderIdentifier];
     [self.tableView registerClass:[LJKRecipeCell class] forCellReuseIdentifier:recipeCellIdentifier];
+}
+
+- (void)setupHomeHeader {
+    
+    // 加载Header数据
+    [self loadNavData];
+    
+    // 加载header界面
+    // 顶部Header的总体高度 = 顶部关注栏 + 中部导航按钮 + 三餐scrollView + 新用户优惠() + 系统状态栏
+    CGFloat homeHeaderSum = LJKHomeHeader_TopNav_Height + LJKHomeHeader_CenterNav_Height + LJKHomeHeader_CenterNav_Height + LJKHomeHeader_NewAuthor_Height;
+    self.homeHeader = [[LJKHomeHeader alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, homeHeaderSum)];
+    self.homeHeader.backgroundColor = Color_BackGround;
+    self.tableView.tableHeaderView = self.homeHeader;
+    
+    // header业务逻辑
+    WeakSelf;
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    self.homeHeader.clickBlock = ^(NSInteger clickedAction) {
+        // 本周流行菜谱
+        if (clickedAction == viewDidClickedActionPopularImageView) {
+            [SVProgressHUD showSuccessWithStatus:@"没有接口"];
+        }
+        // 关注动态
+        else if (clickedAction == viewDidClickedActionFeedsView) {
+            [weakSelf.navigationController pushViewController:[[LJKFeedsViewController alloc] init] animated:YES];
+        }
+        // 排行榜
+        else if (clickedAction == viewDidClickedActionTopListButton) {
+            [weakSelf pushWebViewWithUrl:LJKRequestKitchenRankingList];
+        }
+        // 看视频
+        else if (clickedAction == viewDidClickedActionVideoButton) {
+            [SVProgressHUD showSuccessWithStatus:@"视频界面数据无法抓包"];
+        }
+        // 买买买
+        else if (clickedAction == viewDidClickedActionBuyButton) {
+            [weakSelf.navigationController pushViewController:[[LJKRecommendBuyController alloc] init] animated:YES];
+        }
+        // 菜谱分类
+        else if (clickedAction == viewDidClickedActionRecipeCategoryButton) {
+            [weakSelf pushWebViewWithUrl:LJKRequestKitchenRecipeCategory];
+        }
+        // 三餐
+        else if (clickedAction == viewDidClickedActionBreakfast
+                 || clickedAction == viewDidClickedActionLunch
+                 || clickedAction == viewDidClickedActionSupper) {
+            
+            
+            [weakSelf.navigationController pushViewController:[[LJKBLSViewController alloc] init] animated:YES];
+        }
+        // 红包(新用户优惠)
+        else if (clickedAction == viewDidClickedActionFristAuthor) {
+            
+            //            [SVProgressHUD showSuccessWithStatus:@"跳转至红包界面"];
+            [weakSelf.navigationController pushViewController:[[LJKRedEnvelopeController alloc] init] animated:YES];
+        }
+    };
 }
 
 #pragma mark - 数据处理 
@@ -329,6 +330,7 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
         }
         case LJKCellTemplateRecipeList: { // 模板2 (菜单)
              NSLog(@"即将跳转菜单——————");
+            [self.navigationController pushViewController:[[LJKRecipeListViewController alloc] init] animated:YES];
             break;
         }
         case LJKCellTemplateDish: { // 模板4 (作品)

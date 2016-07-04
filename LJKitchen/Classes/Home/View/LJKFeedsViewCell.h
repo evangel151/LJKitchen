@@ -18,18 +18,20 @@ typedef NS_ENUM(NSInteger, DishViewAction) {
 };
 
 
-@class LJKDish;
+@class LJKDish,LJKReview;
 @interface LJKFeedsViewCell : UITableViewCell
 
 @property (nonatomic, assign) LJKShowViewType type;
-
 @property (nonatomic, strong) LJKDish *dish;
+@property (nonatomic, strong) LJKReview *review;
+
+
 /** 图片数据 */
 @property (nonatomic, strong) NSArray *imageArray;
 /** 存储cell内图片轮播器滚动位置 */
 @property (nonatomic, assign) CGFloat imageViewCurrentLocation;
 /** cell滚动回调 */
 @property (nonatomic, copy) void (^imageViewDidScrolledBlock)();
-/** 评论button事件回调 */
+/** 底部button事件回调 */
 @property (nonatomic, copy) void (^actionBlock)();
 @end

@@ -14,6 +14,8 @@
 NSString * const LJKRequestKitchenRankingList = @"http://www.xiachufang.com/page/top-list/";
 /** 下厨房 - 菜谱分类 */
 NSString * const LJKRequestKitchenRecipeCategory = @"http://www.xiachufang.com/page/app-category/";
+/** 下厨房 - 买买买 */
+NSString * const LJKRequestKitchenBuy = @"http://api.xiachufang.com/v2/explore/buybuybuy.json?cursor=&origin=iphone&api_sign=69199b50e09c797910ee8a05b5e89fbc&sk=7UnwJ-JkQ36hbfrMRoL0fA&size=20&version=5.1.1&api_key=0f9f79be1dac5f003e7de6f876b17c00";
 
 #pragma mark 普通展示
 /** 下厨房 - 导航数据 */

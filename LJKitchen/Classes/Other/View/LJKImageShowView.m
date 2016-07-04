@@ -9,7 +9,7 @@
 #import "LJKImageShowView.h"
 
 #import "LJKPicture.h"
-
+#import "LJKReviewPhoto.h"
 #import <UIImageView+WebCache.h>
 #import <Masonry.h>
 
@@ -101,10 +101,18 @@ static NSString *const imageCellIdentifier = @"imageCell";
     }
     
     if (self.imageArray.count) {
+        // 展示类型为菜谱
         if (self.type == LJKShowViewTypeDish) {
             LJKPicture *picData = self.imageArray[indexPath.item];
             NSURL *imageUrl = [NSURL URLWithString:picData.bigPhoto];
             [imageV sd_setImageWithURL:imageUrl];
+        }
+        // 展示类型为 评价(买买买) 、商品总览、 商品详情
+        else if (self.type == LJKShowViewTypeReview || self.type == LJKShowViewTypeGoods || self.type == LJKShowViewTypeDetail) {
+            
+            LJKReviewPhoto *photo = self.imageArray[indexPath.row];
+            [imageV sd_setImageWithURL:[NSURL URLWithString:photo.url]];
+            
         } else { // 应该不会有这种情况……
             imageV.image = [UIImage imageNamed:@"defaultUserHeader"];
         }

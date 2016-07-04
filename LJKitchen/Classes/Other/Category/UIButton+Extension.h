@@ -31,4 +31,12 @@
                            target:(id)target
                            action:(SEL)action;
 
++ (UIButton *)buttonWithTitleNormal:(NSString *)normalTitle
+                      titleSelected:(NSString *)selectedTitle
+                         titleColor:(UIColor *)titleColor
+          normalBackgroundImageName:(NSString *)normalImage
+        selectedBackgroundImageName:(NSString *)selectedImage
+                             target:(id)target
+                             action:(SEL)action;
+
 @end

@@ -11,6 +11,10 @@
 #import "LJKDish.h"
 #import "LJKAuthor.h"
 #import "LJKComment.h"
+#import "LJKReview.h"
+#import "LJKReviewPhoto.h"
+#import "LJKReviewCommodity.h"
+#import "LJKGoods.h"
 
 #import <Masonry.h>
 @interface LJKFeedsViewCell ()
@@ -328,13 +332,13 @@
         }];
         
         [_dishNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.dishNameView).insets(UIEdgeInsetsMake(0, 0, 0, 34));
+            make.edges.equalTo(self.dishNameView).insets(UIEdgeInsetsMake(0, 0, 0, 36));
         }];
         
         [_dishViewArrow mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(16, 24));
             make.centerY.equalTo(self.dishNameView.mas_centerY);
-            make.right.equalTo(self.dishNameView.mas_right);
+            make.right.equalTo(self.dishNameView.mas_right).offset(-LJKAuthorIcon2CellLeft);
         }];
         
         [_dishDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -489,6 +493,42 @@
 //            make.size.mas_equalTo(CGSizeMake(LJKDiggsButtonWH, LJKDiggsButtonWH));
 //        }];
     }
+}
+
+
+
+- (void)setReview:(LJKReview *)review {
+    _review = review;
+    
+    self.firstCommentLabel.hidden = YES;
+    self.secondCommentLabel.hidden = YES;
+    self.moreButton.hidden = YES;
+    self.diggsButton.hidden = YES;
+    self.commentButton.hidden = YES;
+    self.separatorLine2.hidden = YES;
+    self.diggsCountLabel.hidden = YES;
+    self.diggs.hidden = YES;
+    
+    [self.authorIconView setCircleIconWithUrl:[NSURL URLWithString:review.author.photo]
+                                  placeHolder:@"defaultUserHeader"
+                                   cornRadius:85];
+    
+    
+   
+    self.createdTimeLabel.text = review.friendly_create_time;
+    self.authorActionLabel.text = @"评价";
+    self.dishNameLabel.text = review.commodity.goods.name;
+    self.dishDescLabel.text = review.review;
+    
+    if (review.author.name) {
+        CGFloat nameWidth = [NSString getSizeWithString:review.author.name
+                                                 height:30
+                                                   font:15].width;
+        [_authorNameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(nameWidth + 5));
+        }];
+    }
+    self.authorNameLabel.text = review.author.name;
 }
 
 

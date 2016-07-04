@@ -13,6 +13,9 @@
 UIKIT_EXTERN NSString * const LJKRequestKitchenRankingList;
 /** 下厨房 - 菜谱分类 */
 UIKIT_EXTERN NSString * const LJKRequestKitchenRecipeCategory;
+/** 下厨房 - 买买买 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenBuy;
+
 /** 下厨房 - 导航数据 */
 UIKIT_EXTERN NSString * const LJKRequestKitchenNav;
 /** 下厨房 - 导航数据 */
