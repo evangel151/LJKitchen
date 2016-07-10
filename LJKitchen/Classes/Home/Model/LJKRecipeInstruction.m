@@ -14,7 +14,7 @@
     // 描述文字 高度 
     CGFloat descHeight = [self.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - LJKRecipeCellMarginTitle * 4, MAXFLOAT)
                                                  options:NSStringDrawingUsesLineFragmentOrigin
-                                              attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]}
+                                              attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]}
                                                  context:nil].size.height;
     
 

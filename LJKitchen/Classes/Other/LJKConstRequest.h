@@ -30,6 +30,21 @@ UIKIT_EXTERN NSString * const LJKRequestKitchenSupperDishes;
 UIKIT_EXTERN NSString * const LJKRequestKitchenCell;
 /** 下厨房 - 首页Cell - 上拉加载更多数据 */
 UIKIT_EXTERN NSString * const LJKRequestKitchenCellMore; // 与LJKRequestKitchenCell 相同
+/** 下厨房 - 首页Cell(跳转) - 模板2 菜单详情 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenRecipeList;
+/** 下厨房 - 首页Cell(跳转) - 模板2 菜单内菜谱理由数据 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenRecipeReason;
+/** 下厨房 - 首页Cell(跳转) - 模板4 作品数据 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenDish;
+/** 下厨房 - 首页Cell(跳转) - 模板5 菜谱详情 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenRecipe;
+/** 下厨房 - 首页Cell(跳转) - 模板5 菜谱id数组数据 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenRecipeIDs;
+/** 下厨房 - 首页Cell(跳转) - 模板5 菜谱内作品详细数据 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenRecipeDish;
+/** 下厨房 - 首页Cell(跳转) - 模板5 菜谱“被加入的菜单”数据 */
+UIKIT_EXTERN NSString * const LJKRequestKitchenAddedRecipeList;
+
 
 
 /****      下厨房__信箱__社区  *********/

@@ -25,7 +25,6 @@ typedef NS_ENUM(NSInteger, DishViewAction) {
 @property (nonatomic, strong) LJKDish *dish;
 @property (nonatomic, strong) LJKReview *review;
 
-
 /** 图片数据 */
 @property (nonatomic, strong) NSArray *imageArray;
 /** 存储cell内图片轮播器滚动位置 */

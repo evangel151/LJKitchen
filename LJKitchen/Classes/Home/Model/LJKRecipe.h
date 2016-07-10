@@ -26,9 +26,9 @@
 @property (nonatomic, copy) NSString *video_url;
 /** 视频页面url */
 @property (nonatomic, copy) NSString *video_page_url;
-/** 创建时间 */
+/** 创建时间(关系) */
 @property (nonatomic, copy) NSString *friendly_create_time;
-/** 创建时间 */
+/** 创建时间(菜谱) */
 @property (nonatomic, copy) NSString *create_time;
 /** 是否为独家 */
 @property (nonatomic, assign) BOOL is_exclusive;
@@ -66,8 +66,9 @@
 
 
 /** 菜谱headerHeight */
-@property (nonatomic, assign) CGFloat headerheight;
-/** 菜谱评分、做过人数承载view宽度 */
-@property (nonatomic, assign) CGFloat statsViewWidth;
+@property (nonatomic, assign) CGFloat headerHeight;
+
+@property (nonatomic, assign) CGFloat tipsHeight;
+
 
 @end

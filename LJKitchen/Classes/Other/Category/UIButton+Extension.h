@@ -39,4 +39,9 @@
                              target:(id)target
                              action:(SEL)action;
 
++ (UIButton *)buttonWithImageName:(NSString *)enabled
+                 disableImageName:(NSString *)disabled
+                           target:(id)target
+                           action:(SEL)action;
+
 @end

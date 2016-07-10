@@ -21,10 +21,10 @@
              @"sample_recipes" : [LJKRecipe class]};
 }
 
-- (void)setHeaderheight:(CGFloat)headerheight {
+- (CGFloat)headerheight {
     CGFloat nameLabelHeight = 25;
     CGFloat collectButtonHeight = 30;
-    // 全部顶部间距 (title2Top + nameLabel2Title + button2NameLable + button2Bottom)
+    
     CGFloat totalMargin = LJKAuthorIcon2CellTop * 7;
     CGFloat unchangedHeaderHeight = nameLabelHeight + collectButtonHeight + totalMargin;
     
@@ -43,6 +43,8 @@
     } else {
         _headerheight = unchangedHeaderHeight + titleHeight + 20;
     }
+    
+    return _headerheight;
 }
 
 @end

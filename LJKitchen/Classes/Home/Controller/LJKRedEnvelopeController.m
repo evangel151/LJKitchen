@@ -9,11 +9,16 @@
 #import "LJKRedEnvelopeController.h"
 #import <Masonry.h>
 @interface LJKRedEnvelopeController ()
+/** 红包图片 */
 @property (nonatomic, strong) UIImageView *envelope;
+/** 红包说明 */
 @property (nonatomic, strong) UILabel *descLabel;
 
+/** 功能性组件容器 */
 @property (nonatomic, strong) UIView *containView;
+/** 手机输入框 */
 @property (nonatomic, strong) UITextField *mobileField;
+/** 发送按钮 */
 @property (nonatomic, strong) UIButton *postButton;
 @end
 
@@ -26,6 +31,8 @@ static NSString *descText = @"新人20元红包等你领";
         _mobileField = [[UITextField alloc] init];
         _mobileField.placeholder = @"请输入手机号";
         _mobileField.backgroundColor = Color_BackGround;
+        _mobileField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 0)];
+        _mobileField.leftViewMode = UITextFieldViewModeAlways;
     }
     return _mobileField;
 }
@@ -55,9 +62,14 @@ static NSString *descText = @"新人20元红包等你领";
 - (void)setupBasic {
     self.title = descText;
     UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    bgView.userInteractionEnabled = YES;
+    WeakSelf;
+    [bgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+        [weakSelf.mobileField endEditing:YES];
+    }]];
+    
     bgView.image = [UIImage imageNamed:@"redEnvelopeBackGround"];
     [self.view insertSubview:bgView atIndex:0];
-    
     
     self.descLabel = [UILabel labelWithTextColor:Color_ThemeColor
                                  backgroundColor:[UIColor clearColor]
@@ -76,7 +88,7 @@ static NSString *descText = @"新人20元红包等你领";
     
     
     [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(NAVBAR_HEIGHT * 2);
+        make.top.equalTo(self.view.mas_top).offset(NAVBAR_HEIGHT * 1.4);
         make.left.equalTo(self.view.mas_left);
         make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, TABBAR_HEIGHT));
     }];

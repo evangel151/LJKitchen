@@ -14,6 +14,8 @@
 #import "LJKFeedsViewController.h"      // Header - 关注动态
 #import "LJKRecommendBuyController.h"   // Header - 推荐购买(买买买)
 #import "LJKRecipeListViewController.h" // Cell   - 菜谱
+#import "LJKDishViewController.h"       // Cell   - 作品(single)
+#import "LJKRecipeViewController.h"     // Cell   - 菜谱
 
 
 #import "LJKSearchBar.h"   // 搜索栏控件
@@ -140,7 +142,8 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
     self.homeHeader.clickBlock = ^(NSInteger clickedAction) {
         // 本周流行菜谱
         if (clickedAction == viewDidClickedActionPopularImageView) {
-            [SVProgressHUD showSuccessWithStatus:@"没有接口"];
+//            [SVProgressHUD showSuccessWithStatus:@"没有接口"];
+            [weakSelf.navigationController pushViewController:[[LJKRecipeListViewController alloc] init] animated:YES];
         }
         // 关注动态
         else if (clickedAction == viewDidClickedActionFeedsView) {
@@ -335,10 +338,12 @@ static NSString *const recipeHeaderIdentifier = @"RecipeHeader";
         }
         case LJKCellTemplateDish: { // 模板4 (作品)
             NSLog(@"即将跳转作品详情——————");
+            [self.navigationController pushViewController:[[LJKDishViewController alloc] init] animated:YES];
             break;
         }
         case LJKCellTemplateRecipe: { // 模板5 (菜谱)
             NSLog(@"即将跳转菜谱——————");
+            [self.navigationController pushViewController:[[LJKRecipeViewController alloc] init] animated:YES];
             break;
         }
     }

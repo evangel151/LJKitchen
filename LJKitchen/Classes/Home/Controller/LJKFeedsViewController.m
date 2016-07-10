@@ -7,6 +7,7 @@
 //
 
 #import "LJKFeedsViewController.h"
+#import "LJKRecipeViewController.h"
 #import "LJKFeedsViewCell.h"
 
 #import "LJKDish.h"
@@ -59,16 +60,37 @@ static NSString *feedsCellIdentifier = @"feedsCell";
 
 
 - (void)setupNavigationBar {
-    UIBarButtonItem *noti = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"notification"]
-                                                             style:UIBarButtonItemStylePlain
-                                                            target:self
-                                                            action:@selector(notificationButtonClicked)];
+//    UIButton *notiBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    [notiBtn setImage:[UIImage imageNamed:@"notification"] forState:UIControlStateNormal];
+//    [notiBtn addTarget:self
+//                action:@selector(notificationButtonClicked)
+//      forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIButton *uploadBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    [notiBtn setImage:[UIImage imageNamed:@"uploadPhoto"] forState:UIControlStateNormal];
+//    [uploadBtn addTarget:self
+//                  action:@selector(uploadDishButtonClicked)
+//        forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem *noti1 = [[UIBarButtonItem alloc] initWithCustomView:notiBtn];
+//    UIBarButtonItem *upload1 = [[UIBarButtonItem alloc] initWithCustomView:uploadBtn];
     
-    UIBarButtonItem *upload = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"camera"]
+    // FIXME: 直接设置默认rightBarButtonItems 会导致上传按钮被隐藏 or 错误的颜色显示
+    // 下面的方式设置一个空的标题后可以解决这个问题……但感觉有点蠢……
+    UIBarButtonItem *notifi = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:@selector(notificationButtonClicked)];
+    notifi.image = [UIImage imageNamed:@"notification"];
+    
+    UIBarButtonItem *upload = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
                                                               action:@selector(uploadDishButtonClicked)];
-    self.navigationItem.rightBarButtonItems = @[noti,upload];
+    upload.image = [UIImage imageNamed:@"uploadPhoto"];
+    upload.tintColor = Color_ThemeColor;
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:notifi, upload, nil];
 }
 
 - (void)setupRefresh {
@@ -175,8 +197,9 @@ static NSString *feedsCellIdentifier = @"feedsCell";
                 break;
             }
             case DishViewActionName: {     // 菜谱
-                [UILabel showMessage:@"即将跳转至对应菜谱界面"
+                [UILabel showMessage:@"跳转至对应菜谱界面"
                      atNavController:weakSelf.navigationController];
+                [weakSelf.navigationController pushViewController:[[LJKRecipeViewController alloc] init] animated:YES];
                 break;
             }
             case DishViewActionDigg: {     // 点赞按钮
@@ -243,8 +266,6 @@ static NSString *feedsCellIdentifier = @"feedsCell";
                                            [alertVcInside addAction:other];
                                            [alertVcInside addAction:nonConformity];
                                            [weakSelf presentViewController:alertVcInside animated:YES completion:nil];
-                                           
-                                           
                                        }];
                 
                 [alertVC addAction:reportDish];
@@ -252,13 +273,17 @@ static NSString *feedsCellIdentifier = @"feedsCell";
                 
                 [alertVC setModalPresentationStyle:UIModalPresentationOverFullScreen];
                 [weakSelf presentViewController:alertVC animated:YES completion:nil];
-
                 break;
             }
         }
-        
     };
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == 0 || indexPath.row == 1) {
+//        [self.navigationController pushViewController:[[LJKRecipeViewController alloc] init] animated:YES];
+//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -271,11 +296,11 @@ static NSString *feedsCellIdentifier = @"feedsCell";
 
 #pragma mark - 点击事件 
 - (void)notificationButtonClicked {
-    
+     NSLog(@"点击了通知中心——————");
 }
 
 - (void)uploadDishButtonClicked {
-    
+    NSLog(@"点击了上传图片按钮——————");
 }
 
 #pragma mark - AlertAction reuseMethod 

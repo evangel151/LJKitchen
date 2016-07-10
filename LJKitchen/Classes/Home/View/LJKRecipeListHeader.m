@@ -7,6 +7,8 @@
 //
 
 #import "LJKRecipeListHeader.h"
+#import "LJKRecipeList.h"
+#import "LJKAuthor.h"
 
 #import <Masonry.h>
 
@@ -40,7 +42,8 @@
                                                fontSize:13
                                                   lines:1
                                           textAlignment:NSTextAlignmentCenter];
-        UITapGestureRecognizer *tapAuhor = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(auhorNameLabelDidClicked)];
+        UITapGestureRecognizer *tapAuhor = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                   action:@selector(auhorNameLabelDidClicked)];
         [_recipeMakerLabel addGestureRecognizer:tapAuhor];
     }
     return _recipeMakerLabel;
@@ -52,7 +55,7 @@
                                        backgroundColor:[UIColor clearColor]
                                               fontSize:15
                                                  lines:0
-                                         textAlignment:NSTextAlignmentCenter];
+                                         textAlignment:NSTextAlignmentLeft];
     }
     return _recipeDescLabel;
 }
@@ -96,13 +99,13 @@
         [_recipeDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.recipeTitleLabel.mas_centerX);
             make.width.equalTo(self.recipeTitleLabel.mas_width);
-            make.top.equalTo(self.recipeMakerLabel).offset(2 * LJKAuthorIcon2CellTop);
+            make.top.equalTo(self.recipeMakerLabel).offset(4 * LJKAuthorIcon2CellTop);
         }];
         
         [_collectButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.recipeTitleLabel.mas_centerX).offset(LJKAuthorIcon2CellTop * 2);
+            make.centerX.equalTo(self.recipeTitleLabel.mas_centerX);
             make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH / 3, 30));
-            make.bottom.equalTo(self.mas_bottom).offset(-2 * LJKAuthorIcon2CellTop);
+            make.top.equalTo(self.recipeDescLabel.mas_bottom).offset(20);
         }];
         
     }
@@ -112,6 +115,30 @@
 #pragma mark - 模型传入
 - (void)setRecipeList:(LJKRecipeList *)recipeList {
     _recipeList = recipeList;
+
+    self.recipeTitleLabel.text = recipeList.name;
+    NSString *displayAuthorName = [NSString stringWithFormat:@"来自：%@", recipeList.author.name];
+    [self.recipeMakerLabel setAttributeTextWithString:displayAuthorName
+                                                range:NSMakeRange(3, recipeList.author.name.length)];
+
+    CGFloat titleHeight = [NSString getSizeWithString:recipeList.name width:SCREEN_WIDTH - 40 font:17].height;
+    CGFloat descHeight  = [NSString getSizeWithString:recipeList.desc width:SCREEN_WIDTH - 40 font:15].height;
+    
+    if (recipeList.desc.length) {
+        self.recipeDescLabel.text = recipeList.desc;
+    } else {
+        [_collectButton mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.recipeMakerLabel.mas_bottom).offset(10);
+        }];
+    }
+    
+    [_recipeTitleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(titleHeight + 5));
+    }];
+    
+    [_recipeDescLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(descHeight + 5));
+    }];
 }
 
 #pragma mark - 点击事件 

@@ -16,6 +16,7 @@
 		0003B4DF1D1C7FF90054F205 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0003B4DE1D1C7FF90054F205 /* NSDate+Extension.m */; };
 		0003B4E21D1C92F90054F205 /* LJKTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0003B4E11D1C92F90054F205 /* LJKTopicDetailController.m */; };
 		0003B4E51D1C93870054F205 /* LJKTopicDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0003B4E41D1C93870054F205 /* LJKTopicDetailCell.m */; };
+		000C777D1D2F0B67002C7A39 /* LJKRecipeIngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 000C777C1D2F0B67002C7A39 /* LJKRecipeIngredientCell.m */; };
 		001D93721D0AC63700B006D2 /* LJKMarketSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D93711D0AC63700B006D2 /* LJKMarketSortCell.m */; };
 		001D93751D0B142A00B006D2 /* LJKSettingFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D93741D0B142A00B006D2 /* LJKSettingFooter.m */; };
 		001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D93771D0B2CD600B006D2 /* LJKNotificationCell.m */; };
@@ -32,6 +33,10 @@
 		00372A0D1D06A03F006A21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00372A0B1D06A03F006A21C2 /* LaunchScreen.storyboard */; };
 		00372A181D06A03F006A21C2 /* LJKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A171D06A03F006A21C2 /* LJKitchenTests.m */; };
 		00372A231D06A03F006A21C2 /* LJKitchenUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00372A221D06A03F006A21C2 /* LJKitchenUITests.m */; };
+		0037A7261D2FC75E00DF9106 /* LJKRecipeInstructionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A7251D2FC75E00DF9106 /* LJKRecipeInstructionCell.m */; };
+		0037A7291D2FD92500DF9106 /* LJKRecipeTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A7281D2FD92500DF9106 /* LJKRecipeTipsCell.m */; };
+		0037A72C1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A72B1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m */; };
+		0037A72F1D3058BC00DF9106 /* LJKRecipeAddToListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A72E1D3058BC00DF9106 /* LJKRecipeAddToListCell.m */; };
 		007107421D2AF4A500CDDEAB /* LJKReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 007107411D2AF4A500CDDEAB /* LJKReview.m */; };
 		007107451D2AF58000CDDEAB /* LJKReviewCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 007107441D2AF58000CDDEAB /* LJKReviewCommodity.m */; };
 		007107481D2AF5BB00CDDEAB /* LJKGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 007107471D2AF5BB00CDDEAB /* LJKGoods.m */; };
@@ -48,6 +53,8 @@
 		00A696951D2310250090935F /* LJKEditGenderAndBirthdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */; };
 		00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969A1D2330040090935F /* LJKEditBasicCell.m */; };
 		00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969D1D2335F30090935F /* LJKEditLocationCell.m */; };
+		00A86AA61D2C5FA4008A79A8 /* LJKDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A86AA51D2C5FA4008A79A8 /* LJKDishViewController.m */; };
+		00A86AA91D2C623D008A79A8 /* LJKRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A86AA81D2C623D008A79A8 /* LJKRecipeViewController.m */; };
 		00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED211D08373300B55ED4 /* AppDelegate.m */; };
 		00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED2E1D083D6D00B55ED4 /* LJKMainTabBarController.m */; };
 		00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED311D083E8E00B55ED4 /* LJKNavigationController.m */; };
@@ -127,6 +134,9 @@
 		00F921C31D1F00CE009D78B7 /* keywords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00F921BE1D1F00CE009D78B7 /* keywords.plist */; };
 		00F921C61D1F1109009D78B7 /* LJKSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921C51D1F1109009D78B7 /* LJKSettingCell.m */; };
 		00F921C91D1F280B009D78B7 /* LJKProfileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */; };
+		00FA97091D2D98C60047D4D8 /* LJKRecipeViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FA97081D2D98C50047D4D8 /* LJKRecipeViewHeader.m */; };
+		00FCA40B1D319272002EC801 /* LJKRecipeAddListFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCA40A1D319272002EC801 /* LJKRecipeAddListFooter.m */; };
+		00FCA40E1D3195D9002EC801 /* LJKRecipeDishShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FCA40D1D3195D9002EC801 /* LJKRecipeDishShowCell.m */; };
 		E8626D3AE1E93262D264DEF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C35850CB67314F7DFDA8CBBD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +175,8 @@
 		0003B4E11D1C92F90054F205 /* LJKTopicDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicDetailController.m; sourceTree = "<group>"; };
 		0003B4E31D1C93870054F205 /* LJKTopicDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTopicDetailCell.h; sourceTree = "<group>"; };
 		0003B4E41D1C93870054F205 /* LJKTopicDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicDetailCell.m; sourceTree = "<group>"; };
+		000C777B1D2F0B67002C7A39 /* LJKRecipeIngredientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeIngredientCell.h; sourceTree = "<group>"; };
+		000C777C1D2F0B67002C7A39 /* LJKRecipeIngredientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeIngredientCell.m; sourceTree = "<group>"; };
 		001D93701D0AC63700B006D2 /* LJKMarketSortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketSortCell.h; sourceTree = "<group>"; };
 		001D93711D0AC63700B006D2 /* LJKMarketSortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketSortCell.m; sourceTree = "<group>"; };
 		001D93731D0B142A00B006D2 /* LJKSettingFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKSettingFooter.h; sourceTree = "<group>"; };
@@ -197,6 +209,14 @@
 		00372A1E1D06A03F006A21C2 /* LJKitchenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJKitchenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00372A221D06A03F006A21C2 /* LJKitchenUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJKitchenUITests.m; sourceTree = "<group>"; };
 		00372A241D06A03F006A21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0037A7241D2FC75E00DF9106 /* LJKRecipeInstructionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeInstructionCell.h; sourceTree = "<group>"; };
+		0037A7251D2FC75E00DF9106 /* LJKRecipeInstructionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeInstructionCell.m; sourceTree = "<group>"; };
+		0037A7271D2FD92500DF9106 /* LJKRecipeTipsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeTipsCell.h; sourceTree = "<group>"; };
+		0037A7281D2FD92500DF9106 /* LJKRecipeTipsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeTipsCell.m; sourceTree = "<group>"; };
+		0037A72A1D30398200DF9106 /* LJKRecipeSupplementaryFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeSupplementaryFooter.h; sourceTree = "<group>"; };
+		0037A72B1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeSupplementaryFooter.m; sourceTree = "<group>"; };
+		0037A72D1D3058BC00DF9106 /* LJKRecipeAddToListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeAddToListCell.h; sourceTree = "<group>"; };
+		0037A72E1D3058BC00DF9106 /* LJKRecipeAddToListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeAddToListCell.m; sourceTree = "<group>"; };
 		007107401D2AF4A500CDDEAB /* LJKReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKReview.h; sourceTree = "<group>"; };
 		007107411D2AF4A500CDDEAB /* LJKReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKReview.m; sourceTree = "<group>"; };
 		007107431D2AF58000CDDEAB /* LJKReviewCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKReviewCommodity.h; sourceTree = "<group>"; };
@@ -227,6 +247,10 @@
 		00A6969A1D2330040090935F /* LJKEditBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditBasicCell.m; sourceTree = "<group>"; };
 		00A6969C1D2335F30090935F /* LJKEditLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditLocationCell.h; sourceTree = "<group>"; };
 		00A6969D1D2335F30090935F /* LJKEditLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditLocationCell.m; sourceTree = "<group>"; };
+		00A86AA41D2C5FA3008A79A8 /* LJKDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKDishViewController.h; sourceTree = "<group>"; };
+		00A86AA51D2C5FA4008A79A8 /* LJKDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKDishViewController.m; sourceTree = "<group>"; };
+		00A86AA71D2C623D008A79A8 /* LJKRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeViewController.h; sourceTree = "<group>"; };
+		00A86AA81D2C623D008A79A8 /* LJKRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeViewController.m; sourceTree = "<group>"; };
 		00B5ED201D08373300B55ED4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00B5ED211D08373300B55ED4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -377,6 +401,12 @@
 		00F921C51D1F1109009D78B7 /* LJKSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKSettingCell.m; sourceTree = "<group>"; };
 		00F921C71D1F280B009D78B7 /* LJKProfileHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKProfileHeader.h; sourceTree = "<group>"; };
 		00F921C81D1F280B009D78B7 /* LJKProfileHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKProfileHeader.m; sourceTree = "<group>"; };
+		00FA97071D2D98C50047D4D8 /* LJKRecipeViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeViewHeader.h; sourceTree = "<group>"; };
+		00FA97081D2D98C50047D4D8 /* LJKRecipeViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeViewHeader.m; sourceTree = "<group>"; };
+		00FCA4091D319272002EC801 /* LJKRecipeAddListFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeAddListFooter.h; sourceTree = "<group>"; };
+		00FCA40A1D319272002EC801 /* LJKRecipeAddListFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeAddListFooter.m; sourceTree = "<group>"; };
+		00FCA40C1D3195D9002EC801 /* LJKRecipeDishShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeDishShowCell.h; sourceTree = "<group>"; };
+		00FCA40D1D3195D9002EC801 /* LJKRecipeDishShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeDishShowCell.m; sourceTree = "<group>"; };
 		3B882CD0AA58117E6C61BDE5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FF83AD45A7AA65FC51E6836 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C35850CB67314F7DFDA8CBBD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -524,6 +554,10 @@
 				0000C5201D29525600D2F189 /* LJKRecommendBuyController.m */,
 				0071074F1D2B0CF500CDDEAB /* LJKRecipeListViewController.h */,
 				007107501D2B0CF500CDDEAB /* LJKRecipeListViewController.m */,
+				00A86AA41D2C5FA3008A79A8 /* LJKDishViewController.h */,
+				00A86AA51D2C5FA4008A79A8 /* LJKDishViewController.m */,
+				00A86AA71D2C623D008A79A8 /* LJKRecipeViewController.h */,
+				00A86AA81D2C623D008A79A8 /* LJKRecipeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -578,6 +612,22 @@
 				00E96F0C1D25B4B300E6316D /* LJKFeedsViewCell.m */,
 				007107521D2B11E900CDDEAB /* LJKRecipeListHeader.h */,
 				007107531D2B11E900CDDEAB /* LJKRecipeListHeader.m */,
+				00FA97071D2D98C50047D4D8 /* LJKRecipeViewHeader.h */,
+				00FA97081D2D98C50047D4D8 /* LJKRecipeViewHeader.m */,
+				000C777B1D2F0B67002C7A39 /* LJKRecipeIngredientCell.h */,
+				000C777C1D2F0B67002C7A39 /* LJKRecipeIngredientCell.m */,
+				0037A7241D2FC75E00DF9106 /* LJKRecipeInstructionCell.h */,
+				0037A7251D2FC75E00DF9106 /* LJKRecipeInstructionCell.m */,
+				0037A7271D2FD92500DF9106 /* LJKRecipeTipsCell.h */,
+				0037A7281D2FD92500DF9106 /* LJKRecipeTipsCell.m */,
+				0037A72A1D30398200DF9106 /* LJKRecipeSupplementaryFooter.h */,
+				0037A72B1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m */,
+				0037A72D1D3058BC00DF9106 /* LJKRecipeAddToListCell.h */,
+				0037A72E1D3058BC00DF9106 /* LJKRecipeAddToListCell.m */,
+				00FCA4091D319272002EC801 /* LJKRecipeAddListFooter.h */,
+				00FCA40A1D319272002EC801 /* LJKRecipeAddListFooter.m */,
+				00FCA40C1D3195D9002EC801 /* LJKRecipeDishShowCell.h */,
+				00FCA40D1D3195D9002EC801 /* LJKRecipeDishShowCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1148,6 +1198,7 @@
 			files = (
 				007107511D2B0CF500CDDEAB /* LJKRecipeListViewController.m in Sources */,
 				00F37B3E1D1B4864008A6B9A /* LJKTopicViewCell.m in Sources */,
+				000C777D1D2F0B67002C7A39 /* LJKRecipeIngredientCell.m in Sources */,
 				00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */,
 				00CBB1321D21D57E00B1A16E /* LJKProfileEditViewController.m in Sources */,
 				00E96F101D25BC0A00E6316D /* LJKImageShowView.m in Sources */,
@@ -1165,6 +1216,7 @@
 				002F79DB1D1718520021FD04 /* LJKRecipeStats.m in Sources */,
 				00943B6A1D247119002F8F83 /* LJKCity.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
+				0037A72F1D3058BC00DF9106 /* LJKRecipeAddToListCell.m in Sources */,
 				00E96F041D25888700E6316D /* LJKEditAuthorDescCell.m in Sources */,
 				00F85FE61D148560007E5B09 /* LJKImage.m in Sources */,
 				00F079EC1D0D6461005FDD59 /* LJKHomeHeader.m in Sources */,
@@ -1184,6 +1236,7 @@
 				00F85FE31D148560007E5B09 /* LJKContent.m in Sources */,
 				00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */,
 				00F860041D14858D007E5B09 /* LJKNavContent.m in Sources */,
+				0037A7291D2FD92500DF9106 /* LJKRecipeTipsCell.m in Sources */,
 				00E96F0A1D25B2B500E6316D /* LJKFeedsViewController.m in Sources */,
 				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
 				0003B4D91D1C09DA0054F205 /* LJKTopic.m in Sources */,
@@ -1191,6 +1244,7 @@
 				00F860031D14858D007E5B09 /* LJKNav.m in Sources */,
 				001D93751D0B142A00B006D2 /* LJKSettingFooter.m in Sources */,
 				00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */,
+				0037A7261D2FC75E00DF9106 /* LJKRecipeInstructionCell.m in Sources */,
 				001D93721D0AC63700B006D2 /* LJKMarketSortCell.m in Sources */,
 				00F85FFF1D14858D007E5B09 /* LJKAuthorDetail.m in Sources */,
 				002F79D81D1713680021FD04 /* LJKRecipeIngredient.m in Sources */,
@@ -1207,10 +1261,13 @@
 				007107541D2B11E900CDDEAB /* LJKRecipeListHeader.m in Sources */,
 				00B5ED5A1D086EF000B55ED4 /* LJKCommunityViewController.m in Sources */,
 				00D347281D0987EC00B01E6C /* LJKSendMailViewController.m in Sources */,
+				00A86AA61D2C5FA4008A79A8 /* LJKDishViewController.m in Sources */,
+				00FCA40E1D3195D9002EC801 /* LJKRecipeDishShowCell.m in Sources */,
 				00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */,
 				00F85FE81D148560007E5B09 /* LJKItems.m in Sources */,
 				002F79DE1D173DD80021FD04 /* UIImageView+Extension.m in Sources */,
 				00F37B321D1AE1EE008A6B9A /* LJKCommunityForumCell.m in Sources */,
+				00A86AA91D2C623D008A79A8 /* LJKRecipeViewController.m in Sources */,
 				00F921C91D1F280B009D78B7 /* LJKProfileHeader.m in Sources */,
 				00B5ED351D083F5A00B55ED4 /* LJKHomeViewController.m in Sources */,
 				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
@@ -1222,6 +1279,7 @@
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
 				00F921C61D1F1109009D78B7 /* LJKSettingCell.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
+				00FA97091D2D98C60047D4D8 /* LJKRecipeViewHeader.m in Sources */,
 				00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */,
 				00943B6D1D247178002F8F83 /* LJKLocation.m in Sources */,
 				00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */,
@@ -1234,6 +1292,7 @@
 				00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */,
 				002F79CC1D16DBF30021FD04 /* UILabel+Extension.m in Sources */,
 				007107451D2AF58000CDDEAB /* LJKReviewCommodity.m in Sources */,
+				00FCA40B1D319272002EC801 /* LJKRecipeAddListFooter.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
 				002F79D51D1711F20021FD04 /* LJKRecipeInstruction.m in Sources */,
 				007107421D2AF4A500CDDEAB /* LJKReview.m in Sources */,
@@ -1245,6 +1304,7 @@
 				002F79CF1D1710100021FD04 /* LJKRecipe.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
 				0071074B1D2AF67100CDDEAB /* LJKDiggUsers.m in Sources */,
+				0037A72C1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m in Sources */,
 				0003B4E21D1C92F90054F205 /* LJKTopicDetailController.m in Sources */,
 				00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */,
 				00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */,

@@ -49,7 +49,9 @@
 /** 作者名称 */
 @property (nonatomic, strong) UILabel *authorName;
 /** 独家图标 */
-//@property (nonatomic, strong) UIButton *exclusiveButton;
+@property (nonatomic, strong) UIButton *exclusiveButton;
+/** recipeCell 专用分隔线 */
+@property (nonatomic, strong) UIView *separatorLine;
 
 @end
 
@@ -161,7 +163,7 @@
                                   backgroundColor:[UIColor clearColor]
                                          fontSize:12
                                             lines:0
-                                    textAlignment:NSTextAlignmentCenter];
+                                    textAlignment:NSTextAlignmentLeft];
     }
     return _scoreLabel;
 }
@@ -194,23 +196,31 @@
                                        backgroundColor:[UIColor clearColor]
                                               fontSize:12
                                                  lines:1
-                                         textAlignment:NSTextAlignmentRight];
+                                         textAlignment:NSTextAlignmentLeft];
     }
     return _cookedLabel;
 }
 
-//- (UIButton *)exclusiveButton {
-//    if (!_exclusiveButton) {
-//        _exclusiveButton = [UIButton buttonWithTitle:@"独家"
-//                                          titleColor:Color_TintWhite
-//                                     backgroundColor:[UIColor orangeColor]
-//                                            fontSize:12
-//                                              target:nil
-//                                              action:nil];
-//        _exclusiveButton.userInteractionEnabled = NO;
-//    }
-//    return _exclusiveButton;
-//}
+- (UIButton *)exclusiveButton {
+    if (!_exclusiveButton) {
+        _exclusiveButton = [UIButton buttonWithTitle:@"独家"
+                                          titleColor:Color_TintWhite
+                                     backgroundColor:[UIColor orangeColor]
+                                            fontSize:12
+                                              target:nil
+                                              action:nil];
+        _exclusiveButton.userInteractionEnabled = NO;
+    }
+    return _exclusiveButton;
+}
+
+- (UIView *)separatorLine {
+    if (!_separatorLine) {
+        _separatorLine = [[UIView alloc] init];
+        _separatorLine.backgroundColor = Color_DarkGray;
+    }
+    return _separatorLine;
+}
 
 
 #pragma mark - 构造
@@ -226,14 +236,15 @@
         [self.image addSubview:self.firstTitleLabel];
         [self.image addSubview:self.secondTitleLabel];
         [self.image addSubview:self.whisperLabel];
+        [self.image addSubview:self.exclusiveButton];
         
         // 底部视图
         [self.bottomView addSubview:self.descLabel];
         [self.bottomView addSubview:self.titleLabel];
         [self.bottomView addSubview:self.scoreLabel];
         [self.bottomView addSubview:self.authorName];
-//        [self.bottomView addSubview:self.exclusiveButton]; // 独家按钮已移至跳转的菜谱页面中
         [self.bottomView addSubview:self.cookedLabel];
+        [self.bottomView addSubview:self.separatorLine];
         
         // 整体构成
         [self.contentView addSubview:self.image];
@@ -269,6 +280,13 @@
         [_videoIcon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self.image);
             make.size.mas_equalTo(CGSizeMake(30, 30));
+        }];
+        
+        // 独家标志
+        [_exclusiveButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(50, 22));
+            make.top.equalTo(self.image.mas_top).offset(LJKAuthorIcon2CellTop);
+            make.left.equalTo(self.image.mas_left).offset(LJKAuthorIcon2CellLeft);
         }];
         
         // 大图一级标题
@@ -321,8 +339,9 @@
         
         // 底部视图 (评分)
         [_scoreLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.titleLabel.mas_left);
-            make.top.equalTo(self.titleLabel.mas_bottom).offset(LJKRecipeCellMarginTitle2Desc);
+            make.size.mas_equalTo(self.cookedLabel);
+            make.top.equalTo(self.cookedLabel.mas_top);
+            make.left.equalTo(self.cookedLabel.mas_right);
         }];
         
         // 底部视图 (菜谱作者)
@@ -331,10 +350,19 @@
             make.top.equalTo(self.authorIcon.mas_bottom).offset(5);
         }];
         
-        // cooked count
+        // cooked count （做过的人）
         [_cookedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.descLabel.mas_bottom).offset(LJKRecipeCellMarginTitle2Desc);
             make.left.equalTo(self.descLabel.mas_left);
+            make.height.equalTo(@(25));
+        }];
+        
+        [_separatorLine mas_makeConstraints:^(MASConstraintMaker *make) {
+
+            make.top.equalTo(self.cookedLabel.mas_bottom).offset(5);
+            make.left.equalTo(self.titleLabel.mas_left);
+            make.right.equalTo(self.authorName.mas_right);
+            make.height.equalTo(@(1));
         }];
     }
     return self;
@@ -365,7 +393,8 @@
     self.descLabel.hidden = YES;
     self.scoreLabel.hidden = YES;
     self.authorName.hidden = YES;
-//    self.exclusiveButton.hidden = YES;
+    self.exclusiveButton.hidden = YES;
+    self.separatorLine.hidden = YES;
 
     
     // 根据模板设置控件
@@ -389,7 +418,13 @@
                                       placeHolder:@"defaultUserHeader"
                                        cornRadius:80];
             self.authorName.text = item.contents.author.name;
-            self.cookedLabel.text = [NSString stringWithFormat:@"%zd人做过", item.contents.n_cooked];
+            
+            NSString *displayCooked = [NSString stringWithFormat:@"%zd人做过", item.contents.n_cooked];
+            CGFloat cookedWidth = [NSString getSizeWithString:displayCooked height:25 font:12].width;
+            self.cookedLabel.text = displayCooked;
+            [_cookedLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(@(cookedWidth + 5));
+            }];
         }
         
     } else if (item.template == LJKCellTemplateRecipeList) { // 模板2菜单
@@ -406,7 +441,72 @@
     } else if (item.template == LJKCellTemplateWeeklyMagazine) { // 模板6杂志
 //        self.bottomView.hidden = YES;
     }
+}
 
+- (void)setRecipe:(LJKRecipe *)recipe {
+    _recipe = recipe;
+    
+    self.firstTitleLabel.hidden = YES;
+    self.secondTitleLabel.hidden = YES;
+    self.whisperLabel.hidden = YES;
+    self.separatorLine.hidden = YES;
+    self.descLabel.hidden = YES;
+    self.authorIcon.hidden = YES;
+    self.cookedLabel.hidden = YES;
+    self.scoreLabel.hidden= YES;
+    self.exclusiveButton.hidden = !recipe.is_exclusive;
+    self.videoIcon.hidden = !recipe.video_url.length;
+    
+    self.bottomView.hidden = NO;
+    
+    self.titleLabel.text = recipe.name;
+    self.authorName.text = recipe.author.name;
+    
+    if (recipe.stats.n_cooked) {
+        self.cookedLabel.hidden = NO;
+        self.separatorLine.hidden = NO;
+        
+        // FIXME:(已解决) 都是n_cooked 一个返回字符串一个返回整型闹哪样啊……
+        NSString *displayCooked = [NSString stringWithFormat:@"%@人做过",recipe.stats.n_cooked];
+        CGFloat cookedWidth = [NSString getSizeWithString:displayCooked height:25 font:12].width;
+        self.cookedLabel.text = displayCooked;
+        [_cookedLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(cookedWidth + 5));
+        }];
+
+    }
+    
+    if (recipe.score) {
+        self.scoreLabel.hidden = NO;
+        self.scoreLabel.text = [NSString stringWithFormat:@" · %@分",recipe.score];
+    }
+    
+    if (recipe.photo80.length) {
+        [self.image sd_setImageWithURL:[NSURL URLWithString:recipe.photo80] placeholderImage:nil];
+    }
+    
+    if (recipe.author.photo.length) {
+        self.authorIcon.hidden = NO;
+        [self.authorIcon setCircleIconWithUrl:[NSURL URLWithString:recipe.author.photo]
+                                  placeHolder:@"defaultUserHeader"
+                                   cornRadius:80];
+    }
+    
+//    if (recipe.stats.n_cooked.length || recipe.score) {
+//        self.separatorLine.hidden = NO;
+//    }
+    
+//    if (recipe.summary.length) {
+//        self.separatorLine.hidden = NO;
+//        self.descLabel.hidden = NO;
+//        self.descLabel.text = [NSString stringWithFormat:@"理由:%@",recipe.summary];
+//        
+//        [_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.separatorLine.mas_bottom);
+//            make.left.equalTo(self.separatorLine.mas_left);
+//            make.right.equalTo(self.separatorLine.mas_right);
+//        }];
+//    }
 }
 
 

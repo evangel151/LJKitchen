@@ -13,9 +13,19 @@
 @interface LJKHelpCenterViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *helpView;
 @property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) NSMutableArray *headerStrings;
 @end
 
 @implementation LJKHelpCenterViewController
+
+static NSString *const sectionTitle = @"常见问题";
+
+- (NSMutableArray *)headerStrings {
+    if (!_headerStrings) {
+        _headerStrings = [NSMutableArray arrayWithObjects:@"LJKitchen常见问题",nil];
+    }
+    return _headerStrings;
+}
 
 #pragma mark - 懒加载
 - (NSMutableArray *)titleArray {
@@ -28,9 +38,10 @@
 
 - (UITableView *)helpView {
     if (!_helpView) {
-        _helpView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+        _helpView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+                                                 style:UITableViewStyleGrouped];
         _helpView.dataSource = self;
-        _helpView.delegate = self;
+        _helpView.delegate   = self;
     }
     return _helpView;
 }
@@ -38,14 +49,12 @@
 #pragma mark - 页面主体 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"帮助中心";
     self.view.backgroundColor = Color_BackGround;
     [self.view addSubview:self.helpView];
 }
 
 #pragma mark TableView 数据源 & 代理
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.titleArray.count;
@@ -53,6 +62,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LJKBasicCell *cell = [LJKBasicCell cellWithTableView:tableView];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabelView.text = [NSString stringWithFormat:@"%@", self.titleArray[indexPath.row]];
     return cell;
 }
@@ -64,10 +74,16 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return @"常见问题";
-    }
-    return nil;
+//    if (section == 0) {
+//        return sectionTitle;
+//    }
+//    return nil;
+    return self.headerStrings[section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+
+    return TABLEVIEW_TITLE_HEIGHT;
 }
 
 @end

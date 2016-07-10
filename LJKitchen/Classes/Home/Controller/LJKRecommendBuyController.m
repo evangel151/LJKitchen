@@ -160,9 +160,8 @@ static NSString *const recommendCellIdentifier = @"recommendCell";
         };
         
         cell.actionBlock = ^(DishViewAction action) {
-            if (action == DishViewActionName) { // 点击了标题view
-//                [weakSelf.navigationController pushViewController:[[XCFGoodsViewController alloc] init]
-//                                                         animated:YES];
+            if (action == DishViewActionName) { // 点击了推荐商品 titleView
+
             }
         };
     }

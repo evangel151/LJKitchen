@@ -34,7 +34,7 @@
     
     
     UILabel *label = [UILabel labelWithTextColor:Color_TintWhite
-                                  backgroundColor:Color_ThemeColor_Alpha
+                                 backgroundColor:[UIColor orangeColor]
                                          fontSize:15
                                             lines:1
                                     textAlignment:NSTextAlignmentCenter];

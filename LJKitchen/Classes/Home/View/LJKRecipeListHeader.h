@@ -13,12 +13,14 @@ typedef NS_ENUM(NSInteger, recipeHeaderAction) {
     RecipeHeaderActionCollected   // 收藏
 };
 
-@class LJKRecipeList;
+@class LJKRecipeList,LJKRecipe;
+
 @interface LJKRecipeListHeader : UIView
 /** header点击事件 */
 @property (nonatomic, copy) void (^recipeHeaderActionBlock)();
 
 /** 菜单 */
 @property (nonatomic, strong) LJKRecipeList *recipeList;
+
 
 @end

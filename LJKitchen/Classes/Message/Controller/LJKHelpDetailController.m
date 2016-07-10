@@ -56,21 +56,19 @@
 #pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"帮助中心";
     [self setupBasic];
     [self setupNavigationBar];
 }
 
 - (void)setupNavigationBar {
+    self.title = @"帮助中心";
     self.navigationItem.rightBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"· · ·"
+    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reportIcon"]
                                      style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(popToRoot)];
     self.navigationItem.rightBarButtonItem.tintColor = Color_ThemeColor;
 }
-
-
 
 - (void)setupBasic {
     self.view.backgroundColor = Color_BackGround;

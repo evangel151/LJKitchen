@@ -60,6 +60,19 @@
     return button;
 }
 
++ (UIButton *)buttonWithImageName:(NSString *)enabled
+                 disableImageName:(NSString *)disabled
+                           target:(id)target
+                           action:(SEL)action {
+    
+    UIButton *button = [[UIButton alloc] init];
+    [button setImage:[UIImage imageNamed:enabled] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:disabled] forState:UIControlStateDisabled];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
+
 
 + (UIButton *)buttonWithTitleNormal:(NSString *)normalTitle
                       titleSelected:(NSString *)selectedTitle
