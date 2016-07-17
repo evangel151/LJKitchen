@@ -5,6 +5,7 @@
 //  Created by  a on 16/6/23.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKTopicViewController.h"
 #import "LJKTopicDetailController.h"
@@ -37,15 +38,14 @@ static NSString *const topicCellIdentifier = @"topicCell";
 #pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"讨论区";
-    
-    [self setupNav];
+    [self setupNavigationBar];
     [self setupRefresh];
     [self setupTableView];
     [self loadNewData];
 }
 
-- (void)setupNav {
+- (void)setupNavigationBar {
+    self.title = @"讨论区";
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"发主题"
                                      style:UIBarButtonItemStylePlain
@@ -64,12 +64,10 @@ static NSString *const topicCellIdentifier = @"topicCell";
 - (void)setupTableView {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[LJKTopicViewCell class] forCellReuseIdentifier:topicCellIdentifier];
-    
 }
 
 #pragma mark - 网络请求
 - (void)loadNewData {
-    
     [LJKNetworkTool afnGet:LJKRequestTopic
                     params:nil
                    success:^(id json) {
@@ -95,12 +93,10 @@ static NSString *const topicCellIdentifier = @"topicCell";
 
 }
 
-#pragma mark - TableView 数据源 & 代理  
-
+#pragma mark - TableView 数据源 & 代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.topicArray.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // !!!:(错误写法) 以indexPath来唯一确定cell
@@ -114,7 +110,6 @@ static NSString *const topicCellIdentifier = @"topicCell";
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.topicArray[indexPath.row] cellHeight];
 }
@@ -127,14 +122,9 @@ static NSString *const topicCellIdentifier = @"topicCell";
     [self.navigationController pushViewController:detailViewC animated:YES];
 }
 
-
 #pragma mark - 点击事件
 - (void)postTopic {
      NSLog(@"即将跳转发帖界面——————");
     [UILabel showMessage:@"该功能暂未完成" atNavController:self.navigationController];
 }
-
-
-
-
 @end

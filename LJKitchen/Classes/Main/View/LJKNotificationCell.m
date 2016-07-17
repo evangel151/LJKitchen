@@ -24,9 +24,12 @@
 
 - (UILabel *)statusLabel {
     if (!_statusLabel) {
-        _statusLabel = [[UILabel alloc] init];
-        _statusLabel.bounds        = CGRectMake(0, 0, 100, 44);
-        _statusLabel.textAlignment = NSTextAlignmentRight;
+        _statusLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                   backgroundColor:Color_Clear
+                                          fontSize:17
+                                             lines:1
+                                     textAlignment:NSTextAlignmentRight];
+        _statusLabel.bounds = CGRectMake(0, 0, 100, 44);
     }
     return _statusLabel;
 }
@@ -45,7 +48,8 @@
     static NSString *ID = @"NotificationCell";
     LJKNotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[LJKNotificationCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+        cell = [[LJKNotificationCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                          reuseIdentifier:ID];
     }
     return cell;
 }
@@ -58,8 +62,5 @@
     }
     return self;
 }
-
-
-
 
 @end

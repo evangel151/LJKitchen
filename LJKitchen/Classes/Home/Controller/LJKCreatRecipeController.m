@@ -5,9 +5,11 @@
 //  Created by  a on 16/6/8.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKCreatRecipeController.h"
-#import "LJKBasicTextView.h"
+//#import "LJKBasicTextView.h"
+
 #import <Masonry.h>
 
 @interface LJKCreatRecipeController ()<UITextFieldDelegate>
@@ -65,15 +67,15 @@
     return _descLabel;
 }
 
-#pragma mark - 页面主体 (包括基本布局)
+#pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupNav];
+    [self setupNavigationBar];
     [self setupSubviews];
 }
 
-- (void)setupNav {
+- (void)setupNavigationBar {
     self.title = @"菜谱名称";
     self.view.backgroundColor = Color_BackGround;
     self.navigationItem.leftBarButtonItem =
@@ -90,6 +92,7 @@
     self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
+// 加载控制器子控件 (fake)
 - (void)setupSubviews {
     [self.view addSubview:self.textView];
     [self.view addSubview:self.descLabel];
@@ -131,7 +134,7 @@
      NSLog(@"即将跳转菜谱>>> %@ <<<界面——————",name);
 }
 
-#pragma mark - 通知
+#pragma mark - 键盘通知相关逻辑
 - (void)textDidChange {
     if (self.textView.hasText) {
         self.navigationItem.rightBarButtonItem.enabled = YES;

@@ -8,37 +8,36 @@
 
 #import "LJKProfileEditViewController.h"
 
-#import "LJKProfileEditHeader.h"
-#import "LJKEditGenderAndBirthdayCell.h"
-#import "LJKEditBasicCell.h"
-#import "LJKEditLocationCell.h"
+#import "LJKProfileEditHeader.h"            // 头像
+#import "LJKEditGenderAndBirthdayCell.h"    // 生日 & 性别
+#import "LJKEditBasicCell.h"                // 姓名 (基础编辑栏)
+#import "LJKEditLocationCell.h"             // 地址信息
+#import "LJKEditAuthorDescCell.h"           // 个性签名
 #import "LJKBasicTextView.h"
-#import "LJKEditAuthorDescCell.h"
 
 #import "LJKMyInfo.h"
 #import "LJKAuthorDetail.h"
 
 @interface LJKProfileEditViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
 
-@property (nonatomic, strong) LJKAuthorDetail *authorDetail;
+/** 个人信息编辑 - 头视图 */
 @property (nonatomic, strong) LJKProfileEditHeader *header;
-//@property (nonatomic, strong) LJKBasicTextView *authorDescTextView;
+@property (nonatomic, strong) LJKAuthorDetail *authorDetail;
 @property (nonatomic, assign) CGFloat headerHeight;
 @end
 
 @implementation LJKProfileEditViewController
 
 #pragma mark - 标识符
-static NSString *nickNameIdentifier          = @"nickNameCell";
-static NSString *birthdayAndGenderIdentifier = @"birthdayAndGenderCell";
-static NSString *homeTownIdentifier          = @"homeTownCell";
-static NSString *residentIdentifier          = @"residentCell";
-static NSString *authorDescIdentifier        = @"authorDescCell";
+static NSString *nickNameIdentifier          = @"nickNameCell";             // 昵称
+static NSString *birthdayAndGenderIdentifier = @"birthdayAndGenderCell";    // 生日 + 性别
+static NSString *homeTownIdentifier          = @"homeTownCell";             // 家乡
+static NSString *residentIdentifier          = @"residentCell";             // 居住地
+static NSString *authorDescIdentifier        = @"authorDescCell";           // 用户详情
 
 #pragma mark - 懒加载
 - (LJKAuthorDetail *)authorDetail {
     if (!_authorDetail) {
-//        _authorDetail = [[LJKAuthorDetail alloc] init];
         _authorDetail = [LJKMyInfo info];
     }
     return _authorDetail;
@@ -126,14 +125,8 @@ static NSString *authorDescIdentifier        = @"authorDescCell";
         
         [weakSelf presentViewController:alert animated:YES completion:nil];
     };
-    
     self.tableView.tableHeaderView = _header;
 }
-
-//- (void)setuptableviewFooter {
-//    [self.tableView.tableFooterView addSubview:self.authorDescTextView];
-////    self.tableView.tableFooterView = self.authorDescTextView;
-//}
 
 #pragma mark - TableView 数据源 & 代理 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

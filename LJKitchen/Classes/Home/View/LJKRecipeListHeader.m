@@ -13,21 +13,24 @@
 #import <Masonry.h>
 
 @interface LJKRecipeListHeader ()
+/** 菜单(专辑) - header - 标题 */
 @property (nonatomic, strong) UILabel *recipeTitleLabel;
+/** 菜单(专辑) - header - (专辑)作者 */
 @property (nonatomic, strong) UILabel *recipeMakerLabel;
+/** 菜单(专辑) - header - 菜单描述 */
 @property (nonatomic, strong) UILabel *recipeDescLabel;
+/** 菜单(专辑) - header - “收藏”按钮 */
 @property (nonatomic, strong) UIButton *collectButton;
-
 @end
 
 @implementation LJKRecipeListHeader
 
-#pragma mark - 懒加载
 
+#pragma mark - 懒加载
 - (UILabel *)recipeTitleLabel {
     if (!_recipeTitleLabel) {
         _recipeTitleLabel = [UILabel labelWithTextColor:Color_TintBlack
-                                        backgroundColor:[UIColor clearColor]
+                                        backgroundColor:Color_Clear
                                                fontSize:17
                                                   lines:0
                                           textAlignment:NSTextAlignmentCenter];
@@ -38,7 +41,7 @@
 - (UILabel *)recipeMakerLabel {
     if (!_recipeMakerLabel) {
         _recipeMakerLabel = [UILabel labelWithTextColor:Color_ThemeColor
-                                        backgroundColor:[UIColor clearColor]
+                                        backgroundColor:Color_Clear
                                                fontSize:13
                                                   lines:1
                                           textAlignment:NSTextAlignmentCenter];
@@ -52,7 +55,7 @@
 - (UILabel *)recipeDescLabel {
     if (!_recipeDescLabel) {
         _recipeDescLabel = [UILabel labelWithTextColor:Color_TintBlack
-                                       backgroundColor:[UIColor clearColor]
+                                       backgroundColor:Color_Clear
                                               fontSize:15
                                                  lines:0
                                          textAlignment:NSTextAlignmentLeft];
@@ -75,8 +78,7 @@
 
 #pragma mark - 构造方法
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.collectButton];
@@ -107,7 +109,6 @@
             make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH / 3, 30));
             make.top.equalTo(self.recipeDescLabel.mas_bottom).offset(20);
         }];
-        
     }
     return self;
 }

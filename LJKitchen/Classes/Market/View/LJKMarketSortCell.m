@@ -8,38 +8,41 @@
 
 #import "LJKMarketSortCell.h"
 
+@interface LJKMarketSortCell ()
+
+@end
+
 @implementation LJKMarketSortCell
+
+#pragma mark - 构造方法
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+
+        CGFloat x = 0;
+        CGFloat y = 0;
+        CGFloat width = (SCREEN_WIDTH - 2) / 3;
+        CGFloat height = (SCREEN_WIDTH - 2) / 3;
+        _sortItemView = [[UIImageView alloc] init];
+        _sortItemView.frame = CGRectMake(x, y, width, height);
+        _sortItemView.contentMode = UIViewContentModeScaleAspectFit; // 填充模式
+        [self.contentView addSubview:_sortItemView];
+        self.sortItemView = _sortItemView;
+    }
+    return self;
+}
+
+#pragma mark - useless
+// useless
 + (NSString *)cellIdentifier{
     static NSString *cellIdentifier = @"MarketSortCellIdentifier";
     return cellIdentifier;
 }
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView
-                          forIndexPath:(NSIndexPath *)indexPath
-{
-    
+                          forIndexPath:(NSIndexPath *)indexPath {
     LJKMarketSortCell *cell =
     [collectionView dequeueReusableCellWithReuseIdentifier:[LJKMarketSortCell cellIdentifier]
                                               forIndexPath:indexPath];
     return cell;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
-        //创建label
-        UIImageView *sortItemView = [[UIImageView alloc] init];
-        //设置label尺寸
-        CGFloat x = 0;
-        CGFloat y = 0;
-        CGFloat width = (SCREEN_WIDTH - 2) / 3;
-        CGFloat height = (SCREEN_WIDTH - 2) / 3;
-        sortItemView.frame = CGRectMake(x, y, width, height);
-        //设置label属性
-        sortItemView.contentMode = UIViewContentModeScaleAspectFit;
-        //添加到父控件
-        [self.contentView addSubview:sortItemView];
-        self.sortItemView = sortItemView;
-    }
-    return self;
 }
 @end

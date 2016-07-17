@@ -5,6 +5,7 @@
 //  Created by  a on 16/6/12.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  首页顶部视图主体 (V)
 
 /** 顶部导航视图点击事件 */
 typedef NS_ENUM(NSInteger, viewDidClickedAction) {
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSInteger, viewDidClickedAction) {
     viewDidClickedActionFristAuthor          = 10// 新用户优惠
 };
 
-/** 事件点击Block */
+/** Block Def */
 typedef void (^viewDidClickedBlock)();
 
 #import <UIKit/UIKit.h>
@@ -36,8 +37,10 @@ typedef void (^viewDidClickedBlock)();
 
 /** 导航模型数据 */
 @property (nonatomic, strong) LJKNavContent *navContent;
+
 /** 动态模型数据 */
 @property (nonatomic, strong) LJKDish *dish;
+
 /** Header各部分view点击后回调 */
 @property (nonatomic, copy) viewDidClickedBlock clickBlock;
 @end

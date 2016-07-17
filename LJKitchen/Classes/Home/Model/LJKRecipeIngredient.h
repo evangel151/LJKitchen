@@ -9,9 +9,10 @@
 
 #import <Foundation/Foundation.h>
 
+// useless 
 typedef NS_ENUM(NSInteger, LJKIngredientState) {
-    LJKIngredientStateNone,
-    LJKIngredientStatePurchased // 已购买
+    LJKIngredientStateNone,      // 未购买
+    LJKIngredientStatePurchased  // 已购买
 };
 
 @interface LJKRecipeIngredient : NSObject <NSCoding>
@@ -20,11 +21,12 @@ typedef NS_ENUM(NSInteger, LJKIngredientState) {
 @property (nonatomic, copy) NSString *name;
 /** 用量 */
 @property (nonatomic, copy) NSString *amount;
-///** 未知 */
-//@property (nonatomic, copy) NSString *cat;
-/** 选中状态 */
-@property (nonatomic, assign) LJKIngredientState state;
 /** 用料cellHeight */
 @property (nonatomic, assign) CGFloat cellHeight;
+/** 菜篮子内 - 原料 - 购买状态 */
+@property (nonatomic, assign) LJKIngredientState state;
 
+
+///** 未知 */
+//@property (nonatomic, copy) NSString *cat;
 @end

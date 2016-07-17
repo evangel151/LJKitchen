@@ -46,7 +46,6 @@
                                              fontSize:21
                                                 lines:0
                                         textAlignment:NSTextAlignmentNatural];
-        
         _detailDesLabel.text = @"打开LJKitchen App,点击首页“开始”，使用第三方账号登录即能完成注册。（LJKitchen目前只支持第三方账号登录注册，不支持邮箱注册，建议您再使用第三方账号登录之后，在网页版账号设置里绑定邮箱，之后也可以用所绑定的邮箱进行登录。）";
     }
     return _detailDesLabel;
@@ -96,7 +95,6 @@
         make.left.equalTo(self.containView.mas_left).offset(20);
         make.right.equalTo(self.containView.mas_right).offset(-20);
     }];
-
 }
 
 #pragma mark - 点击事件

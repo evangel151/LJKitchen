@@ -5,9 +5,11 @@
 //  Created by  a on 16/7/1.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKFeedsViewCell.h"
 #import "LJKImageShowView.h"
+
 #import "LJKDish.h"
 #import "LJKAuthor.h"
 #import "LJKComment.h"
@@ -18,29 +20,48 @@
 
 #import <Masonry.h>
 @interface LJKFeedsViewCell ()
+/** 关注动态 - 图片显示器 */
 @property (nonatomic, strong) LJKImageShowView *imageShow;
+/** 关注动态 - 图片显示器(容器) */
 @property (nonatomic, strong) UIView *imagesContainView;
+/** 关注动态 - 用户头像 */
 @property (nonatomic, strong) UIImageView *authorIconView;
+/** 关注动态 - 用户姓名 */
 @property (nonatomic, strong) UILabel *authorNameLabel;
+/** 关注动态 - 用户动态 */
 @property (nonatomic, strong) UILabel *authorActionLabel;
+/** 关注动态 - 创建时间 */
 @property (nonatomic, strong) UILabel *createdTimeLabel;
 
+/** 关注动态 - 菜谱名(容器) */
 @property (nonatomic, strong) UIView *dishNameView;
+/** 关注动态 - 菜谱名 */
 @property (nonatomic, strong) UILabel *dishNameLabel;
+/** 关注动态 - 菜谱名 - 箭头组件 */
 @property (nonatomic, strong) UIImageView *dishViewArrow;
 
+/** 关注动态 - 点赞数 */
 @property (nonatomic, strong) UILabel *diggsCountLabel;
-@property (nonatomic, strong) UILabel *diggs;
+/** 关注动态 - 点赞des  */
+@property (nonatomic, strong) UILabel *diggs; // ...艹.......当时怎么想的
+/** 关注动态 - 菜谱描述 */
 @property (nonatomic, strong) UILabel *dishDescLabel;
 
+/** 关注动态 - 第一条评论 */
 @property (nonatomic, strong) UILabel *firstCommentLabel;
+/** 关注动态 - 第二条评论 */
 @property (nonatomic, strong) UILabel *secondCommentLabel;
+/** 关注动态 - 评论总数 */
 @property (nonatomic, strong) UILabel *totalCmtCountLabel;
 
+/** 关注动态 - 点赞按钮 */
 @property (nonatomic, strong) UIButton *diggsButton;
+/** 关注动态 - 评论按钮 */
 @property (nonatomic, strong) UIButton *commentButton;
+/** 关注动态 - 更多按钮 */
 @property (nonatomic, strong) UIButton *moreButton;
 
+/** 关注动态 - 分隔线 */
 @property (nonatomic, strong) UIView *separatorLine1;
 @property (nonatomic, strong) UIView *separatorLine2;
 @end
@@ -61,6 +82,7 @@
         UITapGestureRecognizer *tapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                   action:@selector(authorIconDidClicked)];
         [_authorIconView addGestureRecognizer:tapIcon];
+        _authorIconView.userInteractionEnabled = YES;
     }
     return _authorIconView;
 }
@@ -285,6 +307,7 @@
         [self.contentView addSubview:self.moreButton];
         [self.contentView addSubview:self.commentButton];
         
+        // 间距总和 = 头像宽度 + 3 * paddind填充
         CGFloat totalMargin = LJKAuthorIconWH + 3 * LJKAuthorIcon2CellLeft;
         
         [_imagesContainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -306,7 +329,6 @@
         [_authorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.authorIconView.mas_centerY);
             make.left.equalTo(self.authorIconView.mas_right).offset(LJKAuthorIcon2CellLeft);
-//            make.size.mas_equalTo(CGSizeMake(80, 30));
             make.height.equalTo(@(30));
         }];
         
@@ -342,7 +364,6 @@
         }];
         
         [_dishDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(self.dishNameView);
             make.left.equalTo(self.authorNameLabel.mas_left);
             make.top.equalTo(self.dishNameView.mas_bottom).offset(10);
             make.right.equalTo(self.createdTimeLabel.mas_right);
@@ -355,7 +376,6 @@
         }];
         
         [_diggsCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(60, 44));
             make.height.equalTo(@(TABBAR_HEIGHT));
             make.left.equalTo(self.authorNameLabel.mas_left);
             make.top.equalTo(self.dishDescLabel.mas_bottom);
@@ -383,14 +403,12 @@
             make.top.equalTo(self.totalCmtCountLabel.mas_bottom);
             make.left.equalTo(self.authorNameLabel.mas_left);
             make.right.equalTo(self.contentView.mas_right).offset(-LJKAuthorIconWH);
-//            make.height.equalTo(@(44));
         }];
         
         [_secondCommentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.firstCommentLabel.mas_bottom).offset(LJKAuthorIcon2CellTop);
             make.left.equalTo(self.authorNameLabel.mas_left);
             make.right.equalTo(self.contentView.mas_right).offset(-LJKAuthorIcon2CellLeft);
-//            make.size.mas_equalTo(self.firstCommentLabel);
         }];
         
         [_diggsButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -410,8 +428,6 @@
             make.left.equalTo(self.diggsButton.mas_right).offset(LJKAuthorIcon2CellLeft);
             make.bottom.equalTo(self.diggsButton.mas_bottom);
         }];
-        
-        
     }
     return self;
 }

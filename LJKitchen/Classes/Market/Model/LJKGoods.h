@@ -5,15 +5,16 @@
 //  Created by  a on 16/7/5.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  商品(M)
 
 #import <Foundation/Foundation.h>
-@class LJKReviewPhoto,LJKShop,LJKReview,LJKGoodsAttrs,LJKGoodsKind;
+@class LJKReviewPhoto,LJKReview,LJKShop,LJKGoodsAttrs,LJKGoodsKind;
 @interface LJKGoods : NSObject
 /** 主图 */
 @property (nonatomic, strong) LJKReviewPhoto *main_pic;
 /** 附加图片 */
 @property (nonatomic, strong) NSArray<LJKReviewPhoto *> *extra_pics;
-/** 所有图片 */
+/** 所有图片(主图 + 附加) */
 @property (nonatomic, strong) NSArray<LJKReviewPhoto *> *totalPics;
 
 
@@ -74,11 +75,14 @@
 /** 商品kind */
 @property (nonatomic, strong) NSArray<LJKGoodsKind *> *kinds;
 
-
-/** 商品信息viewHeight */
+// TODO: 高度尚未计算
+/** 商品信息详情 (header) */
 @property (nonatomic, assign) CGFloat goodsDetailViewHeight;
-/** 商品类别viewHeight */
+/** 商品类别 viewHeight */
 @property (nonatomic, assign) CGFloat goodsCategoryViewHeight;
-/** 店铺信息viewHeight */
+/** 店铺信息 viewHeight */
 @property (nonatomic, assign) CGFloat shopPromotionViewHeight;
+
+/** 店铺信息 推荐购买 **/
+@property (nonatomic, assign) CGFloat shopRecommendBuyCellHeight;
 @end

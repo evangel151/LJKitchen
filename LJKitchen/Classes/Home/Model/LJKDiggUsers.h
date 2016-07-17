@@ -5,6 +5,7 @@
 //  Created by  a on 16/7/5.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  点赞/支持 (M)
 
 #import <Foundation/Foundation.h>
 @class LJKAuthor;

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LJKRecipeList;
 @interface LJKRecipeViewController : UIViewController
+
+@property (nonatomic, strong) LJKRecipeList *recipeList;
 
 @end

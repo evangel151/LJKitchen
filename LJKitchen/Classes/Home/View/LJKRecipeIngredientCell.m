@@ -5,15 +5,17 @@
 //  Created by  a on 16/7/8.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done 
 
 #import "LJKRecipeIngredientCell.h"
 #import "LJKRecipeIngredient.h"
-//#import "LJKRecipeStats.h"
 
 #import <Masonry.h>
 
 @interface LJKRecipeIngredientCell ()
+/** 菜谱用料 - 名称 */
 @property (nonatomic, strong) UILabel *nameLabel;
+/** 菜谱用料 - 用料数量 */
 @property (nonatomic, strong) UILabel *amountLabel;
 @end
 

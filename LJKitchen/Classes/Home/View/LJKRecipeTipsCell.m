@@ -17,6 +17,7 @@
 
 @implementation LJKRecipeTipsCell
 
+#pragma mark - 懒加载
 - (UILabel *)tipsLabel {
     if (!_tipsLabel) {
         _tipsLabel = [UILabel labelWithTextColor:Color_TintBlack
@@ -28,7 +29,7 @@
     return _tipsLabel;
 }
 
-
+#pragma mark - 构造方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -45,9 +46,9 @@
     return self;
 }
 
+#pragma mark - 传入模型
 - (void)setRecipe:(LJKRecipe *)recipe {
     _recipe = recipe;
-    
     self.tipsLabel.text = recipe.tips;
 }
 

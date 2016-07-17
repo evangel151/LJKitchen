@@ -13,13 +13,13 @@
 #import <UIImageView+WebCache.h>
 
 @interface LJKHomeHeaderDish ()
-/** 左侧主题图片(早/中/晚) */
+/** 三餐 - 左侧主题图片(早/中/晚) */
 @property (nonatomic, strong) UIImageView *imageView_Back;
-/** 右侧描述图片(小图) */
+/** 三餐 - 右侧描述图片(小图) */
 @property (nonatomic, strong) UIImageView *imageView_Right;
-/** 标题栏 */
+/** 三餐 - 标题栏 */
 @property (nonatomic, strong) UILabel *titleLabel;
-/** 菜谱数量(早/中/晚) */
+/** 三餐 - 菜谱数量(早/中/晚) */
 @property (nonatomic, strong) UILabel *numberLabel;
 
 @end
@@ -43,22 +43,27 @@
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont systemFontOfSize:17];
+        _titleLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                  backgroundColor:Color_Clear
+                                         fontSize:17
+                                            lines:1
+                                    textAlignment:NSTextAlignmentCenter];
     }
     return _titleLabel;
 }
 
 - (UILabel *)numberLabel {
     if (!_numberLabel) {
-        _numberLabel = [[UILabel alloc] init];
-        _numberLabel.font = [UIFont systemFontOfSize:13];
-        _numberLabel.textColor = Color_DarkGray;
+        _numberLabel = [UILabel labelWithTextColor:Color_DarkGray
+                                   backgroundColor:Color_Clear
+                                          fontSize:13
+                                             lines:1
+                                     textAlignment:NSTextAlignmentCenter];
     }
     return _numberLabel;
 }
 
-#pragma mark - 构造 & 模型传入
+#pragma mark - 构造方法
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -92,7 +97,7 @@
     return self;
 }
 
-
+#pragma mark - 模型传入
 - (void)setPopEvent:(LJKPopEvent *)popEvent {
     _popEvent = popEvent;
     

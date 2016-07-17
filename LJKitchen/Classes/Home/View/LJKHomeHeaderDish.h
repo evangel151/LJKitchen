@@ -5,7 +5,7 @@
 //  Created by  a on 16/6/13.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
-// 首页三餐scrollView 单页View 
+// 首页三餐scrollView 单页View (V)
 
 #import <UIKit/UIKit.h>
 @class LJKPopEvent;

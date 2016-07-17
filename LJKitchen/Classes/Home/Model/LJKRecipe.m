@@ -13,6 +13,7 @@
 #import "LJKAuthor.h"
 
 @implementation LJKRecipe
+// 解档 / 归档
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:_name          forKey:@"name"];
     [aCoder encodeObject:_ingredient    forKey:@"ingredient"];

@@ -5,12 +5,13 @@
 //  Created by  a on 16/6/12.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKHomeHeader.h"
 #import "LJKHomeHeaderTopNav.h"
-#import "LJKHomeHeaderNavButton.h"
-#import "LJKHomeHeaderDish.h"
+#import "LJKHomeHeaderNavButton.h" // 自定义导航按钮
 
+#import "LJKHomeHeaderDish.h"
 #import "LJKNavContent.h"
 #import "LJKPopEvent.h"
 #import "LJKPopEvents.h"
@@ -20,15 +21,22 @@
 #import <Masonry.h>
 
 @interface LJKHomeHeader () <UIScrollViewDelegate>
-
-@property (nonatomic, strong) LJKHomeHeaderTopNav *popular_TopNavLeft; // 流行菜谱
-@property (nonatomic, strong) LJKHomeHeaderTopNav *friend_TopNavRight; // 查找关注
-@property (nonatomic, strong) UIView *navButtonsView;                  // 导航按钮（容器）
-@property (nonatomic, strong) UIView *dishNavView;                     // 三餐导航
-@property (nonatomic, strong) UIScrollView *scrollView;                // 三餐滚动视图(容器)
-@property (nonatomic, strong) UIButton *fristAuthorButton;             // 新用户优惠
-@property (nonatomic, strong) UIPageControl *pageControl;              // ScrollView控制器
-@property (nonatomic, assign) NSUInteger count;                        // 导航按钮个数
+/** 首页header - 流行菜谱 */
+@property (nonatomic, strong) LJKHomeHeaderTopNav *popular_TopNavLeft;
+/** 首页header - 查找关注 */
+@property (nonatomic, strong) LJKHomeHeaderTopNav *friend_TopNavRight;
+/** 首页header - 导航按钮组（容器） */
+@property (nonatomic, strong) UIView *navButtonsView;
+/** 首页header - 三餐(容器) */
+@property (nonatomic, strong) UIView *dishNavView;
+/** 首页header - 三餐滚动视图 */
+@property (nonatomic, strong) UIScrollView *scrollView;
+/** 首页header - 新用户优惠 */
+@property (nonatomic, strong) UIButton *fristAuthorButton;
+/** 首页header - ScrollView - pageControl */
+@property (nonatomic, strong) UIPageControl *pageControl;
+/** 首页header - 导航按钮个数 */
+@property (nonatomic, assign) NSUInteger count;
 
 @end
 
@@ -49,7 +57,6 @@
         _friend_TopNavRight = [LJKHomeHeaderTopNav imageViewWithTitle:@"查找好友并关注"
                                                                target:self
                                                                action:@selector(friend)];
-
     }
     return _friend_TopNavRight;
 }
@@ -57,17 +64,13 @@
 - (UIView *)navButtonsView {
     if (!_navButtonsView) {
         _navButtonsView = [[UIView alloc] init];
-        _navButtonsView.backgroundColor = [UIColor clearColor];
+        _navButtonsView.backgroundColor = Color_Clear;
     }
     return _navButtonsView;
 }
 
 - (UIButton *)fristAuthorButton {
     if (!_fristAuthorButton) {
-//        _fristAuthorButton = [[LJKHomeHeaderNavButton alloc] init];
-//        [_fristAuthorButton setTitle:@"新用户优惠20元！" forState:UIControlStateNormal];
-//        _fristAuthorButton.backgroundColor = [UIColor purpleColor];
-//        [_fristAuthorButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _fristAuthorButton = [UIButton buttonWithTitle:@"新用户优惠20元"
                                             titleColor:Color_ThemeColor
                                        backgroundColor:Color_ThemeColor_Yellow
@@ -83,7 +86,6 @@
 - (UIView *)dishNavView {
     if (!_dishNavView) {
         _dishNavView = [[UIView alloc] init];
-//        _dishNavView.backgroundColor = [UIColor blueColor];
     }
     return _dishNavView;
 }
@@ -111,7 +113,7 @@
     return _pageControl;
 }
 
-#pragma mark - 构造方法 & 传入模型赋值
+#pragma mark - 构造方法
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -146,7 +148,6 @@
             make.left.equalTo(self);
             make.right.equalTo(self.mas_right);
             make.height.equalTo(@(LJKHomeHeader_CenterNav_Height));
-//            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 90));
         }];
         
         
@@ -181,6 +182,7 @@
     return self;
 }
 
+#pragma mark - 传入模型
 - (void)setDish:(LJKDish *)dish {
     _dish = dish;
     // 下载Header右侧顶部图片
@@ -238,9 +240,10 @@
 
 /** 顶部右侧关注状态（朋友圈……） */
 - (void)friend {
-    if (self.clickBlock) {
-        self.clickBlock(viewDidClickedActionFeedsView);
-    }
+//    if (self.clickBlock) {
+//        self.clickBlock(viewDidClickedActionFeedsView);
+//    }
+    !self.clickBlock ? : self.clickBlock(viewDidClickedActionFeedsView);
 }
 
 /** 中部导航按钮(4个 根据tag区别) */
@@ -249,7 +252,7 @@
 }
 
 /** 中部导航按钮(3个 根据tag区别) */
-// 官方版似乎增加了判定，可以根据时间段直接跳转至对应page
+// 官方后台增加了时间段判定，可以根据当前时间段(清晨、正午、午夜)直接跳转至对应page
 - (void)viewDidClicked:(id)sender {
     UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
     !self.clickBlock ? : self.clickBlock(tap.view.tag);

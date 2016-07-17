@@ -23,6 +23,7 @@
 @interface LJKTopicDetailController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *commentsArray;
+/** 发送 - 工具条 */
 @property (nonatomic, strong) LJKTopicComposeBar *composeBar;
 @end
 
@@ -33,7 +34,8 @@ static NSString *const commentIdentifier = @"commentCell";
 #pragma mark - 懒加载
 - (NSMutableArray *)commentsArray {
     if (!_commentsArray) {
-        _commentsArray = [NSMutableArray arrayWithArray:[LJKCommentsTool totalComments]]; // 加载假数据……
+        // 加载假数据
+        _commentsArray = [NSMutableArray arrayWithArray:[LJKCommentsTool totalComments]];
     }
     return _commentsArray;
 }
@@ -91,40 +93,30 @@ static NSString *const commentIdentifier = @"commentCell";
     
     [self.view addSubview:composeBar];
     self.composeBar = composeBar;
-    
     [composeBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
-//        make.right.equalTo(self.view.mas_right);
         make.bottom.equalTo(self.view.mas_bottom);
         make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, TABBAR_HEIGHT));
     }];
-
-    
 }
 
 #pragma mark - tableView 数据源 & 代理 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.commentsArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    static NSString *ID = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-//    }
     LJKTopicDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:commentIdentifier];
     cell.comment = self.commentsArray[indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
     return [self.commentsArray[indexPath.row] cellHeight];
 }
 
+#pragma mark - scrollView 代理
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
 }

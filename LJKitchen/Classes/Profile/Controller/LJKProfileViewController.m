@@ -10,6 +10,7 @@
 #import "LJKFindFriendViewController.h"
 #import "LJKSettingViewController.h"
 #import "LJKProfileEditViewController.h"
+
 #import "LJKProfileHeader.h"
 
 #import "LJKAuthorDetail.h"
@@ -33,6 +34,9 @@
 
 @implementation LJKProfileViewController
 
+static NSString * const mydishIdentifier = @"myDishCollectionCell";
+
+#pragma mark - 懒加载
 - (NSMutableArray *)authorDishArray {
     if (!_authorDishArray) {
         _authorDishArray = [NSMutableArray array];
@@ -41,8 +45,7 @@
 }
 
 
-static NSString * const mydishIdentifier = @"myDishCollectionCell";
-
+#pragma mark - 页面主体
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -122,6 +125,7 @@ static NSString * const mydishIdentifier = @"myDishCollectionCell";
 }
 
 - (void)setupSegment {
+    // 重灾区……
     HMSegmentedControl *segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"作品",@"菜谱"]];
     segmentControl.frame = CGRectMake(0, self.headerHeight + NAVBAR_HEIGHT, SCREEN_WIDTH, TABBAR_HEIGHT);
     segmentControl.selectionIndicatorHeight = 4.0;

@@ -5,17 +5,17 @@
 //  Created by  a on 16/6/8.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done 
 
 #import "LJKMessageViewController.h"
-#import "LJKCommunityViewController.h"
-#import "LJKNotificationViewController.h"
-#import "LJKSendMailViewController.h"
-#import "LJKSuggestViewController.h"
-#import "LJKBasicIconCell.h"
+#import "LJKCommunityViewController.h"      // 社区
+#import "LJKNotificationViewController.h"   // 推送(设置)
+#import "LJKSendMailViewController.h"       // 发送邮件
+#import "LJKSuggestViewController.h"        // 帮助中心
+
 #import "LJKBasic2Cell.h"
 
 #import <MJRefresh.h>
-
 #import <Masonry.h>
 
 @interface LJKMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -24,7 +24,7 @@
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UIImageView *header_IconView;
 @property (nonatomic, strong) UIButton *header_sendMail;
-@property (nonatomic, strong) UIButton *suggestion; // 意见及建议
+@property (nonatomic, strong) UIButton *suggestion;         // 意见及建议
 @end
 
 @implementation LJKMessageViewController
@@ -71,8 +71,6 @@
     }
     return _messageView;
 }
-
-
 
 #pragma mark - 页面主体
 - (void)viewDidLoad {
@@ -127,14 +125,13 @@
 - (void)suggest {
     LJKSuggestViewController *suggest = [[LJKSuggestViewController alloc] init];
     [self.navigationController pushViewController:suggest animated:YES];
+    // ???:这里第一次点击时 会有延迟
      NSLog(@"跳转至意见反馈界面——————");
 }
 
 - (void)community {
-    
     LJKCommunityViewController *community = [[LJKCommunityViewController alloc] init];
     [self.navigationController pushViewController:community animated:YES];
-    
 }
 
 - (void)notification {
@@ -148,7 +145,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 15;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

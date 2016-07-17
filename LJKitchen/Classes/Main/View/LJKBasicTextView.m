@@ -5,13 +5,17 @@
 //  Created by  a on 16/6/9.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKBasicTextView.h"
 
+@interface LJKBasicTextView ()
+
+@end
+
 @implementation LJKBasicTextView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // 设置通知监听 textView发生的变化
@@ -76,9 +80,9 @@
     CGFloat phH = rect.size.height - 2 * phY;
     CGRect phRect = CGRectMake(phX, phY, phW, phH);
     [self.placeholder drawInRect:phRect withAttributes:attrs];
-    
 }
 
+#pragma mark - 移除通知
 - (void)dealloc {
     [NotificationCenter removeObserver:self];
 }

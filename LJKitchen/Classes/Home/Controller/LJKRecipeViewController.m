@@ -5,18 +5,23 @@
 //  Created by  a on 16/7/6.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKRecipeViewController.h"
-#import "LJKRecipeViewHeader.h"
+#import "LJKBasketController.h"             // 菜篮子
+#import "LJKFeedsViewController.h"          // 关注动态
+#import "LJKDishViewController.h"           // 菜谱推介
+#import "LJKReportViewController.h"         // 举报 (举报控制器)
 
-#import "LJKRecipeIngredientCell.h"
-#import "LJKRecipeInstructionCell.h"
-#import "LJKRecipeTipsCell.h"
-#import "LJKRecipeAddToListCell.h"
-#import "LJKRecipeDishShowCell.h"
+#import "LJKRecipeIngredientCell.h"         // 用料
+#import "LJKRecipeInstructionCell.h"        // 步骤
+#import "LJKRecipeTipsCell.h"               // 小贴士
+#import "LJKRecipeAddToListCell.h"          // 加入菜单 (已加入)
+#import "LJKRecipeDishShowCell.h"           // 作品展示
 
-#import "LJKRecipeSupplementaryFooter.h"
-#import "LJKRecipeAddListFooter.h"
+#import "LJKRecipeSupplementaryFooter.h"    // 菜谱追加描述
+#import "LJKRecipeAddListFooter.h"          // 加入菜单 (action)
+#import "LJKRecipeViewHeader.h"             // header
 
 #import "LJKDish.h"
 #import "LJKRecipe.h"
@@ -37,7 +42,7 @@
 @property (nonatomic, strong) NSMutableArray *dishArray;
 @property (nonatomic, strong) NSMutableArray *recipeListArray;
 @property (nonatomic, strong) NSMutableArray *title_sections;
-
+@property (nonatomic, strong) NSArray <UIBarButtonItem *>  *naviButtonsArray;
 @end
 
 @implementation LJKRecipeViewController
@@ -52,6 +57,7 @@ static NSString *const recipeTipsIdentifier = @"TipsCell";                    //
 static NSString *const recipeAddToListIdentifier = @"AddListCell";            // 被加入的菜单
 static NSString *const recipeDishShowIdentifier = @"DishShowCell";            // 作品展示
 
+#pragma mark - 懒加载
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -84,12 +90,14 @@ static NSString *const recipeDishShowIdentifier = @"DishShowCell";            //
     return _title_sections;
 }
 
+#pragma mark - 页面主体
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
     [self setupTableView];
     [self setupTableViewHeader];
     [self loadNewData];
+
 }
 
 - (void)setupNavigationBar {
@@ -99,6 +107,18 @@ static NSString *const recipeDishShowIdentifier = @"DishShowCell";            //
                                     target:self
                                     action:@selector(buyListButtonDidClicked)];
     
+    /*
+     * runtime 向分类中添加属性(block回调)失败，换了最笨的方法……
+     * 这大概就是所谓的隔着屏幕散发出恶臭的代码吧……😓
+     */
+    self.naviButtonsArray = [UIBarButtonItem createShareButtonsWith:self target:self
+                                                  firstButtonAction:@selector(backButtonDidClicked)
+                                                 secondButtonAction:@selector(PYQButtonDidClicked)
+                                                  thirdButtonAction:@selector(WeChatButtonDidClicked)
+                                                 fourthButtonAction:@selector(OtherButtonDidClicked)];
+    self.navigationItem.leftBarButtonItems = self.naviButtonsArray;
+    
+    /*
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
@@ -124,8 +144,8 @@ static NSString *const recipeDishShowIdentifier = @"DishShowCell";            //
                                                                   action:@selector(OtherButtonDidClicked)];
     shareOther.image = [UIImage imageNamed:@"share_other"];
     shareOther.tintColor = Color_DarkGray;
-    
-    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:back, sharePYQ, shareWX, shareOther,nil];
+    */
+
 }
 
 - (void)setupTableView {
@@ -181,16 +201,25 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
                                case RecipeHeaderActionAuthorIconClicked:{
                                    [UILabel showMessage:@"Header - 作者头像点击回调"
                                         atNavController:weakSelf.navigationController];
+                                   [weakSelf pushWebViewWithUrl:LJKRequestKitchenAuthorPage];
+                                   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                       [UILabel showMessage:@"跳转至用户界面(web)"
+                                            atNavController:weakSelf.navigationController];
+                                   });
                                    break;
                                }
                                case RecipeHeaderActionCollectedButtonClicked:{
-                                   [UILabel showMessage:@"Header - 收藏按钮点击回调"
+                                   [UILabel showMessage:@"发送通知，收藏该菜谱"
                                         atNavController:weakSelf.navigationController];
                                    break;
                                }
                                case RecipeHeaderActionBasketButtonClicked:{
-                                   [UILabel showMessage:@"Header - 菜篮子按钮点击回调"
+                                   [UILabel showMessage:@"Header - Push至菜篮子界面"
                                         atNavController:weakSelf.navigationController];
+                                   [UILabel showMessage:@"发送通知，菜篮子储存该菜谱"
+                                        atNavController:weakSelf.navigationController];
+                                   [weakSelf.navigationController pushViewController:[[LJKBasketController alloc] init]
+                                                                            animated:YES];
                                    break;
                                }
                            }
@@ -210,7 +239,7 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
                        self.dishArray = [LJKDish mj_objectArrayWithKeyValuesArray:json[@"content"][@"dishes"]];
                        [self.tableView reloadData];
     } failure:^(NSError *error) {
-        
+                        NSLog(@"加载失败  原因:%@", error);
     }];
     
     [LJKNetworkTool afnGet:LJKRequestKitchenAddedRecipeList
@@ -219,7 +248,7 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
                        self.recipeListArray = [LJKRecipeList mj_objectArrayWithKeyValuesArray:json[@"content"][@"recipe_lists"]];
                        [self.tableView reloadData];
     } failure:^(NSError *error) {
-                        NSLog(@"%@", error);
+                        NSLog(@"加载失败  原因:%@", error);
     }];
 }
 
@@ -288,12 +317,49 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
         LJKRecipeDishShowCell *cell = [tableView dequeueReusableCellWithIdentifier:recipeDishShowIdentifier
                                                                       forIndexPath:indexPath];
         cell.recipe = self.recipe;
+        cell.dishArray = self.dishArray;
+        // 全部作品(button)
         cell.showAllBlock = ^(){
             [UILabel showMessage:@"全部作品" atNavController:weakSelf.navigationController];
+            [weakSelf.navigationController pushViewController:[[LJKFeedsViewController alloc] init] animated:YES];
         };
         
+        // 上传我的作品(View)
         cell.uploadMyDishBlock = ^() {
             [UILabel showMessage:@"跳转至上传作品" atNavController:weakSelf.navigationController];
+        };
+        
+        // cell点击
+        cell.collectionViewCellClickedBlock = ^(NSInteger index){
+            [weakSelf.navigationController pushViewController:[[LJKDishViewController alloc] init] animated:YES];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [UILabel showMessage:@"模拟跳转至对应作品" atNavController:weakSelf.navigationController];
+            });
+        };
+        
+        // 点赞(button)
+        cell.diggsButtonClickedBlock = ^(UIButton *sender){
+            [UILabel showMessage:@"点赞 -> 发送请求 -> 刷新TableView" atNavController:weakSelf.navigationController];
+//            NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:4];
+//            [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        };
+        
+        cell.authorIconDidClickedBlock = ^{
+            [UILabel showMessage:@"头像跳转" atNavController:weakSelf.navigationController];
+            [weakSelf pushWebViewWithUrl:LJKRequestKitchenAuthorPage];
+        };
+        
+        // 刷新
+        cell.refreshBlock = ^{
+            [LJKNetworkTool afnGet:LJKRequestKitchenRecipeDish
+                            params:nil
+                           success:^(id json) {
+                               NSArray *newDish = [LJKDish mj_objectArrayWithKeyValuesArray:json[@"content"][@"dishes"]];
+                               [self.dishArray addObjectsFromArray:newDish];
+                               [self.tableView reloadData];
+            } failure:^(NSError *error) {
+                                NSLog(@"加载失败  原因:%@", error);
+            }];
         };
         return cell;
     }
@@ -314,9 +380,9 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
      // 小贴士
     else if (indexPath.section == 2) {
 
-        if (!self.recipe.tips.length) { // has Tips
+        if (!self.recipe.tips.length) { // 存在小贴士
             return 0;
-        } else {                        // none Tips
+        } else {                        // None
             return self.recipe.tipsHeight;
         }
     }
@@ -332,7 +398,8 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
     }
     // 作品
     else if (indexPath.section == 4) {
-        return self.dishArray.count ? SCREEN_HEIGHT * 0.5 + 160 : 0;
+        // 155 == 作品数LabelHeight + 所有作品ButtonHeight + MarginSum 
+        return self.dishArray.count ? (SCREEN_HEIGHT * 0.5 + 25) + 155 : 0;
     }
     
     return 0;
@@ -346,7 +413,8 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
         LJKRecipeSupplementaryFooter *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:recipeFooterSupplyIdentifier];
 
         footer.recipe = self.recipe;
-        footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
+        footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 150);
+
         footer.footerActionBlock = ^(SupplementaryFooterAction action) {
             switch (action) {
                 case SupplementaryFooterActionComment: {   // 跳转至所有留言
@@ -358,21 +426,33 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
                     break;
                 }
                 case SupplementaryFooterActionReport: {    // 举报界面
-                    [UILabel showMessage:@"举报界面或AlertAction" atNavController:weakSelf.navigationController];
+                    [weakSelf.navigationController pushViewController:[[LJKReportViewController alloc] init]
+                                                             animated:YES];
+                    [UILabel showMessage:@"Push至举报作品界面"
+                         atNavController:weakSelf.navigationController];
                     break;
                 }
             }
         };
+        
         return footer;
     }
     // 被加入的菜单 Footer
     else if (section == 3) {
         LJKRecipeAddListFooter *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:recipeFooterAddListIdentifier];
 
-        footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 60);
+        footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 130);
+        // 将本菜谱加入菜单
         footer.footerActionBlock = ^(){
-            [UILabel showMessage:@"点击了“加入菜单”按钮" atNavController:weakSelf.navigationController];
+            [UILabel showMessage:@"点击了“加入菜单”按钮"
+                 atNavController:weakSelf.navigationController];
         };
+        // 跳转至推广的webView
+        footer.footerSpreadBlock = ^(){
+//            [UILabel showMessage:@"push至商品界面" atNavController:weakSelf.navigationController];
+            [weakSelf pushWebViewWithUrl:LJKRequestKitchenSpread];
+        };
+        
         return footer;
     }
     
@@ -384,7 +464,7 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
     UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:recipeHeaderIdentifier];
     headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
     headerView.contentView.backgroundColor = [UIColor whiteColor];
-    NSInteger tag = 11;
+    NSInteger tag = 30;
     UILabel *label = [headerView.contentView viewWithTag:tag];
     if (label == nil) {
         label = [[UILabel alloc] init];
@@ -400,16 +480,18 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
 
 #pragma mark Header'height In different Section
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if ((section == 2 && self.recipe.tips.length == 0) || section == 4) return 0;
+    if ((section == 2 && self.recipe.tips.length == 0) || section == 4) {
+        return 0;
+    }
     return 50;
 }
 
 #pragma mark Footer'height In different Section
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     if (section == 2) {
-        return 200;
+        return 150;
     } else if (section == 3) {
-        return 80;
+        return 130;
     }
     return 0;
 }
@@ -425,15 +507,24 @@ forHeaderFooterViewReuseIdentifier:recipeFooterAddListIdentifier];
 }
 
 - (void)PYQButtonDidClicked {
-    
+    [UILabel showMessage:@"分享至朋友圈" atNavController:self.navigationController];
 }
 
 - (void)WeChatButtonDidClicked {
-    
+    [UILabel showMessage:@"分享至微信" atNavController:self.navigationController];
 }
 
 - (void)OtherButtonDidClicked {
+    [UILabel showMessage:@"其他分享" atNavController:self.navigationController];
+}
+
+- (void)showReportSuccessHUD {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"LJKitchen已经收到您的举报，我们会对作品信息进行核查，感谢您对LJKitchen一直以来的支持"];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
 }
 
 @end

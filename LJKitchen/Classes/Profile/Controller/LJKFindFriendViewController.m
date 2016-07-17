@@ -21,20 +21,18 @@
     self.view.backgroundColor = Color_BackGround;
     LJKSearchBar *searchBar = [LJKSearchBar searchBarWithPlaceholder:@"搜厨友"];
     self.navigationItem.titleView = searchBar;
-    //    WeakSelf;
+
+    //
     searchBar.searchBarShouldBeginEditingBlock = ^{
-        //        XCFSearchViewController *searchCon = [[XCFSearchViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        //        [weakSelf.navigationController pushViewController:searchCon animated:YES];
+
     };
 
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 @end

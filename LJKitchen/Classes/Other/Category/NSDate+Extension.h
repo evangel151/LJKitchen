@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (Extension)
+
 /** 快速比较当前时间和传入时间的时间差 */
 - (NSDateComponents *)intervalToNow;
 /** 是否为今年 -> 可判断 今年/其他年 */
@@ -17,7 +18,4 @@
 - (BOOL)isToday;
 /** 是否为昨天 */
 - (BOOL)isYesterday;
-
-
-
 @end

@@ -5,10 +5,12 @@
 //  Created by  a on 16/7/1.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  关注动态 cell (V)
 
 #import <UIKit/UIKit.h>
 
 
+// dish 回调状态枚举
 typedef NS_ENUM(NSInteger, DishViewAction) {
     DishViewActionIcon,
     DishViewActionName,
@@ -20,8 +22,10 @@ typedef NS_ENUM(NSInteger, DishViewAction) {
 
 @class LJKDish,LJKReview;
 @interface LJKFeedsViewCell : UITableViewCell
-
+/** 关注动态 - cell类型 */
 @property (nonatomic, assign) LJKShowViewType type;
+
+/** 关注动态 - 模型 */
 @property (nonatomic, strong) LJKDish *dish;
 @property (nonatomic, strong) LJKReview *review;
 

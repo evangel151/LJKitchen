@@ -7,7 +7,7 @@
 //
 
 #import "LJKRecommendBuyController.h"
-#import "LJKFeedsViewCell.h"
+#import "LJKFeedsViewCell.h"            // 关注动态
 
 #import "LJKReview.h"
 #import "LJKReviewPhoto.h"
@@ -60,7 +60,8 @@ static NSString *const recommendCellIdentifier = @"recommendCell";
 - (void)setupTableView {
     self.tableView.backgroundColor = Color_BackGround;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerClass:[LJKFeedsViewCell class] forCellReuseIdentifier:recommendCellIdentifier];
+    [self.tableView registerClass:[LJKFeedsViewCell class]
+           forCellReuseIdentifier:recommendCellIdentifier];
 }
 
 - (void)setupRefresh {
@@ -102,6 +103,7 @@ static NSString *const recommendCellIdentifier = @"recommendCell";
                     params:nil
                    success:^(id json) {
                        NSArray *moreData = [LJKReview mj_objectArrayWithKeyValuesArray:json[@"content"][@"reviews"]];
+                       // ?:(未解决)此处图片数组会引起未知数组越界错误
                        [self.reviewsArray addObjectsFromArray:moreData];
                        for (NSInteger index = 0; index < moreData.count; index++) {
                            [self.imageViewCurrentLocationArray addObject:@(0)];

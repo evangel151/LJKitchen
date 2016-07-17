@@ -7,7 +7,8 @@
 //
 
 #import "LJKFeedsViewController.h"
-#import "LJKRecipeViewController.h"
+#import "LJKRecipeViewController.h"  // 菜谱详情
+
 #import "LJKFeedsViewCell.h"
 
 #import "LJKDish.h"
@@ -28,6 +29,7 @@
 
 static NSString *feedsCellIdentifier = @"feedsCell";
 
+#pragma mark - 懒加载
 - (NSMutableArray *)feedsArray {
     if (!_feedsArray) {
         _feedsArray = [NSMutableArray array];
@@ -42,9 +44,9 @@ static NSString *feedsCellIdentifier = @"feedsCell";
     return _imageViewCurrentLocationArray;
 }
 
+#pragma mark - 页面构成
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"关注动态";
     [self setupNavigationBar];
     [self setupTableView];
     [self setupRefresh];
@@ -54,29 +56,16 @@ static NSString *feedsCellIdentifier = @"feedsCell";
 - (void)setupTableView {
     self.tableView.backgroundColor = Color_BackGround;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerClass:[LJKFeedsViewCell class] forCellReuseIdentifier:feedsCellIdentifier];
+    [self.tableView registerClass:[LJKFeedsViewCell class]
+           forCellReuseIdentifier:feedsCellIdentifier];
     
 }
 
-
 - (void)setupNavigationBar {
-//    UIButton *notiBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-//    [notiBtn setImage:[UIImage imageNamed:@"notification"] forState:UIControlStateNormal];
-//    [notiBtn addTarget:self
-//                action:@selector(notificationButtonClicked)
-//      forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIButton *uploadBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-//    [notiBtn setImage:[UIImage imageNamed:@"uploadPhoto"] forState:UIControlStateNormal];
-//    [uploadBtn addTarget:self
-//                  action:@selector(uploadDishButtonClicked)
-//        forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIBarButtonItem *noti1 = [[UIBarButtonItem alloc] initWithCustomView:notiBtn];
-//    UIBarButtonItem *upload1 = [[UIBarButtonItem alloc] initWithCustomView:uploadBtn];
     
-    // FIXME: 直接设置默认rightBarButtonItems 会导致上传按钮被隐藏 or 错误的颜色显示
+    // FIXME: (已解决)直接设置默认rightBarButtonItems 会导致上传按钮被隐藏 or 错误的颜色显示
     // 下面的方式设置一个空的标题后可以解决这个问题……但感觉有点蠢……
+    self.title = @"关注动态";
     UIBarButtonItem *notifi = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                style:UIBarButtonItemStylePlain
                                                               target:self
@@ -192,8 +181,9 @@ static NSString *feedsCellIdentifier = @"feedsCell";
     cell.actionBlock = ^(DishViewAction action) {
         switch (action) {
             case DishViewActionIcon: {     // 用户头像
-                [UILabel showMessage:@"即将跳转至关注用户界面"
-                     atNavController:weakSelf.navigationController];
+//                [UILabel showMessage:@"即将跳转至关注用户界面"
+//                     atNavController:weakSelf.navigationController];
+                [weakSelf pushWebViewWithUrl:LJKRequestKitchenAuthorPage];
                 break;
             }
             case DishViewActionName: {     // 菜谱
@@ -203,7 +193,7 @@ static NSString *feedsCellIdentifier = @"feedsCell";
                 break;
             }
             case DishViewActionDigg: {     // 点赞按钮
-//                [UILabel showMessage:@"" atNavController:weakSelf.navigationController];
+
                 break;
             }
             case DishViewActionCommment: { // 评论按钮 & total评论Label
@@ -314,8 +304,8 @@ static NSString *feedsCellIdentifier = @"feedsCell";
 }
 
 
-- (void)moreButtonClickedInDishView {
-    
-}
+//- (void)moreButtonClickedInDishView {
+//    
+//}
 
 @end

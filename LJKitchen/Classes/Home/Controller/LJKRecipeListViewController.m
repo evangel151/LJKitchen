@@ -5,10 +5,13 @@
 //  Created by  a on 16/7/5.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKRecipeListViewController.h"
-#import "LJKRecipeListHeader.h"
-#import "LJKRecipeCell.h"
+#import "LJKRecipeViewController.h"     // 菜谱详情
+
+#import "LJKRecipeListHeader.h"         // 菜单头视图
+#import "LJKRecipeCell.h"               // 菜单cell
 
 #import "LJKRecipeList.h"
 #import "LJKRecipe.h"
@@ -26,25 +29,18 @@
 
 static NSString *const recipeListCellIdentifier = @"recipeListCell";
 
+#pragma mark - 页面构成
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
     [self setupTableView];
     [self setupRefresh];
     [self loadNewData];
-
-    
-    
 }
 
 - (void)setupNavigationBar {
     self.title = @"菜单";
-    
 }
-
-//- (void)setupTableViewHeader {
-//    
-//}
 
 - (void)setupTableView {
     self.tableView.backgroundColor = Color_BackGround;
@@ -58,6 +54,7 @@ static NSString *const recipeListCellIdentifier = @"recipeListCell";
                                                                 refreshingAction:@selector(loadNewData)];
 }
 
+#pragma mark - 数据处理
 - (void)loadNewData {
     [LJKNetworkTool afnGet:LJKRequestKitchenRecipeList
                     params:nil
@@ -84,7 +81,6 @@ static NSString *const recipeListCellIdentifier = @"recipeListCell";
                        };
                        self.tableView.tableHeaderView = self.header;
 
-                       
                        [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
                         NSLog(@"加载失败，原因:%@", error);
@@ -105,6 +101,7 @@ static NSString *const recipeListCellIdentifier = @"recipeListCell";
     WeakSelf;
     cell.authorIconClickedBlock  = ^{
         [UILabel showMessage:@"跳转至菜谱作者" atNavController:weakSelf.navigationController];
+        [weakSelf pushWebViewWithUrl:LJKRequestKitchenAuthorPage];
     };
     return cell;
 }
@@ -113,7 +110,15 @@ static NSString *const recipeListCellIdentifier = @"recipeListCell";
     return 320;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 模拟跳转对应ID菜谱
+    // 将点击的对应的菜谱ID 发送给新的菜谱控制器
+    [UILabel showMessage:@"跳转至对应菜谱"
+         atNavController:self.navigationController];
+    LJKRecipeViewController *recipeVc = [[LJKRecipeViewController alloc] init];
+    recipeVc.recipeList.ID = self.recipeList.recipes[indexPath.row];
+    [self.navigationController pushViewController:recipeVc animated:YES];
+}
 
 
 @end

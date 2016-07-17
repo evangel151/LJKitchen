@@ -5,8 +5,10 @@
 //  Created by  a on 16/7/9.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKRecipeAddToListCell.h"
+
 #import "LJKRecipeList.h"
 #import "LJKRecipe.h"
 #import "LJKAuthor.h"
@@ -27,6 +29,7 @@
 
 @implementation LJKRecipeAddToListCell
 
+#pragma mark - 懒加载
 - (UIImageView *)recipeListCover {
     if (!_recipeListCover) {
         _recipeListCover = [[UIImageView alloc] init];

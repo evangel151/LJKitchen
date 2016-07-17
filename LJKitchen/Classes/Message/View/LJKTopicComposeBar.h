@@ -14,7 +14,9 @@ typedef void (^EditingTextBlock)(NSString *);
 /** 编辑输入框后的回调 */
 @property (nonatomic, copy) EditingTextBlock editingTextBlock;
 
-/**  */
+/** 快速创建 */
 + (instancetype)addCompostBarWithEditingTextBlock:(EditingTextBlock)editingTextBlock;
+
+@property (nonatomic, copy) NSString *placeHolder;
 
 @end

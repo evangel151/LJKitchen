@@ -14,10 +14,13 @@
 #import <UIImageView+WebCache.h>
 
 @interface LJKCommunityForumCell ()
-
+/** 社区 - 头像(容器) */
 @property (nonatomic, strong) UIView *iconContainer;
+/** 社区 - title */
 @property (nonatomic, strong) UILabel *mainLabel;
+/** 社区 - 最后一条发言 */
 @property (nonatomic, strong) UILabel *descLabel;
+
 @property (nonatomic, strong) UIImageView *icon1;
 @property (nonatomic, strong) UIImageView *icon2;
 @property (nonatomic, strong) UIImageView *icon3;
@@ -41,36 +44,33 @@
 - (UIImageView *)icon1 {
     if (!_icon1) {
         _icon1 = [[UIImageView alloc] init];
-        _icon1.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon1;
 }
+
 - (UIImageView *)icon2 {
     if (!_icon2) {
         _icon2 = [[UIImageView alloc] init];
-        _icon2.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon2;
 }
 - (UIImageView *)icon3 {
     if (!_icon3) {
         _icon3 = [[UIImageView alloc] init];
-        _icon3.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon3;
 }
 - (UIImageView *)icon4 {
     if (!_icon4) {
         _icon4 = [[UIImageView alloc] init];
-        _icon4.image = [UIImage imageNamed:@"defaultUserHeader"];
     }
     return _icon4;
 }
 
 - (UILabel *)mainLabel {
     if (!_mainLabel) {
-        _mainLabel = [UILabel labelWithTextColor:[UIColor blackColor]
-                                 backgroundColor:[UIColor clearColor]
+        _mainLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                 backgroundColor:Color_Clear
                                         fontSize:17
                                            lines:1
                                    textAlignment:NSTextAlignmentLeft];
@@ -81,7 +81,7 @@
 - (UILabel *)descLabel {
     if (!_descLabel) {
         _descLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                  backgroundColor:[UIColor clearColor]
+                                  backgroundColor:Color_Clear
                                          fontSize:13
                                             lines:1
                                     textAlignment:NSTextAlignmentLeft];
@@ -161,12 +161,14 @@
     
     for (int i = 0; i < forum.latest_authors.count; i++) {
         UIImageView *icon = self.iconContainer.subviews[i];
-
-        [icon setCircleIconWithUrl:[NSURL URLWithString:[forum.latest_authors[i] photo60]] placeHolder:@"defaultUserHeader" cornRadius:0];
-        // 增加一个扩展，去除圆角功能，节约系统性能
-//        [icon setNormalIconWithUrl:[NSURL URLWithString:[forum.latest_authors[i] photo60]] placeHolder:@"defaultUserHeader"];
+        
+        [icon sd_setImageWithURL:[NSURL URLWithString:[forum.latest_authors[i] photo60]]
+                placeholderImage:[UIImage imageNamed:@"defaultUserHeader"]];
+        // 不适合加圆角
+        //        [icon setCircleIconWithUrl:[NSURL URLWithString:[forum.latest_authors[i] photo60]]
+        //                       placeHolder:@"defaultUserHeader"
+        //                        cornRadius:0];
     }
-
 }
 
 @end

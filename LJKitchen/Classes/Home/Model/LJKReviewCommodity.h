@@ -5,6 +5,7 @@
 //  Created by  a on 16/7/5.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  商品评价  
 
 #import <Foundation/Foundation.h>
 @class LJKGoods;

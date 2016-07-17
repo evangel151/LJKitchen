@@ -5,6 +5,7 @@
 //  Created by  a on 16/6/21.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKBLSViewController.h"
 #import "LJKBLSViewHeader.h"
@@ -19,7 +20,9 @@
 #import <MJRefresh.h>
 
 @interface LJKBLSViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
 @property (nonatomic, strong) UICollectionView *collectionView;
+/** 三餐 - 上传我的作品 */
 @property (nonatomic, strong) UIButton *uploadMyDishButton;
 @property (nonatomic, strong) LJKBLSHeaderData *headerData;
 @property (nonatomic, strong) NSArray *dishArray;
@@ -90,17 +93,19 @@ static NSString * const footerIdentifier = @"BLSFooter";
 }
 
 
+#pragma mark - 数据处理
 - (void)loadNewData {
     
     // 2016.6月22日 晚餐
     [LJKNetworkTool afnGet:LJKRequestKitchenSupper
                     params:nil
                    success:^(id json) {
-//                       NSLog(@"%@", json);
+
                        self.headerData = [LJKBLSHeaderData mj_objectWithKeyValues:json[@"content"][@"event"]];
                        [self.collectionView reloadData];
                        NSString *string = [self.headerData.name substringWithRange:NSMakeRange(0, 2)];
-                       [self.uploadMyDishButton setTitle:[NSString stringWithFormat:@"上传我的%@", string] forState:UIControlStateNormal];
+                       [self.uploadMyDishButton setTitle:[NSString stringWithFormat:@"上传我的%@", string]
+                                                forState:UIControlStateNormal];
                        
     }
                    failure:^(NSError *error) {
@@ -115,17 +120,15 @@ static NSString * const footerIdentifier = @"BLSFooter";
     [LJKNetworkTool afnGet:LJKRequestKitchenSupperDishes
                     params:nil
                    success:^(id json) {
-                       NSLog(@"作品json: %@", json);
+//                       NSLog(@"作品json: %@", json);
                        self.dishArray = [LJKDish mj_objectArrayWithKeyValuesArray:json[@"content"][@"dishes"]];
                        [self.collectionView reloadData];
-                       
-                       // 如果接口失效(返回空的JSON) 在navigationBar下方出现一个短暂主题颜色提示框，停留1秒后消失
+
                        NSUInteger count = self.dishArray.count;
                        WeakSelf;
                        if (count == 0 ) {
                            [UILabel showMessage:@"请求已过期，无法显示，请重新抓取" atNavController:weakSelf.navigationController];
                        }
-                       
                    }
                    failure:^(NSError *error) {
                        NSLog(@"加载dishs失败 原因:%@", error);
@@ -133,20 +136,21 @@ static NSString * const footerIdentifier = @"BLSFooter";
 }
 
 - (void)uploadMyDish {
+    // TODO: 上传菜品界面未完成
      NSLog(@"即将跳转上传作品界面——————");
 }
 
 #pragma mark - collectionView 数据源 & 代理
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    // FIXME:(已解决) 接口具有时效性 接口失效，写死
+    // FIXME:(已解决) 接口无故失效！！！
+    // 接口具有时效性……(抓包获取的url时效性约10min ~ 30min不等) 失效后仍返回success,但数据为nil)
     // return 20;
-    NSUInteger count = self.dishArray.count;
 //    WeakSelf;
 //    if (count == 0 ) {
 //        [UILabel showMessage:@"作品接口已失效，暂时无法显示" atNavController:weakSelf.navigationController];
 //    }
-    
+    NSUInteger count = self.dishArray.count;
     return count;
 }
 

@@ -71,19 +71,25 @@
 
 - (UIToolbar *)toolBar {
     if (!_toolBar) {
-        _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TABBAR_HEIGHT)];
-        UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"确定"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(done)];
-        
-        UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(cancel)];
-        UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        _toolBar.items = @[flexible,cancel,done];
-        _toolBar.tintColor = Color_ThemeColor;
+        // FIXME:(已解决) I good vegetable a! 忘了写Target...
+//        _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, TABBAR_HEIGHT)];
+//        UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"确定"
+//                                                                 style:UIBarButtonItemStylePlain
+//                                                                target:self
+//                                                                action:@selector(done)];
+//        
+//        UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消"
+//                                                                 style:UIBarButtonItemStylePlain
+//                                                                target:self
+//                                                                action:@selector(cancel)];
+//        UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//        _toolBar.items = @[flexible,cancel,done];
+//        _toolBar.tintColor = Color_ThemeColor;
+
+        _toolBar = [UIToolbar createBasicToolBarWithDone:@selector(doneDidClicked)
+                                            cancelAction:@selector(cancelDidClicked)
+                                                  target:self];
+
         
     }
     return _toolBar;
@@ -141,12 +147,13 @@
 
 #pragma mark - 事件处理
 
-- (void)done {
+- (void)doneDidClicked {
     [self endEditing:YES];
     !self.editingLocationBlock ? : self.editingLocationBlock(self.locationField.text);
+//     NSLog(@"点击测试——————");
 }
 
-- (void)cancel {
+- (void)cancelDidClicked {
 //    [self endEditing:YES];
     !self.cancelEditingBlock ? : self.cancelEditingBlock(self.displayLocation);
     [self endEditing:YES];

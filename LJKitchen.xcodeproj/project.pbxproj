@@ -37,6 +37,16 @@
 		0037A7291D2FD92500DF9106 /* LJKRecipeTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A7281D2FD92500DF9106 /* LJKRecipeTipsCell.m */; };
 		0037A72C1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A72B1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m */; };
 		0037A72F1D3058BC00DF9106 /* LJKRecipeAddToListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037A72E1D3058BC00DF9106 /* LJKRecipeAddToListCell.m */; };
+		006CDF841D33CBC200EBF154 /* LJKShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF831D33CBC200EBF154 /* LJKShop.m */; };
+		006CDF871D33CC3800EBF154 /* LJKGoodsAttrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF861D33CC3800EBF154 /* LJKGoodsAttrs.m */; };
+		006CDF8A1D33CC8500EBF154 /* LJKGoodsKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF891D33CC8500EBF154 /* LJKGoodsKind.m */; };
+		006CDF8D1D33D1D900EBF154 /* LJKCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF8C1D33D1D900EBF154 /* LJKCartItem.m */; };
+		006CDF911D33DC3B00EBF154 /* LJKCartItemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF901D33DC3B00EBF154 /* LJKCartItemTool.m */; };
+		006CDF941D33DE2A00EBF154 /* LJKConstString.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF931D33DE2A00EBF154 /* LJKConstString.m */; };
+		006CDF971D33E1EF00EBF154 /* LJKOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF961D33E1EF00EBF154 /* LJKOrderViewController.m */; };
+		006CDF9A1D33E23200EBF154 /* LJKGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF991D33E23200EBF154 /* LJKGoodsViewController.m */; };
+		006CDF9D1D33E5E000EBF154 /* LJKCartSettlementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF9C1D33E5E000EBF154 /* LJKCartSettlementView.m */; };
+		006CDFA01D340DF300EBF154 /* LJKCartItemShopHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 006CDF9F1D340DF300EBF154 /* LJKCartItemShopHeader.m */; };
 		007107421D2AF4A500CDDEAB /* LJKReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 007107411D2AF4A500CDDEAB /* LJKReview.m */; };
 		007107451D2AF58000CDDEAB /* LJKReviewCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 007107441D2AF58000CDDEAB /* LJKReviewCommodity.m */; };
 		007107481D2AF5BB00CDDEAB /* LJKGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 007107471D2AF5BB00CDDEAB /* LJKGoods.m */; };
@@ -50,11 +60,29 @@
 		00943B701D247C29002F8F83 /* UIToolbar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00943B6F1D247C29002F8F83 /* UIToolbar+Extension.m */; };
 		00943B741D2487D3002F8F83 /* breakfast.json in Resources */ = {isa = PBXBuildFile; fileRef = 00943B721D2487D3002F8F83 /* breakfast.json */; };
 		00943B751D2487D3002F8F83 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 00943B731D2487D3002F8F83 /* location.json */; };
+		00A088331D38CD8E0037E8AF /* LJKGoodsBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A088321D38CD8E0037E8AF /* LJKGoodsBottomView.m */; };
+		00A088361D38D1590037E8AF /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A088351D38D1590037E8AF /* UIView+Extension.m */; };
+		00A088391D38E7770037E8AF /* LJKTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A088381D38E7770037E8AF /* LJKTalkViewController.m */; };
+		00A0883F1D391EEB0037E8AF /* LJKGoodsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0883E1D391EEB0037E8AF /* LJKGoodsHeaderView.m */; };
+		00A088421D3922890037E8AF /* LJKGoodsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A088411D3922890037E8AF /* LJKGoodsDetailView.m */; };
 		00A696951D2310250090935F /* LJKEditGenderAndBirthdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */; };
 		00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969A1D2330040090935F /* LJKEditBasicCell.m */; };
 		00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A6969D1D2335F30090935F /* LJKEditLocationCell.m */; };
+		00A771611D3A072C005A4B24 /* LJKGoodsFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A771601D3A072C005A4B24 /* LJKGoodsFooterView.m */; };
+		00A771641D3A0D19005A4B24 /* LJKGoodsShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A771631D3A0D19005A4B24 /* LJKGoodsShopCell.m */; };
+		00A771671D3A2693005A4B24 /* LJKGoodsShopPromotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A771661D3A2693005A4B24 /* LJKGoodsShopPromotionView.m */; };
+		00A7716A1D3A4350005A4B24 /* LJKRecommendBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A771691D3A4350005A4B24 /* LJKRecommendBuyCell.m */; };
+		00A7716D1D3A4B6D005A4B24 /* LJKRecommendItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A7716C1D3A4B6D005A4B24 /* LJKRecommendItem.m */; };
 		00A86AA61D2C5FA4008A79A8 /* LJKDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A86AA51D2C5FA4008A79A8 /* LJKDishViewController.m */; };
 		00A86AA91D2C623D008A79A8 /* LJKRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A86AA81D2C623D008A79A8 /* LJKRecipeViewController.m */; };
+		00A8C9B51D34A94C00AB1506 /* LJKCartItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8C9B41D34A94C00AB1506 /* LJKCartItemCell.m */; };
+		00A8C9B81D34EF2400AB1506 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8C9B71D34EF2400AB1506 /* UIBarButtonItem+Extension.m */; };
+		00A8C9BB1D352E6500AB1506 /* LJKShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8C9BA1D352E6500AB1506 /* LJKShopViewController.m */; };
+		00A8C9BE1D3552BD00AB1506 /* LJKOrderPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8C9BD1D3552BD00AB1506 /* LJKOrderPayView.m */; };
+		00ADB9FD1D3759350067CC11 /* LJKMarketCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB9FC1D3759350067CC11 /* LJKMarketCategoryCell.m */; };
+		00ADBA001D377EA30067CC11 /* LJKMarketSpreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB9FF1D377EA30067CC11 /* LJKMarketSpreadCell.m */; };
+		00ADBA031D378CFC0067CC11 /* LJKMarketShopRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ADBA021D378CFC0067CC11 /* LJKMarketShopRecommendCell.m */; };
+		00ADBA061D3790810067CC11 /* LJKShopRecommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ADBA051D3790800067CC11 /* LJKShopRecommentView.m */; };
 		00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED211D08373300B55ED4 /* AppDelegate.m */; };
 		00B5ED2F1D083D6D00B55ED4 /* LJKMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED2E1D083D6D00B55ED4 /* LJKMainTabBarController.m */; };
 		00B5ED321D083E8E00B55ED4 /* LJKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ED311D083E8E00B55ED4 /* LJKNavigationController.m */; };
@@ -84,14 +112,21 @@
 		00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D347361D09F0BF00B01E6C /* LJKBasicCell.m */; };
 		00D347391D09FB4B00B01E6C /* LJKBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */; };
 		00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */; };
+		00E573E31D32FA41005623D6 /* LJKReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E573E21D32FA41005623D6 /* LJKReportViewController.m */; };
 		00E96F041D25888700E6316D /* LJKEditAuthorDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F031D25888700E6316D /* LJKEditAuthorDescCell.m */; };
 		00E96F071D259D2400E6316D /* LJKRedEnvelopeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F061D259D2400E6316D /* LJKRedEnvelopeController.m */; };
 		00E96F0A1D25B2B500E6316D /* LJKFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F091D25B2B500E6316D /* LJKFeedsViewController.m */; };
 		00E96F0D1D25B4B300E6316D /* LJKFeedsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F0C1D25B4B300E6316D /* LJKFeedsViewCell.m */; };
 		00E96F101D25BC0A00E6316D /* LJKImageShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E96F0F1D25BC0A00E6316D /* LJKImageShowView.m */; };
+		00EA904F1D323D24005F02E8 /* LJKDishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EA904E1D323D24005F02E8 /* LJKDishCell.m */; };
+		00EAA69F1D36D41E005B2D7B /* LJKMarketViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EAA69E1D36D41E005B2D7B /* LJKMarketViewHeader.m */; };
 		00EB7A101D19542200CE8B39 /* LJKBLSViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */; };
 		00EB7A131D19546700CE8B39 /* LJKBLSViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A121D19546700CE8B39 /* LJKBLSViewCell.m */; };
 		00EB7A161D196D3100CE8B39 /* LJKBLSHeaderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EB7A151D196D3100CE8B39 /* LJKBLSHeaderData.m */; };
+		00EC465E1D380826009FC499 /* LJKMarketHotThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EC465D1D380826009FC499 /* LJKMarketHotThemeCell.m */; };
+		00EC46641D381A01009FC499 /* LJKMarketHotItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EC46631D381A01009FC499 /* LJKMarketHotItem.m */; };
+		00EC46671D381D56009FC499 /* LJKMarketNewArrivalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EC46661D381D56009FC499 /* LJKMarketNewArrivalCell.m */; };
+		00EC466A1D381E76009FC499 /* LJKMarketArrivalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EC46691D381E76009FC499 /* LJKMarketArrivalItem.m */; };
 		00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8061D119DF80025ED9C /* LJKMyInfo.m */; };
 		00EDE8161D11D3B60025ED9C /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8151D11D3B60025ED9C /* UIViewController+Extension.m */; };
 		00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDE8181D11D7660025ED9C /* LJKConstRequest.m */; };
@@ -102,6 +137,9 @@
 		00F079FF1D0D9D19005FDD59 /* breakfast.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F079FE1D0D9D19005FDD59 /* breakfast.json */; };
 		00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */; };
 		00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */; };
+		00F0B2911D36349C003A0735 /* LJKOrderItemFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F0B2901D36349C003A0735 /* LJKOrderItemFooterView.m */; };
+		00F0B2941D3691C1003A0735 /* LJKOrderPromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F0B2931D3691C1003A0735 /* LJKOrderPromotionCell.m */; };
+		00F0B2971D369CD2003A0735 /* LJKOrderSupplementaryFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F0B2961D369CD2003A0735 /* LJKOrderSupplementaryFooter.m */; };
 		00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F14E661D188D2C0078F262 /* LJKBLSViewController.m */; };
 		00F37B321D1AE1EE008A6B9A /* LJKCommunityForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B311D1AE1EE008A6B9A /* LJKCommunityForumCell.m */; };
 		00F37B351D1AE252008A6B9A /* LJKForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F37B341D1AE252008A6B9A /* LJKForum.m */; };
@@ -217,6 +255,26 @@
 		0037A72B1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeSupplementaryFooter.m; sourceTree = "<group>"; };
 		0037A72D1D3058BC00DF9106 /* LJKRecipeAddToListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeAddToListCell.h; sourceTree = "<group>"; };
 		0037A72E1D3058BC00DF9106 /* LJKRecipeAddToListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeAddToListCell.m; sourceTree = "<group>"; };
+		006CDF821D33CBC200EBF154 /* LJKShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKShop.h; sourceTree = "<group>"; };
+		006CDF831D33CBC200EBF154 /* LJKShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKShop.m; sourceTree = "<group>"; };
+		006CDF851D33CC3800EBF154 /* LJKGoodsAttrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsAttrs.h; sourceTree = "<group>"; };
+		006CDF861D33CC3800EBF154 /* LJKGoodsAttrs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsAttrs.m; sourceTree = "<group>"; };
+		006CDF881D33CC8500EBF154 /* LJKGoodsKind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsKind.h; sourceTree = "<group>"; };
+		006CDF891D33CC8500EBF154 /* LJKGoodsKind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsKind.m; sourceTree = "<group>"; };
+		006CDF8B1D33D1D900EBF154 /* LJKCartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCartItem.h; sourceTree = "<group>"; };
+		006CDF8C1D33D1D900EBF154 /* LJKCartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCartItem.m; sourceTree = "<group>"; };
+		006CDF8F1D33DC3B00EBF154 /* LJKCartItemTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCartItemTool.h; sourceTree = "<group>"; };
+		006CDF901D33DC3B00EBF154 /* LJKCartItemTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCartItemTool.m; sourceTree = "<group>"; };
+		006CDF921D33DE2A00EBF154 /* LJKConstString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKConstString.h; sourceTree = "<group>"; };
+		006CDF931D33DE2A00EBF154 /* LJKConstString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKConstString.m; sourceTree = "<group>"; };
+		006CDF951D33E1EF00EBF154 /* LJKOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKOrderViewController.h; sourceTree = "<group>"; };
+		006CDF961D33E1EF00EBF154 /* LJKOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKOrderViewController.m; sourceTree = "<group>"; };
+		006CDF981D33E23200EBF154 /* LJKGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsViewController.h; sourceTree = "<group>"; };
+		006CDF991D33E23200EBF154 /* LJKGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsViewController.m; sourceTree = "<group>"; };
+		006CDF9B1D33E5E000EBF154 /* LJKCartSettlementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCartSettlementView.h; sourceTree = "<group>"; };
+		006CDF9C1D33E5E000EBF154 /* LJKCartSettlementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCartSettlementView.m; sourceTree = "<group>"; };
+		006CDF9E1D340DF300EBF154 /* LJKCartItemShopHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCartItemShopHeader.h; sourceTree = "<group>"; };
+		006CDF9F1D340DF300EBF154 /* LJKCartItemShopHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCartItemShopHeader.m; sourceTree = "<group>"; };
 		007107401D2AF4A500CDDEAB /* LJKReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKReview.h; sourceTree = "<group>"; };
 		007107411D2AF4A500CDDEAB /* LJKReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKReview.m; sourceTree = "<group>"; };
 		007107431D2AF58000CDDEAB /* LJKReviewCommodity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKReviewCommodity.h; sourceTree = "<group>"; };
@@ -241,16 +299,52 @@
 		00943B6F1D247C29002F8F83 /* UIToolbar+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+Extension.m"; sourceTree = "<group>"; };
 		00943B721D2487D3002F8F83 /* breakfast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breakfast.json; sourceTree = "<group>"; };
 		00943B731D2487D3002F8F83 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		00A088311D38CD8E0037E8AF /* LJKGoodsBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsBottomView.h; sourceTree = "<group>"; };
+		00A088321D38CD8E0037E8AF /* LJKGoodsBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsBottomView.m; sourceTree = "<group>"; };
+		00A088341D38D1590037E8AF /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		00A088351D38D1590037E8AF /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		00A088371D38E7770037E8AF /* LJKTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTalkViewController.h; sourceTree = "<group>"; };
+		00A088381D38E7770037E8AF /* LJKTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTalkViewController.m; sourceTree = "<group>"; };
+		00A0883D1D391EEB0037E8AF /* LJKGoodsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsHeaderView.h; sourceTree = "<group>"; };
+		00A0883E1D391EEB0037E8AF /* LJKGoodsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsHeaderView.m; sourceTree = "<group>"; };
+		00A088401D3922890037E8AF /* LJKGoodsDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsDetailView.h; sourceTree = "<group>"; };
+		00A088411D3922890037E8AF /* LJKGoodsDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsDetailView.m; sourceTree = "<group>"; };
 		00A696931D2310250090935F /* LJKEditGenderAndBirthdayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditGenderAndBirthdayCell.h; sourceTree = "<group>"; };
 		00A696941D2310250090935F /* LJKEditGenderAndBirthdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditGenderAndBirthdayCell.m; sourceTree = "<group>"; };
 		00A696991D2330040090935F /* LJKEditBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditBasicCell.h; sourceTree = "<group>"; };
 		00A6969A1D2330040090935F /* LJKEditBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditBasicCell.m; sourceTree = "<group>"; };
 		00A6969C1D2335F30090935F /* LJKEditLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditLocationCell.h; sourceTree = "<group>"; };
 		00A6969D1D2335F30090935F /* LJKEditLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditLocationCell.m; sourceTree = "<group>"; };
+		00A7715F1D3A072C005A4B24 /* LJKGoodsFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsFooterView.h; sourceTree = "<group>"; };
+		00A771601D3A072C005A4B24 /* LJKGoodsFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsFooterView.m; sourceTree = "<group>"; };
+		00A771621D3A0D19005A4B24 /* LJKGoodsShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKGoodsShopCell.h; sourceTree = "<group>"; };
+		00A771631D3A0D19005A4B24 /* LJKGoodsShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKGoodsShopCell.m; sourceTree = "<group>"; };
+		00A771651D3A2693005A4B24 /* LJKGoodsShopPromotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJKGoodsShopPromotionView.h; path = ../../Home/View/LJKGoodsShopPromotionView.h; sourceTree = "<group>"; };
+		00A771661D3A2693005A4B24 /* LJKGoodsShopPromotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJKGoodsShopPromotionView.m; path = ../../Home/View/LJKGoodsShopPromotionView.m; sourceTree = "<group>"; };
+		00A771681D3A4350005A4B24 /* LJKRecommendBuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecommendBuyCell.h; sourceTree = "<group>"; };
+		00A771691D3A4350005A4B24 /* LJKRecommendBuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecommendBuyCell.m; sourceTree = "<group>"; };
+		00A7716B1D3A4B6D005A4B24 /* LJKRecommendItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecommendItem.h; sourceTree = "<group>"; };
+		00A7716C1D3A4B6D005A4B24 /* LJKRecommendItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecommendItem.m; sourceTree = "<group>"; };
 		00A86AA41D2C5FA3008A79A8 /* LJKDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKDishViewController.h; sourceTree = "<group>"; };
 		00A86AA51D2C5FA4008A79A8 /* LJKDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKDishViewController.m; sourceTree = "<group>"; };
 		00A86AA71D2C623D008A79A8 /* LJKRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRecipeViewController.h; sourceTree = "<group>"; };
 		00A86AA81D2C623D008A79A8 /* LJKRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKRecipeViewController.m; sourceTree = "<group>"; };
+		00A8C9B31D34A94C00AB1506 /* LJKCartItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCartItemCell.h; sourceTree = "<group>"; };
+		00A8C9B41D34A94C00AB1506 /* LJKCartItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCartItemCell.m; sourceTree = "<group>"; };
+		00A8C9B61D34EF2400AB1506 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		00A8C9B71D34EF2400AB1506 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		00A8C9B91D352E6500AB1506 /* LJKShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKShopViewController.h; sourceTree = "<group>"; };
+		00A8C9BA1D352E6500AB1506 /* LJKShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKShopViewController.m; sourceTree = "<group>"; };
+		00A8C9BC1D3552BD00AB1506 /* LJKOrderPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKOrderPayView.h; sourceTree = "<group>"; };
+		00A8C9BD1D3552BD00AB1506 /* LJKOrderPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKOrderPayView.m; sourceTree = "<group>"; };
+		00ADB9FB1D3759350067CC11 /* LJKMarketCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketCategoryCell.h; sourceTree = "<group>"; };
+		00ADB9FC1D3759350067CC11 /* LJKMarketCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketCategoryCell.m; sourceTree = "<group>"; };
+		00ADB9FE1D377EA30067CC11 /* LJKMarketSpreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketSpreadCell.h; sourceTree = "<group>"; };
+		00ADB9FF1D377EA30067CC11 /* LJKMarketSpreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketSpreadCell.m; sourceTree = "<group>"; };
+		00ADBA011D378CFC0067CC11 /* LJKMarketShopRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketShopRecommendCell.h; sourceTree = "<group>"; };
+		00ADBA021D378CFC0067CC11 /* LJKMarketShopRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketShopRecommendCell.m; sourceTree = "<group>"; };
+		00ADBA041D3790800067CC11 /* LJKShopRecommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKShopRecommentView.h; sourceTree = "<group>"; };
+		00ADBA051D3790800067CC11 /* LJKShopRecommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKShopRecommentView.m; sourceTree = "<group>"; };
 		00B5ED201D08373300B55ED4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00B5ED211D08373300B55ED4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		00B5ED2C1D083AFD00B55ED4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -307,6 +401,8 @@
 		00D347381D09FB4B00B01E6C /* LJKBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJKBasicCell.xib; sourceTree = "<group>"; };
 		00D3473A1D0A181100B01E6C /* LJKHelpDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHelpDetailController.h; sourceTree = "<group>"; };
 		00D3473B1D0A181100B01E6C /* LJKHelpDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHelpDetailController.m; sourceTree = "<group>"; };
+		00E573E11D32FA40005623D6 /* LJKReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKReportViewController.h; sourceTree = "<group>"; };
+		00E573E21D32FA41005623D6 /* LJKReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKReportViewController.m; sourceTree = "<group>"; };
 		00E96F021D25888700E6316D /* LJKEditAuthorDescCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKEditAuthorDescCell.h; sourceTree = "<group>"; };
 		00E96F031D25888700E6316D /* LJKEditAuthorDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKEditAuthorDescCell.m; sourceTree = "<group>"; };
 		00E96F051D259D2400E6316D /* LJKRedEnvelopeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKRedEnvelopeController.h; sourceTree = "<group>"; };
@@ -317,6 +413,10 @@
 		00E96F0C1D25B4B300E6316D /* LJKFeedsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKFeedsViewCell.m; sourceTree = "<group>"; };
 		00E96F0E1D25BC0A00E6316D /* LJKImageShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKImageShowView.h; sourceTree = "<group>"; };
 		00E96F0F1D25BC0A00E6316D /* LJKImageShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKImageShowView.m; sourceTree = "<group>"; };
+		00EA904D1D323D24005F02E8 /* LJKDishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKDishCell.h; sourceTree = "<group>"; };
+		00EA904E1D323D24005F02E8 /* LJKDishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKDishCell.m; sourceTree = "<group>"; };
+		00EAA69D1D36D41E005B2D7B /* LJKMarketViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketViewHeader.h; sourceTree = "<group>"; };
+		00EAA69E1D36D41E005B2D7B /* LJKMarketViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketViewHeader.m; sourceTree = "<group>"; };
 		00EB7A0E1D19542200CE8B39 /* LJKBLSViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewHeader.h; sourceTree = "<group>"; };
 		00EB7A0F1D19542200CE8B39 /* LJKBLSViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewHeader.m; sourceTree = "<group>"; };
 		00EB7A111D19546700CE8B39 /* LJKBLSViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewCell.h; sourceTree = "<group>"; };
@@ -324,6 +424,14 @@
 		00EB7A141D196D3100CE8B39 /* LJKBLSHeaderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSHeaderData.h; sourceTree = "<group>"; };
 		00EB7A151D196D3100CE8B39 /* LJKBLSHeaderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSHeaderData.m; sourceTree = "<group>"; };
 		00EB7A181D19D1F800CE8B39 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		00EC465C1D380826009FC499 /* LJKMarketHotThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketHotThemeCell.h; sourceTree = "<group>"; };
+		00EC465D1D380826009FC499 /* LJKMarketHotThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketHotThemeCell.m; sourceTree = "<group>"; };
+		00EC46621D381A01009FC499 /* LJKMarketHotItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketHotItem.h; sourceTree = "<group>"; };
+		00EC46631D381A01009FC499 /* LJKMarketHotItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketHotItem.m; sourceTree = "<group>"; };
+		00EC46651D381D56009FC499 /* LJKMarketNewArrivalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketNewArrivalCell.h; sourceTree = "<group>"; };
+		00EC46661D381D56009FC499 /* LJKMarketNewArrivalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketNewArrivalCell.m; sourceTree = "<group>"; };
+		00EC46681D381E76009FC499 /* LJKMarketArrivalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMarketArrivalItem.h; sourceTree = "<group>"; };
+		00EC46691D381E76009FC499 /* LJKMarketArrivalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMarketArrivalItem.m; sourceTree = "<group>"; };
 		00EDE8051D119DF80025ED9C /* LJKMyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKMyInfo.h; sourceTree = "<group>"; };
 		00EDE8061D119DF80025ED9C /* LJKMyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKMyInfo.m; sourceTree = "<group>"; };
 		00EDE8141D11D3B60025ED9C /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
@@ -342,6 +450,12 @@
 		00F07A011D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderNavButton.m; sourceTree = "<group>"; };
 		00F07A061D0DD801005FDD59 /* LJKHomeHeaderDish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKHomeHeaderDish.h; sourceTree = "<group>"; };
 		00F07A071D0DD802005FDD59 /* LJKHomeHeaderDish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKHomeHeaderDish.m; sourceTree = "<group>"; };
+		00F0B28F1D36349C003A0735 /* LJKOrderItemFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKOrderItemFooterView.h; sourceTree = "<group>"; };
+		00F0B2901D36349C003A0735 /* LJKOrderItemFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKOrderItemFooterView.m; sourceTree = "<group>"; };
+		00F0B2921D3691C1003A0735 /* LJKOrderPromotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKOrderPromotionCell.h; sourceTree = "<group>"; };
+		00F0B2931D3691C1003A0735 /* LJKOrderPromotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKOrderPromotionCell.m; sourceTree = "<group>"; };
+		00F0B2951D369CD2003A0735 /* LJKOrderSupplementaryFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKOrderSupplementaryFooter.h; sourceTree = "<group>"; };
+		00F0B2961D369CD2003A0735 /* LJKOrderSupplementaryFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKOrderSupplementaryFooter.m; sourceTree = "<group>"; };
 		00F14E651D188D2B0078F262 /* LJKBLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKBLSViewController.h; sourceTree = "<group>"; };
 		00F14E661D188D2C0078F262 /* LJKBLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKBLSViewController.m; sourceTree = "<group>"; };
 		00F37B301D1AE1EE008A6B9A /* LJKCommunityForumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCommunityForumCell.h; sourceTree = "<group>"; };
@@ -390,8 +504,8 @@
 		00F921B11D1D8EDA009D78B7 /* LJKTopicComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicComment.m; sourceTree = "<group>"; };
 		00F921B31D1EE59E009D78B7 /* LJKTopicComposeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKTopicComposeBar.h; sourceTree = "<group>"; };
 		00F921B41D1EE59E009D78B7 /* LJKTopicComposeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKTopicComposeBar.m; sourceTree = "<group>"; };
-		00F921B61D1EFEA2009D78B7 /* LJKCommentsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJKCommentsTool.h; sourceTree = "<group>"; };
-		00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJKCommentsTool.m; sourceTree = "<group>"; };
+		00F921B61D1EFEA2009D78B7 /* LJKCommentsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJKCommentsTool.h; path = ../Model/LJKCommentsTool.h; sourceTree = "<group>"; };
+		00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJKCommentsTool.m; path = ../Model/LJKCommentsTool.m; sourceTree = "<group>"; };
 		00F921BA1D1F00CE009D78B7 /* cart_items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cart_items.plist; sourceTree = "<group>"; };
 		00F921BB1D1F00CE009D78B7 /* comment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = comment.plist; sourceTree = "<group>"; };
 		00F921BC1D1F00CE009D78B7 /* detaillocation.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = detaillocation.plist; sourceTree = "<group>"; };
@@ -501,6 +615,24 @@
 				00372A241D06A03F006A21C2 /* Info.plist */,
 			);
 			path = LJKitchenUITests;
+			sourceTree = "<group>";
+		};
+		004D5D571D3BDA13008C95F4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				00F921B61D1EFEA2009D78B7 /* LJKCommentsTool.h */,
+				00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		006CDF8E1D33DAB000EBF154 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				006CDF8F1D33DC3B00EBF154 /* LJKCartItemTool.h */,
+				006CDF901D33DC3B00EBF154 /* LJKCartItemTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		00943B711D2487C1002F8F83 /* JSON */ = {
@@ -677,6 +809,8 @@
 				00019C151D0C195E008BB1A9 /* LJKBasicIconCell.xib */,
 				00019C1B1D0C361D008BB1A9 /* LJKBasic2Cell.h */,
 				00019C1C1D0C361D008BB1A9 /* LJKBasic2Cell.m */,
+				00EA904D1D323D24005F02E8 /* LJKDishCell.h */,
+				00EA904E1D323D24005F02E8 /* LJKDishCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,6 +818,7 @@
 		00B5ED171D08373300B55ED4 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				006CDF8E1D33DAB000EBF154 /* Tool */,
 				00B5ED181D08373300B55ED4 /* Controller */,
 				00B5ED191D08373300B55ED4 /* Model */,
 				00B5ED1A1D08373300B55ED4 /* View */,
@@ -700,6 +835,12 @@
 				00B5ED5F1D08719400B55ED4 /* LJKMallSortViewController.m */,
 				00B5ED611D0871BC00B55ED4 /* LJKShoppingSortViewController.h */,
 				00B5ED621D0871BC00B55ED4 /* LJKShoppingSortViewController.m */,
+				006CDF951D33E1EF00EBF154 /* LJKOrderViewController.h */,
+				006CDF961D33E1EF00EBF154 /* LJKOrderViewController.m */,
+				006CDF981D33E23200EBF154 /* LJKGoodsViewController.h */,
+				006CDF991D33E23200EBF154 /* LJKGoodsViewController.m */,
+				00A8C9B91D352E6500AB1506 /* LJKShopViewController.h */,
+				00A8C9BA1D352E6500AB1506 /* LJKShopViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -709,6 +850,14 @@
 			children = (
 				007107461D2AF5BB00CDDEAB /* LJKGoods.h */,
 				007107471D2AF5BB00CDDEAB /* LJKGoods.m */,
+				006CDF821D33CBC200EBF154 /* LJKShop.h */,
+				006CDF831D33CBC200EBF154 /* LJKShop.m */,
+				006CDF851D33CC3800EBF154 /* LJKGoodsAttrs.h */,
+				006CDF861D33CC3800EBF154 /* LJKGoodsAttrs.m */,
+				006CDF881D33CC8500EBF154 /* LJKGoodsKind.h */,
+				006CDF891D33CC8500EBF154 /* LJKGoodsKind.m */,
+				006CDF8B1D33D1D900EBF154 /* LJKCartItem.h */,
+				006CDF8C1D33D1D900EBF154 /* LJKCartItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -718,6 +867,54 @@
 			children = (
 				001D93701D0AC63700B006D2 /* LJKMarketSortCell.h */,
 				001D93711D0AC63700B006D2 /* LJKMarketSortCell.m */,
+				006CDF9B1D33E5E000EBF154 /* LJKCartSettlementView.h */,
+				006CDF9C1D33E5E000EBF154 /* LJKCartSettlementView.m */,
+				006CDF9E1D340DF300EBF154 /* LJKCartItemShopHeader.h */,
+				006CDF9F1D340DF300EBF154 /* LJKCartItemShopHeader.m */,
+				00A8C9B31D34A94C00AB1506 /* LJKCartItemCell.h */,
+				00A8C9B41D34A94C00AB1506 /* LJKCartItemCell.m */,
+				00A8C9BC1D3552BD00AB1506 /* LJKOrderPayView.h */,
+				00A8C9BD1D3552BD00AB1506 /* LJKOrderPayView.m */,
+				00F0B28F1D36349C003A0735 /* LJKOrderItemFooterView.h */,
+				00F0B2901D36349C003A0735 /* LJKOrderItemFooterView.m */,
+				00F0B2921D3691C1003A0735 /* LJKOrderPromotionCell.h */,
+				00F0B2931D3691C1003A0735 /* LJKOrderPromotionCell.m */,
+				00F0B2951D369CD2003A0735 /* LJKOrderSupplementaryFooter.h */,
+				00F0B2961D369CD2003A0735 /* LJKOrderSupplementaryFooter.m */,
+				00EAA69D1D36D41E005B2D7B /* LJKMarketViewHeader.h */,
+				00EAA69E1D36D41E005B2D7B /* LJKMarketViewHeader.m */,
+				00ADB9FB1D3759350067CC11 /* LJKMarketCategoryCell.h */,
+				00ADB9FC1D3759350067CC11 /* LJKMarketCategoryCell.m */,
+				00ADB9FE1D377EA30067CC11 /* LJKMarketSpreadCell.h */,
+				00ADB9FF1D377EA30067CC11 /* LJKMarketSpreadCell.m */,
+				00ADBA011D378CFC0067CC11 /* LJKMarketShopRecommendCell.h */,
+				00ADBA021D378CFC0067CC11 /* LJKMarketShopRecommendCell.m */,
+				00ADBA041D3790800067CC11 /* LJKShopRecommentView.h */,
+				00ADBA051D3790800067CC11 /* LJKShopRecommentView.m */,
+				00EC465C1D380826009FC499 /* LJKMarketHotThemeCell.h */,
+				00EC465D1D380826009FC499 /* LJKMarketHotThemeCell.m */,
+				00EC46621D381A01009FC499 /* LJKMarketHotItem.h */,
+				00EC46631D381A01009FC499 /* LJKMarketHotItem.m */,
+				00EC46651D381D56009FC499 /* LJKMarketNewArrivalCell.h */,
+				00EC46661D381D56009FC499 /* LJKMarketNewArrivalCell.m */,
+				00EC46681D381E76009FC499 /* LJKMarketArrivalItem.h */,
+				00EC46691D381E76009FC499 /* LJKMarketArrivalItem.m */,
+				00A088311D38CD8E0037E8AF /* LJKGoodsBottomView.h */,
+				00A088321D38CD8E0037E8AF /* LJKGoodsBottomView.m */,
+				00A0883D1D391EEB0037E8AF /* LJKGoodsHeaderView.h */,
+				00A0883E1D391EEB0037E8AF /* LJKGoodsHeaderView.m */,
+				00A088401D3922890037E8AF /* LJKGoodsDetailView.h */,
+				00A088411D3922890037E8AF /* LJKGoodsDetailView.m */,
+				00A771651D3A2693005A4B24 /* LJKGoodsShopPromotionView.h */,
+				00A771661D3A2693005A4B24 /* LJKGoodsShopPromotionView.m */,
+				00A7715F1D3A072C005A4B24 /* LJKGoodsFooterView.h */,
+				00A771601D3A072C005A4B24 /* LJKGoodsFooterView.m */,
+				00A771621D3A0D19005A4B24 /* LJKGoodsShopCell.h */,
+				00A771631D3A0D19005A4B24 /* LJKGoodsShopCell.m */,
+				00A771681D3A4350005A4B24 /* LJKRecommendBuyCell.h */,
+				00A771691D3A4350005A4B24 /* LJKRecommendBuyCell.m */,
+				00A7716B1D3A4B6D005A4B24 /* LJKRecommendItem.h */,
+				00A7716C1D3A4B6D005A4B24 /* LJKRecommendItem.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,6 +922,7 @@
 		00B5ED1B1D08373300B55ED4 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				004D5D571D3BDA13008C95F4 /* Tool */,
 				00B5ED1C1D08373300B55ED4 /* Controller */,
 				00B5ED1D1D08373300B55ED4 /* Model */,
 				00B5ED1E1D08373300B55ED4 /* View */,
@@ -768,8 +966,6 @@
 				0003B4D81D1C09DA0054F205 /* LJKTopic.m */,
 				00F921B01D1D8EDA009D78B7 /* LJKTopicComment.h */,
 				00F921B11D1D8EDA009D78B7 /* LJKTopicComment.m */,
-				00F921B61D1EFEA2009D78B7 /* LJKCommentsTool.h */,
-				00F921B71D1EFEA2009D78B7 /* LJKCommentsTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -799,6 +995,8 @@
 				00B5ED211D08373300B55ED4 /* AppDelegate.m */,
 				00F079F01D0D736C005FDD59 /* LJKConst.h */,
 				00F079F11D0D736C005FDD59 /* LJKConst.m */,
+				006CDF921D33DE2A00EBF154 /* LJKConstString.h */,
+				006CDF931D33DE2A00EBF154 /* LJKConstString.m */,
 				00EDE8171D11D7660025ED9C /* LJKConstRequest.h */,
 				00EDE8181D11D7660025ED9C /* LJKConstRequest.m */,
 				00B5ED471D085D0100B55ED4 /* Category */,
@@ -813,6 +1011,10 @@
 		00B5ED221D08373300B55ED4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				00E573E11D32FA40005623D6 /* LJKReportViewController.h */,
+				00E573E21D32FA41005623D6 /* LJKReportViewController.m */,
+				00A088371D38E7770037E8AF /* LJKTalkViewController.h */,
+				00A088381D38E7770037E8AF /* LJKTalkViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -908,6 +1110,10 @@
 				0003B4DE1D1C7FF90054F205 /* NSDate+Extension.m */,
 				00943B6E1D247C29002F8F83 /* UIToolbar+Extension.h */,
 				00943B6F1D247C29002F8F83 /* UIToolbar+Extension.m */,
+				00A8C9B61D34EF2400AB1506 /* UIBarButtonItem+Extension.h */,
+				00A8C9B71D34EF2400AB1506 /* UIBarButtonItem+Extension.m */,
+				00A088341D38D1590037E8AF /* UIView+Extension.h */,
+				00A088351D38D1590037E8AF /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1210,9 +1416,13 @@
 				00F860071D14858D007E5B09 /* LJKPopEvents.m in Sources */,
 				00F07A081D0DD802005FDD59 /* LJKHomeHeaderDish.m in Sources */,
 				00F37B381D1B3C4E008A6B9A /* LJKTopicViewController.m in Sources */,
+				006CDF911D33DC3B00EBF154 /* LJKCartItemTool.m in Sources */,
+				006CDF9D1D33E5E000EBF154 /* LJKCartSettlementView.m in Sources */,
 				00B5ED2A1D08373300B55ED4 /* AppDelegate.m in Sources */,
 				00F07A021D0D9F41005FDD59 /* LJKHomeHeaderNavButton.m in Sources */,
+				006CDF841D33CBC200EBF154 /* LJKShop.m in Sources */,
 				001D937B1D0B5B0800B006D2 /* LJKSearchBar.m in Sources */,
+				00EC46641D381A01009FC499 /* LJKMarketHotItem.m in Sources */,
 				002F79DB1D1718520021FD04 /* LJKRecipeStats.m in Sources */,
 				00943B6A1D247119002F8F83 /* LJKCity.m in Sources */,
 				00B5ED631D0871BD00B55ED4 /* LJKShoppingSortViewController.m in Sources */,
@@ -1229,17 +1439,25 @@
 				00F921B51D1EE59E009D78B7 /* LJKTopicComposeBar.m in Sources */,
 				00F921B21D1D8EDA009D78B7 /* LJKTopicComment.m in Sources */,
 				00B5ED411D08407A00B55ED4 /* LJKMessageViewController.m in Sources */,
+				006CDF8A1D33CC8500EBF154 /* LJKGoodsKind.m in Sources */,
+				00A771611D3A072C005A4B24 /* LJKGoodsFooterView.m in Sources */,
 				00943B701D247C29002F8F83 /* UIToolbar+Extension.m in Sources */,
 				00EDE8191D11D7660025ED9C /* LJKConstRequest.m in Sources */,
 				001D93781D0B2CD600B006D2 /* LJKNotificationCell.m in Sources */,
 				00A6969B1D2330040090935F /* LJKEditBasicCell.m in Sources */,
+				00A8C9BB1D352E6500AB1506 /* LJKShopViewController.m in Sources */,
+				00A771641D3A0D19005A4B24 /* LJKGoodsShopCell.m in Sources */,
+				006CDFA01D340DF300EBF154 /* LJKCartItemShopHeader.m in Sources */,
+				00EA904F1D323D24005F02E8 /* LJKDishCell.m in Sources */,
 				00F85FE31D148560007E5B09 /* LJKContent.m in Sources */,
+				00EAA69F1D36D41E005B2D7B /* LJKMarketViewHeader.m in Sources */,
 				00EDE8071D119DF80025ED9C /* LJKMyInfo.m in Sources */,
 				00F860041D14858D007E5B09 /* LJKNavContent.m in Sources */,
 				0037A7291D2FD92500DF9106 /* LJKRecipeTipsCell.m in Sources */,
 				00E96F0A1D25B2B500E6316D /* LJKFeedsViewController.m in Sources */,
 				00B5ED381D083F7B00B55ED4 /* LJKMarketViewController.m in Sources */,
 				0003B4D91D1C09DA0054F205 /* LJKTopic.m in Sources */,
+				00A771671D3A2693005A4B24 /* LJKGoodsShopPromotionView.m in Sources */,
 				00B5ED601D08719400B55ED4 /* LJKMallSortViewController.m in Sources */,
 				00F860031D14858D007E5B09 /* LJKNav.m in Sources */,
 				001D93751D0B142A00B006D2 /* LJKSettingFooter.m in Sources */,
@@ -1251,9 +1469,12 @@
 				00D3472E1D09C41100B01E6C /* LJKBasicTextView.m in Sources */,
 				00F860021D14858D007E5B09 /* LJKEvents.m in Sources */,
 				002F79C91D16BC2B0021FD04 /* LJKRecipeCell.m in Sources */,
+				006CDF8D1D33D1D900EBF154 /* LJKCartItem.m in Sources */,
 				00EB7A161D196D3100CE8B39 /* LJKBLSHeaderData.m in Sources */,
+				00EC466A1D381E76009FC499 /* LJKMarketArrivalItem.m in Sources */,
 				00B5ED541D086A9E00B55ED4 /* LJKFindFriendViewController.m in Sources */,
 				0003B4DF1D1C7FF90054F205 /* NSDate+Extension.m in Sources */,
+				00A088391D38E7770037E8AF /* LJKTalkViewController.m in Sources */,
 				00F860051D14858D007E5B09 /* LJKPicture.m in Sources */,
 				00B5ED661D08C74D00B55ED4 /* LJKMessageHeader.m in Sources */,
 				00D347251D0975F500B01E6C /* UIButton+Extension.m in Sources */,
@@ -1264,6 +1485,7 @@
 				00A86AA61D2C5FA4008A79A8 /* LJKDishViewController.m in Sources */,
 				00FCA40E1D3195D9002EC801 /* LJKRecipeDishShowCell.m in Sources */,
 				00B5ED4E1D0862A800B55ED4 /* LJKCreatRecipeController.m in Sources */,
+				00A088421D3922890037E8AF /* LJKGoodsDetailView.m in Sources */,
 				00F85FE81D148560007E5B09 /* LJKItems.m in Sources */,
 				002F79DE1D173DD80021FD04 /* UIImageView+Extension.m in Sources */,
 				00F37B321D1AE1EE008A6B9A /* LJKCommunityForumCell.m in Sources */,
@@ -1273,43 +1495,65 @@
 				00B5ED4B1D085D3300B55ED4 /* LJKNetworkTool.m in Sources */,
 				00F85FE71D148560007E5B09 /* LJKIssues.m in Sources */,
 				00E96F0D1D25B4B300E6316D /* LJKFeedsViewCell.m in Sources */,
+				00A8C9B51D34A94C00AB1506 /* LJKCartItemCell.m in Sources */,
 				0003B4E51D1C93870054F205 /* LJKTopicDetailCell.m in Sources */,
 				0000C5211D29525600D2F189 /* LJKRecommendBuyController.m in Sources */,
+				00EC465E1D380826009FC499 /* LJKMarketHotThemeCell.m in Sources */,
+				006CDF941D33DE2A00EBF154 /* LJKConstString.m in Sources */,
 				00F860001D14858D007E5B09 /* LJKComment.m in Sources */,
+				00ADBA061D3790810067CC11 /* LJKShopRecommentView.m in Sources */,
 				00B5ED511D0862C300B55ED4 /* LJKBasketController.m in Sources */,
+				00ADBA001D377EA30067CC11 /* LJKMarketSpreadCell.m in Sources */,
 				00F921C61D1F1109009D78B7 /* LJKSettingCell.m in Sources */,
+				00F0B2971D369CD2003A0735 /* LJKOrderSupplementaryFooter.m in Sources */,
 				00B5ED441D08409600B55ED4 /* LJKProfileViewController.m in Sources */,
+				00A8C9B81D34EF2400AB1506 /* UIBarButtonItem+Extension.m in Sources */,
+				00ADBA031D378CFC0067CC11 /* LJKMarketShopRecommendCell.m in Sources */,
 				00FA97091D2D98C60047D4D8 /* LJKRecipeViewHeader.m in Sources */,
 				00F14E671D188D2C0078F262 /* LJKBLSViewController.m in Sources */,
 				00943B6D1D247178002F8F83 /* LJKLocation.m in Sources */,
 				00F860061D14858D007E5B09 /* LJKPopEvent.m in Sources */,
+				00ADB9FD1D3759350067CC11 /* LJKMarketCategoryCell.m in Sources */,
+				00A7716A1D3A4350005A4B24 /* LJKRecommendBuyCell.m in Sources */,
+				00F0B2941D3691C1003A0735 /* LJKOrderPromotionCell.m in Sources */,
 				00D347371D09F0BF00B01E6C /* LJKBasicCell.m in Sources */,
+				00A0883F1D391EEB0037E8AF /* LJKGoodsHeaderView.m in Sources */,
 				00F860011D14858D007E5B09 /* LJKDish.m in Sources */,
+				006CDF871D33CC3800EBF154 /* LJKGoodsAttrs.m in Sources */,
 				00F921B81D1EFEA2009D78B7 /* LJKCommentsTool.m in Sources */,
 				007107481D2AF5BB00CDDEAB /* LJKGoods.m in Sources */,
 				0071074E1D2AF6D300CDDEAB /* LJKReviewPhoto.m in Sources */,
 				00F37B3B1D1B3C98008A6B9A /* LJKCookerClubViewController.m in Sources */,
 				00A6969E1D2335F30090935F /* LJKEditLocationCell.m in Sources */,
+				00A8C9BE1D3552BD00AB1506 /* LJKOrderPayView.m in Sources */,
 				002F79CC1D16DBF30021FD04 /* UILabel+Extension.m in Sources */,
+				006CDF971D33E1EF00EBF154 /* LJKOrderViewController.m in Sources */,
 				007107451D2AF58000CDDEAB /* LJKReviewCommodity.m in Sources */,
 				00FCA40B1D319272002EC801 /* LJKRecipeAddListFooter.m in Sources */,
 				00D3473C1D0A181100B01E6C /* LJKHelpDetailController.m in Sources */,
 				002F79D51D1711F20021FD04 /* LJKRecipeInstruction.m in Sources */,
+				00F0B2911D36349C003A0735 /* LJKOrderItemFooterView.m in Sources */,
 				007107421D2AF4A500CDDEAB /* LJKReview.m in Sources */,
 				00A696951D2310250090935F /* LJKEditGenderAndBirthdayCell.m in Sources */,
+				00A088361D38D1590037E8AF /* UIView+Extension.m in Sources */,
 				0003B4DC1D1C12EC0054F205 /* NSString+Extension.m in Sources */,
 				00F85FFE1D14858D007E5B09 /* LJKAuthor.m in Sources */,
+				00E573E31D32FA41005623D6 /* LJKReportViewController.m in Sources */,
 				00F37B351D1AE252008A6B9A /* LJKForum.m in Sources */,
+				00EC46671D381D56009FC499 /* LJKMarketNewArrivalCell.m in Sources */,
+				00A088331D38CD8E0037E8AF /* LJKGoodsBottomView.m in Sources */,
 				00F079F51D0D8A50005FDD59 /* LJKHomeHeaderTopNav.m in Sources */,
 				002F79CF1D1710100021FD04 /* LJKRecipe.m in Sources */,
 				003729FF1D06A03F006A21C2 /* main.m in Sources */,
 				0071074B1D2AF67100CDDEAB /* LJKDiggUsers.m in Sources */,
 				0037A72C1D30398200DF9106 /* LJKRecipeSupplementaryFooter.m in Sources */,
 				0003B4E21D1C92F90054F205 /* LJKTopicDetailController.m in Sources */,
+				006CDF9A1D33E23200EBF154 /* LJKGoodsViewController.m in Sources */,
 				00B5ED5D1D086F1A00B55ED4 /* LJKNotificationViewController.m in Sources */,
 				00B5ED571D086ABB00B55ED4 /* LJKSettingViewController.m in Sources */,
 				00019C1D1D0C361D008BB1A9 /* LJKBasic2Cell.m in Sources */,
 				007107571D2B217000CDDEAB /* LJKRecipeList.m in Sources */,
+				00A7716D1D3A4B6D005A4B24 /* LJKRecommendItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,7 @@
 //  Created by  a on 16/7/9.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKRecipeSupplementaryFooter.h"
 #import "LJKRecipeStats.h"
@@ -14,9 +15,14 @@
 
 @interface LJKRecipeSupplementaryFooter ()
 
+/** 菜谱追加描述 - 评论数 */
 @property (nonatomic, strong) UILabel *commentsLabel;
+/** 菜谱追加描述 - 相同喜好(喜欢这道菜的人还喜欢) */
 @property (nonatomic, strong) UILabel *sameHobbyLabel;
+/** 菜谱追加描述 - 举报 */
 @property (nonatomic, strong) UILabel *reportLabel;
+
+/** 菜谱追加描述 - 分隔线 */
 @property (nonatomic, strong) UIView *separtorLine1;
 @property (nonatomic, strong) UIView *separtorLine2;
 
@@ -31,10 +37,11 @@
                                             fontSize:17
                                                lines:1
                                        textAlignment:NSTextAlignmentLeft];
+        _commentsLabel.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapComment = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(comments)];
         [_commentsLabel addGestureRecognizer:tapComment];
-        _commentsLabel.text = @"测试数据:999条留言";
+        _commentsLabel.text = @"测试数据:999条留言"; // 测试数据
     }
     return _commentsLabel;
 }
@@ -47,8 +54,9 @@
                                                 lines:1
                                         textAlignment:NSTextAlignmentLeft];
         UITapGestureRecognizer *tapHobby = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                     action:@selector(hobby)];
+                                                                                   action:@selector(hobby)];
         [_sameHobbyLabel addGestureRecognizer:tapHobby];
+        _sameHobbyLabel.userInteractionEnabled = YES;
         _sameHobbyLabel.text = @"喜欢这道菜的人也喜欢";
     }
     return _sameHobbyLabel;
@@ -62,8 +70,9 @@
                                              lines:1
                                      textAlignment:NSTextAlignmentLeft];
         UITapGestureRecognizer *tapReport = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                   action:@selector(report)];
+                                                                                    action:@selector(report)];
         [_reportLabel addGestureRecognizer:tapReport];
+        _reportLabel.userInteractionEnabled = YES;
         _reportLabel.text = @"举报此菜谱";
     }
     return _reportLabel;
@@ -138,9 +147,9 @@
 - (void)setRecipe:(LJKRecipe *)recipe {
     _recipe = recipe;
     
-    if ([recipe.stats.n_comments isEqualToString:@"0"] || !recipe.stats.n_comments) {
+    if ([recipe.stats.n_comments isEqualToString:@"0"] || !recipe.stats.n_comments) { // 无留言
         self.commentsLabel.text = @"暂时还没有留言哦";
-    } else {
+    } else { // 有留言
         self.commentsLabel.text = [NSString stringWithFormat:@"%@条留言",recipe.stats.n_comments];
     }
     
@@ -151,6 +160,7 @@
     !self.footerActionBlock ? : self.footerActionBlock(SupplementaryFooterActionComment);
 }
 
+
 - (void)hobby {
     !self.footerActionBlock ? : self.footerActionBlock(SupplementaryFooterActionSameHobby);
 }
@@ -158,5 +168,11 @@
 - (void)report {
     !self.footerActionBlock ? : self.footerActionBlock(SupplementaryFooterActionReport);
 }
+
+// useless
+//- (void)comments:(id)sender {
+//    UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
+//    !self.footerActionBlock ? : self.footerActionBlock(tap.view.tag);
+//}
 
 @end

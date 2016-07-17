@@ -5,8 +5,10 @@
 //  Created by  a on 16/6/19.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done
 
 #import "LJKRecipeCell.h"
+
 #import "LJKRecipe.h"
 #import "LJKItems.h"
 #import "LJKImage.h"
@@ -20,34 +22,36 @@
 
 @interface LJKRecipeCell ()
 
-/** 图片 */
+/** 首页的主体Cell - 图片 */
 @property (nonatomic, strong) UIImageView *image;
-/** 分割线 */
+/** 首页的主体Cell - 分隔线 */
 @property (nonatomic, strong) UIView *separator;
-/** 视频播放按钮 */
+/** 首页的主体Cell - 视频播放按钮 */
 @property (nonatomic, strong) UIImageView *videoIcon;
-/** 模板1描述 */
+/** 首页的主体Cell - 模板1描述 */
 @property (nonatomic, strong) UILabel *descLabel;
-/** 模板1标题 */
+/** 首页的主体Cell - 模板1标题 */
 @property (nonatomic, strong) UILabel *titleLabel;
-/** 底部描述view */
+/** 首页的主体Cell - 底部描述view(容器) */
 @property (nonatomic, strong) UIView *bottomView;
-/** 模板2大标题 */
+
+/** 首页的主体Cell - 模板2大标题 */
 @property (nonatomic, strong) UILabel *firstTitleLabel;
-/** 模板2小标题 */
+/** 首页的主体Cell - 模板2小标题 */
 @property (nonatomic, strong) UILabel *secondTitleLabel;
-/** 模板4标题 */
+/** 首页的主体Cell - 模板4标题 */
 @property (nonatomic, strong) UILabel *whisperLabel;
-/** coverView */
+/** 首页的主体Cell - coverView */
 @property (nonatomic, strong) UIView *coverView;
-/** 模板5作者头像 */
+/** 首页的主体Cell - 模板5作者头像 */
 @property (nonatomic, strong) UIImageView *authorIcon;
-/** 模板5人数 */
+/** 首页的主体Cell - 模板5 - 做过该菜谱的人数 */
 @property (nonatomic, strong) UILabel *cookedLabel;
-/** 分数 */
+/** 首页的主体Cell - 评分 */
 @property (nonatomic, strong) UILabel *scoreLabel;
-/** 作者名称 */
+/** 首页的主体Cell - 菜谱作者昵称 */
 @property (nonatomic, strong) UILabel *authorName;
+
 /** 独家图标 */
 @property (nonatomic, strong) UIButton *exclusiveButton;
 /** recipeCell 专用分隔线 */
@@ -75,7 +79,7 @@
 - (UIView *)coverView {
     if (!_coverView) {
         _coverView = [[UIView alloc] init];
-        _coverView.backgroundColor = LJregular(0, 0, 0, 0.2); // 图片半透明遮罩
+        _coverView.backgroundColor = Color_Cover_Alpha; // 图片半透明遮罩
     }
     return _coverView;
 }
@@ -83,7 +87,7 @@
 - (UILabel *)firstTitleLabel {
     if (!_firstTitleLabel) {
         _firstTitleLabel = [UILabel labelWithTextColor:Color_TintWhite
-                                       backgroundColor:[UIColor clearColor]
+                                       backgroundColor:Color_Clear
                                               fontSize:20
                                                  lines:0
                                          textAlignment:NSTextAlignmentCenter];
@@ -94,7 +98,7 @@
 - (UILabel *)secondTitleLabel {
     if (!_secondTitleLabel) {
         _secondTitleLabel = [UILabel labelWithTextColor:Color_TintWhite
-                                       backgroundColor:[UIColor clearColor]
+                                       backgroundColor:Color_Clear
                                               fontSize:15
                                                  lines:0
                                          textAlignment:NSTextAlignmentCenter];
@@ -105,7 +109,7 @@
 - (UILabel *)whisperLabel {
     if (!_whisperLabel) {
         _whisperLabel = [UILabel labelWithTextColor:Color_TintWhite
-                                    backgroundColor:[UIColor yellowColor]
+                                    backgroundColor:Color_Clear
                                            fontSize:17
                                               lines:0
                                       textAlignment:NSTextAlignmentCenter];
@@ -116,7 +120,6 @@
 - (UIView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[UIView alloc] init];
-//        _bottomView.backgroundColor = [UIColor whiteColor];
         _bottomView.hidden = YES;
     }
     return _bottomView;
@@ -134,9 +137,8 @@
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-//        self.titleLabel = [[UILabel alloc] init];
-        _titleLabel = [UILabel labelWithTextColor:[UIColor blackColor]
-                                   backgroundColor:[UIColor clearColor]
+        _titleLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                   backgroundColor:Color_Clear
                                           fontSize:17
                                              lines:0
                                      textAlignment:NSTextAlignmentLeft];
@@ -147,9 +149,8 @@
 
 - (UILabel *)descLabel {
     if (!_descLabel) {
-//        self.descLabel = [[UILabel alloc] init];
-        _descLabel = [UILabel labelWithTextColor:[UIColor blackColor]
-                                 backgroundColor:[UIColor clearColor]
+        _descLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                 backgroundColor:Color_Clear
                                         fontSize:13
                                            lines:0
                                    textAlignment:NSTextAlignmentLeft];
@@ -160,7 +161,7 @@
 - (UILabel *)scoreLabel {
     if (!_scoreLabel) {
         _scoreLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                  backgroundColor:[UIColor clearColor]
+                                  backgroundColor:Color_Clear
                                          fontSize:12
                                             lines:0
                                     textAlignment:NSTextAlignmentLeft];
@@ -171,7 +172,7 @@
 - (UILabel *)authorName {
     if (!_authorName) {
         _authorName = [UILabel labelWithTextColor:Color_DarkGray
-                                  backgroundColor:[UIColor clearColor]
+                                  backgroundColor:Color_Clear
                                          fontSize:12
                                             lines:1
                                     textAlignment:NSTextAlignmentRight];
@@ -183,7 +184,8 @@
     if (!_authorIcon) {
         _authorIcon = [[UIImageView alloc] init];
         _authorIcon.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(authorIconClick)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(authorIconClick)];
         [_authorIcon addGestureRecognizer:tap];
     }
     return _authorIcon;
@@ -193,23 +195,17 @@
 - (UILabel *)cookedLabel {
     if (!_cookedLabel) {
         _cookedLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                       backgroundColor:[UIColor clearColor]
-                                              fontSize:12
-                                                 lines:1
-                                         textAlignment:NSTextAlignmentLeft];
+                                   backgroundColor:Color_Clear
+                                          fontSize:12
+                                             lines:1
+                                     textAlignment:NSTextAlignmentLeft];
     }
     return _cookedLabel;
 }
 
 - (UIButton *)exclusiveButton {
     if (!_exclusiveButton) {
-        _exclusiveButton = [UIButton buttonWithTitle:@"独家"
-                                          titleColor:Color_TintWhite
-                                     backgroundColor:[UIColor orangeColor]
-                                            fontSize:12
-                                              target:nil
-                                              action:nil];
-        _exclusiveButton.userInteractionEnabled = NO;
+        _exclusiveButton = [UIButton createExclusiveButton];
     }
     return _exclusiveButton;
 }
@@ -334,7 +330,7 @@
         [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.titleLabel.mas_left);
             make.right.equalTo(self.titleLabel.mas_right);
-            make.top.equalTo(self.titleLabel.mas_bottom).offset(LJKRecipeCellMarginTitle2Desc);
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(LJKRecipeCellMarginTitle2Desc+5);
         }];
         
         // 底部视图 (评分)
@@ -347,18 +343,19 @@
         // 底部视图 (菜谱作者)
         [_authorName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.authorIcon.mas_right);
-            make.top.equalTo(self.authorIcon.mas_bottom).offset(5);
+            make.top.equalTo(self.authorIcon.mas_bottom).offset(1);
         }];
         
         // cooked count （做过的人）
         [_cookedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.descLabel.mas_bottom).offset(LJKRecipeCellMarginTitle2Desc);
+            make.top.equalTo(self.descLabel.mas_bottom).offset(5);
             make.left.equalTo(self.descLabel.mas_left);
-            make.height.equalTo(@(25));
+            make.height.equalTo(@(22));
+            // FIXME:(已解决) 布局发生重叠
+            // 调整 _cookedLabel & authorName 的位置 已修正
         }];
         
         [_separatorLine mas_makeConstraints:^(MASConstraintMaker *make) {
-
             make.top.equalTo(self.cookedLabel.mas_bottom).offset(5);
             make.left.equalTo(self.titleLabel.mas_left);
             make.right.equalTo(self.authorName.mas_right);
@@ -492,21 +489,6 @@
                                    cornRadius:80];
     }
     
-//    if (recipe.stats.n_cooked.length || recipe.score) {
-//        self.separatorLine.hidden = NO;
-//    }
-    
-//    if (recipe.summary.length) {
-//        self.separatorLine.hidden = NO;
-//        self.descLabel.hidden = NO;
-//        self.descLabel.text = [NSString stringWithFormat:@"理由:%@",recipe.summary];
-//        
-//        [_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.equalTo(self.separatorLine.mas_bottom);
-//            make.left.equalTo(self.separatorLine.mas_left);
-//            make.right.equalTo(self.separatorLine.mas_right);
-//        }];
-//    }
 }
 
 

@@ -16,12 +16,14 @@
 
 @implementation LJKSettingFooter
 
+#pragma mark - 懒加载
 - (UIButton *)exit {
     if (!_exit) {
         _exit = [[UIButton alloc] init];
         _exit.titleLabel.textColor = [UIColor whiteColor];
         [_exit setTitle:@"退出LJKitchen" forState:UIControlStateNormal];
-        [_exit setBackgroundImage:[UIImage imageNamed:@"exit_Button"] forState:UIControlStateNormal];
+        [_exit setBackgroundImage:[UIImage imageNamed:@"exit_Button"]
+                         forState:UIControlStateNormal];
     }
     return _exit;
 }
@@ -36,8 +38,7 @@
     return _version;
 }
 
-
-
+#pragma mark - 构造方法
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -51,6 +52,7 @@
 + (instancetype)settingFooter {
     return [[self alloc] init];
 }
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];

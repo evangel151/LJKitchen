@@ -23,7 +23,7 @@
 - (UIImageView *)contentView {
     if (!_contentView) {
         _contentView = [[UIImageView alloc] init];
-        _contentView.backgroundColor = LJregular(0, 0, 0, 0.2);
+        _contentView.backgroundColor = Color_Cover_Alpha;
     }
     return _contentView;
 }
@@ -59,16 +59,18 @@
     return self;
 }
 
-#pragma mark - 业务逻辑
+#pragma mark - 快速创建
 /** 类方法: 返回一个已经添加了标题 + 手势事件的imageView */
 + (nonnull LJKHomeHeaderTopNav *)imageViewWithTitle:(nonnull NSString *)title
                                              target:(nullable id)target
                                              action:(nullable SEL)action {
     LJKHomeHeaderTopNav *imageV = [[LJKHomeHeaderTopNav alloc] init];
     imageV.titleLabel.text = title;
-    imageV.userInteractionEnabled = YES;
+    
     // 为imageView添加手势事件
-    [imageV addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:target action:action]];
+    imageV.userInteractionEnabled = YES;
+    [imageV addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:target
+                                                                         action:action]];
     return imageV;
 }
 

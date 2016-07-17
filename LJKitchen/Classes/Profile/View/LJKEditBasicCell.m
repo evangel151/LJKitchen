@@ -19,13 +19,12 @@
 - (UITextField *)textField {
     if (!_textField) {
         _textField = [[UITextField alloc] init];
-//        _textField.placeholder = @"在此处输入昵称";
         _textField.font = [UIFont systemFontOfSize:15];
     }
     return _textField;
 }
 
-
+#pragma mark - 构造方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {

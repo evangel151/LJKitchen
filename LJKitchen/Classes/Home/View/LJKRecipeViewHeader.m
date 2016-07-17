@@ -5,6 +5,7 @@
 //  Created by  a on 16/7/7.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  Done 
 
 #import "LJKRecipeViewHeader.h"
 
@@ -69,13 +70,7 @@
 
 - (UIButton *)exclusiveButton {
     if (!_exclusiveButton) {
-        _exclusiveButton = [UIButton buttonWithTitle:@"独家"
-                                          titleColor:Color_TintWhite
-                                     backgroundColor:[UIColor orangeColor]
-                                            fontSize:12
-                                              target:nil
-                                              action:nil];
-        _exclusiveButton.userInteractionEnabled = NO;
+        _exclusiveButton = [UIButton createExclusiveButton];
     }
     return _exclusiveButton;
 }
@@ -222,7 +217,7 @@
         [_mainImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.mas_top);
             make.left.equalTo(self.mas_left);
-            // 按照250宽度基数进行计算
+            // 按照250宽度基数进行计算图片size (适配)
             make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH * 0.6));
         }];
         
@@ -340,6 +335,7 @@
     }
     
     if (!recipe.is_exclusive) { // 非独家菜谱
+        // 暂时先不更新 BOOL is_exclusive 的布局了
 //        self.exclusiveButton.hidden = YES;
 //        [_scoreLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
 //            make.top.equalTo(self.authorIconView.mas_bottom).offset(LJKAuthorIcon2CellTop);
@@ -357,7 +353,7 @@
 }
 
 #pragma mark - 点击事件
-// !!!:因为一开始block不回传，所以写的麻烦了一点用来测试……万幸能用，凑合用先……
+// !!!:因为一开始block不回传，所以写的麻烦了一点用来测试……万幸能用，先凑合用
 - (void)authorIconDidClicked:(id)sender {
     UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
     !self.clickedBlock ? : self.clickedBlock(tap.view.tag);

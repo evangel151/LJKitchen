@@ -5,7 +5,7 @@
 //  Created by  a on 16/6/23.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
-// 讨论区-帖子
+// 讨论区-帖子 (M)
 
 #import <Foundation/Foundation.h>
 
@@ -28,6 +28,7 @@
 @property (nonatomic, copy) NSString *n_comments;
 /** 置顶(BOOL) */
 @property (nonatomic, assign) BOOL is_sticked;
+
 /** 主题Cell的高度(置顶 、非置顶) */
 @property (nonatomic, assign) CGFloat cellHeight;
 /** 主题详情的高度 */

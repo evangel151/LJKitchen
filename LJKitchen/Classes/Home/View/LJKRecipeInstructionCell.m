@@ -7,22 +7,24 @@
 //
 
 #import "LJKRecipeInstructionCell.h"
+
 #import "LJKRecipeInstruction.h"
 
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 
 @interface LJKRecipeInstructionCell ()
-/** 步骤 - (编号) */
+/** 步骤 - 步骤编号 */
 @property (nonatomic, strong) UILabel *stepLabel;
 /** 步骤 - 详细做法 */
 @property (nonatomic, strong) UILabel *descLabel;
-/** 步骤 - (配图) */
+/** 步骤 - 步骤配图 */
 @property (nonatomic, strong) UIImageView *stepImage;
 @end
 
 @implementation LJKRecipeInstructionCell
 
+#pragma mark - 懒加载
 - (UIImageView *)stepImage {
     if (!_stepImage) {
         _stepImage = [[UIImageView alloc] init];
@@ -55,7 +57,7 @@
 }
 
 
-
+#pragma mark - 构造方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -71,8 +73,10 @@
             make.size.mas_equalTo(CGSizeMake(30, 30));
         }];
         
+        // 配图宽度 == 屏幕宽度 - (步骤label宽度(30)+padding(20)) * 2
+        CGFloat stepImageWidth = SCREEN_WIDTH - 100;
         [_stepImage mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(220, 180));
+            make.size.mas_equalTo(CGSizeMake(stepImageWidth, stepImageWidth * 0.8));
             make.top.equalTo(self.contentView.mas_top).offset(LJKAuthorIcon2CellTop);
             make.left.equalTo(self.stepLabel.mas_right).offset(LJKAuthorIcon2CellTop);
         }];
@@ -86,15 +90,17 @@
     return self;
 }
 
+#pragma mark - 传入模型
 - (void)setInstruction:(LJKRecipeInstruction *)instruction {
     _instruction = instruction;
     
     self.stepLabel.text = [NSString stringWithFormat:@"%zd", instruction.step + 1];
     self.descLabel.text = instruction.text;
-    if (instruction.url.length) {
+    
+    if (instruction.url.length) { // 如果有配图
         self.stepImage.hidden = NO;
         [self.stepImage sd_setImageWithURL:[NSURL URLWithString:instruction.url]];
-    } else {
+    } else {                      // 没有配图
         self.stepImage.hidden = YES;
         [self.descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.stepLabel.mas_top);
@@ -102,7 +108,6 @@
             make.right.equalTo(self.contentView.mas_right).offset(-50);
         }];
     }
-
 }
 
 @end

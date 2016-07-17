@@ -20,6 +20,7 @@
                      height:(CGFloat)height
                        font:(CGFloat)font;
 
+/** 类方法:根据预设Size -> 返回size  */
 - (CGSize)getSizeWithEstimatedSize:(CGSize)estimatedSize
                               font:(CGFloat)font;
 

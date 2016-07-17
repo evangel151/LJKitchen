@@ -30,6 +30,13 @@
     self.attributedText = attrsString;
 }
 
+- (void)setAttributeTextWithString:(NSString *)string range:(NSRange)range color:(id)color {
+    NSMutableAttributedString *attrsString = [[NSMutableAttributedString alloc] initWithString:string];
+    [attrsString addAttribute:NSForegroundColorAttributeName value:color range:range];
+    self.attributedText = attrsString;
+}
+
+
 + (void)showMessage:(NSString *)string atNavController:(UINavigationController *)navController {
     
     

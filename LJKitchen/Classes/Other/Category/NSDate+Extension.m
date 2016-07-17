@@ -9,6 +9,7 @@
 #import "NSDate+Extension.h"
 
 @implementation NSDate (Extension)
+
 - (NSDateComponents *)intervalToDate:(NSDate *)date {
 
     NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];

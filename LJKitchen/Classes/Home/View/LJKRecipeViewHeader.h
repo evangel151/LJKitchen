@@ -8,7 +8,7 @@
 //  具体菜谱制作 header
 
 
-
+// 顶部视图 点击回调
 typedef NS_ENUM(NSInteger, HeaderDidClickedAction) {
     RecipeHeaderActionAuthorIconClicked        = 11,
     RecipeHeaderActionCollectedButtonClicked   = 12,
@@ -18,8 +18,10 @@ typedef NS_ENUM(NSInteger, HeaderDidClickedAction) {
 
 typedef void (^headerDidClickedBlock)();
 #import <UIKit/UIKit.h>
+
 @class LJKRecipe;
 @interface LJKRecipeViewHeader : UIView
+
 /** 菜谱header 模型 */
 @property (nonatomic, strong) LJKRecipe *recipe;
 /** header中事件回调 */

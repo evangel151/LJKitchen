@@ -95,7 +95,7 @@
     self.countLabel.text = [NSString stringWithFormat:@"%@道菜肴",data.n_dishes];
     self.descLabel.text = data.desc;
     
-    if (!data) {
+    if (!data) { // 测试数据
         self.mainLabel.text = @"早餐.6月21日";
         self.countLabel.text = @"999道菜肴";
         self.descLabel.text = @"早上好，今天是星期二";

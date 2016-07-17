@@ -66,8 +66,8 @@
 
 - (UILabel *)myInfoNameLabel {
     if (!_myInfoNameLabel) {
-        _myInfoNameLabel = [UILabel labelWithTextColor:[UIColor blackColor]
-                                       backgroundColor:[UIColor clearColor]
+        _myInfoNameLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                       backgroundColor:Color_Clear
                                               fontSize:17
                                                  lines:1
                                          textAlignment:NSTextAlignmentLeft];
@@ -89,7 +89,7 @@
 - (UILabel *)myInfoFansLabel {
     if (!_myInfoFansLabel) {
         _myInfoFansLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                       backgroundColor:[UIColor clearColor]
+                                       backgroundColor:Color_Clear
                                               fontSize:13
                                                  lines:1
                                          textAlignment:NSTextAlignmentLeft];
@@ -100,7 +100,7 @@
 - (UILabel *)myInfoSignLabel {
     if (!_myInfoSignLabel) {
         _myInfoSignLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                       backgroundColor:[UIColor clearColor]
+                                       backgroundColor:Color_Clear
                                               fontSize:13
                                                  lines:1
                                          textAlignment:NSTextAlignmentLeft];
@@ -144,19 +144,6 @@
 
 
 #pragma mark 下部绑定手机按钮
-//- (UIButton *)bindMobileButton {
-//    if (!_bindMobileButton) {
-//        _bindMobileButton = [UIButton buttonWithTitle:@"绑定手机"
-//                                           titleColor:Color_ThemeColor
-//                                      backgroundColor:[UIColor whiteColor]
-//                                             fontSize:15
-//                                               target:self
-//                                               action:@selector(bindMobile)];
-//        [_bindMobileButton setImage:[UIImage imageNamed:@"bindMobile"] forState:UIControlStateNormal];
-//    }
-//    return _bindMobileButton;
-//}
-
 - (UIView *)bindView {
     if (!_bindView) {
         _bindView = [[UIView alloc] init];
@@ -175,7 +162,7 @@
 - (UILabel *)bindLabel {
     if (!_bindLabel) {
         _bindLabel = [UILabel labelWithTextColor:Color_ThemeColor
-                                 backgroundColor:[UIColor clearColor]
+                                 backgroundColor:Color_Clear
                                         fontSize:15
                                            lines:1
                                    textAlignment:NSTextAlignmentLeft];
@@ -188,8 +175,7 @@
 
 
 #pragma mark - 构造方法
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         
@@ -212,7 +198,6 @@
         [self setupNavButtons];
         [self.navButtons addSubview:self.separatorLine2];
         [self addSubview:self.navButtons];
-        
         UITapGestureRecognizer *tapInfoView = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(myInfoViewDidClick:)];
         self.myInfoView.tag = 1;
@@ -283,8 +268,6 @@
         [_navButtons mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.myInfoView.mas_bottom);
             make.left.equalTo(self.mas_left);
-//            make.height.equalTo(@(LJKHomeHeader_CenterNav_Height));
-//            make.width.equalTo(@(SCREEN_WIDTH));
             make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, LJKHomeHeader_CenterNav_Height));
         }];
         

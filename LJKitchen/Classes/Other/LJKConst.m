@@ -58,7 +58,12 @@ CGFloat const LJKRecipeListViewHeightExpertIcon = 15;
 
 /** 商品界面 - 加入购物车 - 商品分类最小高度 */
 CGFloat const LJKGoodsKindsCategoryViewMinusHeight = 260;
-
+/** 商品界面 - 购物车 - 圆形确认(选中)按钮宽高 */
+CGFloat const LJKCircleCheckMarkWH = 22;
+/** 商品界面 - 购物车 - 商品配图宽高 */
+CGFloat const LJKCartItemMainImageWH = 80;
+/** 商品界面 - 购物车 - 结算工具条高度 */
+CGFloat const LJKCartSettlementViewHeight = 60;
 
 #pragma mark 个人信息 顶部Header各部位宽高
 /** 下厨房 - 个人界面-顶部信息栏 */

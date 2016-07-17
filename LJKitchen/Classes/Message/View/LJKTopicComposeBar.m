@@ -26,20 +26,20 @@
         _textView = [[UITextView alloc] init];
         _textView.backgroundColor = Color_BackGround;
         _textView.delegate = self;
+        _textView.layer.cornerRadius = 5;
     }
     return _textView;
 }
 
 - (UIButton *)postButton {
     if (!_postButton) {
-        _postButton = [UIButton buttonWithTitle:@"发送"
-                                     titleColor:Color_TintWhite
-                                backgroundColor:Color_ThemeColor_Alpha
-                                       fontSize:13
-                                         target:self
-                                         action:@selector(postDidClick)];
-        
-        
+        _postButton = [UIButton buttonWithBackgroundColor:Color_ThemeColor_Alpha
+                                                    title:@"发送"
+                                                 fontSize:13
+                                               titleColor:Color_TintWhite
+                                                   target:self
+                                                   action:@selector(postDidClick)
+                                            clipsToBounds:YES];
     }
     return _postButton;
 }
@@ -76,11 +76,10 @@
     return self;
 }
 
+// 快速创建
 + (instancetype)addCompostBarWithEditingTextBlock:(EditingTextBlock)editingTextBlock {
-    
     LJKTopicComposeBar *composeBar = [[LJKTopicComposeBar alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44, SCREEN_WIDTH, 44)];
     composeBar.editingTextBlock = editingTextBlock;
-    
     return composeBar;
 }
 
@@ -91,7 +90,6 @@
 }
 
 - (void)postDidClick {
-    
      NSLog(@"发送评论到服务器——————");
     self.textView.text = @""; // 发送后清空
 }

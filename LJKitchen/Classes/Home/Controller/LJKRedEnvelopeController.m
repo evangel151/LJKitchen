@@ -132,6 +132,7 @@ static NSString *descText = @"新人20元红包等你领";
     
 }
 
+#pragma mark - 点击事件
 - (void)post {
     WeakSelf;
     if (!self.mobileField.hasText) { // 未输入

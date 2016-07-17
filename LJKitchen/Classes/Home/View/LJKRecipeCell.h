@@ -5,7 +5,7 @@
 //  Created by  a on 16/6/19.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
-// 首页的主体Cell 
+// 首页的主体Cell (V)
 
 #import <UIKit/UIKit.h>
 @class LJKItems,LJKRecipe;

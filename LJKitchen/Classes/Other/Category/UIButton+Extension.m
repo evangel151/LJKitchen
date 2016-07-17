@@ -81,6 +81,7 @@
         selectedBackgroundImageName:(NSString *)selectedImage
                            target:(id)target
                            action:(SEL)action {
+    
     UIButton *button = [[UIButton alloc] init];
     [button setTitle:normalTitle forState:UIControlStateNormal];
     [button setTitleColor:titleColor forState:UIControlStateNormal];
@@ -89,6 +90,46 @@
     [button setBackgroundImage:[UIImage imageNamed:selectedImage] forState:UIControlStateSelected];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
+    return button;
+}
+
++ (UIButton *)buttonWithBackgroundColor:(UIColor *)backgroundColor
+                                  title:(NSString *)title
+                               fontSize:(CGFloat)fontSize
+                             titleColor:(UIColor *)titleColor
+                                 target:(id)target
+                                 action:(SEL)action
+                          clipsToBounds:(BOOL)clipsToBounds {
+    
+    UIButton *button = [[UIButton alloc] init];
+    button.backgroundColor = backgroundColor;
+    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    if (clipsToBounds) {
+        button.layer.cornerRadius = 5;
+    }
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
+
+
++ (UIButton *)checkMarkButtonWithtarget:(id)target
+                                 action:(SEL)action {
+    return [UIButton buttonWithImageName:@"singleSelectDefaultMark"
+                       selectedImageName:@"yesMarkSmall"
+                                  target:target
+                                  action:action];
+}
+
++ (UIButton *)createExclusiveButton {
+    UIButton *button =[UIButton buttonWithTitle:@"独家"
+                                     titleColor:Color_TintWhite
+                                backgroundColor:[UIColor orangeColor]
+                                       fontSize:12
+                                         target:nil
+                                         action:nil];
+    button.userInteractionEnabled = NO;
     return button;
 }
 

@@ -8,6 +8,7 @@
 
 #import "LJKDishViewController.h"
 #import "LJKFeedsViewCell.h"
+#import "LJKRecipeViewController.h"
 
 #import "LJKDish.h"
 #import "LJKPicture.h"
@@ -24,7 +25,9 @@
 
 @implementation LJKDishViewController
 
+static NSString *const dishCellIdentifier = @"dishCell";
 
+#pragma mark - 懒加载
 - (NSMutableArray *)dishArray {
     if (!_dishArray) {
         _dishArray = [[NSMutableArray alloc] init];
@@ -39,10 +42,9 @@
     return _imageViewCurrentLocationArray;
 }
 
-static NSString *const dishCellIdentifier = @"dishCell";
 
+#pragma mark - 页面构成
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     [self setupNavigationBar];
     [self setupTableView];
@@ -63,8 +65,9 @@ static NSString *const dishCellIdentifier = @"dishCell";
 - (void)setupTableView {
     self.tableView.bounces = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    [self.tableView registerClass:[LJKFeedsViewCell class] forCellReuseIdentifier:dishCellIdentifier];
+    self.tableView.backgroundColor = Color_Clear;
+    [self.tableView registerClass:[LJKFeedsViewCell class]
+           forCellReuseIdentifier:dishCellIdentifier];
 }
 
 - (void)loadNewData {
@@ -123,15 +126,19 @@ static NSString *const dishCellIdentifier = @"dishCell";
             case DishViewActionIcon: {     // 用户头像
                 [UILabel showMessage:@"即将跳转至关注用户界面"
                      atNavController:weakSelf.navigationController];
+                [weakSelf pushWebViewWithUrl:LJKRequestKitchenAuthorPage];
                 break;
             }
             case DishViewActionName: {     // 菜谱
                 [UILabel showMessage:@"即将跳转至对应菜谱界面"
                      atNavController:weakSelf.navigationController];
+                [weakSelf.navigationController pushViewController:[[LJKRecipeViewController alloc] init]
+                                                         animated:YES];
                 break;
             }
             case DishViewActionDigg: {     // 点赞按钮
-                //                [UILabel showMessage:@"" atNavController:weakSelf.navigationController];
+                [UILabel showMessage:@"点赞按钮取反 - 发送请求至服务器，刷新页面"
+                     atNavController:weakSelf.navigationController];
                 break;
             }
             case DishViewActionCommment: { // 评论按钮 & total评论Label
@@ -141,10 +148,70 @@ static NSString *const dishCellIdentifier = @"dishCell";
             }
             case DishViewActionMore: {     // 更多按钮
                 // TODO: 将feedsViewController内的Alert进行封装
+                UIAlertController *alertVC =
+                // 一级AlertAction
+                [UIAlertController alertControllerWithTitle:@"更多"
+                                                    message:nil
+                                             preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *sharedDish =
+                [UIAlertAction actionWithTitle:@"分享作品"
+                                         style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * _Nonnull action) {
+                                           
+                                       }];
+                
+                UIAlertAction *reportDish =
+                [UIAlertAction actionWithTitle:@"举报"
+                                         style:UIAlertActionStyleDestructive
+                                       handler:^(UIAlertAction * _Nonnull action) {
+                                           
+                                           // 二级AlertAction
+                                           UIAlertController *alertVcInside =
+                                           [UIAlertController alertControllerWithTitle:@"请选择你的举报理由？"
+                                                                               message:nil
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                           
+                                           UIAlertAction *rubbish =
+                                           [UIAlertAction actionWithTitle:@"广告或垃圾信息"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           UIAlertAction *stolenImage =
+                                           [UIAlertAction actionWithTitle:@"盗图或抄袭"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           UIAlertAction *other =
+                                           [UIAlertAction actionWithTitle:@"其他"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           UIAlertAction *nonConformity =
+                                           [UIAlertAction actionWithTitle:@"与主题不符"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                                      [self showReportSuccessHUD];
+                                                                  }];
+                                           
+                                           [alertVcInside addAction:rubbish];
+                                           [alertVcInside addAction:stolenImage];
+                                           [alertVcInside addAction:other];
+                                           [alertVcInside addAction:nonConformity];
+                                           [weakSelf presentViewController:alertVcInside animated:YES completion:nil];
+                                       }];
+                
+                [alertVC addAction:reportDish];
+                [alertVC addAction:sharedDish];
+                
+                [alertVC setModalPresentationStyle:UIModalPresentationOverFullScreen];
+                [weakSelf presentViewController:alertVC animated:YES completion:nil];
                 break;
             }
         }
-        
     };
     return cell;
 }
@@ -162,5 +229,14 @@ static NSString *const dishCellIdentifier = @"dishCell";
     [UILabel showMessage:@"分享该道菜品" atNavController:self.navigationController];
 }
 
+#pragma mark - AlertAction reuseMethod
+- (void)showReportSuccessHUD {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"LJKitchen已经收到您的举报，我们会对作品信息进行核查，感谢您对LJKitchen一直以来的支持"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
+}
 
 @end

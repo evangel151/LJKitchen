@@ -5,6 +5,7 @@
 //  Created by  a on 16/7/1.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  图片轮播器 
 
 #import <UIKit/UIKit.h>
 

@@ -18,14 +18,20 @@
 #import "UIButton+Extension.h"
 #import "UILabel+Extension.h"
 #import "UIViewController+Extension.h"
+#import "UIView+Extension.h"
 #import "UIImageView+Extension.h"
 #import "NSString+Extension.h"
 #import "NSDate+Extension.h"
+#import "UIToolbar+Extension.h"
+#import "UIBarButtonItem+Extension.h"
 
-// 项目中需要的多种常量
+
+// 项目公用常量 & 枚举
 #import "LJKConst.h"
 // 抓包的请求(固定url)
 #import "LJKConstRequest.h"
+// 公用String (通知 + 特定字符串)
+#import "LJKConstString.h"
 
 // 通用常量 
 #define SCREEN_SIZE    [[UIScreen mainScreen] bounds].size
@@ -47,6 +53,8 @@
 #define Color_ThemeColor  LJregular(234, 79, 57, 1)
 /** 项目主体颜色 & alpha (橘红色 + 半透明) */
 #define Color_ThemeColor_Alpha  LJregular(234, 79, 57, 0.9)
+/** 项目半透明黑色背景 & Alpha (时间指示器) */
+#define Color_Black_Alpha LJregular(0, 0,0 ,0.5)
 /** 项目主体颜色 (鹅黄色) */
 #define Color_ThemeColor_Yellow LJregular(251, 246, 213, 1)
 /** 白色字体 (更改为纯白色……) */
@@ -54,9 +62,16 @@
 #define Color_TintBlack   [UIColor blackColor]
 /** 透明背景 */
 #define Color_Clear [UIColor clearColor]
+///** 半透明黑色背景 */
+//#define Color_Black_Alpha LJregular(0, 0, 0, 0.5)
+/** 半透明(黑色)遮罩 */
+#define Color_Cover_Alpha LJregular(0, 0, 0, 0.2)
 
 /** (fake)评论地址 */
 #define LJKCommentPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"comment.data"]
+
+/** (fake)商品信息 */
+#define LJKCartItemsPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"cartItems.data"]
 
 
 

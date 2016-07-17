@@ -17,11 +17,13 @@
                                               attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]}
                                                  context:nil].size.height;
     
-
+    
+    CGFloat imageH = (SCREEN_WIDTH - 100) * 0.82;
+    CGFloat margin = 10;
     if (self.url.length) { // 如果有词谱配图
-        _cellHeight = 180 + descHeight + LJKRecipeCellMarginTitle * 3;
+        _cellHeight = imageH + descHeight + LJKRecipeCellMarginTitle * 3 + margin;
     } else { // 没有菜谱配图
-        _cellHeight = descHeight + LJKRecipeCellMarginTitle * 2;
+        _cellHeight = descHeight + LJKRecipeCellMarginTitle * 2 + margin;
     }
     
     return _cellHeight;

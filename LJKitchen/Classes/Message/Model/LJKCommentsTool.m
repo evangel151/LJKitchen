@@ -15,6 +15,7 @@
 static NSMutableArray *_commentArray;
 
 + (NSArray *)totalComments {
+    // 从 (fake)comment.data 中加载
     _commentArray = [NSKeyedUnarchiver unarchiveObjectWithFile:LJKCommentPath];
     if (!_commentArray.count) {
         _commentArray = [NSMutableArray array];

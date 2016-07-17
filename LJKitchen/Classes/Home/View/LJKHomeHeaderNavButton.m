@@ -8,6 +8,7 @@
 
 #import "LJKHomeHeaderNavButton.h"
 #import "LJKNav.h"
+
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 
@@ -38,7 +39,7 @@
     if (!_titleL) {
         _titleL = [[UILabel alloc] init];
         _titleL.font = [UIFont systemFontOfSize:13];
-        _titleL.textColor = [UIColor blackColor];
+        _titleL.textColor = Color_TintBlack;
     }
     return _titleL;
 }
@@ -100,6 +101,7 @@
         make.centerX.equalTo(button);
         make.top.equalTo(button).offset(10);
         make.size.mas_equalTo(CGSizeMake(30, 30));
+        // Market 界面中导航按钮不适用该约束 -> 应该略微大图片
     }];
     
     [button.titleL mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -111,4 +113,33 @@
     
     return button;
 }
+
+// 大图模式
++ (nonnull LJKHomeHeaderNavButton *)buttonWithLargeImageName:(nonnull NSString *)imageName
+                                                       title:(nonnull NSString *)title
+                                                      target:(nullable id)target
+                                                      action:(nullable SEL)action {
+    
+    LJKHomeHeaderNavButton *button = [[LJKHomeHeaderNavButton alloc] init];
+    button.imageV.image = [UIImage imageNamed:imageName];
+    button.titleL.text = title;
+    
+    // 修改约束 (配合大图)
+    [button.imageV mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(button);
+        make.top.equalTo(button).offset(5);
+        make.size.mas_equalTo(CGSizeMake(55, 55));
+    }];
+    
+    [button.titleL mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(button);
+        make.top.equalTo(button.imageV.mas_bottom).offset(5);
+    }];
+    
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
+
+
 @end

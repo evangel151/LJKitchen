@@ -12,7 +12,6 @@
 
 
 - (CGFloat)cellHeight {
-    
     CGFloat W = SCREEN_WIDTH - LJKAuthorIconWH - LJKAuthorIcon2CellLeft * 3;
     CGFloat textH = [self.txt getSizeWithEstimatedSize:CGSizeMake(W, MAXFLOAT) font:15].height;
     _cellHeight = textH + LJKAuthorIconWH * 0.5 + 2 * LJKAuthorIcon2CellTop;
@@ -21,7 +20,9 @@
 }
 
 - (NSString *)create_time {
-    return [NSString timeToRequiredStyleWithText:_create_time];
+    // 转换为需要的时间格式
+    _create_time = [NSString timeToRequiredStyleWithText:_create_time];
+    return _create_time;
 }
 
 @end

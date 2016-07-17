@@ -10,11 +10,13 @@
 
 #import "LJKPicture.h"
 #import "LJKReviewPhoto.h"
+
 #import <UIImageView+WebCache.h>
 #import <Masonry.h>
 
 @interface LJKImageShowView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
+/** 轮播器 - 页面显示 */
 @property (nonatomic, strong) UILabel *pageDisplay;
 @end
 
@@ -43,10 +45,12 @@ static NSString *const imageCellIdentifier = @"imageCell";
 - (UILabel *)pageDisplay {
     if (!_pageDisplay) {
         _pageDisplay = [UILabel labelWithTextColor:Color_DarkGray
-                                   backgroundColor:[UIColor clearColor]
+                                   backgroundColor:Color_TintWhite
                                           fontSize:13
                                              lines:1
                                      textAlignment:NSTextAlignmentCenter];
+        _pageDisplay.layer.cornerRadius = 15;
+        _pageDisplay.clipsToBounds = YES;
     }
     return _pageDisplay;
 }
@@ -64,7 +68,7 @@ static NSString *const imageCellIdentifier = @"imageCell";
         }];
         
         [_pageDisplay mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(40, 20));
+            make.size.mas_equalTo(CGSizeMake(30, 30));
             make.right.equalTo(self.mas_right).offset(-LJKAuthorIcon2CellLeft);
             make.bottom.equalTo(self.mas_bottom).offset(-LJKAuthorIcon2CellLeft);
         }];
@@ -117,7 +121,6 @@ static NSString *const imageCellIdentifier = @"imageCell";
             imageV.image = [UIImage imageNamed:@"defaultUserHeader"];
         }
     }
-    
     return cell;
 }
 
@@ -128,7 +131,6 @@ static NSString *const imageCellIdentifier = @"imageCell";
 }
 
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // 跟pageControl 计算方式一样 
     NSInteger index = (scrollView.contentOffset.x + self.collectionView.width * 0.5) / self.collectionView.width;

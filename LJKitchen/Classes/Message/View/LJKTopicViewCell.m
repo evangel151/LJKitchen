@@ -13,22 +13,21 @@
 #import <Masonry.h>
 
 @interface LJKTopicViewCell ()
-/** 头像 */
+/** 帖子(主体) - 头像 */
 @property (nonatomic, strong) UIImageView *iconView;
-/** 置顶标志("顶") */
+/** 帖子(主体) - 置顶标志("顶") */
 @property (nonatomic, strong) UIImageView *stickView;
-/** 用户名 */
+/** 帖子(主体) - 用户名 */
 @property (nonatomic, strong) UILabel *nameLabel;
-/** 帖子标题 */
+/** 帖子(主体) - 帖子标题 */
 @property (nonatomic, strong) UILabel *titleLabel;
-/** 评论数 */
+/** 帖子(主体) - 评论数 */
 @property (nonatomic, strong) UILabel *commentsCount;
-/** 最后回复时间 */
+/** 帖子(主体) - 最后回复时间 */
 @property (nonatomic, strong) UILabel *latestCommentTimeLabel;
 
-/** 自定义分隔符 */
+/** 分隔线 */
 @property (nonatomic, strong) UIView *separatorLine;
-
 @property (nonatomic, assign) CGFloat titleLabelWidth;
 
 @end
@@ -53,7 +52,7 @@
 - (UILabel *)nameLabel {
     if (!_nameLabel) {
         _nameLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                 backgroundColor:[UIColor clearColor]
+                                 backgroundColor:Color_Clear
                                         fontSize:13
                                            lines:1
                                    textAlignment:NSTextAlignmentLeft];
@@ -63,8 +62,8 @@
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [UILabel labelWithTextColor:[UIColor blackColor]
-                                  backgroundColor:[UIColor clearColor]
+        _titleLabel = [UILabel labelWithTextColor:Color_TintBlack
+                                  backgroundColor:Color_Clear
                                          fontSize:15
                                             lines:0
                                     textAlignment:NSTextAlignmentNatural];
@@ -75,7 +74,7 @@
 - (UILabel *)commentsCount {
     if (!_commentsCount) {
         _commentsCount = [UILabel labelWithTextColor:Color_DarkGray
-                                     backgroundColor:[UIColor clearColor]
+                                     backgroundColor:Color_Clear
                                             fontSize:13
                                                lines:1
                                        textAlignment:NSTextAlignmentRight];
@@ -86,7 +85,7 @@
 - (UILabel *)latestCommentTimeLabel {
     if (!_latestCommentTimeLabel) {
         _latestCommentTimeLabel = [UILabel labelWithTextColor:Color_DarkGray
-                                              backgroundColor:[UIColor clearColor]
+                                              backgroundColor:Color_Clear
                                                      fontSize:13
                                                         lines:1
                                                 textAlignment:NSTextAlignmentLeft];
@@ -101,8 +100,6 @@
     }
     return _separatorLine;
 }
-
-
 
 #pragma mark - 构造方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -142,15 +139,11 @@
             make.size.mas_equalTo(CGSizeMake(LJKAuthorIconWH * 0.5, LJKAuthorIconWH *0.5));
             make.left.equalTo(self.nameLabel.mas_left);
             make.top.equalTo(self.nameLabel.mas_bottom).offset(8);
-//            make.centerX.equalTo(self.iconView.mas_centerX);
-//            make.top.equalTo(self.iconView.mas_bottom).offset(20);
         }];
         
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.nameLabel.mas_bottom);
             make.right.equalTo(self.contentView.mas_right).offset(-LJKAuthorIcon2CellLeft);
-//            make.left.equalTo(self.iconView.mas_right).offset(LJKAuthorIcon2CellLeft + LJKAuthorIconWH * 0.5);
-//            make.left.equalTo(self.nameLabel.mas_left).offset(LJKAuthorIconWH * 0.5);
             make.left.equalTo(self.nameLabel.mas_left);
         }];
         
@@ -165,8 +158,6 @@
             make.top.equalTo(self.titleLabel.mas_bottom);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-LJKAuthorIcon2CellTop);
         }];
-        
-
     }
     return self;
 }
@@ -196,7 +187,6 @@
     
     self.nameLabel.text = topic.author.name;
     self.titleLabel.text = topic.content;
-
     self.commentsCount.text = [NSString stringWithFormat:@"%@评论",topic.n_comments];
     self.latestCommentTimeLabel.text = [NSString stringWithFormat:@"最后回复:%@",topic.latest_comment_time];
 }

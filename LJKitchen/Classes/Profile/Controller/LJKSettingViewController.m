@@ -18,9 +18,12 @@
 #import "LJKMyInfo.h"
 
 @interface LJKSettingViewController ()
+/** 设置 - TitlesArryInDifferentSections */
 @property (nonatomic, strong) NSMutableArray *title_section1;
 @property (nonatomic, strong) NSMutableArray *title_section2;
 @property (nonatomic, strong) NSMutableArray *title_section3;
+
+/** 设置 - supply (版本号、退出) */
 @property (nonatomic, strong) LJKSettingFooter *footer;
 @property (nonatomic, strong) LJKAuthorDetail *authorDetail;
 @end
@@ -51,27 +54,32 @@ static NSString *const settingCellIdentifier = @"settingCell";
     return _title_section3;
 }
 
-
+#pragma mark - 页面构成
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"设置";
     self.authorDetail = [LJKMyInfo  info];
-    self.tableView.backgroundColor = Color_BackGround;
-    self.tableView.bounces = NO;
-    
-    [self.tableView registerClass:[LJKSettingCell class] forCellReuseIdentifier:settingCellIdentifier];
+    [self setupNavigationBar];
+    [self setupTableView];
 }
 
+- (void)setupNavigationBar {
+    self.title = @"设置";
+}
 
+- (void)setupTableView {
+    self.tableView.backgroundColor = Color_BackGround;
+    self.tableView.bounces = NO;
+    [self.tableView registerClass:[LJKSettingCell class]
+           forCellReuseIdentifier:settingCellIdentifier];
+}
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) { // 懒……
+    if (section == 0) { 
         return 1;
     } else if (section == 1) {
         return self.title_section1.count;

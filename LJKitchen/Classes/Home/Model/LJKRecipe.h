@@ -5,6 +5,7 @@
 //  Created by  a on 16/6/20.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  菜谱(M)
 
 #import <Foundation/Foundation.h>
 
@@ -53,7 +54,8 @@
 
 /** 缩略图 */
 @property (nonatomic, copy) NSString *thumb;
-/** 菜谱图片 */
+
+/** 菜谱图片 - 多种规格 */
 @property (nonatomic, copy) NSString *photo;
 @property (nonatomic, copy) NSString *photo80;
 @property (nonatomic, copy) NSString *photo90;
@@ -65,9 +67,9 @@
 @property (nonatomic, copy) NSString *photo640;
 
 
-/** 菜谱headerHeight */
+/** 菜谱 - headerHeight */
 @property (nonatomic, assign) CGFloat headerHeight;
-
+/** 菜谱 - 小贴士Height */
 @property (nonatomic, assign) CGFloat tipsHeight;
 
 

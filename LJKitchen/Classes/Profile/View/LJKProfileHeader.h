@@ -5,9 +5,10 @@
 //  Created by  a on 16/6/26.
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
+//  个人 - Header （V）
 
 
-/** 顶部导航视图点击事件 */
+/** header - 回调枚举 */
 typedef NS_ENUM(NSInteger, headerDidClickedAction) {
     
     // 顶部
@@ -24,7 +25,7 @@ typedef NS_ENUM(NSInteger, headerDidClickedAction) {
     
 };
 
-/** 事件点击Block */
+
 typedef void (^headerDidClickedBlock)();
 
 #import <UIKit/UIKit.h>
@@ -35,6 +36,7 @@ typedef void (^headerDidClickedBlock)();
 
 @property (nonatomic, strong) LJKMyInfo *myInfo;
 @property (nonatomic, strong) LJKAuthorDetail *authorDetail;
+
 /** Header各部分view点击后回调 */
 @property (nonatomic, copy) headerDidClickedBlock clickBlock;
 @end

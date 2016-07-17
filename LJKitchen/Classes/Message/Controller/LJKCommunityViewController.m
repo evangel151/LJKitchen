@@ -6,10 +6,10 @@
 //  Copyright © 2016年 ycdsq. All rights reserved.
 //
 
-#import "LJKCommunityViewController.h" // 社区总览
+#import "LJKCommunityViewController.h"
 #import "LJKTopicViewController.h"     // 社区-主题
-#import "LJKCookerClubViewController.h"// 社区-厨友社
-#import "LJKCommunityForumCell.h"
+#import "LJKCommunityForumCell.h"      // 论坛
+//#import "LJKCookerClubViewController.h"// 社区-厨友社
 
 #import "LJKForum.h"
 
@@ -28,8 +28,8 @@
 
 @implementation LJKCommunityViewController
 
-static NSString *const communityFooterIdentifier = @"communityFooter";
-static NSString *const communityCellIdentifier = @"communityCell";
+static NSString *const communityFooterIdentifier = @"communityFooter"; // 厨友社
+static NSString *const communityCellIdentifier   = @"communityCell";   // 社区cell
 static CGFloat  cellHeight = 80;
 
 #pragma mark - 页面主体
@@ -83,15 +83,14 @@ static CGFloat  cellHeight = 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    LJKCommunityForumCell *cell = [tableView dequeueReusableCellWithIdentifier:communityCellIdentifier];
     
+    // 应该是两种不同的cell
+    LJKCommunityForumCell *cell = [tableView dequeueReusableCellWithIdentifier:communityCellIdentifier];
     if (indexPath.row == 0) {
         cell.forum = self.forumDiscuss;
     } else if (indexPath.row == 1) {
         cell.forum = self.forumAmbitus;
     }
-    
     return cell;
 }
 
@@ -123,11 +122,13 @@ static CGFloat  cellHeight = 80;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        NSLog(@"即将跳转至\"主题帖界面\"——————");
-        [self.navigationController pushViewController:[[LJKTopicViewController alloc] init] animated:YES];
+        [UILabel showMessage:@"即将跳转至\"主题帖界面\"" atNavController:self.navigationController];
+        [self.navigationController pushViewController:[[LJKTopicViewController alloc] init]
+                                             animated:YES];
     } else if (indexPath.row == 1) {
 
-        [UILabel showMessage:@"周边需要使用定位功能，暂未实现" atNavController:self.navigationController];
+        [UILabel showMessage:@"周边需要使用定位功能，暂未实现"
+             atNavController:self.navigationController];
     }
 }
 
@@ -135,7 +136,7 @@ static CGFloat  cellHeight = 80;
 #pragma mark - 点击事件
 - (void) cookerClub {
     NSLog(@"即将跳转至\"厨友俱乐部\"——————");
-    [self.navigationController pushViewController:[[LJKCookerClubViewController alloc] init] animated:YES];
+    [self pushWebViewWithUrl:LJKRequestFooterCookerClub];
 }
 
 @end

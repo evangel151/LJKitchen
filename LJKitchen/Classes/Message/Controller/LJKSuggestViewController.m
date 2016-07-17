@@ -12,11 +12,11 @@
 
 @interface LJKSuggestViewController ()<UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate>
 
+/** 意见反馈 - 输入框 */
 @property (nonatomic, strong) LJKBasicTextView *textView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIButton *helpButton;
-
 @end
 
 @implementation LJKSuggestViewController
@@ -49,14 +49,13 @@
         _textView.delegate = self;
         // [_textView becomeFirstResponder];
         // 添加通知
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(textDidChange)
-                                                     name:UITextViewTextDidChangeNotification
-                                                   object:_textView];
+        [NotificationCenter addObserver:self
+                               selector:@selector(textDidChange)
+                                   name:UITextViewTextDidChangeNotification
+                                 object:_textView];
     }
     return _textView;
 }
-
 
 - (UIButton *)helpButton {
     if (!_helpButton) {
@@ -84,9 +83,7 @@
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
                                                                              action:@selector(postSuggestion)];
-
     self.navigationItem.rightBarButtonItem.enabled = NO;
-
 }
 
 #pragma mark - 点击事件

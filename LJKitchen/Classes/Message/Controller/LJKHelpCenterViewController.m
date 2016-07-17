@@ -19,7 +19,7 @@
 @implementation LJKHelpCenterViewController
 
 static NSString *const sectionTitle = @"常见问题";
-
+#pragma mark - 懒加载
 - (NSMutableArray *)headerStrings {
     if (!_headerStrings) {
         _headerStrings = [NSMutableArray arrayWithObjects:@"LJKitchen常见问题",nil];
@@ -27,7 +27,6 @@ static NSString *const sectionTitle = @"常见问题";
     return _headerStrings;
 }
 
-#pragma mark - 懒加载
 - (NSMutableArray *)titleArray {
     if (!_titleArray) {
         self.titleArray = [NSMutableArray arrayWithObjects:@"账号相关",@"菜谱相关",@"作品相关",@"菜单相关",@"登录相关",@"其他", nil];
@@ -55,7 +54,6 @@ static NSString *const sectionTitle = @"常见问题";
 }
 
 #pragma mark TableView 数据源 & 代理
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.titleArray.count;
 }
@@ -74,10 +72,6 @@ static NSString *const sectionTitle = @"常见问题";
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return sectionTitle;
-//    }
-//    return nil;
     return self.headerStrings[section];
 }
 
